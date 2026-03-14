@@ -13,12 +13,12 @@
 
 ### Internationalization (I18N)
 
-- [ ] **I18N-01**: react-i18next + next-i18next configured — /locales/en.json and /locales/fr.json with all UI strings
-- [ ] **I18N-02**: Every component uses useTranslation() — zero hardcoded UI strings
-- [ ] **I18N-03**: Language switcher component renders EN|FR pills in desktop nav, globe icon dropdown on mobile
-- [ ] **I18N-04**: Language switch is instant (no page reload), stored in localStorage, restored on next visit
-- [ ] **I18N-05**: Plurals implemented via i18next plural keys for candidate counts
-- [ ] **I18N-06**: Meta tags (lang attribute, og:locale) set per page via next-i18next
+- [x] **I18N-01**: react-i18next + next-i18next configured — /locales/en.json and /locales/fr.json with all UI strings
+- [x] **I18N-02**: Every component uses useTranslation() — zero hardcoded UI strings
+- [x] **I18N-03**: Language switcher component renders EN|FR pills in desktop nav, globe icon dropdown on mobile
+- [x] **I18N-04**: Language switch is instant (no page reload), stored in localStorage, restored on next visit
+- [x] **I18N-05**: Plurals implemented via i18next plural keys for candidate counts
+- [x] **I18N-06**: Meta tags (lang attribute, og:locale) set per page via next-i18next
 
 ### Landing Pages (LAND)
 
@@ -142,12 +142,12 @@
 | DSYS-01 | Phase 1 | Pending |
 | DSYS-02 | Phase 1 | Pending |
 | DSYS-03 | Phase 1 | Pending |
-| I18N-01 | Phase 1 | Pending |
-| I18N-02 | Phase 1 | Pending |
-| I18N-03 | Phase 1 | Pending |
-| I18N-04 | Phase 1 | Pending |
-| I18N-05 | Phase 1 | Pending |
-| I18N-06 | Phase 1 | Pending |
+| I18N-01 | Phase 1 | Complete |
+| I18N-02 | Phase 1 | Complete |
+| I18N-03 | Phase 1 | Complete |
+| I18N-04 | Phase 1 | Complete |
+| I18N-05 | Phase 1 | Complete |
+| I18N-06 | Phase 1 | Complete |
 | DSGN-01 | Phase 2.1 | Pending |
 | DSGN-02 | Phase 2.1 | Pending |
 | DSGN-03 | Phase 2.1 | Pending |
