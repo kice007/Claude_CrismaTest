@@ -1,11 +1,19 @@
 // src/app/dev/design-system/page.tsx
 // Dev-only: returns 404 in production (I18N-02: all strings via useTranslation)
 "use client";
+import { useState } from "react";
 import { notFound } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
+import { toast } from "sonner";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { fadeIn, slideUp, staggerChildren } from "@/lib/motion";
+import { Skeleton } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
+import { InviteModal } from "@/components/modals/InviteModal";
+import { CalendarModal } from "@/components/modals/CalendarModal";
+import { ExportModal } from "@/components/modals/ExportModal";
+import { ContactModal } from "@/components/modals/ContactModal";
 
 const BRAND_COLORS = [
   { name: "brand-primary", hex: "#1B4FD8", cls: "bg-brand-primary" },
@@ -24,6 +32,11 @@ export default function DesignSystemPage() {
   }
 
   const { t, i18n } = useTranslation();
+
+  const [inviteOpen, setInviteOpen] = useState(false);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [exportOpen, setExportOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background text-foreground p-8 space-y-12">
@@ -147,6 +160,110 @@ export default function DesignSystemPage() {
             <p className="text-sm font-mono text-neutral-500">--shadow-modal</p>
           </div>
         </div>
+      </section>
+
+      {/* Phase 2 — Shared UI Components */}
+      <section className="space-y-8">
+        <h2 className="text-2xl font-bold text-brand-navy border-t border-border pt-8">
+          {t("design_system_phase2_title")}
+        </h2>
+
+        {/* Skeleton demos */}
+        <section className="space-y-4">
+          <h3 className="text-xl font-semibold text-brand-navy">{t("design_system_skeleton_title")}</h3>
+          <div className="p-6 bg-card rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
+            <div className="space-y-3">
+              <Skeleton className="h-4 w-48" />
+              <Skeleton className="h-4 w-64" />
+              <Skeleton className="h-32 w-full rounded-[var(--radius-card)]" />
+              <div className="flex gap-3">
+                <Skeleton className="h-10 w-10 rounded-full" />
+                <div className="space-y-2 flex-1">
+                  <Skeleton className="h-4 w-32" />
+                  <Skeleton className="h-3 w-24" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Empty State demo */}
+        <section className="space-y-4">
+          <h3 className="text-xl font-semibold text-brand-navy">{t("design_system_empty_state_title")}</h3>
+          <div className="p-6 bg-card rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
+            <EmptyState
+              title="No candidates yet"
+              body="Invite candidates to take a test and their results will appear here."
+              ctaLabel="Invite Candidate"
+              ctaHref="#"
+            />
+          </div>
+        </section>
+
+        {/* Toast demos */}
+        <section className="space-y-4">
+          <h3 className="text-xl font-semibold text-brand-navy">{t("design_system_toasts_title")}</h3>
+          <div className="p-6 bg-card rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={() => toast.success("Candidate invited successfully")}
+                className="min-h-[48px] px-4 bg-success text-white rounded-md text-sm font-medium"
+              >
+                {t("design_system_toast_success")}
+              </button>
+              <button
+                onClick={() => toast.warning("Session expiring soon")}
+                className="min-h-[48px] px-4 bg-warning text-white rounded-md text-sm font-medium"
+              >
+                {t("design_system_toast_warning")}
+              </button>
+              <button
+                onClick={() => toast.error("Failed to send invite")}
+                className="min-h-[48px] px-4 bg-danger text-white rounded-md text-sm font-medium"
+              >
+                {t("design_system_toast_error")}
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Modal demos */}
+        <section className="space-y-4">
+          <h3 className="text-xl font-semibold text-brand-navy">{t("design_system_modals_title")}</h3>
+          <div className="p-6 bg-card rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={() => setInviteOpen(true)}
+                className="min-h-[48px] px-4 bg-brand-primary text-white rounded-md text-sm font-medium hover:bg-brand-secondary transition-colors"
+              >
+                Invite Modal
+              </button>
+              <button
+                onClick={() => setCalendarOpen(true)}
+                className="min-h-[48px] px-4 bg-brand-primary text-white rounded-md text-sm font-medium hover:bg-brand-secondary transition-colors"
+              >
+                Calendar Modal
+              </button>
+              <button
+                onClick={() => setExportOpen(true)}
+                className="min-h-[48px] px-4 bg-brand-primary text-white rounded-md text-sm font-medium hover:bg-brand-secondary transition-colors"
+              >
+                Export Modal
+              </button>
+              <button
+                onClick={() => setContactOpen(true)}
+                className="min-h-[48px] px-4 bg-brand-primary text-white rounded-md text-sm font-medium hover:bg-brand-secondary transition-colors"
+              >
+                Contact Modal
+              </button>
+            </div>
+          </div>
+
+          <InviteModal open={inviteOpen} onOpenChange={setInviteOpen} />
+          <CalendarModal open={calendarOpen} onOpenChange={setCalendarOpen} />
+          <ExportModal open={exportOpen} onOpenChange={setExportOpen} />
+          <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
+        </section>
       </section>
     </div>
   );
