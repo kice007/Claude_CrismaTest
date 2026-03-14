@@ -17,5 +17,13 @@
   "nav_login": "Connexion",
   "nav_sign_up": "S'inscrire",
   "nav_open_menu": "Ouvrir le menu",
-  "nav_mobile_title": "Navigation"
+  "nav_mobile_title": "Navigation",
+  "design_system_phase2_title": "Phase 2 — Composants UI partagés",
+  "design_system_skeleton_title": "Squelettes",
+  "design_system_empty_state_title": "État vide",
+  "design_system_toasts_title": "Notifications",
+  "design_system_modals_title": "Modales",
+  "design_system_toast_success": "Afficher succès",
+  "design_system_toast_warning": "Afficher avertissement",
+  "design_system_toast_error": "Afficher erreur"
 }
