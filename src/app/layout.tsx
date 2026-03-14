@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Geist } from "next/font/google";
 import { MotionConfig } from "motion/react";
 import { I18nProvider } from "@/components/I18nProvider";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -47,6 +48,13 @@ export default function RootLayout({
         {/* MotionConfig propagates reducedMotion="user" to all child motion components */}
         <MotionConfig reducedMotion="user">
           <I18nProvider>{children}</I18nProvider>
+          <Toaster
+            position="bottom-right"
+            visibleToasts={3}
+            richColors
+            closeButton
+            duration={4000}
+          />
         </MotionConfig>
       </body>
     </html>
