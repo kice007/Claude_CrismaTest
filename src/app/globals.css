@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand raw values */
+  --brand-primary-raw: #1B4FD8;
+  --brand-secondary-raw: #3B6FE8;
+  --brand-navy-raw: #0F2A6B;
+  --brand-light-raw: #EEF2FF;
+  --brand-accent-raw: #6366F1;
+
+  /* Shadcn semantic vars mapped to brand HSL equivalents */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(222 47% 11%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222 47% 11%);
+  --primary: hsl(221 77% 47%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(221 77% 57%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(221 30% 96%);
+  --muted-foreground: hsl(222 20% 45%);
+  --accent: hsl(239 84% 67%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(221 20% 88%);
+  --input: hsl(221 20% 88%);
+  --ring: hsl(221 77% 47%);
+  --radius: 0.5rem;
 }
 
 @theme inline {
+  /* Font vars — resolved by Plan 02's next/font setup */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+
+  /* Brand color utilities */
+  --color-brand-primary: #1B4FD8;
+  --color-brand-secondary: #3B6FE8;
+  --color-brand-navy: #0F2A6B;
+  --color-brand-light: #EEF2FF;
+  --color-brand-accent: #6366F1;
+
+  /* Neutral scale */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-500: #64748b;
+  --color-neutral-700: #334155;
+  --color-neutral-900: #0f172a;
+
+  /* Status colors */
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+
+  /* Shadcn semantic → Tailwind utilities */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Custom border-radius tokens */
+  --radius-card: 0.75rem;
+  --radius-chip: 9999px;
+  --radius-badge: 0.375rem;
+
+  /* Custom shadow tokens (brand-navy based for premium SaaS depth) */
+  --shadow-card: 0 1px 3px 0 rgb(15 42 107 / 0.08), 0 4px 16px -2px rgb(15 42 107 / 0.06);
+  --shadow-dropdown: 0 4px 16px -2px rgb(15 42 107 / 0.12), 0 1px 4px 0 rgb(15 42 107 / 0.06);
+  --shadow-modal: 0 20px 48px -8px rgb(15 42 107 / 0.2), 0 4px 16px -4px rgb(15 42 107 / 0.1);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
 }
