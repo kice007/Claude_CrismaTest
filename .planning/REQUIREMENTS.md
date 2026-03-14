@@ -27,9 +27,9 @@
 - [ ] **LAND-03**: /for-companies — B2B value prop, speed/accuracy/anti-fraud features, dashboard screenshot, company logos, "Request Demo" and "Start Trial" CTAs
 - [ ] **LAND-04**: /pricing — 4-plan table (Free / Starter $49 / Pro $149 / Enterprise), monthly/annual toggle (shows 20% discount, visual only), "Get Started" CTAs on paid plans → /checkout/[plan]
 - [ ] **LAND-05**: /contact — demo request form (name, company, email, team size, message, consent checkbox), POST to Supabase contact_submissions + Resend email notification, rate-limited 3/IP/hour, success toast on submit
-- [ ] **LAND-06**: Fixed nav (desktop): logo left, links center, EN|FR + Login + Sign Up right; white/95 backdrop-blur; shadow on scroll
-- [ ] **LAND-07**: Mobile nav: hamburger → slide-down sheet with all links + language toggle, 48px tap targets
-- [ ] **LAND-08**: All landing pages fully responsive — no horizontal overflow at 320px minimum
+- [x] **LAND-06**: Fixed nav (desktop): logo left, links center, EN|FR + Login + Sign Up right; white/95 backdrop-blur; shadow on scroll
+- [x] **LAND-07**: Mobile nav: hamburger → slide-down sheet with all links + language toggle, 48px tap targets
+- [x] **LAND-08**: All landing pages fully responsive — no horizontal overflow at 320px minimum
 
 ### Authentication — Visual Only (AUTH)
 
@@ -161,9 +161,9 @@
 | UI-05 | Phase 2 | Complete |
 | UI-06 | Phase 2 | Complete |
 | UI-07 | Phase 2 | Complete |
-| LAND-06 | Phase 2 | Pending |
-| LAND-07 | Phase 2 | Pending |
-| LAND-08 | Phase 2 | Pending |
+| LAND-06 | Phase 2 | Complete |
+| LAND-07 | Phase 2 | Complete |
+| LAND-08 | Phase 2 | Complete |
 | LAND-01 | Phase 3 | Pending |
 | LAND-02 | Phase 3 | Pending |
 | LAND-03 | Phase 3 | Pending |
