@@ -1,0 +1,14 @@
+{
+  "language_switcher_en": "EN",
+  "language_switcher_fr": "FR",
+  "language_switcher_label": "Langue",
+  "candidate_count_one": "{{count}} candidat",
+  "candidate_count_other": "{{count}} candidats",
+  "design_system_title": "Système de design",
+  "design_system_colors": "Couleurs de marque",
+  "design_system_typography": "Typographie",
+  "design_system_components": "Composants",
+  "design_system_animations": "Animations",
+  "design_system_i18n": "Internationalisation",
+  "design_system_plural_demo": "Démo pluriel"
+}
