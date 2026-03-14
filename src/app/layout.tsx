@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Geist } from "next/font/google";
 import { MotionConfig } from "motion/react";
 import { I18nProvider } from "@/components/I18nProvider";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
 
 // Replace Geist fonts with Inter + JetBrains Mono (per DSYS-03 and CONTEXT.md decision)
 // JetBrains_Mono is a variable font — no weight array needed
@@ -38,7 +42,7 @@ export default function RootLayout({
   return (
     // lang="en" is the server-rendered default; I18nProvider useEffect updates it
     // client-side to match the stored localStorage language (I18N-06)
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={cn(inter.variable, jetbrainsMono.variable, "font-sans", geist.variable)}>
       <body className="antialiased">
         {/* MotionConfig propagates reducedMotion="user" to all child motion components */}
         <MotionConfig reducedMotion="user">
