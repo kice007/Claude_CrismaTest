@@ -7,9 +7,9 @@
 
 ### Design System (DSYS)
 
-- [ ] **DSYS-01**: Tailwind config extended with all brand tokens (colors: brand-primary #1B4FD8, brand-secondary #3B6FE8, brand-navy #0F2A6B, brand-light #EEF2FF, brand-accent #6366F1, neutrals, success/warning/danger; typography scale; spacing scale)
-- [ ] **DSYS-02**: Shadcn/ui installed and overridden with brand tokens via CSS variables in globals.css
-- [ ] **DSYS-03**: Inter + JetBrains Mono loaded via next/font with font-display: swap
+- [x] **DSYS-01**: Tailwind config extended with all brand tokens (colors: brand-primary #1B4FD8, brand-secondary #3B6FE8, brand-navy #0F2A6B, brand-light #EEF2FF, brand-accent #6366F1, neutrals, success/warning/danger; typography scale; spacing scale)
+- [x] **DSYS-02**: Shadcn/ui installed and overridden with brand tokens via CSS variables in globals.css
+- [x] **DSYS-03**: Inter + JetBrains Mono loaded via next/font with font-display: swap
 
 ### Internationalization (I18N)
 
@@ -139,9 +139,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DSYS-01 | Phase 1 | Pending |
-| DSYS-02 | Phase 1 | Pending |
-| DSYS-03 | Phase 1 | Pending |
+| DSYS-01 | Phase 1 | Complete |
+| DSYS-02 | Phase 1 | Complete |
+| DSYS-03 | Phase 1 | Complete |
 | I18N-01 | Phase 1 | Complete |
 | I18N-02 | Phase 1 | Complete |
 | I18N-03 | Phase 1 | Complete |

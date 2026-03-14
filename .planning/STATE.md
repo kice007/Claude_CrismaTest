@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-foundation-02-PLAN.md
-last_updated: "2026-03-14T20:23:11.291Z"
+stopped_at: Completed 01-foundation-01-01-PLAN.md
+last_updated: "2026-03-14T20:24:24.734Z"
 last_activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
 progress:
   total_phases: 7
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -51,6 +51,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-foundation P02 | 15min | 2 tasks | 8 files |
+| Phase 01-foundation P01 | 4 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,8 @@ Recent decisions affecting current work:
 - [Init]: Supabase for minimal real data (seeded candidates/tests), not full backend
 - [Init]: react-i18next chosen for zero-reload bilingual switching; all strings via useTranslation()
 - [Phase 01-foundation]: motion package used for MotionConfig (motion/react import path); .claude/ excluded from ESLint; og:locale static en_US default for SSR compatibility
+- [Phase 01-01]: Used motion-dom for Variants type import — motion/react v12 does not re-export Variants in its TypeScript declaration
+- [Phase 01-01]: globals.css uses @theme inline (not bare @theme) for all var()-referencing blocks; font vars reference Plan 02 next/font vars safely
 
 ### Pending Todos
 
@@ -75,6 +78,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-14T20:23:11.288Z
-Stopped at: Completed 01-foundation-02-PLAN.md
+Last session: 2026-03-14T20:24:24.732Z
+Stopped at: Completed 01-foundation-01-01-PLAN.md
 Resume file: None
