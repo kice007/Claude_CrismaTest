@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-03-14T21:54:37.767Z"
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-03-14T21:57:55.658Z"
 last_activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
 progress:
   total_phases: 7
   completed_phases: 1
   total_plans: 9
-  completed_plans: 4
+  completed_plans: 5
   percent: 0
 ---
 
@@ -54,6 +54,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P01 | 4 | 2 tasks | 2 files |
 | Phase 01-foundation P03 | 2 | 2 tasks | 2 files |
 | Phase 02-shared-ui-nav-shell P01 | 3min | 1 tasks | 7 files |
+| Phase 02-shared-ui-nav-shell P02 | 2min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,9 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Dev-only route guard pattern: check process.env.NODE_ENV \!== development at top of client component, call notFound() immediately
 - [Phase 02-01]: shadcn init uses Nova preset by default (newer CLI removed --style flag); Nova is equivalent to new-york for this project
 - [Phase 02-01]: Brand HSL tokens must be manually restored post-shadcn-init — shadcn overwrites :root with oklch() values
+- [Phase 02-shared-ui-nav-shell]: CSS-only shimmer animation via .shimmer class (not Framer Motion) — zero JS overhead, Skeleton stays a Server Component
+- [Phase 02-shared-ui-nav-shell]: error.tsx requires 'use client' in Next.js App Router for error boundary wiring; not-found.tsx stays a Server Component
+- [Phase 02-shared-ui-nav-shell]: EmptyState inline SVG uses hardcoded hex values matching brand palette — SVG attributes not processed by Tailwind class engine
 
 ### Pending Todos
 
@@ -84,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-14T21:54:37.763Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-03-14T21:57:55.654Z
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None

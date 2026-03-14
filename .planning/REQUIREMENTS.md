@@ -95,11 +95,11 @@
 
 ### Shared UI (UI)
 
-- [ ] **UI-01**: Skeleton loading states (shimmer 1.5s infinite) on all data-heavy views
-- [ ] **UI-02**: Empty state with illustrated card + body text + CTA (blue-palette abstract shapes)
+- [x] **UI-01**: Skeleton loading states (shimmer 1.5s infinite) on all data-heavy views
+- [x] **UI-02**: Empty state with illustrated card + body text + CTA (blue-palette abstract shapes)
 - [x] **UI-03**: Toast system — success/warning/error, slide-in from right 250ms, 4s auto-dismiss
 - [x] **UI-04**: Modal system — invite candidate, calendar, export, contact modals; focus-trapped; ESC to close
-- [ ] **UI-05**: Branded 404 and 500 pages — no stack trace, link back to home
+- [x] **UI-05**: Branded 404 and 500 pages — no stack trace, link back to home
 - [x] **UI-06**: All animations wrapped in @media (prefers-reduced-motion: no-preference)
 - [ ] **UI-07**: Minimum 48×48px touch targets on all interactive elements; 16px minimum font-size on all form inputs
 
@@ -154,11 +154,11 @@
 | DSGN-04 | Phase 2.1 | Pending |
 | DSGN-05 | Phase 2.1 | Pending |
 | DSGN-06 | Phase 2.1 | Pending |
-| UI-01 | Phase 2 | Pending |
-| UI-02 | Phase 2 | Pending |
+| UI-01 | Phase 2 | Complete |
+| UI-02 | Phase 2 | Complete |
 | UI-03 | Phase 2 | Complete |
 | UI-04 | Phase 2 | Complete |
-| UI-05 | Phase 2 | Pending |
+| UI-05 | Phase 2 | Complete |
 | UI-06 | Phase 2 | Complete |
 | UI-07 | Phase 2 | Pending |
 | LAND-06 | Phase 2 | Pending |
