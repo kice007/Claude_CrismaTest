@@ -101,7 +101,7 @@
 - [x] **UI-04**: Modal system — invite candidate, calendar, export, contact modals; focus-trapped; ESC to close
 - [x] **UI-05**: Branded 404 and 500 pages — no stack trace, link back to home
 - [x] **UI-06**: All animations wrapped in @media (prefers-reduced-motion: no-preference)
-- [ ] **UI-07**: Minimum 48×48px touch targets on all interactive elements; 16px minimum font-size on all form inputs
+- [x] **UI-07**: Minimum 48×48px touch targets on all interactive elements; 16px minimum font-size on all form inputs
 
 ## v2 Requirements
 
@@ -160,7 +160,7 @@
 | UI-04 | Phase 2 | Complete |
 | UI-05 | Phase 2 | Complete |
 | UI-06 | Phase 2 | Complete |
-| UI-07 | Phase 2 | Pending |
+| UI-07 | Phase 2 | Complete |
 | LAND-06 | Phase 2 | Pending |
 | LAND-07 | Phase 2 | Pending |
 | LAND-08 | Phase 2 | Pending |
