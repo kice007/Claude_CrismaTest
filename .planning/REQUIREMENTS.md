@@ -130,23 +130,71 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DSYS-01–03 | Phase 1 | Pending |
-| I18N-01–06 | Phase 1 | Pending |
-| LAND-06–08 | Phase 1 | Pending |
-| AUTH-01–05 | Phase 2 | Pending |
-| LAND-01–05 | Phase 2 | Pending |
-| TEST-01–05 | Phase 3 | Pending |
-| DASH-01–06 | Phase 4 | Pending |
-| PAY-01–02 | Phase 5 | Pending |
-| DATA-01–10 | Phase 5 | Pending |
-| SEC-01–07 | Phase 6 | Pending |
-| UI-01–07 | Phase 6 | Pending |
+| DSYS-01 | Phase 1 | Pending |
+| DSYS-02 | Phase 1 | Pending |
+| DSYS-03 | Phase 1 | Pending |
+| I18N-01 | Phase 1 | Pending |
+| I18N-02 | Phase 1 | Pending |
+| I18N-03 | Phase 1 | Pending |
+| I18N-04 | Phase 1 | Pending |
+| I18N-05 | Phase 1 | Pending |
+| I18N-06 | Phase 1 | Pending |
+| UI-01 | Phase 2 | Pending |
+| UI-02 | Phase 2 | Pending |
+| UI-03 | Phase 2 | Pending |
+| UI-04 | Phase 2 | Pending |
+| UI-05 | Phase 2 | Pending |
+| UI-06 | Phase 2 | Pending |
+| UI-07 | Phase 2 | Pending |
+| LAND-06 | Phase 2 | Pending |
+| LAND-07 | Phase 2 | Pending |
+| LAND-08 | Phase 2 | Pending |
+| LAND-01 | Phase 3 | Pending |
+| LAND-02 | Phase 3 | Pending |
+| LAND-03 | Phase 3 | Pending |
+| LAND-04 | Phase 3 | Pending |
+| LAND-05 | Phase 3 | Pending |
+| DATA-01 | Phase 3 | Pending |
+| DATA-02 | Phase 3 | Pending |
+| DATA-03 | Phase 3 | Pending |
+| DATA-10 | Phase 3 | Pending |
+| SEC-01 | Phase 3 | Pending |
+| AUTH-01 | Phase 4 | Pending |
+| AUTH-02 | Phase 4 | Pending |
+| AUTH-03 | Phase 4 | Pending |
+| AUTH-04 | Phase 4 | Pending |
+| AUTH-05 | Phase 4 | Pending |
+| TEST-01 | Phase 4 | Pending |
+| TEST-02 | Phase 4 | Pending |
+| TEST-03 | Phase 4 | Pending |
+| TEST-04 | Phase 4 | Pending |
+| TEST-05 | Phase 4 | Pending |
+| DASH-01 | Phase 5 | Pending |
+| DASH-02 | Phase 5 | Pending |
+| DASH-03 | Phase 5 | Pending |
+| DASH-04 | Phase 5 | Pending |
+| DASH-05 | Phase 5 | Pending |
+| DASH-06 | Phase 5 | Pending |
+| DATA-04 | Phase 5 | Pending |
+| DATA-05 | Phase 5 | Pending |
+| DATA-06 | Phase 5 | Pending |
+| DATA-07 | Phase 5 | Pending |
+| DATA-08 | Phase 5 | Pending |
+| DATA-09 | Phase 5 | Pending |
+| PAY-01 | Phase 6 | Pending |
+| PAY-02 | Phase 6 | Pending |
+| SEC-02 | Phase 6 | Pending |
+| SEC-03 | Phase 6 | Pending |
+| SEC-04 | Phase 6 | Pending |
+| SEC-05 | Phase 6 | Pending |
+| SEC-06 | Phase 6 | Pending |
+| SEC-07 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 51 total
-- Mapped to phases: 51
-- Unmapped: 0 ✓
+- v1 requirements: 59 total
+- Mapped to phases: 59
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 after initial definition*
+*Last updated: 2026-03-14 after roadmap creation*
