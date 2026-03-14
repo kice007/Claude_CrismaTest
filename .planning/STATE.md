@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-14T21:27:04.354Z"
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-14T21:54:37.767Z"
 last_activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
 progress:
   total_phases: 7
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 9
+  completed_plans: 4
   percent: 0
 ---
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P02 | 15min | 2 tasks | 8 files |
 | Phase 01-foundation P01 | 4 | 2 tasks | 2 files |
 | Phase 01-foundation P03 | 2 | 2 tasks | 2 files |
+| Phase 02-shared-ui-nav-shell P01 | 3min | 1 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 01-01]: globals.css uses @theme inline (not bare @theme) for all var()-referencing blocks; font vars reference Plan 02 next/font vars safely
 - [Phase 01-foundation]: notFound() works inside 'use client' components in Next.js App Router — no server-only wrapper needed for production 404 guard
 - [Phase 01-foundation]: Dev-only route guard pattern: check process.env.NODE_ENV \!== development at top of client component, call notFound() immediately
+- [Phase 02-01]: shadcn init uses Nova preset by default (newer CLI removed --style flag); Nova is equivalent to new-york for this project
+- [Phase 02-01]: Brand HSL tokens must be manually restored post-shadcn-init — shadcn overwrites :root with oklch() values
 
 ### Pending Todos
 
@@ -81,6 +84,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-14T21:27:04.352Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-shared-ui-nav-shell/02-CONTEXT.md
+Last session: 2026-03-14T21:54:37.763Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None
