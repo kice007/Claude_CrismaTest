@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-foundation-01-01-PLAN.md
-last_updated: "2026-03-14T20:24:24.734Z"
+stopped_at: Completed 01-foundation-01-03-PLAN.md
+last_updated: "2026-03-14T20:27:58.954Z"
 last_activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
 progress:
   total_phases: 7
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-foundation P02 | 15min | 2 tasks | 8 files |
 | Phase 01-foundation P01 | 4 | 2 tasks | 2 files |
+| Phase 01-foundation P03 | 2 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -67,6 +68,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: motion package used for MotionConfig (motion/react import path); .claude/ excluded from ESLint; og:locale static en_US default for SSR compatibility
 - [Phase 01-01]: Used motion-dom for Variants type import — motion/react v12 does not re-export Variants in its TypeScript declaration
 - [Phase 01-01]: globals.css uses @theme inline (not bare @theme) for all var()-referencing blocks; font vars reference Plan 02 next/font vars safely
+- [Phase 01-foundation]: notFound() works inside 'use client' components in Next.js App Router — no server-only wrapper needed for production 404 guard
+- [Phase 01-foundation]: Dev-only route guard pattern: check process.env.NODE_ENV \!== development at top of client component, call notFound() immediately
 
 ### Pending Todos
 
@@ -78,6 +81,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-14T20:24:24.732Z
-Stopped at: Completed 01-foundation-01-01-PLAN.md
+Last session: 2026-03-14T20:27:58.952Z
+Stopped at: Completed 01-foundation-01-03-PLAN.md
 Resume file: None

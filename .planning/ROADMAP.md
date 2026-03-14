@@ -12,7 +12,7 @@ CrismaTest ships as a premium SaaS prototype: a bilingual, fully interactive tal
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Design system tokens, i18n framework, and font setup — the substrate every component builds on
+- [x] **Phase 1: Foundation** - Design system tokens, i18n framework, and font setup — the substrate every component builds on (completed 2026-03-14)
 - [ ] **Phase 2: Shared UI + Nav Shell** - Reusable component library (toasts, modals, skeletons, error pages), responsive nav, and global layout wrapper
 - [ ] **Phase 2.1: Screen Design** (INSERTED) - Full Pencil screen designs for all product areas — visual spec used by Phases 3–6
 - [ ] **Phase 3: Landing Pages + Data Foundation** - All five marketing pages served with real Supabase data, seeded database, and contact form API
@@ -119,7 +119,7 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 2/3 | In Progress|  |
+| 1. Foundation | 3/3 | Complete   | 2026-03-14 |
 | 2. Shared UI + Nav Shell | 0/TBD | Not started | - |
 | 2.1. Screen Design | 0/TBD | Not started | - |
 | 3. Landing Pages + Data Foundation | 0/TBD | Not started | - |
