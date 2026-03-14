@@ -10,5 +10,12 @@
   "design_system_components": "Composants",
   "design_system_animations": "Animations",
   "design_system_i18n": "Internationalisation",
-  "design_system_plural_demo": "Démo pluriel"
+  "design_system_plural_demo": "Démo pluriel",
+  "nav_for_candidates": "Pour les candidats",
+  "nav_for_companies": "Pour les entreprises",
+  "nav_pricing": "Tarifs",
+  "nav_login": "Connexion",
+  "nav_sign_up": "S'inscrire",
+  "nav_open_menu": "Ouvrir le menu",
+  "nav_mobile_title": "Navigation"
 }

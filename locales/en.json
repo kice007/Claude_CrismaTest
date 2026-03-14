@@ -10,5 +10,12 @@
   "design_system_components": "Components",
   "design_system_animations": "Animations",
   "design_system_i18n": "Internationalization",
-  "design_system_plural_demo": "Plural Demo"
+  "design_system_plural_demo": "Plural Demo",
+  "nav_for_candidates": "For Candidates",
+  "nav_for_companies": "For Companies",
+  "nav_pricing": "Pricing",
+  "nav_login": "Login",
+  "nav_sign_up": "Sign Up",
+  "nav_open_menu": "Open menu",
+  "nav_mobile_title": "Navigation"
 }
