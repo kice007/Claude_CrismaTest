@@ -31,7 +31,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Inter and JetBrains Mono load via next/font and are visible on any rendered page
   4. A developer can switch the app language from EN to FR and back — instantly, without page reload — and the selected language persists across a browser refresh
   5. Every UI string in any component is sourced from a translation key — grep for hardcoded English text in JSX returns zero results
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Design system: brand tokens in globals.css + Shadcn init + Framer Motion variants
+- [ ] 01-02-PLAN.md — i18n framework: react-i18next config, I18nProvider, LanguageSwitcher, fonts in layout.tsx
+- [ ] 01-03-PLAN.md — Validation artifact: /dev/design-system page + type-check script
 
 ### Phase 2: Shared UI + Nav Shell
 **Goal**: Every reusable UI primitive exists and is usable by any page — developers can assemble pages from a working component library rather than building primitives inline.
@@ -100,7 +105,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/3 | Not started | - |
 | 2. Shared UI + Nav Shell | 0/TBD | Not started | - |
 | 3. Landing Pages + Data Foundation | 0/TBD | Not started | - |
 | 4. Auth + Test Flow | 0/TBD | Not started | - |
