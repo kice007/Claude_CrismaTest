@@ -49,7 +49,15 @@ Plans:
   3. Skeleton shimmer placeholders appear on any data-heavy view while data is loading
   4. The desktop nav renders logo left, links center, EN|FR + Login + Sign Up right — collapses to a hamburger sheet on mobile with 48px tap targets
   5. The app renders without horizontal overflow at 320px viewport width on any page
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Shadcn/ui init: install dialog, drawer, sheet, sonner; scaffold src/components/ui/
+- [ ] 02-02-PLAN.md — Skeleton shimmer primitive + EmptyState component + branded 404/500 pages
+- [ ] 02-03-PLAN.md — Toast system: Sonner Toaster wired into layout.tsx
+- [ ] 02-04-PLAN.md — Modal system: useMediaQuery hook + four modal variants (Dialog/Drawer)
+- [ ] 02-05-PLAN.md — Nav shell: NavShell + NavDesktop + NavMobile + wire layout.tsx
+- [ ] 02-06-PLAN.md — Validation: i18n key audit + design-system Phase 2 section + human checkpoint
 
 ### Phase 2.1: Screen Design (INSERTED)
 **Goal**: Every screen in the product has a Pencil design using brand tokens, ready as a visual spec so Phases 3–6 never have to guess at layout, spacing, or component composition.
@@ -120,7 +128,7 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-03-14 |
-| 2. Shared UI + Nav Shell | 0/TBD | Not started | - |
+| 2. Shared UI + Nav Shell | 0/6 | Not started | - |
 | 2.1. Screen Design | 0/TBD | Not started | - |
 | 3. Landing Pages + Data Foundation | 0/TBD | Not started | - |
 | 4. Auth + Test Flow | 0/TBD | Not started | - |
