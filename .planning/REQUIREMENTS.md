@@ -84,6 +84,15 @@
 - [ ] **SEC-06**: External links use rel="noopener noreferrer"
 - [ ] **SEC-07**: localStorage stores only non-sensitive data (language preference only — no scores in URL params or localStorage)
 
+### Screen Design — Pencil (DSGN)
+
+- [ ] **DSGN-01**: Landing page system designed in Pencil — home (/), /for-candidates, /for-companies, /pricing, /contact; desktop nav (logo + links + EN|FR + CTA) and mobile nav (hamburger sheet); all sections and content hierarchy visible; brand color tokens and Inter typography applied throughout
+- [ ] **DSGN-02**: Auth screens designed — /sign-up (form with role selector, show/hide password, Google OAuth button), /login (email + password + remember me), /forgot-password (static confirmation); form validation state variants shown
+- [ ] **DSGN-03**: Candidate test flow designed — /test/[id]/intro (role badge, module list, CTA), /check (webcam preview, mic bars, checklist), /questions (all six question formats: QCM, drag & drop, case study, simulation, audio/video, short text; countdown timer; progress bar), /calculating (animated steps), /result (score gauge, sub-score bars, confetti state, share CTA)
+- [ ] **DSGN-04**: Company dashboard designed — /dashboard (brand-navy sidebar, candidate table, filters), /candidates/[id] (score gauge, sub-scores, fraud flags, AI insight), /compare (3-col side-by-side), /talent-pool (card grid, contact modal), /build-test (4-step flow); mobile tab-bar state for all views
+- [ ] **DSGN-05**: Payment flow designed — /checkout/[plan] (plan summary, billing toggle, Stripe-styled card form, billing info), /checkout/success (illustration, welcome headline, CTAs)
+- [ ] **DSGN-06**: Shared component reference sheet — toast variants (success/warning/error), modal variants (invite, calendar, export, contact), skeleton shimmer states, empty state illustrations, branded 404 and 500 pages
+
 ### Shared UI (UI)
 
 - [ ] **UI-01**: Skeleton loading states (shimmer 1.5s infinite) on all data-heavy views
@@ -139,6 +148,12 @@
 | I18N-04 | Phase 1 | Pending |
 | I18N-05 | Phase 1 | Pending |
 | I18N-06 | Phase 1 | Pending |
+| DSGN-01 | Phase 2.1 | Pending |
+| DSGN-02 | Phase 2.1 | Pending |
+| DSGN-03 | Phase 2.1 | Pending |
+| DSGN-04 | Phase 2.1 | Pending |
+| DSGN-05 | Phase 2.1 | Pending |
+| DSGN-06 | Phase 2.1 | Pending |
 | UI-01 | Phase 2 | Pending |
 | UI-02 | Phase 2 | Pending |
 | UI-03 | Phase 2 | Pending |
@@ -191,8 +206,8 @@
 | SEC-07 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 59 total
-- Mapped to phases: 59
+- v1 requirements: 65 total (59 original + 6 DSGN)
+- Mapped to phases: 65
 - Unmapped: 0
 
 ---

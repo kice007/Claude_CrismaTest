@@ -14,6 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation** - Design system tokens, i18n framework, and font setup — the substrate every component builds on
 - [ ] **Phase 2: Shared UI + Nav Shell** - Reusable component library (toasts, modals, skeletons, error pages), responsive nav, and global layout wrapper
+- [ ] **Phase 2.1: Screen Design** (INSERTED) - Full Pencil screen designs for all product areas — visual spec used by Phases 3–6
 - [ ] **Phase 3: Landing Pages + Data Foundation** - All five marketing pages served with real Supabase data, seeded database, and contact form API
 - [ ] **Phase 4: Auth + Test Flow** - Visual-only sign-up/login and the full five-step candidate test journey
 - [ ] **Phase 5: Company Dashboard + API** - Complete company-facing dashboard with six views, wired to six live API routes returning seeded data
@@ -50,9 +51,22 @@ Plans:
   5. The app renders without horizontal overflow at 320px viewport width on any page
 **Plans**: TBD
 
+### Phase 2.1: Screen Design (INSERTED)
+**Goal**: Every screen in the product has a Pencil design using brand tokens, ready as a visual spec so Phases 3–6 never have to guess at layout, spacing, or component composition.
+**Depends on**: Phase 2
+**Requirements**: DSGN-01, DSGN-02, DSGN-03, DSGN-04, DSGN-05, DSGN-06
+**Success Criteria** (what must be TRUE):
+  1. All five landing pages and both nav states (desktop + mobile) are designed in Pencil using brand color tokens and Inter typography
+  2. Auth screens (sign-up, login, forgot-password) are designed with form layouts, field states, and role-selector variant
+  3. All five candidate test-flow screens are designed — including all six question format layouts and the animated result gauge
+  4. All six company dashboard views are designed with the brand-navy sidebar, data tables, and mobile tab-bar state
+  5. Checkout and success screens are designed with the Stripe-styled card form layout
+  6. A shared component reference sheet exists in Pencil: toast variants, modal variants, skeleton states, empty states, and 404/500 pages
+**Plans**: TBD
+
 ### Phase 3: Landing Pages + Data Foundation
 **Goal**: All five marketing pages are live and bilingual, the Supabase database is seeded with realistic data, and the contact form posts real data and sends a real email.
-**Depends on**: Phase 2
+**Depends on**: Phase 2.1
 **Requirements**: LAND-01, LAND-02, LAND-03, LAND-04, LAND-05, DATA-01, DATA-02, DATA-03, DATA-10, SEC-01
 **Success Criteria** (what must be TRUE):
   1. Visiting /, /for-candidates, /for-companies, /pricing, and /contact all render fully with correct bilingual content and no layout breaks on mobile or desktop
@@ -101,12 +115,13 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
+Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/3 | Not started | - |
 | 2. Shared UI + Nav Shell | 0/TBD | Not started | - |
+| 2.1. Screen Design | 0/TBD | Not started | - |
 | 3. Landing Pages + Data Foundation | 0/TBD | Not started | - |
 | 4. Auth + Test Flow | 0/TBD | Not started | - |
 | 5. Company Dashboard + API | 0/TBD | Not started | - |
