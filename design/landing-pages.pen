@@ -1,5 +1,1521 @@
 {
   "version": "1.0",
-  "variables": {},
-  "nodes": []
+  "variables": {
+    "brand-primary": "#1B4FD8",
+    "brand-secondary": "#3B6FE8",
+    "brand-navy": "#0F2A6B",
+    "brand-light": "#EEF2FF",
+    "brand-accent": "#6366F1",
+    "font-sans": "Inter",
+    "font-mono": "JetBrains Mono"
+  },
+  "nodes": [
+    {
+      "id": "nav-shell",
+      "type": "frame",
+      "label": "NavShell",
+      "reusable": true,
+      "width": 1440,
+      "height": 72,
+      "layout": "horizontal",
+      "align": "center",
+      "padding": { "x": 32, "y": 0 },
+      "gap": 0,
+      "fill": { "type": "solid", "color": "var(brand-light)", "opacity": 0.95 },
+      "backdropBlur": 12,
+      "shadow": { "type": "sm", "annotation": "shadow-sm applied on scroll via js class toggle" },
+      "children": [
+        {
+          "id": "nav-shell-logo",
+          "type": "rect",
+          "label": "← LogoMark from src/components/nav/LogoMark.tsx",
+          "width": 120,
+          "height": 40,
+          "fill": { "type": "solid", "color": "var(brand-primary)" },
+          "cornerRadius": 4
+        },
+        {
+          "id": "nav-shell-spacer-left",
+          "type": "rect",
+          "label": "flex-1 spacer",
+          "fill": { "type": "none" },
+          "flex": 1
+        },
+        {
+          "id": "nav-shell-links",
+          "type": "frame",
+          "label": "Nav links",
+          "layout": "horizontal",
+          "gap": 32,
+          "fill": { "type": "none" },
+          "children": [
+            { "id": "nav-link-home", "type": "text", "label": "Home", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#374151" },
+            { "id": "nav-link-candidates", "type": "text", "label": "For Candidates", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#374151" },
+            { "id": "nav-link-companies", "type": "text", "label": "For Companies", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#374151" },
+            { "id": "nav-link-pricing", "type": "text", "label": "Pricing", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#374151" },
+            { "id": "nav-link-contact", "type": "text", "label": "Contact", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#374151" }
+          ]
+        },
+        {
+          "id": "nav-shell-spacer-right",
+          "type": "rect",
+          "label": "flex-1 spacer",
+          "fill": { "type": "none" },
+          "flex": 1
+        },
+        {
+          "id": "nav-shell-right",
+          "type": "frame",
+          "label": "Right group",
+          "layout": "horizontal",
+          "gap": 8,
+          "align": "center",
+          "fill": { "type": "none" },
+          "children": [
+            {
+              "id": "nav-lang-en",
+              "type": "rect",
+              "label": "EN",
+              "width": 36,
+              "height": 28,
+              "cornerRadius": 4,
+              "fill": { "type": "solid", "color": "var(brand-primary)", "opacity": 0.1 },
+              "text": "EN",
+              "fontSize": 12
+            },
+            {
+              "id": "nav-lang-fr",
+              "type": "rect",
+              "label": "FR",
+              "width": 36,
+              "height": 28,
+              "cornerRadius": 4,
+              "fill": { "type": "none" },
+              "stroke": { "color": "#D1D5DB", "width": 1 },
+              "text": "FR",
+              "fontSize": 12
+            },
+            {
+              "id": "nav-login-btn",
+              "type": "rect",
+              "label": "Login",
+              "width": 72,
+              "height": 36,
+              "cornerRadius": 6,
+              "fill": { "type": "none" },
+              "stroke": { "color": "var(brand-primary)", "width": 1 },
+              "text": "Login",
+              "fontSize": 14,
+              "fontFamily": "var(font-sans)",
+              "textColor": "var(brand-primary)"
+            },
+            {
+              "id": "nav-signup-btn",
+              "type": "rect",
+              "label": "Sign Up",
+              "width": 88,
+              "height": 36,
+              "cornerRadius": 6,
+              "fill": { "type": "solid", "color": "var(brand-primary)" },
+              "text": "Sign Up",
+              "fontSize": 14,
+              "fontFamily": "var(font-sans)",
+              "textColor": "#FFFFFF",
+              "fontWeight": 600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nav-shell-annotation",
+      "type": "note",
+      "content": "← NavShell from src/components/nav/NavShell.tsx — white/95 backdrop-blur, shadow on scroll. Reusable: true — referenced by auth.pen and test-flow.pen via cross-file import.",
+      "x": 0,
+      "y": -40
+    },
+    {
+      "id": "home",
+      "type": "frame",
+      "label": "home",
+      "width": 1440,
+      "layout": "vertical",
+      "gap": 0,
+      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "children": [
+        {
+          "id": "home-nav",
+          "type": "ref",
+          "label": "NavShell ref",
+          "ref": "nav-shell"
+        },
+        {
+          "id": "home-hero",
+          "type": "frame",
+          "label": "Hero section",
+          "width": 1440,
+          "height": 640,
+          "layout": "vertical",
+          "align": "center",
+          "justify": "center",
+          "gap": 24,
+          "fill": {
+            "type": "gradient",
+            "gradient": "linear",
+            "angle": 135,
+            "stops": [
+              { "offset": 0, "color": "var(brand-navy)" },
+              { "offset": 1, "color": "var(brand-primary)", "opacity": 0.85 }
+            ]
+          },
+          "children": [
+            {
+              "id": "home-hero-eyebrow",
+              "type": "text",
+              "label": "Eyebrow",
+              "content": "Trusted by 200+ companies across North America",
+              "fontSize": 14,
+              "fontFamily": "var(font-sans)",
+              "color": "var(brand-accent)",
+              "fontWeight": 500,
+              "letterSpacing": 0.5,
+              "textTransform": "uppercase"
+            },
+            {
+              "id": "home-hero-headline",
+              "type": "text",
+              "label": "Hero headline",
+              "content": "Find top talent with confidence",
+              "fontSize": 60,
+              "fontFamily": "var(font-sans)",
+              "fontWeight": 800,
+              "color": "#FFFFFF",
+              "lineHeight": 1.1,
+              "maxWidth": 760,
+              "textAlign": "center"
+            },
+            {
+              "id": "home-hero-subheadline",
+              "type": "text",
+              "label": "Hero sub-headline",
+              "content": "CrismaTest verifies real skills with proctored assessments and a verifiable CrismaScore — so you hire with certainty, not guesswork.",
+              "fontSize": 20,
+              "fontFamily": "var(font-sans)",
+              "fontWeight": 400,
+              "color": "#E0E7FF",
+              "lineHeight": 1.5,
+              "maxWidth": 580,
+              "textAlign": "center"
+            },
+            {
+              "id": "home-hero-ctas",
+              "type": "frame",
+              "label": "CTA buttons",
+              "layout": "horizontal",
+              "gap": 16,
+              "fill": { "type": "none" },
+              "children": [
+                {
+                  "id": "home-cta-primary",
+                  "type": "rect",
+                  "label": "Get Started",
+                  "width": 160,
+                  "height": 48,
+                  "cornerRadius": 8,
+                  "fill": { "type": "solid", "color": "var(brand-primary)" },
+                  "text": "Get Started",
+                  "fontSize": 16,
+                  "fontFamily": "var(font-sans)",
+                  "fontWeight": 600,
+                  "textColor": "#FFFFFF"
+                },
+                {
+                  "id": "home-cta-secondary",
+                  "type": "rect",
+                  "label": "Watch Demo",
+                  "width": 160,
+                  "height": 48,
+                  "cornerRadius": 8,
+                  "fill": { "type": "none" },
+                  "stroke": { "color": "#FFFFFF", "width": 2 },
+                  "text": "Watch Demo",
+                  "fontSize": 16,
+                  "fontFamily": "var(font-sans)",
+                  "fontWeight": 600,
+                  "textColor": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "id": "home-hero-dashboard-card",
+              "type": "frame",
+              "label": "[Floating dashboard card — frosted edges]",
+              "width": 680,
+              "height": 320,
+              "cornerRadius": 16,
+              "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.12 },
+              "backdropBlur": 16,
+              "stroke": { "color": "#FFFFFF", "opacity": 0.2, "width": 1 },
+              "shadow": { "type": "lg" },
+              "annotation": "Simplified candidate table mockup — frosted/blurred edges. See Phase 3 CONTEXT for seeded data (Marie Dupont, Score 78, Product Manager)",
+              "children": [
+                {
+                  "id": "hero-card-header",
+                  "type": "text",
+                  "label": "Card label",
+                  "content": "Recent Candidates",
+                  "fontSize": 13,
+                  "fontFamily": "var(font-sans)",
+                  "fontWeight": 600,
+                  "color": "#FFFFFF"
+                },
+                {
+                  "id": "hero-card-row-1",
+                  "type": "frame",
+                  "label": "Candidate row 1",
+                  "layout": "horizontal",
+                  "gap": 16,
+                  "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.08 },
+                  "padding": { "x": 16, "y": 10 },
+                  "children": [
+                    { "id": "r1-name", "type": "text", "content": "Marie Dupont", "fontSize": 13, "color": "#FFFFFF" },
+                    { "id": "r1-role", "type": "text", "content": "Product Manager", "fontSize": 12, "color": "#C7D2FE" },
+                    { "id": "r1-score", "type": "rect", "label": "Score badge 78", "width": 40, "height": 22, "cornerRadius": 11, "fill": { "type": "solid", "color": "var(brand-accent)" }, "text": "78", "fontSize": 12, "textColor": "#FFFFFF" }
+                  ]
+                },
+                {
+                  "id": "hero-card-row-2",
+                  "type": "frame",
+                  "label": "Candidate row 2",
+                  "layout": "horizontal",
+                  "gap": 16,
+                  "fill": { "type": "none" },
+                  "padding": { "x": 16, "y": 10 },
+                  "children": [
+                    { "id": "r2-name", "type": "text", "content": "Thomas Laurent", "fontSize": 13, "color": "#FFFFFF" },
+                    { "id": "r2-role", "type": "text", "content": "Software Engineer", "fontSize": 12, "color": "#C7D2FE" },
+                    { "id": "r2-score", "type": "rect", "label": "Score badge 91", "width": 40, "height": 22, "cornerRadius": 11, "fill": { "type": "solid", "color": "#10B981" }, "text": "91", "fontSize": 12, "textColor": "#FFFFFF" }
+                  ]
+                },
+                {
+                  "id": "hero-card-row-3",
+                  "type": "frame",
+                  "label": "Candidate row 3",
+                  "layout": "horizontal",
+                  "gap": 16,
+                  "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.08 },
+                  "padding": { "x": 16, "y": 10 },
+                  "children": [
+                    { "id": "r3-name", "type": "text", "content": "Sophie Chen", "fontSize": 13, "color": "#FFFFFF" },
+                    { "id": "r3-role", "type": "text", "content": "Data Analyst", "fontSize": 12, "color": "#C7D2FE" },
+                    { "id": "r3-score", "type": "rect", "label": "Score badge 65", "width": 40, "height": 22, "cornerRadius": 11, "fill": { "type": "solid", "color": "#F59E0B" }, "text": "65", "fontSize": 12, "textColor": "#FFFFFF" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "home-trust-bar",
+          "type": "frame",
+          "label": "Trust bar",
+          "width": 1440,
+          "height": 80,
+          "layout": "horizontal",
+          "align": "center",
+          "justify": "center",
+          "gap": 48,
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "children": [
+            { "id": "logo-1", "type": "rect", "label": "Company logo 1", "width": 120, "height": 32, "fill": { "type": "solid", "color": "#E5E7EB" }, "cornerRadius": 4 },
+            { "id": "logo-2", "type": "rect", "label": "Company logo 2", "width": 100, "height": 32, "fill": { "type": "solid", "color": "#E5E7EB" }, "cornerRadius": 4 },
+            { "id": "logo-3", "type": "rect", "label": "Company logo 3", "width": 130, "height": 32, "fill": { "type": "solid", "color": "#E5E7EB" }, "cornerRadius": 4 },
+            { "id": "logo-4", "type": "rect", "label": "Company logo 4", "width": 90, "height": 32, "fill": { "type": "solid", "color": "#E5E7EB" }, "cornerRadius": 4 },
+            { "id": "logo-5", "type": "rect", "label": "Company logo 5", "width": 110, "height": 32, "fill": { "type": "solid", "color": "#E5E7EB" }, "cornerRadius": 4 }
+          ],
+          "annotation": "[Trust bar — company logos marquee]"
+        },
+        {
+          "id": "home-what-is",
+          "type": "frame",
+          "label": "What-is section",
+          "width": 1440,
+          "height": 480,
+          "layout": "horizontal",
+          "align": "center",
+          "padding": { "x": 120, "y": 80 },
+          "gap": 80,
+          "fill": { "type": "solid", "color": "var(brand-light)" },
+          "children": [
+            {
+              "id": "what-is-text",
+              "type": "frame",
+              "label": "Text column",
+              "flex": 1,
+              "layout": "vertical",
+              "gap": 24,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "what-is-headline", "type": "text", "content": "Skills verification that both sides trust", "fontSize": 36, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827", "lineHeight": 1.2 },
+                { "id": "what-is-body", "type": "text", "content": "CrismaTest runs proctored, AI-monitored assessments covering six question formats. Candidates get a portable CrismaScore they can share. Companies get verifiable, comparable data to make faster, fairer decisions.", "fontSize": 16, "fontFamily": "var(font-sans)", "color": "#6B7280", "lineHeight": 1.6 },
+                { "id": "what-is-cta", "type": "rect", "label": "Learn More CTA", "width": 140, "height": 44, "cornerRadius": 6, "fill": { "type": "solid", "color": "var(brand-primary)" }, "text": "Learn More", "fontSize": 14, "textColor": "#FFFFFF" }
+              ]
+            },
+            {
+              "id": "what-is-visual",
+              "type": "rect",
+              "label": "[What-is visual — product screenshot placeholder]",
+              "flex": 1,
+              "height": 320,
+              "cornerRadius": 12,
+              "fill": { "type": "solid", "color": "#E0E7FF" },
+              "stroke": { "color": "var(brand-secondary)", "width": 2 }
+            }
+          ]
+        },
+        {
+          "id": "home-process",
+          "type": "frame",
+          "label": "3-step process",
+          "width": 1440,
+          "height": 360,
+          "layout": "vertical",
+          "align": "center",
+          "padding": { "x": 120, "y": 64 },
+          "gap": 48,
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "children": [
+            { "id": "process-headline", "type": "text", "content": "How it works", "fontSize": 32, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827", "textAlign": "center" },
+            {
+              "id": "process-steps",
+              "type": "frame",
+              "label": "Steps row",
+              "layout": "horizontal",
+              "gap": 40,
+              "fill": { "type": "none" },
+              "children": [
+                {
+                  "id": "step-1",
+                  "type": "frame",
+                  "label": "Step 1",
+                  "flex": 1,
+                  "layout": "vertical",
+                  "align": "center",
+                  "gap": 16,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "step-1-circle", "type": "rect", "label": "1", "width": 48, "height": 48, "cornerRadius": 24, "fill": { "type": "solid", "color": "var(brand-accent)" }, "text": "1", "fontSize": 18, "fontWeight": 700, "textColor": "#FFFFFF" },
+                    { "id": "step-1-label", "type": "text", "content": "Invite Candidates", "fontSize": 16, "fontFamily": "var(font-sans)", "fontWeight": 600, "color": "#111827", "textAlign": "center" },
+                    { "id": "step-1-desc", "type": "text", "content": "Send a test link directly from your dashboard or integrate via API", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#6B7280", "textAlign": "center" }
+                  ]
+                },
+                {
+                  "id": "step-2",
+                  "type": "frame",
+                  "label": "Step 2",
+                  "flex": 1,
+                  "layout": "vertical",
+                  "align": "center",
+                  "gap": 16,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "step-2-circle", "type": "rect", "label": "2", "width": 48, "height": 48, "cornerRadius": 24, "fill": { "type": "solid", "color": "var(brand-accent)" }, "text": "2", "fontSize": 18, "fontWeight": 700, "textColor": "#FFFFFF" },
+                    { "id": "step-2-label", "type": "text", "content": "Candidates Test", "fontSize": 16, "fontFamily": "var(font-sans)", "fontWeight": 600, "color": "#111827", "textAlign": "center" },
+                    { "id": "step-2-desc", "type": "text", "content": "Proctored, AI-monitored assessment with 6 question formats and a live timer", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#6B7280", "textAlign": "center" }
+                  ]
+                },
+                {
+                  "id": "step-3",
+                  "type": "frame",
+                  "label": "Step 3",
+                  "flex": 1,
+                  "layout": "vertical",
+                  "align": "center",
+                  "gap": 16,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "step-3-circle", "type": "rect", "label": "3", "width": 48, "height": 48, "cornerRadius": 24, "fill": { "type": "solid", "color": "var(brand-accent)" }, "text": "3", "fontSize": 18, "fontWeight": 700, "textColor": "#FFFFFF" },
+                    { "id": "step-3-label", "type": "text", "content": "Review CrismaScores", "fontSize": 16, "fontFamily": "var(font-sans)", "fontWeight": 600, "color": "#111827", "textAlign": "center" },
+                    { "id": "step-3-desc", "type": "text", "content": "Compare candidates side-by-side by score, sub-scores, and fraud flags", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#6B7280", "textAlign": "center" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "home-features",
+          "type": "frame",
+          "label": "For-companies feature grid",
+          "width": 1440,
+          "height": 480,
+          "layout": "vertical",
+          "align": "center",
+          "padding": { "x": 120, "y": 64 },
+          "gap": 48,
+          "fill": { "type": "solid", "color": "var(brand-light)" },
+          "children": [
+            { "id": "features-headline", "type": "text", "content": "Everything you need to hire with confidence", "fontSize": 32, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827", "textAlign": "center" },
+            {
+              "id": "features-grid",
+              "type": "frame",
+              "label": "3-col feature grid",
+              "layout": "horizontal",
+              "gap": 24,
+              "fill": { "type": "none" },
+              "children": [
+                {
+                  "id": "feature-card-1",
+                  "type": "frame",
+                  "label": "Feature card: Anti-fraud",
+                  "flex": 1,
+                  "height": 220,
+                  "cornerRadius": 12,
+                  "padding": { "x": 24, "y": 24 },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "fill": { "type": "solid", "color": "#FFFFFF" },
+                  "shadow": { "type": "sm" },
+                  "children": [
+                    { "id": "fc1-icon", "type": "rect", "width": 40, "height": 40, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-light)" }, "label": "[Shield icon]" },
+                    { "id": "fc1-title", "type": "text", "content": "Anti-Fraud Monitoring", "fontSize": 16, "fontFamily": "var(font-sans)", "fontWeight": 600, "color": "#111827" },
+                    { "id": "fc1-body", "type": "text", "content": "AI-powered webcam proctoring and behavioral analysis flags suspicious patterns in real time", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#6B7280", "lineHeight": 1.5 }
+                  ]
+                },
+                {
+                  "id": "feature-card-2",
+                  "type": "frame",
+                  "label": "Feature card: Speed",
+                  "flex": 1,
+                  "height": 220,
+                  "cornerRadius": 12,
+                  "padding": { "x": 24, "y": 24 },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "fill": { "type": "solid", "color": "#FFFFFF" },
+                  "shadow": { "type": "sm" },
+                  "children": [
+                    { "id": "fc2-icon", "type": "rect", "width": 40, "height": 40, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-light)" }, "label": "[Lightning icon]" },
+                    { "id": "fc2-title", "type": "text", "content": "Hire 3× Faster", "fontSize": 16, "fontFamily": "var(font-sans)", "fontWeight": 600, "color": "#111827" },
+                    { "id": "fc2-body", "type": "text", "content": "Automated scoring and ranking eliminates manual resume screening — results in minutes, not days", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#6B7280", "lineHeight": 1.5 }
+                  ]
+                },
+                {
+                  "id": "feature-card-3",
+                  "type": "frame",
+                  "label": "Feature card: CrismaScore",
+                  "flex": 1,
+                  "height": 220,
+                  "cornerRadius": 12,
+                  "padding": { "x": 24, "y": 24 },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "fill": { "type": "solid", "color": "#FFFFFF" },
+                  "shadow": { "type": "sm" },
+                  "children": [
+                    { "id": "fc3-icon", "type": "rect", "width": 40, "height": 40, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-light)" }, "label": "[Chart icon]" },
+                    { "id": "fc3-title", "type": "text", "content": "Verifiable CrismaScore", "fontSize": 16, "fontFamily": "var(font-sans)", "fontWeight": 600, "color": "#111827" },
+                    { "id": "fc3-body", "type": "text", "content": "Each candidate gets a portable, cryptographically-signed score they can share on LinkedIn and resumes", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#6B7280", "lineHeight": 1.5 }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "home-antifraud",
+          "type": "frame",
+          "label": "Anti-fraud section",
+          "width": 1440,
+          "height": 320,
+          "layout": "horizontal",
+          "align": "center",
+          "justify": "center",
+          "padding": { "x": 120, "y": 64 },
+          "gap": 48,
+          "fill": { "type": "solid", "color": "var(brand-navy)" },
+          "children": [
+            {
+              "id": "antifraud-text",
+              "type": "frame",
+              "flex": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "antifraud-headline", "type": "text", "content": "Built for integrity. Not just speed.", "fontSize": 32, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#FFFFFF" },
+                { "id": "antifraud-body", "type": "text", "content": "Multi-layer proctoring: gaze tracking, tab-switch detection, ID verification, and AI behavioral analysis. Every test session is auditable.", "fontSize": 16, "color": "#C7D2FE", "lineHeight": 1.6 }
+              ]
+            },
+            {
+              "id": "antifraud-badges",
+              "type": "frame",
+              "flex": 1,
+              "layout": "horizontal",
+              "gap": 24,
+              "justify": "center",
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "badge-1", "type": "rect", "label": "[Gaze tracking badge]", "width": 100, "height": 100, "cornerRadius": 12, "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.1 } },
+                { "id": "badge-2", "type": "rect", "label": "[Tab detection badge]", "width": 100, "height": 100, "cornerRadius": 12, "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.1 } },
+                { "id": "badge-3", "type": "rect", "label": "[ID verify badge]", "width": 100, "height": 100, "cornerRadius": 12, "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.1 } }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "home-test-library",
+          "type": "frame",
+          "label": "Test library preview",
+          "width": 1440,
+          "height": 420,
+          "layout": "vertical",
+          "align": "center",
+          "padding": { "x": 120, "y": 64 },
+          "gap": 40,
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "children": [
+            { "id": "test-lib-headline", "type": "text", "content": "Over 50 ready-made test templates", "fontSize": 32, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827", "textAlign": "center" },
+            {
+              "id": "test-lib-cards",
+              "type": "frame",
+              "label": "Test type cards",
+              "layout": "horizontal",
+              "gap": 20,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "test-card-1", "type": "rect", "label": "Product Management", "width": 220, "height": 120, "cornerRadius": 12, "fill": { "type": "solid", "color": "var(brand-light)" } },
+                { "id": "test-card-2", "type": "rect", "label": "Software Engineering", "width": 220, "height": 120, "cornerRadius": 12, "fill": { "type": "solid", "color": "var(brand-light)" } },
+                { "id": "test-card-3", "type": "rect", "label": "Data Analysis", "width": 220, "height": 120, "cornerRadius": 12, "fill": { "type": "solid", "color": "var(brand-light)" } },
+                { "id": "test-card-4", "type": "rect", "label": "UX Research", "width": 220, "height": 120, "cornerRadius": 12, "fill": { "type": "solid", "color": "var(brand-light)" } },
+                { "id": "test-card-5", "type": "rect", "label": "Marketing Strategy", "width": 220, "height": 120, "cornerRadius": 12, "fill": { "type": "solid", "color": "var(brand-light)" } }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "home-testimonials",
+          "type": "frame",
+          "label": "Testimonials",
+          "width": 1440,
+          "height": 400,
+          "layout": "vertical",
+          "align": "center",
+          "padding": { "x": 120, "y": 64 },
+          "gap": 40,
+          "fill": { "type": "solid", "color": "var(brand-light)" },
+          "children": [
+            { "id": "testimonials-headline", "type": "text", "content": "Trusted by hiring teams everywhere", "fontSize": 32, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827", "textAlign": "center" },
+            {
+              "id": "testimonials-grid",
+              "type": "frame",
+              "label": "3-col testimonial cards",
+              "layout": "horizontal",
+              "gap": 24,
+              "fill": { "type": "none" },
+              "children": [
+                {
+                  "id": "testi-1",
+                  "type": "frame",
+                  "flex": 1,
+                  "height": 200,
+                  "cornerRadius": 12,
+                  "padding": { "x": 24, "y": 24 },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "fill": { "type": "solid", "color": "#FFFFFF" },
+                  "shadow": { "type": "sm" },
+                  "children": [
+                    { "id": "t1-quote", "type": "text", "content": "\"CrismaTest cut our time-to-hire by 60%. The fraud detection alone is worth it.\"", "fontSize": 15, "fontFamily": "var(font-sans)", "color": "#374151", "lineHeight": 1.5 },
+                    { "id": "t1-author", "type": "text", "content": "Sarah Mitchell — VP Talent, Nexus Corp", "fontSize": 13, "fontFamily": "var(font-sans)", "color": "#9CA3AF", "fontWeight": 500 }
+                  ]
+                },
+                {
+                  "id": "testi-2",
+                  "type": "frame",
+                  "flex": 1,
+                  "height": 200,
+                  "cornerRadius": 12,
+                  "padding": { "x": 24, "y": 24 },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "fill": { "type": "solid", "color": "#FFFFFF" },
+                  "shadow": { "type": "sm" },
+                  "children": [
+                    { "id": "t2-quote", "type": "text", "content": "\"My CrismaScore got me two interviews in a week. Companies actually trust the number.\"", "fontSize": 15, "fontFamily": "var(font-sans)", "color": "#374151", "lineHeight": 1.5 },
+                    { "id": "t2-author", "type": "text", "content": "Julien Bernard — Product Manager candidate", "fontSize": 13, "fontFamily": "var(font-sans)", "color": "#9CA3AF", "fontWeight": 500 }
+                  ]
+                },
+                {
+                  "id": "testi-3",
+                  "type": "frame",
+                  "flex": 1,
+                  "height": 200,
+                  "cornerRadius": 12,
+                  "padding": { "x": 24, "y": 24 },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "fill": { "type": "solid", "color": "#FFFFFF" },
+                  "shadow": { "type": "sm" },
+                  "children": [
+                    { "id": "t3-quote", "type": "text", "content": "\"The comparison view is brilliant. Seeing 3 candidates side-by-side by sub-score is exactly what we needed.\"", "fontSize": 15, "fontFamily": "var(font-sans)", "color": "#374151", "lineHeight": 1.5 },
+                    { "id": "t3-author", "type": "text", "content": "Amy Zhao — HR Director, DataBridge", "fontSize": 13, "fontFamily": "var(font-sans)", "color": "#9CA3AF", "fontWeight": 500 }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "home-faq",
+          "type": "frame",
+          "label": "FAQ",
+          "width": 1440,
+          "height": 520,
+          "layout": "vertical",
+          "align": "center",
+          "padding": { "x": 240, "y": 64 },
+          "gap": 16,
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "children": [
+            { "id": "faq-headline", "type": "text", "content": "Frequently asked questions", "fontSize": 32, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827", "textAlign": "center" },
+            { "id": "faq-1", "type": "rect", "label": "FAQ: What is a CrismaScore?", "width": 960, "height": 52, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "#E5E7EB", "width": 1 } },
+            { "id": "faq-2", "type": "rect", "label": "FAQ: How does proctoring work?", "width": 960, "height": 52, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "#E5E7EB", "width": 1 } },
+            { "id": "faq-3", "type": "rect", "label": "FAQ: Is my data secure?", "width": 960, "height": 52, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "#E5E7EB", "width": 1 } },
+            { "id": "faq-4", "type": "rect", "label": "FAQ: What question formats are supported?", "width": 960, "height": 52, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "#E5E7EB", "width": 1 } },
+            { "id": "faq-5", "type": "rect", "label": "FAQ: Can I create custom tests?", "width": 960, "height": 52, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "#E5E7EB", "width": 1 } },
+            { "id": "faq-6", "type": "rect", "label": "FAQ: How long does a test take?", "width": 960, "height": 52, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "#E5E7EB", "width": 1 } }
+          ]
+        },
+        {
+          "id": "home-footer",
+          "type": "frame",
+          "label": "Footer",
+          "width": 1440,
+          "height": 240,
+          "layout": "horizontal",
+          "align": "start",
+          "padding": { "x": 120, "y": 48 },
+          "gap": 64,
+          "fill": { "type": "solid", "color": "var(brand-navy)" },
+          "children": [
+            {
+              "id": "footer-brand",
+              "type": "frame",
+              "label": "Footer brand col",
+              "width": 240,
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "footer-logo", "type": "rect", "width": 120, "height": 36, "cornerRadius": 4, "fill": { "type": "solid", "color": "var(brand-primary)" }, "label": "LogoMark" },
+                { "id": "footer-tagline", "type": "text", "content": "Verify skills. Hire with confidence.", "fontSize": 13, "color": "#9CA3AF" },
+                { "id": "footer-copyright", "type": "text", "content": "© 2026 CrismaTest. All rights reserved.", "fontSize": 12, "color": "#6B7280" }
+              ]
+            },
+            { "id": "footer-links-product", "type": "rect", "label": "Product links col", "width": 140, "height": 160, "fill": { "type": "none" }, "annotation": "Links: Features, Pricing, Integrations, API" },
+            { "id": "footer-links-company", "type": "rect", "label": "Company links col", "width": 140, "height": 160, "fill": { "type": "none" }, "annotation": "Links: About, Blog, Careers, Contact" },
+            { "id": "footer-links-legal", "type": "rect", "label": "Legal links col", "width": 140, "height": 160, "fill": { "type": "none" }, "annotation": "Links: Privacy Policy, Terms of Service, GDPR" }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "home-callout",
+          "type": "note",
+          "content": "← NavShell, ← EmptyState (empty-state variant in data sections). Motion: hero headline uses slideUp from src/lib/motion.ts. CTA buttons use fadeIn variant."
+        }
+      ]
+    },
+    {
+      "id": "for-candidates",
+      "type": "frame",
+      "label": "for-candidates",
+      "width": 1440,
+      "layout": "vertical",
+      "gap": 0,
+      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "children": [
+        {
+          "id": "fc-nav",
+          "type": "ref",
+          "label": "NavShell ref",
+          "ref": "nav-shell"
+        },
+        {
+          "id": "fc-hero",
+          "type": "frame",
+          "label": "Candidate hero",
+          "width": 1440,
+          "height": 560,
+          "layout": "horizontal",
+          "align": "center",
+          "justify": "center",
+          "padding": { "x": 120, "y": 80 },
+          "gap": 80,
+          "fill": {
+            "type": "gradient",
+            "gradient": "linear",
+            "angle": 135,
+            "stops": [
+              { "offset": 0, "color": "var(brand-navy)" },
+              { "offset": 1, "color": "var(brand-primary)" }
+            ]
+          },
+          "children": [
+            {
+              "id": "fc-hero-text",
+              "type": "frame",
+              "flex": 1,
+              "layout": "vertical",
+              "gap": 24,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "fc-headline", "type": "text", "content": "Prove your skills. Stand out from the crowd.", "fontSize": 48, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.15 },
+                { "id": "fc-subheadline", "type": "text", "content": "Take a proctored CrismaTest and earn a verifiable CrismaScore that companies actually trust. Share it on LinkedIn and let your score open doors.", "fontSize": 18, "color": "#E0E7FF", "lineHeight": 1.6 },
+                { "id": "fc-cta", "type": "rect", "label": "Take the Test CTA", "width": 160, "height": 48, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-primary)" }, "text": "Take the Test", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": 600 }
+              ]
+            },
+            {
+              "id": "fc-score-gauge",
+              "type": "frame",
+              "label": "[CrismaScore gauge]",
+              "width": 320,
+              "height": 320,
+              "cornerRadius": 160,
+              "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.1 },
+              "stroke": { "color": "var(brand-accent)", "width": 8 },
+              "annotation": "[CrismaScore gauge — circular gauge, 0→final score, 1.5s ease-out animation. Score value rendered in center in Inter bold 48px]",
+              "children": [
+                { "id": "gauge-score", "type": "text", "content": "87", "fontSize": 56, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "#FFFFFF", "textAlign": "center" },
+                { "id": "gauge-label", "type": "text", "content": "CrismaScore", "fontSize": 14, "color": "#C7D2FE", "textAlign": "center" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fc-share",
+          "type": "frame",
+          "label": "Share examples section",
+          "width": 1440,
+          "height": 400,
+          "layout": "vertical",
+          "align": "center",
+          "padding": { "x": 120, "y": 64 },
+          "gap": 40,
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "children": [
+            { "id": "fc-share-headline", "type": "text", "content": "Your score, everywhere you apply", "fontSize": 32, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827", "textAlign": "center" },
+            {
+              "id": "fc-share-cards",
+              "type": "frame",
+              "layout": "horizontal",
+              "gap": 32,
+              "fill": { "type": "none" },
+              "children": [
+                {
+                  "id": "fc-linkedin-card",
+                  "type": "rect",
+                  "label": "[LinkedIn share card mockup]",
+                  "width": 320,
+                  "height": 180,
+                  "cornerRadius": 12,
+                  "fill": { "type": "solid", "color": "#0A66C2" },
+                  "annotation": "LinkedIn share card: name, score badge, test type, 'Verified by CrismaTest' seal"
+                },
+                {
+                  "id": "fc-resume-card",
+                  "type": "rect",
+                  "label": "[Resume badge mockup]",
+                  "width": 240,
+                  "height": 120,
+                  "cornerRadius": 12,
+                  "fill": { "type": "solid", "color": "var(brand-light)" },
+                  "stroke": { "color": "var(brand-primary)", "width": 2 },
+                  "annotation": "Embeddable badge for resume/portfolio: shows score + verification link"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fc-social-proof",
+          "type": "frame",
+          "label": "Candidate testimonials",
+          "width": 1440,
+          "height": 320,
+          "layout": "vertical",
+          "align": "center",
+          "padding": { "x": 120, "y": 48 },
+          "gap": 32,
+          "fill": { "type": "solid", "color": "var(brand-light)" },
+          "children": [
+            { "id": "fc-proof-headline", "type": "text", "content": "Candidates who used their score to get hired", "fontSize": 28, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827", "textAlign": "center" },
+            {
+              "id": "fc-proof-grid",
+              "type": "frame",
+              "layout": "horizontal",
+              "gap": 24,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "fc-proof-1", "type": "rect", "label": "Candidate testimonial 1", "flex": 1, "height": 140, "cornerRadius": 12, "fill": { "type": "solid", "color": "#FFFFFF" }, "shadow": { "type": "sm" } },
+                { "id": "fc-proof-2", "type": "rect", "label": "Candidate testimonial 2", "flex": 1, "height": 140, "cornerRadius": 12, "fill": { "type": "solid", "color": "#FFFFFF" }, "shadow": { "type": "sm" } },
+                { "id": "fc-proof-3", "type": "rect", "label": "Candidate testimonial 3", "flex": 1, "height": 140, "cornerRadius": 12, "fill": { "type": "solid", "color": "#FFFFFF" }, "shadow": { "type": "sm" } }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fc-take-test-cta",
+          "type": "frame",
+          "label": "Take the Test CTA section",
+          "width": 1440,
+          "height": 240,
+          "layout": "vertical",
+          "align": "center",
+          "justify": "center",
+          "gap": 24,
+          "fill": { "type": "solid", "color": "var(brand-primary)" },
+          "children": [
+            { "id": "fc-cta-headline", "type": "text", "content": "Ready to prove your skills?", "fontSize": 36, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#FFFFFF", "textAlign": "center" },
+            { "id": "fc-cta-btn", "type": "rect", "label": "Take Free Test CTA", "width": 200, "height": 52, "cornerRadius": 8, "fill": { "type": "solid", "color": "#FFFFFF" }, "text": "Take Free Test", "textColor": "var(brand-primary)", "fontSize": 16, "fontWeight": 700 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "for-companies",
+      "type": "frame",
+      "label": "for-companies",
+      "width": 1440,
+      "layout": "vertical",
+      "gap": 0,
+      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "children": [
+        {
+          "id": "fco-nav",
+          "type": "ref",
+          "label": "NavShell ref",
+          "ref": "nav-shell"
+        },
+        {
+          "id": "fco-hero",
+          "type": "frame",
+          "label": "Company hero",
+          "width": 1440,
+          "height": 560,
+          "layout": "horizontal",
+          "align": "center",
+          "padding": { "x": 120, "y": 80 },
+          "gap": 80,
+          "fill": {
+            "type": "gradient",
+            "gradient": "linear",
+            "angle": 135,
+            "stops": [
+              { "offset": 0, "color": "var(brand-navy)" },
+              { "offset": 1, "color": "#1B2F5E" }
+            ]
+          },
+          "children": [
+            {
+              "id": "fco-hero-text",
+              "type": "frame",
+              "flex": 1,
+              "layout": "vertical",
+              "gap": 24,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "fco-headline", "type": "text", "content": "Stop guessing. Start hiring by score.", "fontSize": 48, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.15 },
+                { "id": "fco-subheadline", "type": "text", "content": "CrismaTest gives your HR team a data-driven shortlist — verified skills, fraud flags, and side-by-side comparisons — in the time it takes to read one resume.", "fontSize": 18, "color": "#C7D2FE", "lineHeight": 1.6 },
+                {
+                  "id": "fco-ctas",
+                  "type": "frame",
+                  "layout": "horizontal",
+                  "gap": 16,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "fco-cta-demo", "type": "rect", "label": "Request Demo", "width": 160, "height": 48, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-primary)" }, "text": "Request Demo", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": 600 },
+                    { "id": "fco-cta-trial", "type": "rect", "label": "Start Trial", "width": 140, "height": 48, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "#FFFFFF", "width": 2 }, "text": "Start Trial", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": 600 }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "fco-dashboard-preview",
+              "type": "rect",
+              "label": "[Dashboard screenshot]",
+              "width": 580,
+              "height": 380,
+              "cornerRadius": 12,
+              "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.08 },
+              "stroke": { "color": "#FFFFFF", "opacity": 0.15, "width": 1 },
+              "annotation": "[Dashboard screenshot — shows candidate table with scores, comparison view. Phase 5 implementers build the real dashboard this previews.]"
+            }
+          ]
+        },
+        {
+          "id": "fco-features",
+          "type": "frame",
+          "label": "Speed / Accuracy / Anti-fraud 3-col cards",
+          "width": 1440,
+          "height": 360,
+          "layout": "horizontal",
+          "align": "center",
+          "padding": { "x": 120, "y": 64 },
+          "gap": 32,
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "children": [
+            {
+              "id": "fco-speed-card",
+              "type": "frame",
+              "flex": 1,
+              "height": 240,
+              "cornerRadius": 12,
+              "padding": { "x": 32, "y": 32 },
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "solid", "color": "var(brand-light)" },
+              "children": [
+                { "id": "fco-speed-icon", "type": "rect", "width": 48, "height": 48, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-primary)", "opacity": 0.12 }, "label": "[Speed icon]" },
+                { "id": "fco-speed-title", "type": "text", "content": "3× Faster Hiring", "fontSize": 20, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827" },
+                { "id": "fco-speed-body", "type": "text", "content": "Automated scoring delivers a ranked shortlist in minutes. No manual review bottleneck.", "fontSize": 15, "color": "#6B7280", "lineHeight": 1.5 }
+              ]
+            },
+            {
+              "id": "fco-accuracy-card",
+              "type": "frame",
+              "flex": 1,
+              "height": 240,
+              "cornerRadius": 12,
+              "padding": { "x": 32, "y": 32 },
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "solid", "color": "var(brand-light)" },
+              "children": [
+                { "id": "fco-accuracy-icon", "type": "rect", "width": 48, "height": 48, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-primary)", "opacity": 0.12 }, "label": "[Accuracy icon]" },
+                { "id": "fco-accuracy-title", "type": "text", "content": "Science-backed Accuracy", "fontSize": 20, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827" },
+                { "id": "fco-accuracy-body", "type": "text", "content": "6-format assessments validated against real job performance. CrismaScores have 94% predictive validity.", "fontSize": 15, "color": "#6B7280", "lineHeight": 1.5 }
+              ]
+            },
+            {
+              "id": "fco-antifraud-card",
+              "type": "frame",
+              "flex": 1,
+              "height": 240,
+              "cornerRadius": 12,
+              "padding": { "x": 32, "y": 32 },
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "solid", "color": "var(brand-light)" },
+              "children": [
+                { "id": "fco-af-icon", "type": "rect", "width": 48, "height": 48, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-primary)", "opacity": 0.12 }, "label": "[Shield icon]" },
+                { "id": "fco-af-title", "type": "text", "content": "Anti-Fraud by Default", "fontSize": 20, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827" },
+                { "id": "fco-af-body", "type": "text", "content": "Multi-layer proctoring with gaze tracking, tab-switch detection, and AI behavioral analysis.", "fontSize": 15, "color": "#6B7280", "lineHeight": 1.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fco-trust-bar",
+          "type": "frame",
+          "label": "Company logos trust bar",
+          "width": 1440,
+          "height": 100,
+          "layout": "horizontal",
+          "align": "center",
+          "justify": "center",
+          "gap": 48,
+          "fill": { "type": "solid", "color": "var(brand-light)" },
+          "children": [
+            { "id": "fco-logo-1", "type": "rect", "width": 120, "height": 36, "cornerRadius": 4, "fill": { "type": "solid", "color": "#D1D5DB" }, "label": "Company logo 1" },
+            { "id": "fco-logo-2", "type": "rect", "width": 100, "height": 36, "cornerRadius": 4, "fill": { "type": "solid", "color": "#D1D5DB" }, "label": "Company logo 2" },
+            { "id": "fco-logo-3", "type": "rect", "width": 130, "height": 36, "cornerRadius": 4, "fill": { "type": "solid", "color": "#D1D5DB" }, "label": "Company logo 3" },
+            { "id": "fco-logo-4", "type": "rect", "width": 90, "height": 36, "cornerRadius": 4, "fill": { "type": "solid", "color": "#D1D5DB" }, "label": "Company logo 4" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pricing",
+      "type": "frame",
+      "label": "pricing",
+      "width": 1440,
+      "layout": "vertical",
+      "gap": 0,
+      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "children": [
+        {
+          "id": "pricing-nav",
+          "type": "ref",
+          "label": "NavShell ref",
+          "ref": "nav-shell"
+        },
+        {
+          "id": "pricing-header",
+          "type": "frame",
+          "label": "Pricing header + toggle",
+          "width": 1440,
+          "height": 200,
+          "layout": "vertical",
+          "align": "center",
+          "justify": "center",
+          "gap": 24,
+          "fill": { "type": "solid", "color": "var(brand-light)" },
+          "children": [
+            { "id": "pricing-headline", "type": "text", "content": "Simple, transparent pricing", "fontSize": 40, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "#111827", "textAlign": "center" },
+            { "id": "pricing-subheadline", "type": "text", "content": "Start free, scale as you grow. No hidden fees.", "fontSize": 18, "color": "#6B7280", "textAlign": "center" },
+            {
+              "id": "pricing-toggle",
+              "type": "frame",
+              "label": "Monthly/Annual toggle",
+              "layout": "horizontal",
+              "gap": 12,
+              "align": "center",
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "toggle-monthly", "type": "text", "content": "Monthly", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#374151", "fontWeight": 600 },
+                {
+                  "id": "toggle-switch",
+                  "type": "rect",
+                  "label": "Toggle switch",
+                  "width": 44,
+                  "height": 24,
+                  "cornerRadius": 12,
+                  "fill": { "type": "solid", "color": "var(brand-primary)" },
+                  "annotation": "Annual toggle: $49 → $39/mo live price update (20% discount). State driven by client React state."
+                },
+                { "id": "toggle-annual", "type": "text", "content": "Annual", "fontSize": 14, "fontFamily": "var(font-sans)", "color": "#374151" },
+                { "id": "toggle-badge", "type": "rect", "label": "Save 20% badge", "width": 76, "height": 22, "cornerRadius": 11, "fill": { "type": "solid", "color": "var(brand-accent)", "opacity": 0.15 }, "text": "Save 20%", "fontSize": 11, "textColor": "var(brand-accent)", "fontWeight": 600 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pricing-cards",
+          "type": "frame",
+          "label": "4-plan card row",
+          "width": 1440,
+          "height": 600,
+          "layout": "horizontal",
+          "align": "end",
+          "justify": "center",
+          "padding": { "x": 80, "y": 40 },
+          "gap": 24,
+          "fill": { "type": "solid", "color": "var(brand-light)" },
+          "children": [
+            {
+              "id": "plan-free",
+              "type": "frame",
+              "label": "Free plan",
+              "width": 280,
+              "height": 440,
+              "cornerRadius": 16,
+              "padding": { "x": 28, "y": 28 },
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "solid", "color": "#FFFFFF" },
+              "stroke": { "color": "#E5E7EB", "width": 1 },
+              "children": [
+                { "id": "free-name", "type": "text", "content": "Free", "fontSize": 22, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827" },
+                { "id": "free-price", "type": "text", "content": "$0 / mo", "fontSize": 36, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "#111827" },
+                { "id": "free-desc", "type": "text", "content": "Perfect for trying out CrismaTest with a small team", "fontSize": 14, "color": "#6B7280" },
+                { "id": "free-features", "type": "rect", "label": "Feature list: 3 tests/mo, 1 seat, basic reports", "width": 224, "height": 120, "fill": { "type": "none" } },
+                { "id": "free-cta", "type": "rect", "label": "Get Started free CTA", "width": 224, "height": 44, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "var(brand-primary)", "width": 1 }, "text": "Get Started", "textColor": "var(brand-primary)", "fontSize": 14, "fontWeight": 600 }
+              ]
+            },
+            {
+              "id": "plan-starter",
+              "type": "frame",
+              "label": "Starter plan",
+              "width": 280,
+              "height": 460,
+              "cornerRadius": 16,
+              "padding": { "x": 28, "y": 28 },
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "solid", "color": "#FFFFFF" },
+              "stroke": { "color": "#E5E7EB", "width": 1 },
+              "children": [
+                { "id": "starter-name", "type": "text", "content": "Starter", "fontSize": 22, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827" },
+                { "id": "starter-price", "type": "text", "content": "$49 / mo", "fontSize": 36, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "#111827", "annotation": "Annual: $39/mo (20% off)" },
+                { "id": "starter-desc", "type": "text", "content": "Growing teams that need structured, scored hiring", "fontSize": 14, "color": "#6B7280" },
+                { "id": "starter-features", "type": "rect", "label": "Feature list: 25 tests/mo, 5 seats, full reports, anti-fraud", "width": 224, "height": 120, "fill": { "type": "none" } },
+                { "id": "starter-cta", "type": "rect", "label": "Get Started Starter CTA", "width": 224, "height": 44, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-primary)" }, "text": "Get Started", "textColor": "#FFFFFF", "fontSize": 14, "fontWeight": 600, "link": "/checkout/starter" }
+              ]
+            },
+            {
+              "id": "plan-pro",
+              "type": "frame",
+              "label": "Pro plan — MOST POPULAR (taller, brand-primary top border)",
+              "width": 300,
+              "height": 520,
+              "cornerRadius": 16,
+              "padding": { "x": 28, "y": 32 },
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "solid", "color": "#FFFFFF" },
+              "stroke": { "color": "var(brand-primary)", "width": 2 },
+              "borderTop": { "color": "var(brand-primary)", "width": 4 },
+              "shadow": { "type": "xl" },
+              "children": [
+                {
+                  "id": "pro-popular-badge",
+                  "type": "rect",
+                  "label": "Most Popular badge",
+                  "width": 110,
+                  "height": 26,
+                  "cornerRadius": 13,
+                  "fill": { "type": "solid", "color": "var(brand-primary)" },
+                  "text": "Most Popular",
+                  "fontSize": 11,
+                  "fontWeight": 700,
+                  "textColor": "#FFFFFF"
+                },
+                { "id": "pro-name", "type": "text", "content": "Pro", "fontSize": 22, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#111827" },
+                { "id": "pro-price", "type": "text", "content": "$149 / mo", "fontSize": 36, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "var(brand-primary)", "annotation": "Annual: $119/mo (20% off)" },
+                { "id": "pro-desc", "type": "text", "content": "Scaling companies with high-volume hiring needs", "fontSize": 14, "color": "#6B7280" },
+                { "id": "pro-features", "type": "rect", "label": "Feature list: unlimited tests, 25 seats, custom branding, API access, priority support", "width": 244, "height": 140, "fill": { "type": "none" } },
+                { "id": "pro-cta", "type": "rect", "label": "Get Started Pro CTA", "width": 244, "height": 48, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-primary)" }, "text": "Get Started", "textColor": "#FFFFFF", "fontSize": 15, "fontWeight": 700, "link": "/checkout/pro" }
+              ],
+              "annotation": "Pro card: taller height (520px vs 460px for Starter), brand-primary 4px top border, 'Most Popular' badge — per locked spec"
+            },
+            {
+              "id": "plan-enterprise",
+              "type": "frame",
+              "label": "Enterprise plan",
+              "width": 280,
+              "height": 440,
+              "cornerRadius": 16,
+              "padding": { "x": 28, "y": 28 },
+              "layout": "vertical",
+              "gap": 16,
+              "fill": { "type": "solid", "color": "var(brand-navy)" },
+              "stroke": { "color": "var(brand-navy)", "width": 1 },
+              "children": [
+                { "id": "ent-name", "type": "text", "content": "Enterprise", "fontSize": 22, "fontFamily": "var(font-sans)", "fontWeight": 700, "color": "#FFFFFF" },
+                { "id": "ent-price", "type": "text", "content": "Custom", "fontSize": 36, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "#FFFFFF" },
+                { "id": "ent-desc", "type": "text", "content": "Enterprise-grade compliance, SSO, and dedicated support", "fontSize": 14, "color": "#C7D2FE" },
+                { "id": "ent-features", "type": "rect", "label": "Feature list: everything in Pro + SSO, SLA, dedicated CSM, audit logs", "width": 224, "height": 120, "fill": { "type": "solid", "color": "#FFFFFF", "opacity": 0.08 }, "cornerRadius": 8 },
+                { "id": "ent-cta", "type": "rect", "label": "Contact Sales CTA", "width": 224, "height": 44, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "#FFFFFF", "width": 2 }, "text": "Contact Sales", "textColor": "#FFFFFF", "fontSize": 14, "fontWeight": 600 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pricing-note",
+          "type": "note",
+          "content": "Pro card: taller height, brand-primary 4px top border, 'Most Popular' badge — per locked spec. Annual toggle: $49 → $39/mo live price update via React state."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "frame",
+      "label": "contact",
+      "width": 1440,
+      "layout": "vertical",
+      "gap": 0,
+      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "children": [
+        {
+          "id": "contact-nav",
+          "type": "ref",
+          "label": "NavShell ref",
+          "ref": "nav-shell"
+        },
+        {
+          "id": "contact-main",
+          "type": "frame",
+          "label": "Contact main content",
+          "width": 1440,
+          "height": 720,
+          "layout": "horizontal",
+          "align": "start",
+          "justify": "center",
+          "padding": { "x": 160, "y": 80 },
+          "gap": 80,
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "children": [
+            {
+              "id": "contact-info",
+              "type": "frame",
+              "label": "Contact info col",
+              "width": 340,
+              "layout": "vertical",
+              "gap": 24,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "contact-headline", "type": "text", "content": "Request a Demo", "fontSize": 36, "fontFamily": "var(font-sans)", "fontWeight": 800, "color": "#111827" },
+                { "id": "contact-body", "type": "text", "content": "See CrismaTest in action. Our team will show you the full hiring workflow — from sending invites to reviewing scored results — in a 30-minute session.", "fontSize": 16, "color": "#6B7280", "lineHeight": 1.6 },
+                {
+                  "id": "contact-detail-1",
+                  "type": "frame",
+                  "layout": "horizontal",
+                  "gap": 12,
+                  "align": "center",
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "cd1-icon", "type": "rect", "width": 24, "height": 24, "cornerRadius": 4, "fill": { "type": "solid", "color": "var(brand-light)" }, "label": "[Clock icon]" },
+                    { "id": "cd1-text", "type": "text", "content": "30-minute demo", "fontSize": 14, "color": "#374151" }
+                  ]
+                },
+                {
+                  "id": "contact-detail-2",
+                  "type": "frame",
+                  "layout": "horizontal",
+                  "gap": 12,
+                  "align": "center",
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "cd2-icon", "type": "rect", "width": 24, "height": 24, "cornerRadius": 4, "fill": { "type": "solid", "color": "var(brand-light)" }, "label": "[Video icon]" },
+                    { "id": "cd2-text", "type": "text", "content": "Video call (Zoom or Meet)", "fontSize": 14, "color": "#374151" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "contact-form",
+              "type": "frame",
+              "label": "Demo request form",
+              "flex": 1,
+              "layout": "vertical",
+              "gap": 20,
+              "padding": { "x": 40, "y": 40 },
+              "fill": { "type": "solid", "color": "var(brand-light)" },
+              "cornerRadius": 16,
+              "shadow": { "type": "sm" },
+              "children": [
+                {
+                  "id": "form-row-1",
+                  "type": "frame",
+                  "layout": "horizontal",
+                  "gap": 16,
+                  "fill": { "type": "none" },
+                  "children": [
+                    {
+                      "id": "form-name",
+                      "type": "frame",
+                      "flex": 1,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "fill": { "type": "none" },
+                      "children": [
+                        { "id": "form-name-label", "type": "text", "content": "Full name", "fontSize": 13, "fontFamily": "var(font-sans)", "fontWeight": 500, "color": "#374151" },
+                        { "id": "form-name-input", "type": "rect", "height": 44, "cornerRadius": 8, "fill": { "type": "solid", "color": "#FFFFFF" }, "stroke": { "color": "#D1D5DB", "width": 1 }, "label": "Text input" }
+                      ]
+                    },
+                    {
+                      "id": "form-company",
+                      "type": "frame",
+                      "flex": 1,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "fill": { "type": "none" },
+                      "children": [
+                        { "id": "form-company-label", "type": "text", "content": "Company", "fontSize": 13, "fontFamily": "var(font-sans)", "fontWeight": 500, "color": "#374151" },
+                        { "id": "form-company-input", "type": "rect", "height": 44, "cornerRadius": 8, "fill": { "type": "solid", "color": "#FFFFFF" }, "stroke": { "color": "#D1D5DB", "width": 1 }, "label": "Text input" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "form-email-group",
+                  "type": "frame",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "form-email-label", "type": "text", "content": "Work email", "fontSize": 13, "fontFamily": "var(font-sans)", "fontWeight": 500, "color": "#374151" },
+                    { "id": "form-email-input", "type": "rect", "height": 44, "cornerRadius": 8, "fill": { "type": "solid", "color": "#FFFFFF" }, "stroke": { "color": "#D1D5DB", "width": 1 }, "label": "Email input" },
+                    {
+                      "id": "form-email-error",
+                      "type": "text",
+                      "label": "[Inline validation error state]",
+                      "content": "Please enter a valid work email address",
+                      "fontSize": 12,
+                      "color": "#EF4444",
+                      "fontFamily": "var(font-sans)",
+                      "annotation": "Error state: border turns red (#EF4444), error message appears below field. CTA remains disabled until error cleared."
+                    }
+                  ]
+                },
+                {
+                  "id": "form-team-size",
+                  "type": "frame",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "form-team-label", "type": "text", "content": "Team size", "fontSize": 13, "fontFamily": "var(font-sans)", "fontWeight": 500, "color": "#374151" },
+                    { "id": "form-team-select", "type": "rect", "height": 44, "cornerRadius": 8, "fill": { "type": "solid", "color": "#FFFFFF" }, "stroke": { "color": "#D1D5DB", "width": 1 }, "label": "Select: 1-10 / 11-50 / 51-200 / 200+" }
+                  ]
+                },
+                {
+                  "id": "form-message",
+                  "type": "frame",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "form-message-label", "type": "text", "content": "Message (optional)", "fontSize": 13, "fontFamily": "var(font-sans)", "fontWeight": 500, "color": "#374151" },
+                    { "id": "form-message-textarea", "type": "rect", "height": 100, "cornerRadius": 8, "fill": { "type": "solid", "color": "#FFFFFF" }, "stroke": { "color": "#D1D5DB", "width": 1 }, "label": "Textarea" }
+                  ]
+                },
+                {
+                  "id": "form-consent",
+                  "type": "frame",
+                  "layout": "horizontal",
+                  "gap": 10,
+                  "align": "start",
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "form-consent-checkbox", "type": "rect", "width": 18, "height": 18, "cornerRadius": 4, "fill": { "type": "none" }, "stroke": { "color": "#D1D5DB", "width": 1 }, "label": "Consent checkbox" },
+                    { "id": "form-consent-text", "type": "text", "content": "I agree to the Privacy Policy and consent to being contacted by CrismaTest", "fontSize": 13, "color": "#6B7280", "lineHeight": 1.4 }
+                  ]
+                },
+                {
+                  "id": "form-submit",
+                  "type": "rect",
+                  "label": "Send Message CTA (disabled until consent checked)",
+                  "height": 48,
+                  "cornerRadius": 8,
+                  "fill": { "type": "solid", "color": "var(brand-primary)", "opacity": 0.4 },
+                  "text": "Send Message",
+                  "textColor": "#FFFFFF",
+                  "fontSize": 15,
+                  "fontWeight": 600,
+                  "annotation": "Disabled state shown: opacity 40%. Enabled when consent checkbox checked. POST to Supabase contact_submissions + Resend email; rate limited 3/IP/hour"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "contact-toast-note",
+          "type": "note",
+          "content": "← Toast success from src/components/ui/sonner — fires on submit. POST to Supabase contact_submissions + Resend email; rate limited 3/IP/hour"
+        }
+      ]
+    },
+    {
+      "id": "nav--mobile",
+      "type": "frame",
+      "label": "nav--mobile",
+      "width": 375,
+      "layout": "vertical",
+      "gap": 0,
+      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "children": [
+        {
+          "id": "mobile-nav-bar",
+          "type": "frame",
+          "label": "Mobile nav bar",
+          "width": 375,
+          "height": 56,
+          "layout": "horizontal",
+          "align": "center",
+          "padding": { "x": 16, "y": 0 },
+          "justify": "space-between",
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "shadow": { "type": "sm" },
+          "children": [
+            { "id": "mobile-logo", "type": "rect", "width": 80, "height": 28, "cornerRadius": 4, "fill": { "type": "solid", "color": "var(brand-primary)" }, "label": "LogoMark" },
+            {
+              "id": "mobile-hamburger",
+              "type": "frame",
+              "label": "Hamburger icon — OPEN state (X icon)",
+              "width": 40,
+              "height": 40,
+              "layout": "vertical",
+              "gap": 5,
+              "align": "center",
+              "justify": "center",
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "hamburger-line-1", "type": "rect", "width": 22, "height": 2, "cornerRadius": 1, "fill": { "type": "solid", "color": "#111827" }, "transform": "rotate(45deg)", "annotation": "X close icon — hamburger open state" },
+                { "id": "hamburger-line-2", "type": "rect", "width": 22, "height": 2, "cornerRadius": 1, "fill": { "type": "solid", "color": "#111827" }, "transform": "rotate(-45deg)" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-sheet",
+          "type": "frame",
+          "label": "Slide-down sheet — open state",
+          "width": 375,
+          "layout": "vertical",
+          "gap": 0,
+          "fill": { "type": "solid", "color": "#FFFFFF" },
+          "shadow": { "type": "lg" },
+          "children": [
+            {
+              "id": "mobile-nav-links",
+              "type": "frame",
+              "label": "Stacked nav links (48px tap targets)",
+              "layout": "vertical",
+              "gap": 0,
+              "fill": { "type": "none" },
+              "children": [
+                { "id": "mobile-link-home", "type": "rect", "label": "Home — active", "width": 375, "height": 48, "fill": { "type": "solid", "color": "var(brand-light)" }, "stroke": { "color": "var(brand-primary)", "width": 0, "side": "left", "sideWidth": 3 }, "text": "Home", "fontSize": 16, "fontFamily": "var(font-sans)", "textColor": "var(brand-primary)", "fontWeight": 600, "paddingLeft": 24, "annotation": "Active link: brand-navy accent on left border, brand-primary text" },
+                { "id": "mobile-link-candidates", "type": "rect", "label": "For Candidates", "width": 375, "height": 48, "fill": { "type": "none" }, "text": "For Candidates", "fontSize": 16, "textColor": "#374151", "paddingLeft": 24 },
+                { "id": "mobile-link-companies", "type": "rect", "label": "For Companies", "width": 375, "height": 48, "fill": { "type": "none" }, "text": "For Companies", "fontSize": 16, "textColor": "#374151", "paddingLeft": 24 },
+                { "id": "mobile-link-pricing", "type": "rect", "label": "Pricing", "width": 375, "height": 48, "fill": { "type": "none" }, "text": "Pricing", "fontSize": 16, "textColor": "#374151", "paddingLeft": 24 },
+                { "id": "mobile-link-contact", "type": "rect", "label": "Contact", "width": 375, "height": 48, "fill": { "type": "none" }, "text": "Contact", "fontSize": 16, "textColor": "#374151", "paddingLeft": 24 },
+                {
+                  "id": "mobile-divider",
+                  "type": "rect",
+                  "width": 375,
+                  "height": 1,
+                  "fill": { "type": "solid", "color": "#E5E7EB" }
+                },
+                {
+                  "id": "mobile-lang-toggle",
+                  "type": "frame",
+                  "label": "Language toggle",
+                  "width": 375,
+                  "height": 56,
+                  "layout": "horizontal",
+                  "align": "center",
+                  "padding": { "x": 24, "y": 0 },
+                  "gap": 12,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "lang-globe-icon", "type": "rect", "width": 20, "height": 20, "cornerRadius": 10, "fill": { "type": "solid", "color": "#6B7280" }, "label": "[Globe icon]" },
+                    { "id": "lang-en-pill", "type": "rect", "label": "EN active", "width": 44, "height": 28, "cornerRadius": 4, "fill": { "type": "solid", "color": "var(brand-primary)" }, "text": "EN", "fontSize": 13, "fontWeight": 600, "textColor": "#FFFFFF" },
+                    { "id": "lang-fr-pill", "type": "rect", "label": "FR inactive", "width": 44, "height": 28, "cornerRadius": 4, "fill": { "type": "none" }, "stroke": { "color": "#D1D5DB", "width": 1 }, "text": "FR", "fontSize": 13, "textColor": "#6B7280" }
+                  ]
+                },
+                { "id": "mobile-divider-2", "type": "rect", "width": 375, "height": 1, "fill": { "type": "solid", "color": "#E5E7EB" } },
+                {
+                  "id": "mobile-auth-row",
+                  "type": "frame",
+                  "label": "Login + Sign Up at bottom",
+                  "width": 375,
+                  "height": 80,
+                  "layout": "horizontal",
+                  "align": "center",
+                  "justify": "center",
+                  "padding": { "x": 24, "y": 16 },
+                  "gap": 12,
+                  "fill": { "type": "none" },
+                  "children": [
+                    { "id": "mobile-login", "type": "rect", "label": "Login", "flex": 1, "height": 48, "cornerRadius": 8, "fill": { "type": "none" }, "stroke": { "color": "var(brand-primary)", "width": 1 }, "text": "Login", "textColor": "var(brand-primary)", "fontSize": 15, "fontWeight": 600 },
+                    { "id": "mobile-signup", "type": "rect", "label": "Sign Up", "flex": 1, "height": 48, "cornerRadius": 8, "fill": { "type": "solid", "color": "var(brand-primary)" }, "text": "Sign Up", "textColor": "#FFFFFF", "fontSize": 15, "fontWeight": 700 }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "mobile-nav-callout",
+          "type": "note",
+          "content": "← NavMobile from src/components/nav/NavMobile.tsx — Base UI Sheet, 48px tap targets. All links stacked vertically. Globe icon + EN/FR language toggle. Login + Sign Up at bottom of sheet."
+        }
+      ]
+    }
+  ]
 }
