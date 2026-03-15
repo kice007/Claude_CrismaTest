@@ -1,5 +1,1060 @@
 {
-  "version": "1.0",
-  "variables": {},
-  "nodes": []
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "37yVr",
+      "x": 0,
+      "y": 0,
+      "name": "checkout",
+      "width": 1440,
+      "height": 900,
+      "fill": "$brand-light",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "YohJ9",
+          "name": "co-header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#FFFFFF",
+          "gap": 16,
+          "padding": [
+            0,
+            40
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "0qNEU",
+              "name": "co-logo",
+              "fill": "$brand-navy",
+              "content": "CrismaTest",
+              "fontFamily": "$font-sans",
+              "fontSize": 20,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "Zj7LW",
+              "name": "co-secure",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "kAEqb",
+                  "name": "co-lock",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "lock",
+                  "iconFontFamily": "lucide",
+                  "fill": "#64748B"
+                },
+                {
+                  "type": "text",
+                  "id": "HiNXy",
+                  "name": "coSecureTxt",
+                  "fill": "#64748B",
+                  "content": "Secure Checkout",
+                  "fontFamily": "$font-sans",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "FIFPj",
+          "name": "co-body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "gap": 40,
+          "padding": [
+            40,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "GZOvY",
+              "name": "co-left",
+              "width": 380,
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BTn6b",
+                  "name": "co-plan-card",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000001A",
+                    "offset": {
+                      "x": 0,
+                      "y": 2
+                    },
+                    "blur": 8
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eiDPH",
+                      "name": "co-plan-badge",
+                      "fill": "$brand-accent",
+                      "cornerRadius": 20,
+                      "padding": [
+                        4,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Nr4rU",
+                          "name": "badgeTxt",
+                          "fill": "#FFFFFF",
+                          "content": "Pro Plan",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VDrXn",
+                      "name": "co-price-row",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "WfR8d",
+                          "name": "coPriceAmt",
+                          "fill": "$brand-navy",
+                          "content": "$149/mo",
+                          "fontFamily": "Inter",
+                          "fontSize": 32,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wvUdi",
+                      "name": "co-billing-toggle",
+                      "width": "fill_container",
+                      "fill": "#F1F5F9",
+                      "cornerRadius": 8,
+                      "gap": 2,
+                      "padding": 4,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "x6EUd",
+                          "name": "co-monthly-btn",
+                          "width": "fill_container",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 6,
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#0000001A",
+                            "offset": {
+                              "x": 0,
+                              "y": 1
+                            },
+                            "blur": 3
+                          },
+                          "padding": [
+                            6,
+                            12
+                          ],
+                          "justifyContent": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Y2VRK",
+                              "name": "coMonthlyTxt",
+                              "fill": "$brand-navy",
+                              "content": "Monthly",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "rjtBt",
+                          "name": "co-annual-btn",
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "padding": [
+                            6,
+                            12
+                          ],
+                          "justifyContent": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "QBq9q",
+                              "name": "coAnnualTxt",
+                              "fill": "#64748B",
+                              "content": "Annual",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "v956W",
+                      "name": "co-save-badge",
+                      "fill": "#DCFCE7",
+                      "cornerRadius": 4,
+                      "padding": [
+                        2,
+                        8
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m8LsR",
+                          "name": "coSaveTxt",
+                          "fill": "#16A34A",
+                          "content": "Save 20% — $119/mo annually",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "note",
+                      "id": "HvYX3",
+                      "name": "co-toggle-note",
+                      "width": 320,
+                      "height": 40,
+                      "content": "Billing toggle: price updates live — $149/mo ↔ $119/mo; mirrors pricing page toggle behavior; PAY-01"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IaB2B",
+                      "name": "co-features",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "r60Eh",
+                          "name": "co-f1",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "ATAvC",
+                              "name": "coF1Icon",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "check",
+                              "iconFontFamily": "lucide",
+                              "fill": "#22C55E"
+                            },
+                            {
+                              "type": "text",
+                              "id": "6zupT",
+                              "name": "coF1Txt",
+                              "fill": "$brand-navy",
+                              "content": "Unlimited assessments",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "c6fEa",
+                          "name": "co-f2",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "cvvgh",
+                              "name": "coF2Icon",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "check",
+                              "iconFontFamily": "lucide",
+                              "fill": "#22C55E"
+                            },
+                            {
+                              "type": "text",
+                              "id": "7RuDd",
+                              "name": "coF2Txt",
+                              "fill": "$brand-navy",
+                              "content": "Advanced analytics",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hRORJ",
+                          "name": "co-f3",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "EZ0jC",
+                              "name": "coF3Icon",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "check",
+                              "iconFontFamily": "lucide",
+                              "fill": "#22C55E"
+                            },
+                            {
+                              "type": "text",
+                              "id": "3hNqH",
+                              "name": "coF3Txt",
+                              "fill": "$brand-navy",
+                              "content": "Priority support",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "dmA7o",
+                          "name": "co-f4",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "gQ3H3",
+                              "name": "coF4Icon",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "check",
+                              "iconFontFamily": "lucide",
+                              "fill": "#22C55E"
+                            },
+                            {
+                              "type": "text",
+                              "id": "1kj3F",
+                              "name": "coF4Txt",
+                              "fill": "$brand-navy",
+                              "content": "API access",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Dmukq",
+                  "name": "co-back-link",
+                  "fill": "$brand-primary",
+                  "content": "← Back to Pricing",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "t97JS",
+              "name": "co-right",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mky0i",
+                  "name": "co-form-card",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000001A",
+                    "offset": {
+                      "x": 0,
+                      "y": 2
+                    },
+                    "blur": 8
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "JkxdT",
+                      "name": "coCardHeading",
+                      "fill": "$brand-navy",
+                      "content": "Payment details",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QpcTq",
+                      "name": "co-card-group",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "o8MiM",
+                          "name": "co-card-num-field",
+                          "width": "fill_container",
+                          "height": 48,
+                          "fill": "#F8FAFC",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E2E8F0"
+                          },
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "C7v8B",
+                              "name": "coCardNumTxt",
+                              "fill": "#94A3B8",
+                              "content": "Card number",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "3yscK",
+                              "name": "coCardIcon",
+                              "width": 20,
+                              "height": 20,
+                              "iconFontName": "credit-card",
+                              "iconFontFamily": "lucide",
+                              "fill": "#94A3B8"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "TmAx6",
+                          "name": "co-card-row",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "R0n1F",
+                              "name": "co-expiry-field",
+                              "width": "fill_container",
+                              "height": 48,
+                              "fill": "#F8FAFC",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#E2E8F0"
+                              },
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "qmHXD",
+                                  "name": "coExpiryTxt",
+                                  "fill": "#94A3B8",
+                                  "content": "MM / YY",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "vBtVG",
+                              "name": "co-cvc-field",
+                              "width": "fill_container",
+                              "height": 48,
+                              "fill": "#F8FAFC",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#E2E8F0"
+                              },
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "g3WZ0",
+                                  "name": "coCvcTxt",
+                                  "fill": "#94A3B8",
+                                  "content": "CVC",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WViXP",
+                          "name": "co-cardholder-field",
+                          "width": "fill_container",
+                          "height": 48,
+                          "fill": "#F8FAFC",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E2E8F0"
+                          },
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "1COUg",
+                              "name": "coCardholderTxt",
+                              "fill": "#94A3B8",
+                              "content": "Cardholder name",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "j6aAK",
+                      "name": "coBillingHeading",
+                      "fill": "$brand-navy",
+                      "content": "Billing information",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "k6otf",
+                      "name": "co-billing-group",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "uX5y5",
+                          "name": "co-email-field",
+                          "width": "fill_container",
+                          "height": 48,
+                          "fill": "#F8FAFC",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E2E8F0"
+                          },
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "dnGRn",
+                              "name": "coEmailTxt",
+                              "fill": "#94A3B8",
+                              "content": "Email address",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "KxEoR",
+                          "name": "co-addr-field",
+                          "width": "fill_container",
+                          "height": 48,
+                          "fill": "#F8FAFC",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E2E8F0"
+                          },
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "PwlNb",
+                              "name": "coAddrTxt",
+                              "fill": "#94A3B8",
+                              "content": "Address",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Brpzq",
+                          "name": "co-city-row",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "CNTqp",
+                              "name": "co-city-field",
+                              "width": "fill_container",
+                              "height": 48,
+                              "fill": "#F8FAFC",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#E2E8F0"
+                              },
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "obR8d",
+                                  "name": "coCityTxt",
+                                  "fill": "#94A3B8",
+                                  "content": "City",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "GTkwc",
+                              "name": "co-postal-field",
+                              "width": "fill_container",
+                              "height": 48,
+                              "fill": "#F8FAFC",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "thickness": 1,
+                                "fill": "#E2E8F0"
+                              },
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Bdrvf",
+                                  "name": "coPostalTxt",
+                                  "fill": "#94A3B8",
+                                  "content": "Postal code",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "UoOZ3",
+                          "name": "co-country-field",
+                          "width": "fill_container",
+                          "height": 48,
+                          "fill": "#F8FAFC",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E2E8F0"
+                          },
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "dugOe",
+                              "name": "coCountryTxt",
+                              "fill": "$brand-navy",
+                              "content": "France",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "4xSei",
+                              "name": "coChevron",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "chevron-down",
+                              "iconFontFamily": "lucide",
+                              "fill": "#94A3B8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NVtHk",
+                      "name": "co-sub-btn",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "$brand-primary",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PFpvm",
+                          "name": "coSubTxt",
+                          "fill": "#FFFFFF",
+                          "content": "Subscribe Now",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "note",
+                      "id": "ihjV7",
+                      "name": "co-sub-note",
+                      "width": 380,
+                      "height": 40,
+                      "content": "'Subscribe Now' → 1.5s loading state → /checkout/success (visual only — no real Stripe integration in v1)"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BgOb6",
+                      "name": "co-secure-row",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "4UvpH",
+                          "name": "coSecureLock",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "lock",
+                          "iconFontFamily": "lucide",
+                          "fill": "#64748B"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vlhhS",
+                          "name": "coSecureStripe",
+                          "fill": "#64748B",
+                          "content": "Secured by Stripe",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "vYmTu",
+      "x": 1560,
+      "y": 0,
+      "name": "checkout-success",
+      "width": 1440,
+      "height": 900,
+      "fill": "$brand-light",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "aHYjG",
+          "name": "cs-header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#FFFFFF",
+          "padding": [
+            0,
+            40
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "j4ChC",
+              "name": "csLogo",
+              "fill": "$brand-navy",
+              "content": "CrismaTest",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "PaGvT",
+          "name": "cs-body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "u5GHB",
+              "name": "cs-card",
+              "width": 560,
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#0000001A",
+                "offset": {
+                  "x": 0,
+                  "y": 4
+                },
+                "blur": 16
+              },
+              "layout": "vertical",
+              "gap": 28,
+              "padding": 48,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Tr5oC",
+                  "name": "cs-illustration",
+                  "width": 96,
+                  "height": 96,
+                  "fill": "$brand-primary",
+                  "cornerRadius": 48,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "pkKKl",
+                      "name": "csCheckIcon",
+                      "width": 48,
+                      "height": 48,
+                      "iconFontName": "check",
+                      "iconFontFamily": "lucide",
+                      "weight": 300,
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "TjsOf",
+                  "name": "cs-heading",
+                  "fill": "$brand-navy",
+                  "textGrowth": "fixed-width",
+                  "width": 464,
+                  "content": "Welcome to CrismaTest Pro!",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 26,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "PjuE8",
+                  "name": "cs-subtext",
+                  "fill": "#64748B",
+                  "textGrowth": "fixed-width",
+                  "width": 400,
+                  "content": "Your subscription is active. You're all set to start hiring smarter.",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "fxwY6",
+                  "name": "cs-cta-group",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wmjYN",
+                      "name": "cs-dash-btn",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "$brand-primary",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "L8RFZ",
+                          "name": "csDashTxt",
+                          "fill": "#FFFFFF",
+                          "content": "Go to Dashboard",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "65k6I",
+                      "name": "cs-test-btn",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1.5,
+                        "fill": "$brand-navy"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "9LrS1",
+                          "name": "csTestTxt",
+                          "fill": "$brand-navy",
+                          "content": "Take Your First Test",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "brand-accent": {
+      "type": "color",
+      "value": "#6366F1"
+    },
+    "brand-light": {
+      "type": "color",
+      "value": "#EEF2FF"
+    },
+    "brand-navy": {
+      "type": "color",
+      "value": "#0F2A6B"
+    },
+    "brand-primary": {
+      "type": "color",
+      "value": "#1B4FD8"
+    },
+    "brand-secondary": {
+      "type": "color",
+      "value": "#3B6FE8"
+    },
+    "font-mono": {
+      "type": "string",
+      "value": "JetBrains Mono"
+    },
+    "font-sans": {
+      "type": "string",
+      "value": "Inter"
+    }
+  }
 }
