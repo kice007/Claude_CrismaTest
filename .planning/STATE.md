@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 2.1-screen-design-inserted 2.1-01-PLAN.md
-last_updated: "2026-03-15T02:31:18.122Z"
+stopped_at: Completed 2.1-screen-design-inserted 2.1-02-PLAN.md
+last_updated: "2026-03-15T02:44:53.345Z"
 last_activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
 progress:
   total_phases: 7
   completed_phases: 2
   total_plans: 16
-  completed_plans: 11
+  completed_plans: 12
   percent: 0
 ---
 
@@ -61,6 +61,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-shared-ui-nav-shell P06 | 5min | 3 tasks | 3 files |
 | Phase 2.1-screen-design-inserted P00 | 1 | 1 tasks | 6 files |
 | Phase 2.1-screen-design-inserted P01 | 5min | 2 tasks | 1 files |
+| Phase 2.1-screen-design-inserted P02 | 3min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,9 @@ Recent decisions affecting current work:
 - [Phase 2.1-screen-design-inserted]: Both tasks committed together in one atomic write — .pen JSON format requires complete valid document; partial writes produce invalid files
 - [Phase 2.1-screen-design-inserted]: NavShell defined before page frames in nodes array so ref nodes resolve correctly
 - [Phase 2.1-screen-design-inserted]: Pricing Pro card: 520px height vs 460px Starter, brand-primary 4px top border, Most Popular badge — matches locked spec
+- [Phase 2.1-02]: auth.pen tasks committed atomically — .pen JSON format requires complete valid document; partial writes produce invalid files
+- [Phase 2.1-02]: NavShell not rebuilt in auth.pen — imports array documents cross-file reference to landing-pages.pen; auth pages omit NavShell (full-screen centered card layout per AUTH-01)
+- [Phase 2.1-02]: Error state variants (sign-up--error, login--error) are full frame copies with error fields; inline error text #EF4444, disabled CTA at opacity 0.5
 
 ### Pending Todos
 
@@ -106,6 +110,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T02:31:18.117Z
-Stopped at: Completed 2.1-screen-design-inserted 2.1-01-PLAN.md
+Last session: 2026-03-15T02:44:53.338Z
+Stopped at: Completed 2.1-screen-design-inserted 2.1-02-PLAN.md
 Resume file: None
