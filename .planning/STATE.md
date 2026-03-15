@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 2.1-screen-design-inserted 2.1-02-PLAN.md
-last_updated: "2026-03-15T02:44:53.345Z"
+stopped_at: Completed 2.1-screen-design-inserted 2.1-03-PLAN.md
+last_updated: "2026-03-15T02:59:55.785Z"
 last_activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
 progress:
   total_phases: 7
   completed_phases: 2
   total_plans: 16
-  completed_plans: 12
-  percent: 0
+  completed_plans: 13
+  percent: 81
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-14)
 
 **Core value:** A candidate completes the test and gets their CrismaScore — a company can review and compare candidates by score.
-**Current focus:** Phase 1: Foundation
+**Current focus:** Phase 2.1: Screen Design (INSERTED)
 
 ## Current Position
 
-Phase: 1 of 6 (Foundation)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
+Phase: 2.1 of 6 (Screen Design — INSERTED)
+Plan: 3 of 7 in current phase
+Status: In progress
+Last activity: 2026-03-15 — Completed 2.1-03 test-flow.pen (12 frames, DSGN-03)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [████████░░] 81%
 
 ## Performance Metrics
 
@@ -62,6 +62,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 2.1-screen-design-inserted P00 | 1 | 1 tasks | 6 files |
 | Phase 2.1-screen-design-inserted P01 | 5min | 2 tasks | 1 files |
 | Phase 2.1-screen-design-inserted P02 | 3min | 2 tasks | 1 files |
+| Phase 2.1-screen-design-inserted P03 | 8 | 3 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -99,6 +100,9 @@ Recent decisions affecting current work:
 - [Phase 2.1-02]: auth.pen tasks committed atomically — .pen JSON format requires complete valid document; partial writes produce invalid files
 - [Phase 2.1-02]: NavShell not rebuilt in auth.pen — imports array documents cross-file reference to landing-pages.pen; auth pages omit NavShell (full-screen centered card layout per AUTH-01)
 - [Phase 2.1-02]: Error state variants (sign-up--error, login--error) are full frame copies with error fields; inline error text #EF4444, disabled CTA at opacity 0.5
+- [Phase 2.1-03]: test-flow.pen tasks committed atomically — .pen JSON format requires complete valid document; partial writes produce invalid files
+- [Phase 2.1-03]: questions--mobile at 375px uses QCM format to show layout contrast vs desktop — no nav chrome, full-width options, 48px tap targets
+- [Phase 2.1-03]: result frame score 74 (base state), result--confetti score 85 (confetti trigger state) — distinct scores differentiate the two result variants
 
 ### Pending Todos
 
@@ -110,6 +114,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T02:44:53.338Z
-Stopped at: Completed 2.1-screen-design-inserted 2.1-02-PLAN.md
+Last session: 2026-03-15T02:59:55.772Z
+Stopped at: Completed 2.1-screen-design-inserted 2.1-03-PLAN.md
 Resume file: None

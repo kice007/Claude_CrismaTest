@@ -76,7 +76,7 @@ Plans:
 - [ ] 2.1-00-PLAN.md — Setup: create /design/ directory + initialize 6 empty .pen files + verify Pencil MCP connection
 - [x] 2.1-01-PLAN.md — DSGN-01: landing-pages.pen — 5 landing page desktop frames + mobile nav frame + NavShell reusable component
 - [ ] 2.1-02-PLAN.md — DSGN-02: auth.pen — sign-up, login, forgot-password + 2 form error state variants
-- [ ] 2.1-03-PLAN.md — DSGN-03: test-flow.pen — 5 screens + 6 question format frames + mobile questions frame (12 total)
+- [x] 2.1-03-PLAN.md — DSGN-03: test-flow.pen — 5 screens + 6 question format frames + mobile questions frame (12 total)
 - [ ] 2.1-04-PLAN.md — DSGN-04: dashboard.pen — 5 desktop + 5 mobile dashboard views + 3 state variants (13 total)
 - [ ] 2.1-05-PLAN.md — DSGN-05: payments.pen — checkout + checkout-success (2 frames)
 - [ ] 2.1-06-PLAN.md — DSGN-06: components.pen — shared component reference sheet (6 groups: toasts, modals, skeletons, empty state, 404, 500)
@@ -138,7 +138,7 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-03-14 |
 | 2. Shared UI + Nav Shell | 6/6 | Complete   | 2026-03-15 |
-| 2.1. Screen Design | 0/7 | Not started | - |
+| 2.1. Screen Design | 3/7 | In progress | - |
 | 3. Landing Pages + Data Foundation | 0/TBD | Not started | - |
 | 4. Auth + Test Flow | 0/TBD | Not started | - |
 | 5. Company Dashboard + API | 0/TBD | Not started | - |
