@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: "Checkpoint: Pencil MCP verification (2.1-00)"
-last_updated: "2026-03-15T02:12:05.427Z"
+stopped_at: Completed 2.1-screen-design-inserted 2.1-01-PLAN.md
+last_updated: "2026-03-15T02:31:18.122Z"
 last_activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
 progress:
   total_phases: 7
   completed_phases: 2
   total_plans: 16
-  completed_plans: 10
+  completed_plans: 11
   percent: 0
 ---
 
@@ -60,6 +60,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-shared-ui-nav-shell P05 | 5min | 2 tasks | 7 files |
 | Phase 02-shared-ui-nav-shell P06 | 5min | 3 tasks | 3 files |
 | Phase 2.1-screen-design-inserted P00 | 1 | 1 tasks | 6 files |
+| Phase 2.1-screen-design-inserted P01 | 5min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -91,6 +92,9 @@ Recent decisions affecting current work:
 - [Phase 02-shared-ui-nav-shell]: i18n audit plan at end of each phase: scan all useTranslation() calls, merge missing keys into both locale files
 - [Phase 2.1-00]: .pen files bootstrapped via Write tool — Pencil CLI cannot create files, so Write tool pre-creates them for open_document
 - [Phase 2.1-00]: Minimal valid .pen JSON: version=1.0, empty variables object, empty nodes array
+- [Phase 2.1-screen-design-inserted]: Both tasks committed together in one atomic write — .pen JSON format requires complete valid document; partial writes produce invalid files
+- [Phase 2.1-screen-design-inserted]: NavShell defined before page frames in nodes array so ref nodes resolve correctly
+- [Phase 2.1-screen-design-inserted]: Pricing Pro card: 520px height vs 460px Starter, brand-primary 4px top border, Most Popular badge — matches locked spec
 
 ### Pending Todos
 
@@ -102,6 +106,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T02:12:05.418Z
-Stopped at: Checkpoint: Pencil MCP verification (2.1-00)
+Last session: 2026-03-15T02:31:18.117Z
+Stopped at: Completed 2.1-screen-design-inserted 2.1-01-PLAN.md
 Resume file: None

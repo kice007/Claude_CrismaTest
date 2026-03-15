@@ -74,7 +74,7 @@ Plans:
 
 Plans:
 - [ ] 2.1-00-PLAN.md — Setup: create /design/ directory + initialize 6 empty .pen files + verify Pencil MCP connection
-- [ ] 2.1-01-PLAN.md — DSGN-01: landing-pages.pen — 5 landing page desktop frames + mobile nav frame + NavShell reusable component
+- [x] 2.1-01-PLAN.md — DSGN-01: landing-pages.pen — 5 landing page desktop frames + mobile nav frame + NavShell reusable component
 - [ ] 2.1-02-PLAN.md — DSGN-02: auth.pen — sign-up, login, forgot-password + 2 form error state variants
 - [ ] 2.1-03-PLAN.md — DSGN-03: test-flow.pen — 5 screens + 6 question format frames + mobile questions frame (12 total)
 - [ ] 2.1-04-PLAN.md — DSGN-04: dashboard.pen — 5 desktop + 5 mobile dashboard views + 3 state variants (13 total)
