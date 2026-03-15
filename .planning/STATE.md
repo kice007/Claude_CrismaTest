@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 2.1 context gathered
-last_updated: "2026-03-14T22:46:15.172Z"
+stopped_at: "Checkpoint: Pencil MCP verification (2.1-00)"
+last_updated: "2026-03-15T02:12:05.427Z"
 last_activity: 2026-03-14 — Roadmap created; 59 v1 requirements mapped to 6 phases
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 9
-  completed_plans: 9
+  total_plans: 16
+  completed_plans: 10
   percent: 0
 ---
 
@@ -59,6 +59,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-shared-ui-nav-shell P04 | 2min | 2 tasks | 5 files |
 | Phase 02-shared-ui-nav-shell P05 | 5min | 2 tasks | 7 files |
 | Phase 02-shared-ui-nav-shell P06 | 5min | 3 tasks | 3 files |
+| Phase 2.1-screen-design-inserted P00 | 1 | 1 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -88,6 +89,8 @@ Recent decisions affecting current work:
 - [Phase 02-shared-ui-nav-shell]: NavShell placed inside I18nProvider in layout.tsx so NavDesktop/NavMobile can call useTranslation()
 - [Phase 02-shared-ui-nav-shell]: Design-system page consolidates all Phase 2 component demos in a single route for efficient manual QA
 - [Phase 02-shared-ui-nav-shell]: i18n audit plan at end of each phase: scan all useTranslation() calls, merge missing keys into both locale files
+- [Phase 2.1-00]: .pen files bootstrapped via Write tool — Pencil CLI cannot create files, so Write tool pre-creates them for open_document
+- [Phase 2.1-00]: Minimal valid .pen JSON: version=1.0, empty variables object, empty nodes array
 
 ### Pending Todos
 
@@ -99,6 +102,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-14T22:46:15.166Z
-Stopped at: Phase 2.1 context gathered
-Resume file: .planning/phases/2.1-screen-design-inserted/2.1-CONTEXT.md
+Last session: 2026-03-15T02:12:05.418Z
+Stopped at: Checkpoint: Pencil MCP verification (2.1-00)
+Resume file: None
