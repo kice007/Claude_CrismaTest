@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Homepage Redesign — Full Wireframe</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #f1f5f9; padding: 24px; }
+h1 { font-size: 18px; color: #1e293b; margin-bottom: 4px; }
+.meta { font-size: 13px; color: #64748b; margin-bottom: 24px; }
+
+.page { width: 760px; margin: 0 auto; box-shadow: 0 4px 32px rgba(0,0,0,0.12); border-radius: 8px; overflow: hidden; }
+
+/* NAV */
+.nav { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 12px 32px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-size: 14px; font-weight: 800; color: #0f2a6b; }
+.nav-links { display: flex; gap: 20px; font-size: 11px; color: #64748b; }
+.nav-cta { background: #0f2a6b; color: #fff; border-radius: 4px; padding: 5px 14px; font-size: 11px; font-weight: 600; }
+
+/* HERO */
+.hero { background: #fff; padding: 52px 32px; display: flex; gap: 40px; align-items: center; border-bottom: 1px solid #f1f5f9; }
+.hero-left { flex: 0 0 340px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 10px; font-size: 10px; color: #475569; margin-bottom: 16px; }
+.hero-title { font-size: 30px; font-weight: 900; line-height: 1.15; color: #0f172a; margin-bottom: 14px; }
+.hero-title .accent { color: #1b4fd8; }
+.hero-sub { font-size: 12px; color: #64748b; line-height: 1.6; margin-bottom: 20px; max-width: 300px; }
+.hero-ctarow { display: flex; gap: 10px; align-items: center; }
+.btn-primary { background: #1b4fd8; color: #fff; border-radius: 4px; padding: 8px 18px; font-size: 11px; font-weight: 700; }
+.btn-ghost { border: 1.5px dashed #94a3b8; color: #475569; border-radius: 4px; padding: 8px 16px; font-size: 11px; }
+.hero-right { flex: 1; background: #f8faff; border: 1px solid #e0e7ff; border-radius: 8px; padding: 14px; min-height: 170px; }
+.hero-ui-bar { display: flex; gap: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 10px; font-size: 9px; color: #94a3b8; }
+.hero-ui-bar span.active { color: #1b4fd8; font-weight: 700; border-bottom: 2px solid #1b4fd8; padding-bottom: 2px; }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.hero-stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px; text-align: center; }
+.hero-stat .num { font-size: 18px; font-weight: 800; color: #1b4fd8; }
+.hero-stat .lbl { font-size: 8px; color: #64748b; margin-top: 2px; }
+.hero-candidate-row { display: flex; gap: 6px; margin-top: 8px; }
+.hero-candidate { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 8px; flex: 1; font-size: 8px; }
+.hero-candidate .name { font-weight: 700; color: #0f172a; }
+.hero-candidate .score { color: #1b4fd8; font-weight: 700; font-size: 11px; }
+
+/* TRUST BAR */
+.trust { background: #f8faff; border-bottom: 1px solid #e2e8f0; padding: 20px 32px; text-align: center; }
+.trust-label { font-size: 10px; color: #94a3b8; letter-spacing: 1.5px; font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
+.trust-logos { display: flex; justify-content: center; gap: 32px; align-items: center; }
+.trust-logo { font-size: 12px; color: #94a3b8; font-weight: 700; }
+
+/* SECTION LABEL */
+.section-label { display: flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; color: #1b4fd8; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+.section-label::before, .section-label::after { content: ''; display: block; width: 20px; height: 2px; background: #1b4fd8; }
+
+/* PROBLEM SECTION */
+.problem { background: #fff; padding: 52px 32px; border-bottom: 1px solid #f1f5f9; }
+.problem-title { font-size: 26px; font-weight: 900; line-height: 1.2; color: #0f172a; margin-bottom: 12px; max-width: 440px; }
+.problem-sub { font-size: 12px; color: #64748b; line-height: 1.6; margin-bottom: 28px; max-width: 400px; }
+.problem-visual { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.problem-card { border: 1.5px dashed #fca5a5; border-radius: 6px; padding: 10px; background: #fff5f5; }
+.problem-card .err { display: inline-flex; gap: 4px; align-items: center; background: #fee2e2; border-radius: 3px; padding: 2px 6px; font-size: 8px; color: #991b1b; font-weight: 600; margin-bottom: 6px; }
+.problem-card .title { font-size: 9px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.problem-card .body { font-size: 8px; color: #64748b; line-height: 1.4; }
+
+/* HOW IT WORKS */
+.howitworks { background: #f8faff; padding: 52px 32px; border-bottom: 1px solid #e2e8f0; }
+.howitworks-inner { display: flex; gap: 40px; align-items: flex-start; }
+.howitworks-left { flex: 0 0 280px; }
+.howitworks-title { font-size: 22px; font-weight: 900; color: #0f172a; margin-bottom: 10px; }
+.howitworks-title .accent { color: #1b4fd8; }
+.howitworks-sub { font-size: 11px; color: #64748b; line-height: 1.6; margin-bottom: 20px; }
+.steps-list { display: flex; flex-direction: column; gap: 12px; }
+.step { display: flex; gap: 10px; align-items: flex-start; }
+.step-num { background: #1b4fd8; color: #fff; border-radius: 50%; width: 20px; height: 20px; font-size: 9px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.step-text { font-size: 10px; color: #374151; }
+.step-text strong { display: block; color: #0f172a; font-weight: 700; margin-bottom: 2px; }
+.howitworks-right { flex: 1; background: #fff; border: 1px solid #e0e7ff; border-radius: 8px; padding: 14px; }
+.assess-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 9px; }
+.assess-row .name { font-weight: 600; color: #0f172a; }
+.assess-row .tag { background: #eff6ff; color: #1b4fd8; border-radius: 3px; padding: 2px 6px; font-size: 8px; }
+.assess-row .score-pill { background: #1b4fd8; color: #fff; border-radius: 20px; padding: 2px 8px; font-size: 9px; font-weight: 700; }
+
+/* STATS ROW */
+.stats { background: #fff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stat-cell { padding: 24px 20px; border-right: 1px solid #e2e8f0; }
+.stat-cell:last-child { border-right: none; }
+.stat-icon { font-size: 18px; margin-bottom: 8px; }
+.stat-val { font-size: 18px; font-weight: 900; color: #0f172a; margin-bottom: 4px; }
+.stat-desc { font-size: 9px; color: #64748b; line-height: 1.4; }
+
+/* WHAT WE DO */
+.whatwedo { background: #fff; padding: 52px 32px; border-bottom: 1px solid #f1f5f9; }
+.whatwedo-inner { display: flex; gap: 40px; align-items: center; }
+.whatwedo-left { flex: 0 0 260px; }
+.whatwedo-title { font-size: 20px; font-weight: 900; color: #0f172a; margin-bottom: 10px; line-height: 1.25; }
+.whatwedo-sub { font-size: 11px; color: #64748b; line-height: 1.6; margin-bottom: 16px; }
+.whatwedo-features { display: flex; flex-direction: column; gap: 10px; }
+.feat-row { display: flex; gap: 8px; align-items: flex-start; font-size: 10px; }
+.feat-icon { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; }
+.feat-row strong { display: block; color: #0f172a; font-size: 10px; font-weight: 700; }
+.feat-row span { color: #64748b; font-size: 9px; }
+.whatwedo-right { flex: 1; background: #0f2a6b; border-radius: 8px; padding: 16px; min-height: 160px; }
+.score-card { background: #1b4fd8; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+.score-card .label { font-size: 8px; color: #93c5fd; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.score-card .value { font-size: 22px; font-weight: 900; color: #fff; }
+.score-card .sub { font-size: 9px; color: #bfdbfe; }
+.score-breakdown { display: flex; flex-direction: column; gap: 5px; }
+.score-bar-row { display: flex; align-items: center; gap: 6px; font-size: 8px; color: #93c5fd; }
+.score-bar { height: 4px; background: #1b4fd8; border-radius: 2px; }
+
+/* TESTIMONIAL */
+.testimonial { background: #f8faff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 48px 32px; }
+.testimonial-inner { display: flex; gap: 0; border: 1px solid #e0e7ff; border-radius: 8px; overflow: hidden; background: #fff; }
+.testimonial-main { flex: 1; padding: 28px; }
+.testimonial-quote { font-size: 16px; line-height: 1.6; color: #1b4fd8; font-style: italic; margin-bottom: 20px; }
+.testimonial-author { font-size: 11px; color: #374151; }
+.testimonial-author strong { color: #0f172a; display: block; font-size: 13px; margin-bottom: 2px; }
+.testimonial-side { width: 120px; background: #eff6ff; display: flex; flex-direction: column; border-left: 1px solid #e0e7ff; }
+.side-person { flex: 1; padding: 12px 8px; border-bottom: 1px solid #e0e7ff; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 9px; color: #1b4fd8; font-weight: 700; display: flex; align-items: center; gap: 4px; }
+.side-person:last-child { border-bottom: none; }
+
+/* FAQ */
+.faq { background: #fff; padding: 48px 32px; border-bottom: 1px solid #f1f5f9; }
+.faq-title { font-size: 22px; font-weight: 900; color: #0f172a; margin-bottom: 24px; }
+.faq-item { border-bottom: 1px solid #e2e8f0; padding: 14px 0; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #374151; font-weight: 600; }
+.faq-item .plus { color: #94a3b8; font-size: 16px; }
+
+/* FINAL CTA */
+.finalcta { background: #0f2a6b; padding: 56px 32px; text-align: center; position: relative; overflow: hidden; }
+.cta-grid { position: absolute; inset: 0; background-image: radial-gradient(circle, #1b4fd830 1px, transparent 1px); background-size: 20px 20px; }
+.finalcta-inner { position: relative; }
+.cta-label { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; color: #93c5fd; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+.cta-label::before, .cta-label::after { content: ''; display: block; width: 16px; height: 2px; background: #93c5fd; }
+.cta-title { font-size: 26px; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 10px; }
+.cta-title .accent { color: #60a5fa; }
+.cta-sub { font-size: 12px; color: #93c5fd; margin-bottom: 24px; }
+.cta-btns { display: flex; justify-content: center; gap: 12px; }
+.cta-btn-white { background: #fff; color: #0f2a6b; border-radius: 4px; padding: 10px 22px; font-size: 12px; font-weight: 700; }
+.cta-btn-outline { border: 1.5px solid #ffffff50; color: #fff; border-radius: 4px; padding: 10px 22px; font-size: 12px; }
+
+/* FOOTER */
+.footer { background: #060f2a; padding: 32px 32px 20px; }
+.footer-top { display: flex; gap: 32px; justify-content: space-between; margin-bottom: 20px; }
+.footer-logo { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.footer-tagline { font-size: 9px; color: #475569; line-height: 1.5; max-width: 140px; }
+.footer-col h4 { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.footer-col li { font-size: 10px; color: #475569; }
+.footer-bottom { border-top: 1px solid #1e2d4e; padding-top: 12px; font-size: 9px; color: #475569; display: flex; justify-content: space-between; }
+
+/* SECTION ANNOTS */
+.annot { position: absolute; right: -160px; top: 50%; transform: translateY(-50%); font-size: 10px; color: #1b4fd8; font-weight: 600; white-space: nowrap; display: flex; align-items: center; gap: 6px; }
+.annot::before { content:''; width: 30px; height: 1px; background: #1b4fd8; display: block; }
+.section-wrapper { position: relative; }
+
+h1 { font-family: system-ui; }
+</style>
+</head>
+<body>
+
+<div style="max-width:760px; margin:0 auto 24px;">
+  <h1 style="font-family:system-ui;font-size:18px;color:#1e293b;margin-bottom:4px;">Homepage Redesign — Full Wireframe</h1>
+  <p style="font-family:system-ui;font-size:13px;color:#64748b;margin-bottom:16px;">Bold/Data-heavy style · Existing blue palette · Scroll to review all sections</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;font-family:system-ui;">
+    <span style="background:#eff6ff;border:1px solid #bfdbfe;color:#1b4fd8;border-radius:4px;padding:4px 10px;font-size:11px;">🔄 Redesigned</span>
+    <span style="background:#f0fdf4;border:1px solid #86efac;color:#166534;border-radius:4px;padding:4px 10px;font-size:11px;">✓ Kept</span>
+    <span style="background:#fefce8;border:1px solid #fde047;color:#854d0e;border-radius:4px;padding:4px 10px;font-size:11px;">➕ New section</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- NAV (kept) -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#166534;font-weight:700;background:#f0fdf4;border:1px solid #86efac;border-radius:3px;padding:2px 6px;">✓ Kept</div>
+    <div class="nav">
+      <div class="nav-logo">◆ CrismaTest</div>
+      <div class="nav-links">
+        <span>For Companies</span><span>For Candidates</span><span>Pricing</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <span style="font-size:11px;color:#64748b;">Login</span>
+        <div class="nav-cta">Book a Demo ↗</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO (redesigned) -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#1b4fd8;font-weight:700;background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:2px 6px;">🔄 Hero</div>
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-badge">🚀 Now with AI-powered scoring</div>
+        <div class="hero-title">Stop guessing.<br>Hire on <span class="accent">verified skills.</span></div>
+        <div class="hero-sub">Replace resume screening with structured assessments. CrismaScore shows you exactly what every candidate can do — before the interview.</div>
+        <div class="hero-ctarow">
+          <div class="btn-primary">Book a demo ↗</div>
+          <div class="btn-ghost">Explore platform</div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-ui-bar">
+          <span class="active">Overview</span>
+          <span>Assessments</span>
+          <span>Reports</span>
+          <span>Candidates</span>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">89%</div><div class="lbl">Hire accuracy</div></div>
+          <div class="hero-stat"><div class="num">2.8×</div><div class="lbl">Faster hires</div></div>
+          <div class="hero-stat"><div class="num">48h</div><div class="lbl">Avg. time-to-hire</div></div>
+        </div>
+        <div class="hero-candidate-row">
+          <div class="hero-candidate"><div class="name">Sarah K.</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;"><span style="font-size:8px;color:#64748b;">React Dev</span><span class="score">92</span></div></div>
+          <div class="hero-candidate"><div class="name">Marcus T.</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;"><span style="font-size:8px;color:#64748b;">Backend</span><span class="score">87</span></div></div>
+          <div class="hero-candidate"><div class="name">Priya M.</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;"><span style="font-size:8px;color:#64748b;">Full Stack</span><span class="score">95</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST BAR (redesigned) -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#1b4fd8;font-weight:700;background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:2px 6px;">🔄 Trust</div>
+    <div class="trust">
+      <div class="trust-label">Powering better hiring for leading companies</div>
+      <div class="trust-logos">
+        <span class="trust-logo">Acme Corp</span>
+        <span class="trust-logo">Veritas</span>
+        <span class="trust-logo">NovaTech</span>
+        <span class="trust-logo">BrightHire</span>
+        <span class="trust-logo">Scalepath</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE PROBLEM (new) -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#854d0e;font-weight:700;background:#fefce8;border:1px solid #fde047;border-radius:3px;padding:2px 6px;">➕ Problem</div>
+    <div class="problem">
+      <div class="section-label">The Problem</div>
+      <div class="problem-title">You're making hiring decisions on incomplete foundations</div>
+      <div class="problem-sub">Most teams rely on résumés and gut feeling — fragile, biased, and slow. You end up hiring the best interviewers, not the best engineers.</div>
+      <div class="problem-visual">
+        <div class="problem-card">
+          <div class="err">⚠ Bias risk</div>
+          <div class="title">Résumé screening</div>
+          <div class="body">Manually reviewing 200+ applications for one role, missing top candidates with non-traditional backgrounds.</div>
+        </div>
+        <div class="problem-card">
+          <div class="err">⚠ Time lost</div>
+          <div class="title">Unstructured interviews</div>
+          <div class="body">Inconsistent questions, subjective scoring — two interviewers rate the same candidate completely differently.</div>
+        </div>
+        <div class="problem-card">
+          <div class="err">⚠ Bad hires</div>
+          <div class="title">No skill validation</div>
+          <div class="body">Candidates claim skills they don't have. You only find out after onboarding, costing months of time and budget.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS (redesigned from "steps") -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#1b4fd8;font-weight:700;background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:2px 6px;">🔄 Steps</div>
+    <div class="howitworks">
+      <div class="section-label">The Solution</div>
+      <div class="howitworks-inner">
+        <div class="howitworks-left">
+          <div class="howitworks-title">Get the most complete picture of every <span class="accent">candidate.</span></div>
+          <div class="howitworks-sub">CrismaTest provides the reliable foundation your hiring team needs to make confident, data-backed decisions.</div>
+          <div class="steps-list">
+            <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Send a CrismaTest</strong>Share a skill assessment in seconds — no setup needed.</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Candidates complete it</strong>Takes 10–30 minutes, mobile-friendly, anti-cheat protected.</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Get a CrismaScore</strong>Standardized, objective score you can compare across all candidates.</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Hire with confidence</strong>Filter, rank, and shortlist based on real data — not gut feel.</div></div>
+          </div>
+        </div>
+        <div class="howitworks-right">
+          <div style="font-size:9px;color:#64748b;margin-bottom:10px;font-weight:600;">Active Assessment — React Developer</div>
+          <div class="assess-row"><span class="name">Sarah K.</span><span class="tag">React</span><span class="score-pill">92</span></div>
+          <div class="assess-row"><span class="name">Marcus T.</span><span class="tag">Node.js</span><span class="score-pill">87</span></div>
+          <div class="assess-row"><span class="name">Priya M.</span><span class="tag">TypeScript</span><span class="score-pill">95</span></div>
+          <div class="assess-row"><span class="name">David L.</span><span class="tag">React</span><span class="score-pill">79</span></div>
+          <div style="margin-top:10px;font-size:9px;color:#1b4fd8;font-weight:600;cursor:pointer;">See full ranking →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS ROW (redesigned from "forCompanies") -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#1b4fd8;font-weight:700;background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:2px 6px;">🔄 Stats</div>
+    <div class="stats">
+      <div class="stat-cell"><div class="stat-icon">⚡</div><div class="stat-val">10 min</div><div class="stat-desc">Average time to send and share an assessment</div></div>
+      <div class="stat-cell"><div class="stat-icon">🎯</div><div class="stat-val">89%</div><div class="stat-desc">Of hires made via CrismaTest pass their 6-month review</div></div>
+      <div class="stat-cell"><div class="stat-icon">🔒</div><div class="stat-val">Anti-cheat</div><div class="stat-desc">Browser lock, randomized questions, plagiarism detection</div></div>
+      <div class="stat-cell"><div class="stat-icon">📊</div><div class="stat-val">50+ tests</div><div class="stat-desc">Library of skill assessments across engineering, design, and ops</div></div>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO / CRIMSASCORE (redesigned from "antiFraud") -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#1b4fd8;font-weight:700;background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:2px 6px;">🔄 Score</div>
+    <div class="whatwedo">
+      <div class="section-label">CrismaScore</div>
+      <div class="whatwedo-inner">
+        <div class="whatwedo-left">
+          <div class="whatwedo-title">One number that says everything about a candidate.</div>
+          <div class="whatwedo-sub">CrismaScore is a standardized, objective rating built from multiple skill dimensions. Comparable across roles, seniority levels, and teams.</div>
+          <div class="whatwedo-features">
+            <div class="feat-row"><div class="feat-icon">✓</div><div><strong>Collect, normalize & score</strong><span>Data from all test dimensions combined into one clear number</span></div></div>
+            <div class="feat-row"><div class="feat-icon">🔗</div><div><strong>Share like a badge</strong><span>Candidates can share their CrismaScore with any employer</span></div></div>
+            <div class="feat-row"><div class="feat-icon">📈</div><div><strong>Track over time</strong><span>Scores improve with practice — candidates can retest quarterly</span></div></div>
+          </div>
+          <div style="margin-top:16px;"><span style="background:#1b4fd8;color:#fff;border-radius:4px;padding:6px 14px;font-size:10px;font-weight:700;">See CrismaScore in action ↗</span></div>
+        </div>
+        <div class="whatwedo-right">
+          <div class="score-card">
+            <div class="label">CrismaScore</div>
+            <div class="value">92 / 100</div>
+            <div class="sub">Sarah K. · React Developer · March 2026</div>
+          </div>
+          <div class="score-breakdown">
+            <div class="score-bar-row"><span style="width:80px;">Problem solving</span><div class="score-bar" style="width:90%;"></div><span>95</span></div>
+            <div class="score-bar-row"><span style="width:80px;">React depth</span><div class="score-bar" style="width:88%;"></div><span>91</span></div>
+            <div class="score-bar-row"><span style="width:80px;">Code quality</span><div class="score-bar" style="width:85%;"></div><span>88</span></div>
+            <div class="score-bar-row"><span style="width:80px;">Speed</span><div class="score-bar" style="width:82%;"></div><span>84</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL (redesigned) -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#1b4fd8;font-weight:700;background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:2px 6px;">🔄 Testimonial</div>
+    <div class="testimonial">
+      <div class="section-label">What customers say</div>
+      <div class="testimonial-inner">
+        <div class="testimonial-main">
+          <div class="testimonial-quote">"We've been using CrismaTest for over a year and it's completely changed how we hire. We stopped wasting time on interviews that go nowhere — the scores tell us exactly who to prioritize."</div>
+          <div class="testimonial-author">
+            <strong>Laure Dupont</strong>
+            Head of Engineering · Veritas SAS
+          </div>
+        </div>
+        <div class="testimonial-side">
+          <div class="side-person" style="color:#1b4fd8;">Laure D. · Engineering</div>
+          <div class="side-person" style="color:#6366f1;">Marc R. · Talent Acquisition</div>
+          <div class="side-person" style="color:#0ea5e9;">Priya S. · HR Ops</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ (kept, minor restyling) -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#1b4fd8;font-weight:700;background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:2px 6px;">🔄 FAQ</div>
+    <div class="faq">
+      <div class="section-label">FAQs</div>
+      <div class="faq-title">Your questions,<br>answered.</div>
+      <div class="faq-item"><span>What types of skills does CrismaTest assess?</span><span class="plus">+</span></div>
+      <div class="faq-item"><span>How long does a typical assessment take?</span><span class="plus">+</span></div>
+      <div class="faq-item"><span>How does the anti-cheat system work?</span><span class="plus">+</span></div>
+      <div class="faq-item"><span>Can candidates retake assessments?</span><span class="plus">+</span></div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA (redesigned) -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#1b4fd8;font-weight:700;background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:2px 6px;">🔄 CTA</div>
+    <div class="finalcta">
+      <div class="cta-grid"></div>
+      <div class="finalcta-inner">
+        <div class="cta-label">Get started</div>
+        <div class="cta-title">What would you build with<br>better <span class="accent">hiring data?</span></div>
+        <div class="cta-sub">Test your first 5 candidates free. No credit card required. Results in 24 hours.</div>
+        <div class="cta-btns">
+          <div class="cta-btn-white">Start for free ↗</div>
+          <div class="cta-btn-outline">Book a demo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER (kept) -->
+  <div style="position:relative;">
+    <div style="position:absolute;top:8px;left:-80px;font-size:9px;color:#166534;font-weight:700;background:#f0fdf4;border:1px solid #86efac;border-radius:3px;padding:2px 6px;">✓ Kept</div>
+    <div class="footer">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">◆ CrismaTest</div>
+          <div class="footer-tagline">Skill-based hiring for modern teams.</div>
+        </div>
+        <div class="footer-col"><h4>Product</h4><ul><li>For Companies</li><li>For Candidates</li><li>Pricing</li></ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul><li>Blog</li><li>Documentation</li><li>Case Studies</li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li>About</li><li>Careers</li><li>Contact</li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CrismaTest. All rights reserved.</span>
+        <span>Privacy · Terms</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="max-width:760px;margin:24px auto;font-family:system-ui;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:20px;">
+  <h3 style="font-size:14px;color:#0f172a;margin-bottom:12px;">Summary of changes</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;color:#374151;">
+    <div>🔄 <strong>Hero</strong> — white bg, left-aligned, badge, product UI right</div>
+    <div>🔄 <strong>Trust bar</strong> — cleaner, descriptive label text</div>
+    <div>➕ <strong>Problem section</strong> — new, "The Problem" framing</div>
+    <div>🔄 <strong>Steps → Solution</strong> — decorated label, left/right layout</div>
+    <div>🔄 <strong>Features → Stats row</strong> — 4-col icon grid</div>
+    <div>🔄 <strong>Score section</strong> — dark navy card with score breakdown</div>
+    <div>🔄 <strong>Testimonials</strong> — large quote + colorful vertical panel</div>
+    <div>🔄 <strong>FAQ</strong> — decorated label, bold title</div>
+    <div>🔄 <strong>Final CTA</strong> — dark navy + dot grid texture</div>
+    <div>✓ <strong>Nav + Footer</strong> — kept as-is</div>
+  </div>
+</div>
+
+</body>
+</html>

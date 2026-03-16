@@ -5,7 +5,7 @@
       "type": "frame",
       "id": "q2ZMJ",
       "x": 0,
-      "y": 0,
+      "y": -44,
       "name": "dashboard",
       "width": 1440,
       "height": 900,
@@ -1730,7 +1730,7 @@
     {
       "type": "frame",
       "id": "4mBob",
-      "x": 1560,
+      "x": 1626,
       "y": 0,
       "name": "dashboard--mobile",
       "width": 375,
@@ -1810,14 +1810,6 @@
                       "fontFamily": "Inter",
                       "fontSize": 13,
                       "fontWeight": "normal"
-                    },
-                    {
-                      "type": "note",
-                      "id": "tqySa",
-                      "name": "mobFilterNote",
-                      "width": 0,
-                      "height": 0,
-                      "content": "← Bottom sheet for filters — Base UI Drawer"
                     }
                   ]
                 }
@@ -2311,14 +2303,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "note",
-          "id": "Duw98",
-          "name": "tabNote",
-          "width": 0,
-          "height": 0,
-          "content": "Bottom tab bar: 56px, brand-navy, 5 icons — sidebar collapses to this on mobile; DASH-02"
         }
       ]
     },
@@ -2529,7 +2513,7 @@
                   "id": "1G0xY",
                   "name": "backTxt",
                   "fill": "#1B4FD8",
-                  "content": "← Back to Candidates",
+                  "content": "Back to Candidates",
                   "fontFamily": "Inter",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -2666,6 +2650,7 @@
                       "type": "frame",
                       "id": "RHPUk",
                       "name": "cdScoreCard",
+                      "width": 277,
                       "fill": "#FFFFFF",
                       "cornerRadius": 12,
                       "stroke": {
@@ -2920,7 +2905,7 @@
                   "type": "frame",
                   "id": "okrTT",
                   "name": "cdCenter",
-                  "width": "fill_container",
+                  "width": 274,
                   "layout": "vertical",
                   "gap": 16,
                   "children": [
@@ -3039,6 +3024,7 @@
                       "type": "frame",
                       "id": "TQNKT",
                       "name": "cdVideoCard",
+                      "width": 259,
                       "fill": "#FFFFFF",
                       "cornerRadius": 12,
                       "stroke": {
@@ -3099,6 +3085,7 @@
                       "type": "frame",
                       "id": "ppzLU",
                       "name": "fraudCard",
+                      "width": 257,
                       "fill": "#FFFFFF",
                       "cornerRadius": 12,
                       "stroke": {
@@ -3261,6 +3248,7 @@
                       "type": "frame",
                       "id": "pA6sD",
                       "name": "aiCard",
+                      "width": 361,
                       "fill": "#FFFFFF",
                       "cornerRadius": 12,
                       "stroke": {
@@ -3651,14 +3639,6 @@
                       "fontFamily": "Inter",
                       "fontSize": 14,
                       "fontWeight": "600"
-                    },
-                    {
-                      "type": "note",
-                      "id": "TIfgH",
-                      "name": "cdmInviteNote",
-                      "width": 0,
-                      "height": 0,
-                      "content": "← CalendarModal"
                     }
                   ]
                 }
@@ -4857,8 +4837,8 @@
     {
       "type": "note",
       "id": "b1tPC",
-      "x": 922,
-      "y": -205,
+      "x": 932,
+      "y": -325,
       "name": "inviteNote",
       "width": 0,
       "height": 0,
@@ -6826,7 +6806,7 @@
       "type": "note",
       "id": "KIyY1",
       "x": 595,
-      "y": -219,
+      "y": -325,
       "name": "dashNote",
       "width": 0,
       "height": 0,
@@ -6865,7 +6845,7 @@
     {
       "type": "note",
       "id": "EH7ra",
-      "x": -377,
+      "x": -352,
       "y": 3226,
       "name": "tpC1Note",
       "width": 0,
@@ -6911,6 +6891,36 @@
       "width": 400,
       "height": 48,
       "content": "← EmptyState from src/components/EmptyState.tsx — shown when candidates table returns empty array"
+    },
+    {
+      "type": "note",
+      "id": "Duw98",
+      "x": 2049,
+      "y": 284,
+      "name": "tabNote",
+      "width": 0,
+      "height": 0,
+      "content": "Bottom tab bar: 56px, brand-navy, 5 icons — sidebar collapses to this on mobile; DASH-02"
+    },
+    {
+      "type": "note",
+      "id": "tqySa",
+      "x": 2049,
+      "y": 14,
+      "name": "mobFilterNote",
+      "width": 214,
+      "height": 219,
+      "content": "← Bottom sheet for filters — Base UI Drawer"
+    },
+    {
+      "type": "note",
+      "id": "TIfgH",
+      "x": 2049,
+      "y": 952,
+      "name": "cdmInviteNote",
+      "width": 0,
+      "height": 0,
+      "content": "← CalendarModal"
     }
   ],
   "variables": {

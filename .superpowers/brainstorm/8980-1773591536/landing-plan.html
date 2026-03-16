@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Pages Design Plan</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, system-ui, sans-serif; background: #0a0a14; color: #e2e8f0; padding: 32px; line-height: 1.5; }
+  h1 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .subtitle { font-size: 14px; color: #94a3b8; margin-bottom: 32px; }
+  .pages { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .page-card { background: #131325; border: 1px solid #1e2a4a; border-radius: 12px; overflow: hidden; }
+  .page-header { padding: 14px 16px 12px; border-bottom: 1px solid #1e2a4a; display: flex; align-items: center; gap: 10px; }
+  .page-badge { background: #1B4FD8; color: #fff; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.5px; }
+  .page-badge.home { background: #0F2A6B; }
+  .page-badge.candidates { background: #1B4FD8; }
+  .page-badge.companies { background: #3B6FE8; }
+  .page-badge.pricing { background: #6366F1; }
+  .page-badge.contact { background: #4f46e5; }
+  .page-title { font-size: 14px; font-weight: 600; color: #fff; }
+  .page-route { font-size: 11px; color: #6366F1; font-family: monospace; margin-left: auto; }
+  .page-body { padding: 14px 16px; }
+  .section-list { list-style: none; }
+  .section-list li { display: flex; align-items: flex-start; gap: 8px; padding: 5px 0; font-size: 12px; color: #94a3b8; border-bottom: 1px solid #1a2035; }
+  .section-list li:last-child { border-bottom: none; }
+  .section-dot { width: 6px; height: 6px; border-radius: 50%; background: #1B4FD8; margin-top: 4px; flex-shrink: 0; }
+  .section-dot.hero { background: #6366F1; }
+  .section-dot.trust { background: #3B6FE8; }
+  .section-dot.cta { background: #22c55e; }
+  .section-name { font-weight: 500; color: #cbd5e1; }
+  .section-desc { color: #64748b; }
+
+  .legend { display: flex; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #94a3b8; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  .note { background: #0F2A6B22; border: 1px solid #1B4FD844; border-radius: 8px; padding: 14px 16px; margin-top: 24px; font-size: 13px; color: #94a3b8; }
+  .note strong { color: #a5b4fc; }
+  .brand-chip { display: inline-flex; align-items: center; gap: 6px; background: #131325; border: 1px solid #1e2a4a; border-radius: 6px; padding: 6px 12px; font-size: 12px; margin-right: 8px; margin-bottom: 8px; }
+  .color-swatch { width: 12px; height: 12px; border-radius: 2px; }
+  .brand-row { margin-bottom: 20px; }
+  .brand-label { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<h1>CrismaTest — Landing Pages Design Plan</h1>
+<p class="subtitle">5 frames will be designed in landing-pages.pen · Desktop 1440px wide · Brand colors & Inter typography</p>
+
+<div class="brand-row">
+  <div class="brand-label">Brand Palette</div>
+  <span class="brand-chip"><span class="color-swatch" style="background:#0F2A6B"></span> brand-navy #0F2A6B</span>
+  <span class="brand-chip"><span class="color-swatch" style="background:#1B4FD8"></span> brand-primary #1B4FD8</span>
+  <span class="brand-chip"><span class="color-swatch" style="background:#3B6FE8"></span> brand-secondary #3B6FE8</span>
+  <span class="brand-chip"><span class="color-swatch" style="background:#6366F1"></span> brand-accent #6366F1</span>
+  <span class="brand-chip"><span class="color-swatch" style="background:#EEF2FF; border:1px solid #444"></span> brand-light #EEF2FF</span>
+</div>
+
+<div class="pages">
+
+  <!-- HOME PAGE -->
+  <div class="page-card">
+    <div class="page-header">
+      <span class="page-badge home">HOME</span>
+      <span class="page-title">Home Page</span>
+      <span class="page-route">/</span>
+    </div>
+    <div class="page-body">
+      <ul class="section-list">
+        <li><span class="section-dot hero"></span><div><span class="section-name">Hero</span> — navy bg, gradient, headline, 2 CTAs, floating dashboard card mockup</div></li>
+        <li><span class="section-dot trust"></span><div><span class="section-name">Trust Bar</span> — scrolling marquee of company logos</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">What Is CrismaTest</span> — explanation section, light bg</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">3-Step Process</span> — numbered steps, how it works</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">For Companies</span> — feature grid, 4 cards</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Anti-Fraud</span> — dark section, fraud detection highlights</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Test Library</span> — preview of 8 roles</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Testimonials</span> — 3-column grid, social proof</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">FAQ</span> — 6-8 expandable items</div></li>
+        <li><span class="section-dot cta"></span><div><span class="section-name">Footer</span> — logo, nav columns, copyright</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOR CANDIDATES -->
+  <div class="page-card">
+    <div class="page-header">
+      <span class="page-badge candidates">CAND</span>
+      <span class="page-title">For Candidates</span>
+      <span class="page-route">/for-candidates</span>
+    </div>
+    <div class="page-body">
+      <ul class="section-list">
+        <li><span class="section-dot hero"></span><div><span class="section-name">Hero</span> — "Prove your skills, get noticed" headline + CTA</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">CrismaScore Breakdown</span> — 5 sub-score visual explanation</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">How to Share</span> — LinkedIn, copy link, certificate preview</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Social Proof</span> — candidate testimonials, hired stories</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Test Formats</span> — 6 question types preview</div></li>
+        <li><span class="section-dot cta"></span><div><span class="section-name">CTA Section</span> — "Take the Test" primary CTA + footer</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOR COMPANIES -->
+  <div class="page-card">
+    <div class="page-header">
+      <span class="page-badge companies">B2B</span>
+      <span class="page-title">For Companies</span>
+      <span class="page-route">/for-companies</span>
+    </div>
+    <div class="page-body">
+      <ul class="section-list">
+        <li><span class="section-dot hero"></span><div><span class="section-name">Hero</span> — "Hire confidently, hire fast" + "Request Demo" + "Start Trial"</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Value Props</span> — speed, accuracy, anti-fraud trio</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Dashboard Screenshot</span> — product mockup of candidate table</div></li>
+        <li><span class="section-dot trust"></span><div><span class="section-name">Company Logos</span> — trust bar, client logos</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Features Deep Dive</span> — 3 alternating feature+screenshot rows</div></li>
+        <li><span class="section-dot cta"></span><div><span class="section-name">CTA Section</span> — demo request + footer</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="page-card">
+    <div class="page-header">
+      <span class="page-badge pricing">PRICE</span>
+      <span class="page-title">Pricing</span>
+      <span class="page-route">/pricing</span>
+    </div>
+    <div class="page-body">
+      <ul class="section-list">
+        <li><span class="section-dot hero"></span><div><span class="section-name">Header</span> — headline + monthly/annual toggle (Save 20%)</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Plan Cards ×4</span> — Free / Starter $49 / Pro $149 / Enterprise</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Pro Card</span> — highlighted, taller, "Most Popular" badge, brand-primary border</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Feature Comparison</span> — brief feature list per plan</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">FAQ</span> — 4-5 pricing-specific questions</div></li>
+        <li><span class="section-dot cta"></span><div><span class="section-name">Enterprise CTA</span> — "Contact Us" banner + footer</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page-card">
+    <div class="page-header">
+      <span class="page-badge contact">FORM</span>
+      <span class="page-title">Contact / Demo</span>
+      <span class="page-route">/contact</span>
+    </div>
+    <div class="page-body">
+      <ul class="section-list">
+        <li><span class="section-dot hero"></span><div><span class="section-name">Header</span> — "Request a Demo" headline, navy bg strip</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">Form</span> — name, company, email, team size dropdown, message textarea</div></li>
+        <li><span class="section-dot"></span><div><span class="section-name">GDPR Consent</span> — checkbox required to enable submit</div></li>
+        <li><span class="section-dot cta"></span><div><span class="section-name">Success State</span> — toast + form reset preview</div></li>
+        <li><span class="section-dot trust"></span><div><span class="section-name">Side Panel</span> — "Why CrismaTest?" trust points alongside form</div></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">
+  <strong>Design approach:</strong> Hero sections use <strong>navy (#0F2A6B)</strong> with gradient to brand-primary. Body sections alternate white and brand-light (#EEF2FF). Typography uses Inter throughout. Each frame is 1440px wide, height fits content. Mobile frames are not in scope for this pass (desktop only).
+</div>
+
+</body>
+</html>

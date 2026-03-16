@@ -1,1307 +1,1841 @@
 {
-  "version": "1.0",
-  "variables": {
-    "brand-primary": "#1B4FD8",
-    "brand-secondary": "#3B6FE8",
-    "brand-navy": "#0F2A6B",
-    "brand-light": "#EEF2FF",
-    "brand-accent": "#6366F1",
-    "font-sans": "Inter",
-    "font-mono": "JetBrains Mono"
-  },
-  "imports": [
-    { "file": "landing-pages.pen", "nodeId": "nav-shell", "as": "NavShell" }
-  ],
-  "nodes": [
+  "version": "2.8",
+  "children": [
     {
-      "id": "sign-up",
       "type": "frame",
-      "label": "sign-up — /sign-up desktop",
+      "id": "dghI9",
+      "x": 0,
+      "y": 0,
+      "name": "sign-up",
       "width": 1440,
       "height": 900,
-      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "fill": "$brand-light",
       "layout": "vertical",
-      "align": "center",
-      "justify": "center",
+      "justifyContent": "center",
+      "alignItems": "center",
       "children": [
         {
-          "id": "sign-up-card",
           "type": "frame",
-          "label": "Auth card",
+          "id": "pYoqc",
+          "name": "signupCard",
           "width": 480,
+          "fill": "#FFFFFF",
+          "cornerRadius": 12,
           "layout": "vertical",
           "gap": 20,
-          "padding": { "x": 40, "y": 40 },
-          "fill": { "type": "solid", "color": "#FFFFFF" },
-          "cornerRadius": 12,
-          "shadow": { "type": "md" },
+          "padding": 40,
           "children": [
             {
-              "id": "sign-up-logo",
-              "type": "rect",
-              "label": "← LogoMark from src/components/nav/LogoMark.tsx",
-              "width": 120,
+              "type": "frame",
+              "id": "6qPHr",
+              "name": "logoRow",
+              "width": "fill_container",
               "height": 40,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
-              "cornerRadius": 4,
-              "align": "center"
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "rDmDZ",
+                  "name": "logoMark",
+                  "width": 140,
+                  "height": 32,
+                  "fill": "$brand-primary",
+                  "cornerRadius": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GLtQy",
+                      "name": "logoLabel",
+                      "fill": "#FFFFFF",
+                      "content": "CrismaTest",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "id": "sign-up-heading",
               "type": "text",
-              "label": "Create your account",
+              "id": "v11K5",
+              "name": "heading",
+              "fill": "$brand-navy",
+              "content": "Create your account",
+              "textAlign": "center",
+              "fontFamily": "Inter",
               "fontSize": 24,
-              "fontWeight": "bold",
-              "fontFamily": "var(font-sans)",
-              "color": "var(brand-navy)",
-              "align": "center"
+              "fontWeight": "700"
             },
             {
-              "id": "sign-up-role-selector",
               "type": "frame",
-              "label": "Role selector toggle",
-              "layout": "horizontal",
-              "gap": 0,
-              "width": 400,
-              "height": 44,
+              "id": "Ya7XX",
+              "name": "roleRow",
+              "width": "fill_container",
               "cornerRadius": 8,
-              "fill": { "type": "none" },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$brand-primary"
+              },
               "children": [
                 {
-                  "id": "role-candidate-btn",
                   "type": "frame",
-                  "label": "Candidate (selected)",
-                  "flex": 1,
-                  "height": 44,
-                  "fill": { "type": "solid", "color": "var(brand-primary)" },
+                  "id": "jON1M",
+                  "name": "candidateBtn",
+                  "width": "fill_container",
+                  "height": 40,
+                  "fill": "$brand-primary",
                   "cornerRadius": 8,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "justify": "center",
+                  "justifyContent": "center",
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "role-candidate-text",
                       "type": "text",
-                      "label": "Candidate",
+                      "id": "P09U2",
+                      "name": "candidateLbl",
+                      "fill": "#FFFFFF",
+                      "content": "Candidate",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontWeight": "semibold",
-                      "fontFamily": "var(font-sans)",
-                      "color": "#FFFFFF"
+                      "fontWeight": "600"
                     }
                   ]
                 },
                 {
-                  "id": "role-company-btn",
                   "type": "frame",
-                  "label": "Company (outline / unselected)",
-                  "flex": 1,
-                  "height": 44,
-                  "fill": { "type": "none" },
-                  "border": { "color": "var(brand-primary)", "width": 1 },
+                  "id": "RDmSl",
+                  "name": "companyBtn",
+                  "width": "fill_container",
+                  "height": 40,
+                  "fill": "#FFFFFF",
                   "cornerRadius": 8,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "justify": "center",
+                  "justifyContent": "center",
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "role-company-text",
                       "type": "text",
-                      "label": "Company",
+                      "id": "heNhJ",
+                      "name": "companyLbl",
+                      "fill": "$brand-primary",
+                      "content": "Company",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontWeight": "semibold",
-                      "fontFamily": "var(font-sans)",
-                      "color": "var(brand-primary)"
+                      "fontWeight": "600"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "sign-up-full-name",
               "type": "frame",
-              "label": "Full Name field",
+              "id": "53Dve",
+              "name": "nameField",
+              "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
-              "fill": { "type": "none" },
               "children": [
                 {
-                  "id": "sign-up-full-name-label",
                   "type": "text",
-                  "label": "Full Name",
+                  "id": "qc3oV",
+                  "name": "nameLbl",
+                  "fill": "$brand-navy",
+                  "content": "Full Name",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 },
                 {
-                  "id": "sign-up-full-name-input",
                   "type": "frame",
-                  "label": "Text input",
-                  "width": 400,
+                  "id": "D1xrX",
+                  "name": "nameInput",
+                  "width": "fill_container",
                   "height": 44,
-                  "fill": { "type": "solid", "color": "#FFFFFF" },
-                  "border": { "color": "#D1D5DB", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D1D5DB"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "sign-up-full-name-placeholder",
                       "type": "text",
-                      "label": "Jane Doe",
+                      "id": "AIfG3",
+                      "name": "namePlaceholder",
+                      "fill": "#9CA3AF",
+                      "content": "Jane Smith",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#9CA3AF"
+                      "fontWeight": "normal"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "sign-up-email",
               "type": "frame",
-              "label": "Email field",
+              "id": "q0Wnn",
+              "name": "emailField",
+              "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
-              "fill": { "type": "none" },
               "children": [
                 {
-                  "id": "sign-up-email-label",
                   "type": "text",
-                  "label": "Email",
+                  "id": "fUGh3",
+                  "name": "emailLbl",
+                  "fill": "$brand-navy",
+                  "content": "Email",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 },
                 {
-                  "id": "sign-up-email-input",
                   "type": "frame",
-                  "label": "Text input",
-                  "width": 400,
+                  "id": "V7mG6",
+                  "name": "emailInput",
+                  "width": "fill_container",
                   "height": 44,
-                  "fill": { "type": "solid", "color": "#FFFFFF" },
-                  "border": { "color": "#D1D5DB", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D1D5DB"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "sign-up-email-placeholder",
                       "type": "text",
-                      "label": "jane@example.com",
+                      "id": "s7aOt",
+                      "name": "emailPlaceholder",
+                      "fill": "#9CA3AF",
+                      "content": "jane@example.com",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#9CA3AF"
+                      "fontWeight": "normal"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "sign-up-password",
               "type": "frame",
-              "label": "Password field",
+              "id": "p1QVn",
+              "name": "pwField",
+              "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
-              "fill": { "type": "none" },
               "children": [
                 {
-                  "id": "sign-up-password-label",
                   "type": "text",
-                  "label": "Password",
+                  "id": "1axlY",
+                  "name": "pwLbl",
+                  "fill": "$brand-navy",
+                  "content": "Password",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 },
                 {
-                  "id": "sign-up-password-input",
                   "type": "frame",
-                  "label": "Password input with show/hide toggle",
-                  "width": 400,
+                  "id": "XLh8n",
+                  "name": "pwInput",
+                  "width": "fill_container",
                   "height": 44,
-                  "fill": { "type": "solid", "color": "#FFFFFF" },
-                  "border": { "color": "#D1D5DB", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
-                  "gap": 0,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D1D5DB"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "sign-up-password-value",
                       "type": "text",
-                      "label": "••••••••",
+                      "id": "8ewBw",
+                      "name": "pwPlaceholder",
+                      "fill": "#9CA3AF",
+                      "content": "••••••••",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151",
-                      "flex": 1
+                      "fontWeight": "normal"
                     },
                     {
-                      "id": "sign-up-password-eye",
-                      "type": "rect",
-                      "label": "show/hide password — eye icon toggle",
-                      "width": 20,
-                      "height": 20,
-                      "fill": { "type": "solid", "color": "#9CA3AF" },
-                      "cornerRadius": 2,
-                      "annotation": "Eye icon — toggles input type between password and text (Auth-01)"
+                      "type": "icon_font",
+                      "id": "h8KYq",
+                      "name": "eyeIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "eye",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "sign-up-cta",
               "type": "frame",
-              "label": "Create Account CTA",
-              "width": 400,
+              "id": "cAvEv",
+              "name": "ctaBtn",
+              "width": "fill_container",
               "height": 48,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
+              "fill": "$brand-primary",
               "cornerRadius": 8,
-              "layout": "horizontal",
-              "align": "center",
-              "justify": "center",
+              "justifyContent": "center",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "sign-up-cta-text",
                   "type": "text",
-                  "label": "Create Account",
+                  "id": "7ErUg",
+                  "name": "ctaLbl",
+                  "fill": "#FFFFFF",
+                  "content": "Create Account",
+                  "fontFamily": "Inter",
                   "fontSize": 15,
-                  "fontWeight": "semibold",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#FFFFFF"
+                  "fontWeight": "600"
                 }
               ]
             },
             {
-              "id": "sign-up-divider",
               "type": "frame",
-              "label": "Divider row",
-              "layout": "horizontal",
+              "id": "5NXsx",
+              "name": "dividerRow",
+              "width": "fill_container",
               "gap": 12,
-              "align": "center",
-              "fill": { "type": "none" },
-              "width": 400,
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "sign-up-divider-line-left",
-                  "type": "rect",
-                  "label": "",
-                  "flex": 1,
+                  "type": "frame",
+                  "id": "18aR7",
+                  "name": "divLine1",
+                  "width": "fill_container",
                   "height": 1,
-                  "fill": { "type": "solid", "color": "#E5E7EB" }
+                  "fill": "#E5E7EB"
                 },
                 {
-                  "id": "sign-up-divider-text",
                   "type": "text",
-                  "label": "or continue with",
-                  "fontSize": 12,
-                  "fontFamily": "var(font-sans)",
-                  "color": "#9CA3AF"
+                  "id": "YLMQI",
+                  "name": "divText",
+                  "fill": "#6B7280",
+                  "content": "or continue with",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
                 },
                 {
-                  "id": "sign-up-divider-line-right",
-                  "type": "rect",
-                  "label": "",
-                  "flex": 1,
+                  "type": "frame",
+                  "id": "OlWR9",
+                  "name": "divLine2",
+                  "width": "fill_container",
                   "height": 1,
-                  "fill": { "type": "solid", "color": "#E5E7EB" }
+                  "fill": "#E5E7EB"
                 }
               ]
             },
             {
-              "id": "sign-up-oauth-btn",
               "type": "frame",
-              "label": "Google OAuth button",
-              "width": 400,
-              "height": 48,
-              "fill": { "type": "solid", "color": "#FFFFFF" },
-              "border": { "color": "#D1D5DB", "width": 1 },
+              "id": "xWgvm",
+              "name": "googleBtn",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "#FFFFFF",
               "cornerRadius": 8,
-              "layout": "horizontal",
-              "align": "center",
-              "justify": "center",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#D1D5DB"
+              },
               "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "sign-up-google-logo",
-                  "type": "rect",
-                  "label": "Google logo placeholder",
-                  "width": 20,
-                  "height": 20,
-                  "fill": { "type": "solid", "color": "#EA4335" },
-                  "cornerRadius": 10
+                  "type": "icon_font",
+                  "id": "VslVa",
+                  "name": "googleIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "globe",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
                 },
                 {
-                  "id": "sign-up-google-text",
                   "type": "text",
-                  "label": "Sign in with Google",
+                  "id": "X3uFL",
+                  "name": "googleLbl",
+                  "fill": "#374151",
+                  "content": "Sign in with Google",
+                  "fontFamily": "Inter",
                   "fontSize": 14,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 }
               ]
             },
             {
-              "id": "sign-up-footer-link",
-              "type": "text",
-              "label": "Already have an account? Login",
-              "fontSize": 13,
-              "fontFamily": "var(font-sans)",
-              "color": "#6B7280",
-              "align": "center",
-              "annotation": "Login link → /login"
+              "type": "frame",
+              "id": "476nH",
+              "name": "footerRow",
+              "width": "fill_container",
+              "gap": 4,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wK0bW",
+                  "name": "footerText",
+                  "fill": "#6B7280",
+                  "content": "Already have an account?",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "94CUW",
+                  "name": "footerLink",
+                  "fill": "$brand-primary",
+                  "content": "Login",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
             }
           ]
-        },
-        {
-          "id": "sign-up-no-navshell-note",
-          "type": "note",
-          "label": "← NavShell omitted on auth pages — full-screen centered card layout per AUTH-01",
-          "x": 20,
-          "y": 20
-        },
-        {
-          "id": "sign-up-oauth-note",
-          "type": "note",
-          "label": "→ Google OAuth shows 'Coming soon' toast on click (visual only, AUTH-01)",
-          "x": 20,
-          "y": 60
         }
       ]
     },
     {
-      "id": "login",
       "type": "frame",
-      "label": "login — /login desktop",
+      "id": "hxbaJ",
+      "x": 0,
+      "y": 1301,
+      "name": "login",
       "width": 1440,
       "height": 900,
-      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "fill": "$brand-light",
       "layout": "vertical",
-      "align": "center",
-      "justify": "center",
+      "justifyContent": "center",
+      "alignItems": "center",
       "children": [
         {
-          "id": "login-card",
           "type": "frame",
-          "label": "Auth card",
+          "id": "ajlUJ",
+          "name": "loginCard",
           "width": 480,
+          "fill": "#FFFFFF",
+          "cornerRadius": 12,
           "layout": "vertical",
           "gap": 20,
-          "padding": { "x": 40, "y": 40 },
-          "fill": { "type": "solid", "color": "#FFFFFF" },
-          "cornerRadius": 12,
-          "shadow": { "type": "md" },
+          "padding": 40,
           "children": [
             {
-              "id": "login-logo",
-              "type": "rect",
-              "label": "← LogoMark from src/components/nav/LogoMark.tsx",
-              "width": 120,
-              "height": 40,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
-              "cornerRadius": 4,
-              "align": "center"
-            },
-            {
-              "id": "login-heading",
-              "type": "text",
-              "label": "Welcome back",
-              "fontSize": 24,
-              "fontWeight": "bold",
-              "fontFamily": "var(font-sans)",
-              "color": "var(brand-navy)",
-              "align": "center"
-            },
-            {
-              "id": "login-email",
               "type": "frame",
-              "label": "Email field",
-              "layout": "vertical",
-              "gap": 6,
-              "fill": { "type": "none" },
+              "id": "YaPuX",
+              "name": "lLogoRow",
+              "width": "fill_container",
+              "height": 40,
+              "justifyContent": "center",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "login-email-label",
-                  "type": "text",
-                  "label": "Email",
-                  "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
-                },
-                {
-                  "id": "login-email-input",
                   "type": "frame",
-                  "label": "Text input",
-                  "width": 400,
-                  "height": 44,
-                  "fill": { "type": "solid", "color": "#FFFFFF" },
-                  "border": { "color": "#D1D5DB", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
+                  "id": "wwpBE",
+                  "name": "lLogoMark",
+                  "width": 140,
+                  "height": 32,
+                  "fill": "$brand-primary",
+                  "cornerRadius": 4,
                   "children": [
                     {
-                      "id": "login-email-placeholder",
                       "type": "text",
-                      "label": "jane@example.com",
-                      "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#9CA3AF"
+                      "id": "vaXY3",
+                      "name": "lLogoLbl",
+                      "fill": "#FFFFFF",
+                      "content": "CrismaTest",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "700"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "login-password",
+              "type": "text",
+              "id": "OwKVp",
+              "name": "lHeading",
+              "fill": "$brand-navy",
+              "content": "Welcome back",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
               "type": "frame",
-              "label": "Password field",
+              "id": "773wm",
+              "name": "lEmailField",
+              "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
-              "fill": { "type": "none" },
               "children": [
                 {
-                  "id": "login-password-label",
                   "type": "text",
-                  "label": "Password",
+                  "id": "j62wA",
+                  "name": "lEmailLbl",
+                  "fill": "$brand-navy",
+                  "content": "Email",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 },
                 {
-                  "id": "login-password-input",
                   "type": "frame",
-                  "label": "Password input with show/hide toggle",
-                  "width": 400,
+                  "id": "4T5MK",
+                  "name": "lEmailInput",
+                  "width": "fill_container",
                   "height": 44,
-                  "fill": { "type": "solid", "color": "#FFFFFF" },
-                  "border": { "color": "#D1D5DB", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
-                  "gap": 0,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D1D5DB"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "login-password-value",
                       "type": "text",
-                      "label": "••••••••",
+                      "id": "pKX3e",
+                      "name": "lEmailPlaceholder",
+                      "fill": "#9CA3AF",
+                      "content": "jane@example.com",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151",
-                      "flex": 1
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FP59c",
+              "name": "lPwField",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fpQx9",
+                  "name": "lPwLbl",
+                  "fill": "$brand-navy",
+                  "content": "Password",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "1Ug3l",
+                  "name": "lPwInput",
+                  "width": "fill_container",
+                  "height": 44,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D1D5DB"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bODlQ",
+                      "name": "lPwDots",
+                      "fill": "#9CA3AF",
+                      "content": "••••••••",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     },
                     {
-                      "id": "login-password-eye",
-                      "type": "rect",
-                      "label": "show/hide password — eye icon toggle",
-                      "width": 20,
-                      "height": 20,
-                      "fill": { "type": "solid", "color": "#9CA3AF" },
-                      "cornerRadius": 2
+                      "type": "icon_font",
+                      "id": "1y5OE",
+                      "name": "lEyeIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "eye",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "login-remember-row",
               "type": "frame",
-              "label": "Remember me + Forgot password row",
-              "layout": "horizontal",
-              "align": "center",
-              "fill": { "type": "none" },
-              "width": 400,
+              "id": "0fv9q",
+              "name": "lRememberRow",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "login-remember-checkbox",
                   "type": "frame",
-                  "label": "Remember me checkbox",
-                  "layout": "horizontal",
+                  "id": "u7hcN",
+                  "name": "lCheckbox",
                   "gap": 8,
-                  "align": "center",
-                  "fill": { "type": "none" },
-                  "flex": 1,
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "login-checkbox-box",
-                      "type": "rect",
-                      "label": "Checkbox",
+                      "type": "frame",
+                      "id": "dPHmg",
+                      "name": "lCheckboxBox",
                       "width": 16,
                       "height": 16,
-                      "fill": { "type": "none" },
-                      "border": { "color": "#D1D5DB", "width": 1 },
-                      "cornerRadius": 3
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#D1D5DB"
+                      }
                     },
                     {
-                      "id": "login-remember-label",
                       "type": "text",
-                      "label": "Remember me",
+                      "id": "1EvYX",
+                      "name": "lCheckboxLbl",
+                      "fill": "#374151",
+                      "content": "Remember me",
+                      "fontFamily": "Inter",
                       "fontSize": 13,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151"
+                      "fontWeight": "normal"
                     }
                   ]
                 },
                 {
-                  "id": "login-forgot-link",
                   "type": "text",
-                  "label": "Forgot password?",
+                  "id": "ARJyJ",
+                  "name": "lForgotLink",
+                  "fill": "$brand-primary",
+                  "content": "Forgot password?",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontFamily": "var(font-sans)",
-                  "color": "var(brand-primary)",
-                  "annotation": "Links to /forgot-password — AUTH-02"
+                  "fontWeight": "500"
                 }
               ]
             },
             {
-              "id": "login-cta",
               "type": "frame",
-              "label": "Sign In CTA",
-              "width": 400,
+              "id": "hSEf3",
+              "name": "lCtaBtn",
+              "width": "fill_container",
               "height": 48,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
+              "fill": "$brand-primary",
               "cornerRadius": 8,
-              "layout": "horizontal",
-              "align": "center",
-              "justify": "center",
+              "justifyContent": "center",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "login-cta-text",
                   "type": "text",
-                  "label": "Sign In",
+                  "id": "9HGab",
+                  "name": "lCtaLbl",
+                  "fill": "#FFFFFF",
+                  "content": "Sign In",
+                  "fontFamily": "Inter",
                   "fontSize": 15,
-                  "fontWeight": "semibold",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#FFFFFF"
+                  "fontWeight": "600"
                 }
               ]
             },
             {
-              "id": "login-divider",
               "type": "frame",
-              "label": "Divider row",
-              "layout": "horizontal",
+              "id": "kQP8c",
+              "name": "lDivRow",
+              "width": "fill_container",
               "gap": 12,
-              "align": "center",
-              "fill": { "type": "none" },
-              "width": 400,
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "login-divider-line-left",
-                  "type": "rect",
-                  "label": "",
-                  "flex": 1,
+                  "type": "frame",
+                  "id": "PENMP",
+                  "name": "lDivLine1",
+                  "width": "fill_container",
                   "height": 1,
-                  "fill": { "type": "solid", "color": "#E5E7EB" }
+                  "fill": "#E5E7EB"
                 },
                 {
-                  "id": "login-divider-text",
                   "type": "text",
-                  "label": "or continue with",
-                  "fontSize": 12,
-                  "fontFamily": "var(font-sans)",
-                  "color": "#9CA3AF"
+                  "id": "smWME",
+                  "name": "lDivText",
+                  "fill": "#6B7280",
+                  "content": "or continue with",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
                 },
                 {
-                  "id": "login-divider-line-right",
-                  "type": "rect",
-                  "label": "",
-                  "flex": 1,
+                  "type": "frame",
+                  "id": "tXwpR",
+                  "name": "lDivLine2",
+                  "width": "fill_container",
                   "height": 1,
-                  "fill": { "type": "solid", "color": "#E5E7EB" }
+                  "fill": "#E5E7EB"
                 }
               ]
             },
             {
-              "id": "login-oauth-btn",
               "type": "frame",
-              "label": "Google OAuth button",
-              "width": 400,
-              "height": 48,
-              "fill": { "type": "solid", "color": "#FFFFFF" },
-              "border": { "color": "#D1D5DB", "width": 1 },
+              "id": "N5jlc",
+              "name": "lGoogleBtn",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "#FFFFFF",
               "cornerRadius": 8,
-              "layout": "horizontal",
-              "align": "center",
-              "justify": "center",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#D1D5DB"
+              },
               "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "login-google-logo",
-                  "type": "rect",
-                  "label": "Google logo placeholder",
-                  "width": 20,
-                  "height": 20,
-                  "fill": { "type": "solid", "color": "#EA4335" },
-                  "cornerRadius": 10
+                  "type": "icon_font",
+                  "id": "fDpc5",
+                  "name": "lGoogleIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "globe",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
                 },
                 {
-                  "id": "login-google-text",
                   "type": "text",
-                  "label": "Sign in with Google",
+                  "id": "aD3ky",
+                  "name": "lGoogleLbl",
+                  "fill": "#374151",
+                  "content": "Sign in with Google",
+                  "fontFamily": "Inter",
                   "fontSize": 14,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 }
               ]
             },
             {
-              "id": "login-footer-link",
-              "type": "text",
-              "label": "Don't have an account? Sign up",
-              "fontSize": 13,
-              "fontFamily": "var(font-sans)",
-              "color": "#6B7280",
-              "align": "center",
-              "annotation": "Sign up link → /sign-up"
+              "type": "frame",
+              "id": "wbDj1",
+              "name": "lFooterRow",
+              "width": "fill_container",
+              "gap": 4,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "k3jAr",
+                  "name": "lFooterText",
+                  "fill": "#6B7280",
+                  "content": "Don't have an account?",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "uvDkY",
+                  "name": "lFooterLink",
+                  "fill": "$brand-primary",
+                  "content": "Sign up",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
             }
           ]
-        },
-        {
-          "id": "login-no-navshell-note",
-          "type": "note",
-          "label": "← NavShell omitted on auth pages — full-screen centered card layout per AUTH-02",
-          "x": 20,
-          "y": 20
-        },
-        {
-          "id": "login-oauth-note",
-          "type": "note",
-          "label": "→ Google OAuth shows 'Coming soon' toast on click (visual only, AUTH-02)",
-          "x": 20,
-          "y": 60
         }
       ]
     },
     {
-      "id": "forgot-password",
       "type": "frame",
-      "label": "forgot-password — /forgot-password desktop",
+      "id": "OnUL2",
+      "x": 0,
+      "y": -1258,
+      "name": "forgot-password",
       "width": 1440,
       "height": 900,
-      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "fill": "$brand-light",
       "layout": "vertical",
-      "align": "center",
-      "justify": "center",
+      "justifyContent": "center",
+      "alignItems": "center",
       "children": [
         {
-          "id": "forgot-password-card",
           "type": "frame",
-          "label": "Auth card",
+          "id": "XlhPE",
+          "name": "fpCard",
           "width": 480,
+          "fill": "#FFFFFF",
+          "cornerRadius": 12,
           "layout": "vertical",
           "gap": 20,
-          "padding": { "x": 40, "y": 48 },
-          "fill": { "type": "solid", "color": "#FFFFFF" },
-          "cornerRadius": 12,
-          "shadow": { "type": "md" },
-          "align": "center",
+          "padding": 40,
+          "alignItems": "center",
           "children": [
             {
-              "id": "forgot-password-logo",
-              "type": "rect",
-              "label": "← LogoMark from src/components/nav/LogoMark.tsx",
-              "width": 120,
+              "type": "frame",
+              "id": "kNWds",
+              "name": "fpLogoRow",
+              "width": "fill_container",
               "height": 40,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
-              "cornerRadius": 4,
-              "align": "center"
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dHShL",
+                  "name": "fpLogoMark",
+                  "width": 140,
+                  "height": 32,
+                  "fill": "$brand-primary",
+                  "cornerRadius": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "E8kmh",
+                      "name": "fpLogoLbl",
+                      "fill": "#FFFFFF",
+                      "content": "CrismaTest",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "id": "forgot-password-envelope",
-              "type": "rect",
-              "label": "Email envelope icon — 48px, brand-accent color",
+              "type": "icon_font",
+              "id": "3oypj",
+              "name": "fpEmailIcon",
               "width": 48,
               "height": 48,
-              "fill": { "type": "solid", "color": "var(brand-accent)" },
-              "cornerRadius": 24,
-              "align": "center",
-              "annotation": "Envelope/mail icon — Heroicons outline, brand-accent #6366F1, 48x48"
+              "iconFontName": "mail",
+              "iconFontFamily": "lucide",
+              "fill": "$brand-accent"
             },
             {
-              "id": "forgot-password-heading",
               "type": "text",
-              "label": "Check your email",
+              "id": "guErb",
+              "name": "fpHeading",
+              "fill": "$brand-navy",
+              "content": "Check your email",
+              "textAlign": "center",
+              "fontFamily": "Inter",
               "fontSize": 24,
-              "fontWeight": "bold",
-              "fontFamily": "var(font-sans)",
-              "color": "var(brand-navy)",
-              "align": "center"
+              "fontWeight": "700"
             },
             {
-              "id": "forgot-password-body",
               "type": "text",
-              "label": "We've sent a password reset link to your email address.",
+              "id": "YXndF",
+              "name": "fpBody",
+              "fill": "#6B7280",
+              "content": "We've sent a password reset link to your email address.",
+              "textAlign": "center",
+              "fontFamily": "Inter",
               "fontSize": 14,
-              "fontFamily": "var(font-sans)",
-              "color": "#6B7280",
-              "align": "center",
-              "lineHeight": 1.6
+              "fontWeight": "normal"
             },
             {
-              "id": "forgot-password-back-link",
               "type": "text",
-              "label": "Back to Login",
+              "id": "nvKLx",
+              "name": "fpBackLink",
+              "fill": "$brand-primary",
+              "content": "← Back to Login",
+              "textAlign": "center",
+              "fontFamily": "Inter",
               "fontSize": 14,
-              "fontWeight": "medium",
-              "fontFamily": "var(font-sans)",
-              "color": "var(brand-primary)",
-              "align": "center",
-              "annotation": "Links back to /login"
+              "fontWeight": "600"
             }
           ]
-        },
-        {
-          "id": "forgot-password-note",
-          "type": "note",
-          "label": "Static confirmation screen — no API call; AUTH-03. No email input field — this is the post-submission confirmation state.",
-          "x": 20,
-          "y": 20
         }
       ]
     },
     {
-      "id": "sign-up--error",
       "type": "frame",
-      "label": "sign-up--error — /sign-up form error state variant",
+      "id": "u7d7x",
+      "x": 1520,
+      "y": 0,
+      "name": "sign-up--error",
       "width": 1440,
       "height": 900,
-      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "fill": "$brand-light",
       "layout": "vertical",
-      "align": "center",
-      "justify": "center",
+      "justifyContent": "center",
+      "alignItems": "center",
       "children": [
         {
-          "id": "sign-up-error-card",
           "type": "frame",
-          "label": "Auth card — error state",
+          "id": "LA42z",
+          "name": "signupCard",
           "width": 480,
+          "fill": "#FFFFFF",
+          "cornerRadius": 12,
           "layout": "vertical",
           "gap": 20,
-          "padding": { "x": 40, "y": 40 },
-          "fill": { "type": "solid", "color": "#FFFFFF" },
-          "cornerRadius": 12,
-          "shadow": { "type": "md" },
+          "padding": 40,
           "children": [
             {
-              "id": "sign-up-error-logo",
-              "type": "rect",
-              "label": "← LogoMark from src/components/nav/LogoMark.tsx",
-              "width": 120,
+              "type": "frame",
+              "id": "60Szf",
+              "name": "logoRow",
+              "width": "fill_container",
               "height": 40,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
-              "cornerRadius": 4,
-              "align": "center"
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "9p6ns",
+                  "name": "logoMark",
+                  "width": 140,
+                  "height": 32,
+                  "fill": "$brand-primary",
+                  "cornerRadius": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "2YFM1",
+                      "name": "logoLabel",
+                      "fill": "#FFFFFF",
+                      "content": "CrismaTest",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "id": "sign-up-error-heading",
               "type": "text",
-              "label": "Create your account",
+              "id": "GKmQm",
+              "name": "heading",
+              "fill": "$brand-navy",
+              "content": "Create your account",
+              "textAlign": "center",
+              "fontFamily": "Inter",
               "fontSize": 24,
-              "fontWeight": "bold",
-              "fontFamily": "var(font-sans)",
-              "color": "var(brand-navy)",
-              "align": "center"
+              "fontWeight": "700"
             },
             {
-              "id": "sign-up-error-role-selector",
               "type": "frame",
-              "label": "Role selector toggle (same as base state)",
-              "layout": "horizontal",
-              "gap": 0,
-              "width": 400,
-              "height": 44,
+              "id": "tIxEb",
+              "name": "roleRow",
+              "width": "fill_container",
               "cornerRadius": 8,
-              "fill": { "type": "none" },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$brand-primary"
+              },
               "children": [
                 {
-                  "id": "sign-up-error-role-candidate-btn",
                   "type": "frame",
-                  "label": "Candidate (selected)",
-                  "flex": 1,
-                  "height": 44,
-                  "fill": { "type": "solid", "color": "var(brand-primary)" },
+                  "id": "vUFlr",
+                  "name": "candidateBtn",
+                  "width": "fill_container",
+                  "height": 40,
+                  "fill": "$brand-primary",
                   "cornerRadius": 8,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "justify": "center",
+                  "justifyContent": "center",
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "sign-up-error-role-candidate-text",
                       "type": "text",
-                      "label": "Candidate",
+                      "id": "HSVaO",
+                      "name": "candidateLbl",
+                      "fill": "#FFFFFF",
+                      "content": "Candidate",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontWeight": "semibold",
-                      "fontFamily": "var(font-sans)",
-                      "color": "#FFFFFF"
+                      "fontWeight": "600"
                     }
                   ]
                 },
                 {
-                  "id": "sign-up-error-role-company-btn",
                   "type": "frame",
-                  "label": "Company (outline / unselected)",
-                  "flex": 1,
-                  "height": 44,
-                  "fill": { "type": "none" },
-                  "border": { "color": "var(brand-primary)", "width": 1 },
+                  "id": "Ln7PU",
+                  "name": "companyBtn",
+                  "width": "fill_container",
+                  "height": 40,
+                  "fill": "#FFFFFF",
                   "cornerRadius": 8,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "justify": "center",
+                  "justifyContent": "center",
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "sign-up-error-role-company-text",
                       "type": "text",
-                      "label": "Company",
+                      "id": "n11Bp",
+                      "name": "companyLbl",
+                      "fill": "$brand-primary",
+                      "content": "Company",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontWeight": "semibold",
-                      "fontFamily": "var(font-sans)",
-                      "color": "var(brand-primary)"
+                      "fontWeight": "600"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "sign-up-error-full-name",
               "type": "frame",
-              "label": "Full Name field (no error)",
+              "id": "PfELG",
+              "name": "nameField",
+              "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
-              "fill": { "type": "none" },
               "children": [
                 {
-                  "id": "sign-up-error-full-name-label",
                   "type": "text",
-                  "label": "Full Name",
+                  "id": "58dzx",
+                  "name": "nameLbl",
+                  "fill": "$brand-navy",
+                  "content": "Full Name",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 },
                 {
-                  "id": "sign-up-error-full-name-input",
                   "type": "frame",
-                  "label": "Text input",
-                  "width": 400,
+                  "id": "Q0ubj",
+                  "name": "nameInput",
+                  "width": "fill_container",
                   "height": 44,
-                  "fill": { "type": "solid", "color": "#FFFFFF" },
-                  "border": { "color": "#D1D5DB", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D1D5DB"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "sign-up-error-full-name-value",
                       "type": "text",
-                      "label": "Jane Doe",
+                      "id": "2ZRBk",
+                      "name": "namePlaceholder",
+                      "fill": "#9CA3AF",
+                      "content": "Jane Smith",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151"
+                      "fontWeight": "normal"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "sign-up-error-email",
               "type": "frame",
-              "label": "Email field — ERROR STATE (red border)",
+              "id": "4XgYc",
+              "name": "emailField",
+              "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
-              "fill": { "type": "none" },
               "children": [
                 {
-                  "id": "sign-up-error-email-label",
                   "type": "text",
-                  "label": "Email",
+                  "id": "pKrcz",
+                  "name": "emailLbl",
+                  "fill": "$brand-navy",
+                  "content": "Email",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 },
                 {
-                  "id": "sign-up-error-email-input",
                   "type": "frame",
-                  "label": "Text input — error: red border",
-                  "width": 400,
+                  "id": "YaOcq",
+                  "name": "emailInput",
+                  "width": "fill_container",
                   "height": 44,
-                  "fill": { "type": "solid", "color": "#FFF5F5" },
-                  "border": { "color": "#EF4444", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#EF4444"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "sign-up-error-email-value",
                       "type": "text",
-                      "label": "notavalidemail",
+                      "id": "vexgh",
+                      "name": "emailPlaceholder",
+                      "fill": "#9CA3AF",
+                      "content": "jane@example.com",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151"
+                      "fontWeight": "normal"
                     }
                   ]
                 },
                 {
-                  "id": "sign-up-error-email-message",
                   "type": "text",
-                  "label": "Please enter a valid email address",
+                  "id": "lHKik",
+                  "name": "emailErr",
+                  "fill": "#EF4444",
+                  "content": "Please enter a valid email address",
+                  "fontFamily": "Inter",
                   "fontSize": 12,
-                  "fontFamily": "var(font-sans)",
-                  "color": "#EF4444"
+                  "fontWeight": "normal"
                 }
               ]
             },
             {
-              "id": "sign-up-error-password",
               "type": "frame",
-              "label": "Password field — ERROR STATE (red border)",
+              "id": "RIfsK",
+              "name": "pwField",
+              "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
-              "fill": { "type": "none" },
               "children": [
                 {
-                  "id": "sign-up-error-password-label",
                   "type": "text",
-                  "label": "Password",
+                  "id": "mE23o",
+                  "name": "pwLbl",
+                  "fill": "$brand-navy",
+                  "content": "Password",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 },
                 {
-                  "id": "sign-up-error-password-input",
                   "type": "frame",
-                  "label": "Password input — error: red border",
-                  "width": 400,
+                  "id": "JUjK6",
+                  "name": "pwInput",
+                  "width": "fill_container",
                   "height": 44,
-                  "fill": { "type": "solid", "color": "#FFF5F5" },
-                  "border": { "color": "#EF4444", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
-                  "gap": 0,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#EF4444"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "sign-up-error-password-value",
                       "type": "text",
-                      "label": "••••",
+                      "id": "DrHxc",
+                      "name": "pwPlaceholder",
+                      "fill": "#9CA3AF",
+                      "content": "••••••••",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151",
-                      "flex": 1
+                      "fontWeight": "normal"
                     },
                     {
-                      "id": "sign-up-error-password-eye",
-                      "type": "rect",
-                      "label": "eye icon toggle",
-                      "width": 20,
-                      "height": 20,
-                      "fill": { "type": "solid", "color": "#9CA3AF" },
-                      "cornerRadius": 2
+                      "type": "icon_font",
+                      "id": "tCXF4",
+                      "name": "eyeIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "eye",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
                     }
                   ]
                 },
                 {
-                  "id": "sign-up-error-password-message",
                   "type": "text",
-                  "label": "Password must be at least 8 characters",
+                  "id": "ePsvX",
+                  "name": "pwErr",
+                  "fill": "#EF4444",
+                  "content": "Password must be at least 8 characters",
+                  "fontFamily": "Inter",
                   "fontSize": 12,
-                  "fontFamily": "var(font-sans)",
-                  "color": "#EF4444"
+                  "fontWeight": "normal"
                 }
               ]
             },
             {
-              "id": "sign-up-error-cta",
               "type": "frame",
-              "label": "Create Account CTA — DISABLED STATE (50% opacity)",
-              "width": 400,
-              "height": 48,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
-              "cornerRadius": 8,
+              "id": "SB786",
+              "name": "ctaBtn",
               "opacity": 0.5,
-              "layout": "horizontal",
-              "align": "center",
-              "justify": "center",
-              "cursor": "not-allowed",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "$brand-primary",
+              "cornerRadius": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "sign-up-error-cta-text",
                   "type": "text",
-                  "label": "Create Account",
+                  "id": "d8eK7",
+                  "name": "ctaLbl",
+                  "fill": "#FFFFFF",
+                  "content": "Create Account",
+                  "fontFamily": "Inter",
                   "fontSize": 15,
-                  "fontWeight": "semibold",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#FFFFFF"
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tw0uC",
+              "name": "dividerRow",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "QZH0W",
+                  "name": "divLine1",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E7EB"
+                },
+                {
+                  "type": "text",
+                  "id": "QVaNo",
+                  "name": "divText",
+                  "fill": "#6B7280",
+                  "content": "or continue with",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "56vPw",
+                  "name": "divLine2",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E7EB"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mAR7b",
+              "name": "googleBtn",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#D1D5DB"
+              },
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "qXflp",
+                  "name": "googleIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "globe",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "text",
+                  "id": "1wOAN",
+                  "name": "googleLbl",
+                  "fill": "#374151",
+                  "content": "Sign in with Google",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "1hWsH",
+              "name": "footerRow",
+              "width": "fill_container",
+              "gap": 4,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "DrkQL",
+                  "name": "footerText",
+                  "fill": "#6B7280",
+                  "content": "Already have an account?",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "KFuh8",
+                  "name": "footerLink",
+                  "fill": "$brand-primary",
+                  "content": "Login",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
                 }
               ]
             }
           ]
-        },
-        {
-          "id": "sign-up-error-note",
-          "type": "note",
-          "label": "Error state: inline field errors (red text below field, #EF4444) + disabled CTA (opacity 50%, not-allowed cursor) — per CONTEXT.md annotation spec",
-          "x": 20,
-          "y": 20
         }
       ]
     },
     {
-      "id": "login--error",
       "type": "frame",
-      "label": "login--error — /login form error state variant",
+      "id": "AecLQ",
+      "x": 3040,
+      "y": 0,
+      "name": "login--error",
       "width": 1440,
       "height": 900,
-      "fill": { "type": "solid", "color": "var(brand-light)" },
+      "fill": "$brand-light",
       "layout": "vertical",
-      "align": "center",
-      "justify": "center",
+      "justifyContent": "center",
+      "alignItems": "center",
       "children": [
         {
-          "id": "login-error-card",
           "type": "frame",
-          "label": "Auth card — error state",
+          "id": "5qyUQ",
+          "name": "loginCard",
           "width": 480,
+          "fill": "#FFFFFF",
+          "cornerRadius": 12,
           "layout": "vertical",
           "gap": 20,
-          "padding": { "x": 40, "y": 40 },
-          "fill": { "type": "solid", "color": "#FFFFFF" },
-          "cornerRadius": 12,
-          "shadow": { "type": "md" },
+          "padding": 40,
           "children": [
             {
-              "id": "login-error-logo",
-              "type": "rect",
-              "label": "← LogoMark from src/components/nav/LogoMark.tsx",
-              "width": 120,
-              "height": 40,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
-              "cornerRadius": 4,
-              "align": "center"
-            },
-            {
-              "id": "login-error-heading",
-              "type": "text",
-              "label": "Welcome back",
-              "fontSize": 24,
-              "fontWeight": "bold",
-              "fontFamily": "var(font-sans)",
-              "color": "var(brand-navy)",
-              "align": "center"
-            },
-            {
-              "id": "login-error-email",
               "type": "frame",
-              "label": "Email field — ERROR STATE",
-              "layout": "vertical",
-              "gap": 6,
-              "fill": { "type": "none" },
+              "id": "RZCQi",
+              "name": "lLogoRow",
+              "width": "fill_container",
+              "height": 40,
+              "justifyContent": "center",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "login-error-email-label",
-                  "type": "text",
-                  "label": "Email",
-                  "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
-                },
-                {
-                  "id": "login-error-email-input",
                   "type": "frame",
-                  "label": "Text input — error: red border",
-                  "width": 400,
-                  "height": 44,
-                  "fill": { "type": "solid", "color": "#FFF5F5" },
-                  "border": { "color": "#EF4444", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
+                  "id": "ujJgS",
+                  "name": "lLogoMark",
+                  "width": 140,
+                  "height": 32,
+                  "fill": "$brand-primary",
+                  "cornerRadius": 4,
                   "children": [
                     {
-                      "id": "login-error-email-value",
                       "type": "text",
-                      "label": "jane@example.com",
-                      "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151"
+                      "id": "HaBYb",
+                      "name": "lLogoLbl",
+                      "fill": "#FFFFFF",
+                      "content": "CrismaTest",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "700"
                     }
                   ]
-                },
-                {
-                  "id": "login-error-email-message",
-                  "type": "text",
-                  "label": "Invalid email or password",
-                  "fontSize": 12,
-                  "fontFamily": "var(font-sans)",
-                  "color": "#EF4444"
                 }
               ]
             },
             {
-              "id": "login-error-password",
+              "type": "text",
+              "id": "fkcCe",
+              "name": "lHeading",
+              "fill": "$brand-navy",
+              "content": "Welcome back",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
               "type": "frame",
-              "label": "Password field — ERROR STATE",
+              "id": "RTltT",
+              "name": "lEmailField",
+              "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
-              "fill": { "type": "none" },
               "children": [
                 {
-                  "id": "login-error-password-label",
                   "type": "text",
-                  "label": "Password",
+                  "id": "SZAd1",
+                  "name": "lEmailLbl",
+                  "fill": "$brand-navy",
+                  "content": "Email",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontWeight": "medium",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#374151"
+                  "fontWeight": "500"
                 },
                 {
-                  "id": "login-error-password-input",
                   "type": "frame",
-                  "label": "Password input — error: red border",
-                  "width": 400,
+                  "id": "kNl9S",
+                  "name": "lEmailInput",
+                  "width": "fill_container",
                   "height": 44,
-                  "fill": { "type": "solid", "color": "#FFF5F5" },
-                  "border": { "color": "#EF4444", "width": 1 },
-                  "cornerRadius": 6,
-                  "layout": "horizontal",
-                  "align": "center",
-                  "padding": { "x": 12, "y": 0 },
-                  "gap": 0,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#EF4444"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "login-error-password-value",
                       "type": "text",
-                      "label": "••••••••",
+                      "id": "eU7Fs",
+                      "name": "lEmailPlaceholder",
+                      "fill": "#9CA3AF",
+                      "content": "jane@example.com",
+                      "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151",
-                      "flex": 1
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "yIJbU",
+                  "name": "lErrMsg",
+                  "fill": "#EF4444",
+                  "content": "Invalid email or password",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Znpqy",
+              "name": "lPwField",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "b5QuH",
+                  "name": "lPwLbl",
+                  "fill": "$brand-navy",
+                  "content": "Password",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "I9eBA",
+                  "name": "lPwInput",
+                  "width": "fill_container",
+                  "height": 44,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D1D5DB"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Nvoj4",
+                      "name": "lPwDots",
+                      "fill": "#9CA3AF",
+                      "content": "••••••••",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     },
                     {
-                      "id": "login-error-password-eye",
-                      "type": "rect",
-                      "label": "eye icon toggle",
-                      "width": 20,
-                      "height": 20,
-                      "fill": { "type": "solid", "color": "#9CA3AF" },
-                      "cornerRadius": 2
+                      "type": "icon_font",
+                      "id": "ugYWO",
+                      "name": "lEyeIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "eye",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9CA3AF"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "login-error-remember-row",
               "type": "frame",
-              "label": "Remember me + Forgot password row",
-              "layout": "horizontal",
-              "align": "center",
-              "fill": { "type": "none" },
-              "width": 400,
+              "id": "qLN2s",
+              "name": "lRememberRow",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "login-error-remember-checkbox",
                   "type": "frame",
-                  "label": "Remember me checkbox",
-                  "layout": "horizontal",
+                  "id": "2TNfj",
+                  "name": "lCheckbox",
                   "gap": 8,
-                  "align": "center",
-                  "fill": { "type": "none" },
-                  "flex": 1,
+                  "alignItems": "center",
                   "children": [
                     {
-                      "id": "login-error-checkbox-box",
-                      "type": "rect",
-                      "label": "Checkbox",
+                      "type": "frame",
+                      "id": "0ELtR",
+                      "name": "lCheckboxBox",
                       "width": 16,
                       "height": 16,
-                      "fill": { "type": "none" },
-                      "border": { "color": "#D1D5DB", "width": 1 },
-                      "cornerRadius": 3
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#D1D5DB"
+                      }
                     },
                     {
-                      "id": "login-error-remember-label",
                       "type": "text",
-                      "label": "Remember me",
+                      "id": "uFq6n",
+                      "name": "lCheckboxLbl",
+                      "fill": "#374151",
+                      "content": "Remember me",
+                      "fontFamily": "Inter",
                       "fontSize": 13,
-                      "fontFamily": "var(font-sans)",
-                      "color": "#374151"
+                      "fontWeight": "normal"
                     }
                   ]
                 },
                 {
-                  "id": "login-error-forgot-link",
                   "type": "text",
-                  "label": "Forgot password?",
+                  "id": "kVtOo",
+                  "name": "lForgotLink",
+                  "fill": "$brand-primary",
+                  "content": "Forgot password?",
+                  "fontFamily": "Inter",
                   "fontSize": 13,
-                  "fontFamily": "var(font-sans)",
-                  "color": "var(brand-primary)"
+                  "fontWeight": "500"
                 }
               ]
             },
             {
-              "id": "login-error-cta",
               "type": "frame",
-              "label": "Sign In CTA — DISABLED STATE (50% opacity)",
-              "width": 400,
-              "height": 48,
-              "fill": { "type": "solid", "color": "var(brand-primary)" },
-              "cornerRadius": 8,
+              "id": "mk51g",
+              "name": "lCtaBtn",
               "opacity": 0.5,
-              "layout": "horizontal",
-              "align": "center",
-              "justify": "center",
-              "cursor": "not-allowed",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "$brand-primary",
+              "cornerRadius": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
               "children": [
                 {
-                  "id": "login-error-cta-text",
                   "type": "text",
-                  "label": "Sign In",
+                  "id": "KNk1Z",
+                  "name": "lCtaLbl",
+                  "fill": "#FFFFFF",
+                  "content": "Sign In",
+                  "fontFamily": "Inter",
                   "fontSize": 15,
-                  "fontWeight": "semibold",
-                  "fontFamily": "var(font-sans)",
-                  "color": "#FFFFFF"
+                  "fontWeight": "600"
                 }
               ]
             },
             {
-              "id": "login-error-footer-link",
-              "type": "text",
-              "label": "Don't have an account? Sign up",
-              "fontSize": 13,
-              "fontFamily": "var(font-sans)",
-              "color": "#6B7280",
-              "align": "center"
+              "type": "frame",
+              "id": "6mzST",
+              "name": "lDivRow",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JermD",
+                  "name": "lDivLine1",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E7EB"
+                },
+                {
+                  "type": "text",
+                  "id": "cXkEw",
+                  "name": "lDivText",
+                  "fill": "#6B7280",
+                  "content": "or continue with",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "XIl1z",
+                  "name": "lDivLine2",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E7EB"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "4INEJ",
+              "name": "lGoogleBtn",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#D1D5DB"
+              },
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "vd9s4",
+                  "name": "lGoogleIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "globe",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7280"
+                },
+                {
+                  "type": "text",
+                  "id": "wd9I6",
+                  "name": "lGoogleLbl",
+                  "fill": "#374151",
+                  "content": "Sign in with Google",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZHwWr",
+              "name": "lFooterRow",
+              "width": "fill_container",
+              "gap": 4,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RbLOU",
+                  "name": "lFooterText",
+                  "fill": "#6B7280",
+                  "content": "Don't have an account?",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "LOQde",
+                  "name": "lFooterLink",
+                  "fill": "$brand-primary",
+                  "content": "Sign up",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
             }
           ]
-        },
-        {
-          "id": "login-error-note",
-          "type": "note",
-          "label": "Error state variant per CONTEXT.md — shows inline validation before submit. Error text 'Invalid email or password' on both email and password fields (server-side validation). CTA disabled at 50% opacity, not-allowed cursor.",
-          "x": 20,
-          "y": 20
         }
       ]
+    },
+    {
+      "type": "note",
+      "id": "Es9lt",
+      "x": 4562,
+      "y": 526,
+      "name": "lErrNote",
+      "width": 0,
+      "height": 0,
+      "content": "Error state variant per CONTEXT.md — shows inline validation before submit; CTA disabled at opacity 50%"
+    },
+    {
+      "type": "note",
+      "id": "QkBqW",
+      "x": 4562,
+      "y": 148,
+      "name": "lGoogleNote",
+      "width": 0,
+      "height": 0,
+      "content": "→ shows 'Coming soon' toast on click (visual only)"
+    },
+    {
+      "type": "note",
+      "id": "lgtJ2",
+      "x": 2539,
+      "y": 944,
+      "name": "errNote",
+      "width": 0,
+      "height": 0,
+      "content": "Error state: inline field errors (red text below field) + disabled CTA at opacity 50% — per CONTEXT.md annotation spec"
+    },
+    {
+      "type": "note",
+      "id": "9Q2y9",
+      "x": 2190,
+      "y": 944,
+      "name": "navNote",
+      "width": 0,
+      "height": 0,
+      "content": "← NavShell omitted on auth pages — full-screen centered card layout per AUTH-01"
+    },
+    {
+      "type": "note",
+      "id": "ACaCB",
+      "x": 1779,
+      "y": 944,
+      "name": "googleNote",
+      "width": 0,
+      "height": 0,
+      "content": "→ shows 'Coming soon' toast on click (visual only)"
+    },
+    {
+      "type": "note",
+      "id": "sut1X",
+      "x": -356,
+      "y": 0,
+      "name": "googleNote",
+      "width": 0,
+      "height": 0,
+      "content": "→ shows 'Coming soon' toast on click (visual only)"
+    },
+    {
+      "type": "note",
+      "id": "EBM9S",
+      "x": -356,
+      "y": 681,
+      "name": "navNote",
+      "width": 0,
+      "height": 0,
+      "content": "← NavShell omitted on auth pages — full-screen centered card layout per AUTH-01"
+    },
+    {
+      "type": "note",
+      "id": "Goc38",
+      "x": -356,
+      "y": -1104,
+      "name": "fpNote",
+      "width": 0,
+      "height": 0,
+      "content": "Static confirmation screen — no API call; AUTH-03"
+    },
+    {
+      "type": "note",
+      "id": "02ipN",
+      "x": -356,
+      "y": 1660,
+      "name": "lGoogleNote",
+      "width": 0,
+      "height": 0,
+      "content": "→ shows 'Coming soon' toast on click (visual only)"
     }
-  ]
+  ],
+  "variables": {
+    "brand-accent": {
+      "type": "color",
+      "value": "#6366F1"
+    },
+    "brand-light": {
+      "type": "color",
+      "value": "#EEF2FF"
+    },
+    "brand-navy": {
+      "type": "color",
+      "value": "#0F2A6B"
+    },
+    "brand-primary": {
+      "type": "color",
+      "value": "#1B4FD8"
+    },
+    "brand-secondary": {
+      "type": "color",
+      "value": "#3B6FE8"
+    },
+    "font-mono": {
+      "type": "string",
+      "value": "JetBrains Mono"
+    },
+    "font-sans": {
+      "type": "string",
+      "value": "Inter"
+    }
+  }
 }

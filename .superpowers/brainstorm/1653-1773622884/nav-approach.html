@@ -1,0 +1,37 @@
+<h2>How should the nav work for home-v4?</h2>
+<p class="subtitle">The content structure is clear — this is about how the navigation behaves on this landing page.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Dedicated landing nav (replaces global nav)</h3>
+      <p>home-v4 gets its own standalone layout with a marketing nav. Links are anchor-based: <strong>#how-it-works</strong>, <strong>#for-companies</strong>, <strong>#crimsascore</strong>. No route navigation. Pure single-page experience. Login / Sign Up CTAs on the right.</p>
+      <div class="mock-nav" style="margin-top:12px;font-size:12px;">
+        CrismaTest &nbsp;|&nbsp; How It Works &nbsp;|&nbsp; For Companies &nbsp;|&nbsp; CrismaScore &nbsp;|&nbsp; Pricing &nbsp;→&nbsp; Login &nbsp; Sign Up
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Reuse existing global NavShell (routes stay)</h3>
+      <p>Keep the current NavShell with <strong>/for-candidates</strong>, <strong>/for-companies</strong>, <strong>/pricing</strong> route links. Sections just get <code>id</code> attributes. The "key sections" the user scrolls to are driven by in-page anchor CTAs, not the top nav.</p>
+      <div class="mock-nav" style="margin-top:12px;font-size:12px;">
+        CrismaTest &nbsp;|&nbsp; For Candidates &nbsp;|&nbsp; For Companies &nbsp;|&nbsp; Pricing &nbsp;→&nbsp; Login &nbsp; Sign Up
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Hybrid: global nav + section anchor links added</h3>
+      <p>Extend the existing NavDesktop to detect the current route (<code>/home-v4</code>) and swap in anchor links instead of route links. Both worlds — the global shell is reused but the link behavior is route-aware. More complex, but consistent infrastructure.</p>
+      <div class="mock-nav" style="margin-top:12px;font-size:12px;">
+        CrismaTest &nbsp;|&nbsp; How It Works &nbsp;|&nbsp; For Companies &nbsp;|&nbsp; FAQ &nbsp;→&nbsp; Login &nbsp; Sign Up
+      </div>
+    </div>
+  </div>
+</div>

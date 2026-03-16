@@ -1,0 +1,61 @@
+<h2>How deep should the redesign go?</h2>
+<p class="subtitle">Three approaches for applying the Bold/Data-heavy style to the homepage. My recommendation is highlighted.</p>
+
+<div class="options">
+
+  <div class="option" data-choice="surgical" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Surgical Updates <span style="font-size:11px;font-weight:normal;color:#888;">(2–3 sections)</span></h3>
+      <p>Change only the highest-impact surface areas: white hero with left-aligned headline + badge, section labels with decorative flankers, dark navy CTA block redesign. The middle content (steps, features, test library) stays as-is.</p>
+      <div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
+        <span style="background:#f0fdf4;border:1px solid #86efac;color:#166534;border-radius:4px;padding:2px 8px;font-size:11px;">✓ Fastest</span>
+        <span style="background:#f0fdf4;border:1px solid #86efac;color:#166534;border-radius:4px;padding:2px 8px;font-size:11px;">✓ Lower risk</span>
+        <span style="background:#fef2f2;border:1px solid #fca5a5;color:#991b1b;border-radius:4px;padding:2px 8px;font-size:11px;">✗ Inconsistent feel mid-page</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="option selected" data-choice="full" onclick="toggleSelect(this)" style="border-color: var(--primary); background: var(--primary-light);">
+    <div class="letter" style="background: var(--primary);">B</div>
+    <div class="content">
+      <h3>Full Redesign ⭐ Recommended <span style="font-size:11px;font-weight:normal;color:#888;">(all sections)</span></h3>
+      <p>Rebuild every section with Datashake patterns: white hero with left text + right product UI, decorated section labels throughout, problem/solution framing, 5-column feature stats row, large quote testimonial block, dark navy CTA with data grid texture. Cohesive end-to-end.</p>
+      <div style="margin-top:8px;">
+        <div style="font-size:11px; color:#555; margin-bottom:6px;font-weight:600;">Sections to redesign:</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;color:#444;">
+          <span>🔄 Hero → white, left-aligned, badge</span>
+          <span>🔄 Trust bar → cleaner logo row</span>
+          <span>➕ "The Problem" section</span>
+          <span>🔄 Steps → labeled feature sections</span>
+          <span>🔄 Features → icon stat grid</span>
+          <span>🔄 Testimonials → large quote block</span>
+          <span>🔄 Final CTA → dark navy + grid bg</span>
+          <span>✓ Footer → keep as-is</span>
+        </div>
+      </div>
+      <div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
+        <span style="background:#f0fdf4;border:1px solid #86efac;color:#166534;border-radius:4px;padding:2px 8px;font-size:11px;">✓ Cohesive, polished result</span>
+        <span style="background:#f0fdf4;border:1px solid #86efac;color:#166534;border-radius:4px;padding:2px 8px;font-size:11px;">✓ True Datashake feel</span>
+        <span style="background:#fef2f2;border:1px solid #fca5a5;color:#991b1b;border-radius:4px;padding:2px 8px;font-size:11px;">✗ More implementation work</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="hero-only" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Hero + CTA Only <span style="font-size:11px;font-weight:normal;color:#888;">(first + last impression)</span></h3>
+      <p>Update only the hero (white bg, badge, left-aligned) and the final CTA block (dark navy + grid texture). Everything in between stays exactly as designed. Best if you want to test the feel quickly before committing.</p>
+      <div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
+        <span style="background:#f0fdf4;border:1px solid #86efac;color:#166534;border-radius:4px;padding:2px 8px;font-size:11px;">✓ Quickest preview</span>
+        <span style="background:#fef2f2;border:1px solid #fca5a5;color:#991b1b;border-radius:4px;padding:2px 8px;font-size:11px;">✗ Most inconsistent result</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:24px; padding:16px; background:#f8faff; border:1px solid #e0e7ff; border-radius:8px; font-size:13px; color:#374151;">
+  <strong>My recommendation:</strong> Option B — Full Redesign. You've picked a strong design direction; applying it only to part of the page will feel incomplete. The homepage is a single scroll, so visual consistency across all sections matters. We can work section by section, so the effort is manageable.
+</div>

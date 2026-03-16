@@ -247,14 +247,6 @@
                       ]
                     },
                     {
-                      "type": "note",
-                      "id": "HvYX3",
-                      "name": "co-toggle-note",
-                      "width": 320,
-                      "height": 40,
-                      "content": "Billing toggle: price updates live — $149/mo ↔ $119/mo; mirrors pricing page toggle behavior; PAY-01"
-                    },
-                    {
                       "type": "frame",
                       "id": "IaB2B",
                       "name": "co-features",
@@ -797,14 +789,6 @@
                       ]
                     },
                     {
-                      "type": "note",
-                      "id": "ihjV7",
-                      "name": "co-sub-note",
-                      "width": 380,
-                      "height": 40,
-                      "content": "'Subscribe Now' → 1.5s loading state → /checkout/success (visual only — no real Stripe integration in v1)"
-                    },
-                    {
                       "type": "frame",
                       "id": "BgOb6",
                       "name": "co-secure-row",
@@ -1025,6 +1009,26 @@
           ]
         }
       ]
+    },
+    {
+      "type": "note",
+      "id": "ihjV7",
+      "x": 530,
+      "y": 929,
+      "name": "co-sub-note",
+      "width": 380,
+      "height": 40,
+      "content": "'Subscribe Now' → 1.5s loading state → /checkout/success (visual only — no real Stripe integration in v1)"
+    },
+    {
+      "type": "note",
+      "id": "HvYX3",
+      "x": -373,
+      "y": 300,
+      "name": "co-toggle-note",
+      "width": 320,
+      "height": 40,
+      "content": "Billing toggle: price updates live — $149/mo ↔ $119/mo; mirrors pricing page toggle behavior; PAY-01"
     }
   ],
   "variables": {
