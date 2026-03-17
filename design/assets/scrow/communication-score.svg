@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243 150" width="243" height="150">
+  <defs>
+    <linearGradient id="bubble1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+    <linearGradient id="bubble2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B2559"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="243" height="150" fill="#EEF2FF"/>
+  <!-- Decorative dots background -->
+  <circle cx="20" cy="20" r="3" fill="#C7D2FE" opacity="0.5"/>
+  <circle cx="220" cy="130" r="3" fill="#C7D2FE" opacity="0.5"/>
+  <circle cx="225" cy="20" r="5" fill="#E0E7FF"/>
+  <circle cx="18" cy="130" r="5" fill="#E0E7FF"/>
+  <!-- Left speech bubble (sender) -->
+  <rect x="18" y="22" width="130" height="52" rx="12" fill="url(#bubble1)"/>
+  <!-- Bubble tail bottom-left -->
+  <path d="M30,74 L18,88 L50,74 Z" fill="#3730A3"/>
+  <!-- Text lines in left bubble -->
+  <rect x="30" y="36" width="94" height="8" rx="4" fill="#A5B4FC"/>
+  <rect x="30" y="52" width="70" height="8" rx="4" fill="#818CF8"/>
+  <!-- Avatar dot -->
+  <circle cx="118" cy="44" r="10" fill="#6366F1"/>
+  <circle cx="118" cy="44" r="6" fill="#C7D2FE"/>
+  <!-- Right speech bubble (receiver) -->
+  <rect x="90" y="85" width="136" height="48" rx="12" fill="url(#bubble2)"/>
+  <!-- Bubble tail bottom-right -->
+  <path d="M212,133 L226,148 L200,133 Z" fill="#0F172A"/>
+  <!-- Text lines in right bubble -->
+  <rect x="104" y="98" width="90" height="7" rx="3.5" fill="#4F46E5" opacity="0.7"/>
+  <rect x="104" y="112" width="64" height="7" rx="3.5" fill="#4F46E5" opacity="0.5"/>
+  <!-- Wave / verbal indicator (left side) -->
+  <path d="M8,95 Q11,88 14,95 Q17,102 20,95" stroke="#818CF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M4,95 Q8,84 12,95 Q16,106 20,95" stroke="#C7D2FE" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+</svg>

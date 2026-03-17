@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243 150" width="243" height="150">
+  <defs>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3730A3"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="screenHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="screenClip">
+      <rect x="22" y="18" width="152" height="105" rx="10"/>
+    </clipPath>
+  </defs>
+  <rect width="243" height="150" fill="#EEF2FF"/>
+  <!-- Screen shadow -->
+  <rect x="26" y="24" width="152" height="105" rx="10" fill="#1B2559" opacity="0.15"/>
+  <!-- Main screen -->
+  <rect x="22" y="18" width="152" height="105" rx="10" fill="url(#screenGrad)"/>
+  <!-- Screen top highlight -->
+  <rect x="22" y="18" width="152" height="52" rx="10" fill="url(#screenHighlight)" clip-path="url(#screenClip)"/>
+  <!-- Person silhouette -->
+  <ellipse cx="98" cy="55" rx="18" ry="18" fill="#4F46E5" opacity="0.8"/>
+  <ellipse cx="98" cy="55" rx="10" ry="10" fill="#818CF8"/>
+  <path d="M68,105 a30,30 0,0,1 60,0" fill="#4F46E5" opacity="0.5"/>
+  <!-- Play button -->
+  <circle cx="98" cy="75" r="22" fill="#FFFFFF" opacity="0.12"/>
+  <circle cx="98" cy="75" r="16" fill="#FFFFFF" opacity="0.15"/>
+  <polygon points="93,67 93,83 110,75" fill="#FFFFFF" opacity="0.95"/>
+  <!-- Recording indicator -->
+  <circle cx="155" cy="28" r="6" fill="#EF4444"/>
+  <circle cx="155" cy="28" r="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.4"/>
+  <!-- Camera viewfinder (right side) -->
+  <rect x="178" y="52" width="46" height="36" rx="6" fill="#1B2559" opacity="0.15"/>
+  <rect x="181" y="55" width="40" height="30" rx="4" fill="#C7D2FE" opacity="0.4"/>
+  <rect x="183" y="57" width="36" height="26" rx="3" fill="#4F46E5" opacity="0.25"/>
+  <!-- Camera lens -->
+  <circle cx="201" cy="70" r="9" fill="#1B2559" opacity="0.5"/>
+  <circle cx="201" cy="70" r="6" fill="#4F46E5" opacity="0.7"/>
+  <circle cx="201" cy="70" r="3" fill="#EEF2FF" opacity="0.8"/>
+  <!-- Camera triangle connector -->
+  <path d="M178,60 L178,80 L183,74 L183,66 Z" fill="#818CF8" opacity="0.4"/>
+  <!-- Bottom progress bar (video timeline) -->
+  <rect x="22" y="128" width="152" height="5" rx="2.5" fill="#C7D2FE"/>
+  <rect x="22" y="128" width="68" height="5" rx="2.5" fill="#4F46E5"/>
+  <circle cx="90" cy="130.5" r="5" fill="#4F46E5" stroke="#FFFFFF" stroke-width="1.5"/>
+</svg>

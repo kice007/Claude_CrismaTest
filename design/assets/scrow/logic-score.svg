@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243 150" width="243" height="150">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#EEF2FF"/>
+      <stop offset="100%" stop-color="#E0E7FF"/>
+    </radialGradient>
+    <radialGradient id="core1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </radialGradient>
+  </defs>
+  <rect width="243" height="150" fill="url(#bg1)"/>
+  <!-- Outer concentric ring -->
+  <ellipse cx="121" cy="75" rx="68" ry="62" fill="none" stroke="#C7D2FE" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="121" cy="75" rx="48" ry="44" fill="none" stroke="#A5B4FC" stroke-width="1" opacity="0.5"/>
+  <!-- Connection lines -->
+  <line x1="121" y1="75" x2="55" y2="32" stroke="#A5B4FC" stroke-width="1.5" opacity="0.7"/>
+  <line x1="121" y1="75" x2="187" y2="32" stroke="#A5B4FC" stroke-width="1.5" opacity="0.7"/>
+  <line x1="121" y1="75" x2="40" y2="95" stroke="#A5B4FC" stroke-width="1.5" opacity="0.7"/>
+  <line x1="121" y1="75" x2="202" y2="95" stroke="#A5B4FC" stroke-width="1.5" opacity="0.7"/>
+  <line x1="121" y1="75" x2="78" y2="130" stroke="#A5B4FC" stroke-width="1.5" opacity="0.7"/>
+  <line x1="121" y1="75" x2="164" y2="130" stroke="#A5B4FC" stroke-width="1.5" opacity="0.7"/>
+  <!-- Outer satellite nodes -->
+  <circle cx="55" cy="32" r="11" fill="#818CF8"/>
+  <circle cx="187" cy="32" r="11" fill="#818CF8"/>
+  <circle cx="40" cy="95" r="9" fill="#A5B4FC"/>
+  <circle cx="202" cy="95" r="9" fill="#A5B4FC"/>
+  <circle cx="78" cy="130" r="11" fill="#6366F1"/>
+  <circle cx="164" cy="130" r="11" fill="#6366F1"/>
+  <!-- Node inner dots -->
+  <circle cx="55" cy="32" r="4" fill="#EEF2FF"/>
+  <circle cx="187" cy="32" r="4" fill="#EEF2FF"/>
+  <circle cx="78" cy="130" r="4" fill="#EEF2FF"/>
+  <circle cx="164" cy="130" r="4" fill="#EEF2FF"/>
+  <!-- Center glow ring -->
+  <circle cx="121" cy="75" r="28" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="2"/>
+  <!-- Center core -->
+  <circle cx="121" cy="75" r="20" fill="url(#core1)"/>
+  <!-- Lightning bolt (logic symbol) -->
+  <polygon points="124,61 118,75 123,75 118,90 126,74 121,74" fill="#FFFFFF"/>
+</svg>

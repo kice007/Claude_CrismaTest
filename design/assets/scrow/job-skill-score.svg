@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243 150" width="243" height="150">
+  <defs>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1B2559"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#A5B4FC"/>
+    </linearGradient>
+  </defs>
+  <rect width="243" height="150" fill="#EEF2FF"/>
+  <!-- Card header label -->
+  <rect x="18" y="14" width="90" height="9" rx="4.5" fill="#C7D2FE"/>
+  <rect x="116" y="14" width="50" height="9" rx="4.5" fill="#E0E7FF"/>
+  <!-- Bar 1 track + fill (92%) -->
+  <rect x="18" y="34" width="207" height="16" rx="8" fill="#E0E7FF"/>
+  <rect x="18" y="34" width="190" height="16" rx="8" fill="url(#bar1)"/>
+  <circle cx="208" cy="42" r="8" fill="#FFFFFF" stroke="#4F46E5" stroke-width="2"/>
+  <!-- Bar 2 track + fill (70%) -->
+  <rect x="18" y="62" width="207" height="16" rx="8" fill="#E0E7FF"/>
+  <rect x="18" y="62" width="145" height="16" rx="8" fill="url(#bar2)"/>
+  <circle cx="163" cy="70" r="8" fill="#FFFFFF" stroke="#1B2559" stroke-width="2"/>
+  <!-- Bar 3 track + fill (82%) -->
+  <rect x="18" y="90" width="207" height="16" rx="8" fill="#E0E7FF"/>
+  <rect x="18" y="90" width="170" height="16" rx="8" fill="url(#bar3)"/>
+  <circle cx="188" cy="98" r="8" fill="#FFFFFF" stroke="#6366F1" stroke-width="2"/>
+  <!-- Bar 4 track + fill (55%) -->
+  <rect x="18" y="118" width="207" height="16" rx="8" fill="#E0E7FF"/>
+  <rect x="18" y="118" width="114" height="16" rx="8" fill="#A5B4FC"/>
+  <circle cx="132" cy="126" r="8" fill="#FFFFFF" stroke="#A5B4FC" stroke-width="2"/>
+  <!-- Briefcase icon top-right -->
+  <rect x="200" y="10" width="28" height="20" rx="3" fill="none" stroke="#818CF8" stroke-width="1.5"/>
+  <path d="M207,10 V8 Q207,6 209,6 h6 Q217,6 217,8 V10" fill="none" stroke="#818CF8" stroke-width="1.5"/>
+  <line x1="200" y1="18" x2="228" y2="18" stroke="#818CF8" stroke-width="1" opacity="0.6"/>
+</svg>
