@@ -195,7 +195,7 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 ### Landing Pages (LAND)
 
 - [~] **LAND-01**: `/` Light Home page — implement frame `home-light` from `design/landing-pages.pen`; hero, features, social proof, pricing CTA, footer; Missing: mresponsive mobile frames for each landing page, mobile nav (hamburger)
-- [ ] **LAND-02**: `/dark` Dark Home page — implement frame `home-dark` from `design/landing-pages.pen`
+- [x] **LAND-02**: `/dark` Dark Home page — implement frame `home-dark` from `design/landing-pages.pen`
 - [ ] **LAND-01_02-contact**: clinking on the contact form submit button on each landing page→ POST /api/contact
 - [x] **LAND-06**: Fixed nav (desktop): logo left, links center, EN|FR + Login + Sign Up right; white/95 backdrop-blur; shadow on scroll
 - [x] **LAND-07**: Mobile nav: hamburger → slide-down sheet with all links + language toggle, 48px tap targets
@@ -366,8 +366,8 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 | LAND-06 | Phase 2 | Complete |
 | LAND-07 | Phase 2 | Complete |
 | LAND-08 | Phase 2 | Complete |
-| LAND-01 | Phase 3 | Pending |
-| LAND-02 | Phase 3 | Pending |
+| LAND-01 | Phase 3 | Complete |
+| LAND-02 | Phase 3 | Complete |
 | LAND-01_02-contact | Phase 3 | Pending |
 | DATA-01 | Phase 3 | Complete |
 | DATA-02 | Phase 3 | Complete |
