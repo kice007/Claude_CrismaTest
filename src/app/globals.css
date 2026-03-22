@@ -200,3 +200,15 @@ body {
     background: var(--color-neutral-100);
   }
 }
+
+/* TrustBar marquee — CSS-only infinite scroll */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class*="animate-[marquee"] {
+    animation: none;
+  }
+}
