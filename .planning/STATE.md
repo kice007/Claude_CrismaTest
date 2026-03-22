@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03-landing-pages-data-foundation 03-02-PLAN.md
-last_updated: "2026-03-22T20:43:24.682Z"
+stopped_at: Completed 03-landing-pages-data-foundation 03-03-PLAN.md
+last_updated: "2026-03-22T20:56:22.532Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 3
   total_plans: 22
-  completed_plans: 19
+  completed_plans: 20
   percent: 81
 ---
 
@@ -65,6 +65,7 @@ Progress: [████████░░] 81%
 | Phase 2.1-screen-design-inserted P03 | 8 | 3 tasks | 1 files |
 | Phase 03-landing-pages-data-foundation P01 | 28min | 2 tasks | 9 files |
 | Phase 03-landing-pages-data-foundation P02 | 4min | 1 tasks | 2 files |
+| Phase 03-landing-pages-data-foundation P03 | 25min | 2 tasks | 16 files |
 
 ## Accumulated Context
 
@@ -110,6 +111,9 @@ Recent decisions affecting current work:
 - [Phase 03-01]: tsx added as devDependency for zero-compile TypeScript seed execution via npx tsx
 - [Phase 03-02]: All landing page copy pre-loaded into locale files before components are built — eliminates missing-key fallback strings during development
 - [Phase 03-02]: French translations use formal vous register — consistent with B2B professional context for all landing page copy
+- [Phase 03-landing-pages-data-foundation]: standardSchemaResolver used for zod v4 compat — @hookform/resolvers v5 removed the /zod sub-package; zod v4 implements Standard Schema natively
+- [Phase 03-landing-pages-data-foundation]: Hero and AntifraudSection always dark navy regardless of variant prop — design spec mandates fixed dark sections on both light and dark pages
+- [Phase 03-landing-pages-data-foundation]: /api/contact route created alongside home page — ContactForm fetch POST requires server route at build time; includes zod validation + module-level rate limiter
 
 ### Pending Todos
 
@@ -121,6 +125,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-22T20:43:24.679Z
-Stopped at: Completed 03-landing-pages-data-foundation 03-02-PLAN.md
+Last session: 2026-03-22T20:56:22.525Z
+Stopped at: Completed 03-landing-pages-data-foundation 03-03-PLAN.md
 Resume file: None
