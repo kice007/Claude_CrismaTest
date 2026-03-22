@@ -254,9 +254,9 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 
 ### Backend & Data (DATA)
 
-- [ ] **DATA-01**: Supabase schema — tables: `test_templates`, `mock_candidates`, `questions`, `contact_submissions`, `test_sessions` (id, test_id, candidate_info JSON, answers JSON, score, sub_scores JSON, created_at)
-- [ ] **DATA-02**: RLS — all tables read-only via anon key; `contact_submissions` insert-only; `test_sessions` insert-only from client; email field not exposed in candidates list response
-- [ ] **DATA-03**: Seed script (`npm run db:seed`) — 30-50 mock candidates with varied scores, roles, fraud flags; 80-120 static questions across 8 roles, 6 types, EN+FR text; test templates for 8 roles
+- [x] **DATA-01**: Supabase schema — tables: `test_templates`, `mock_candidates`, `questions`, `contact_submissions`, `test_sessions` (id, test_id, candidate_info JSON, answers JSON, score, sub_scores JSON, created_at)
+- [x] **DATA-02**: RLS — all tables read-only via anon key; `contact_submissions` insert-only; `test_sessions` insert-only from client; email field not exposed in candidates list response
+- [x] **DATA-03**: Seed script (`npm run db:seed`) — 30-50 mock candidates with varied scores, roles, fraud flags; 80-120 static questions across 8 roles, 6 types, EN+FR text; test templates for 8 roles
 - [ ] **DATA-04**: `GET /api/tests` — returns all test templates (id, role, slug, name, modules, duration, status, created_at, response_count)
 - [ ] **DATA-05**: `GET /api/tests/[id]` — returns single test with full question list, custom questions, shareable link, response count
 - [ ] **DATA-05b**: `PUT /api/tests/[id]` — updates test name, modules, custom questions; returns updated test
@@ -265,12 +265,12 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 - [ ] **DATA-07**: `GET /api/candidates/[id]` — returns full candidate detail including email
 - [ ] **DATA-08**: `GET /api/talent-pool` — returns filterable talent pool entries
 - [ ] **DATA-09**: `POST /api/contact` — validates fields (zod schema), stores in Supabase `contact_submissions`, triggers Resend email, rate-limited 3/IP/hour, returns minimal error messages
-- [ ] **DATA-10**: varlock `.env.schema` declared with all env variables: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, `NEXT_PUBLIC_APP_URL` with `@required`/`@sensitive` tags
+- [x] **DATA-10**: varlock `.env.schema` declared with all env variables: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, `NEXT_PUBLIC_APP_URL` with `@required`/`@sensitive` tags
 - [ ] **DATA-11**: `candidate_info` from `/test/[id]/user-info` form (fullName, email, phone, jobTitle, company) stored in sessionStorage key `crismatest_candidate_info`; passed as JSON body field to `POST /api/test-sessions` on test submit (v1: localStorage mock; v2: Supabase `test_sessions` table)
 
 ### Security (SEC)
 
-- [ ] **SEC-01**: `.env` in `.gitignore` — never committed; `SUPABASE_SERVICE_ROLE_KEY` and `RESEND_API_KEY` used only in server-side API routes, never in client bundle
+- [x] **SEC-01**: `.env` in `.gitignore` — never committed; `SUPABASE_SERVICE_ROLE_KEY` and `RESEND_API_KEY` used only in server-side API routes, never in client bundle
 - [ ] **SEC-02**: No `dangerouslySetInnerHTML` anywhere — zero raw HTML rendering of user input
 - [ ] **SEC-03**: `POST /api/contact` validates all fields server-side (zod schema) and sanitizes inputs against XSS
 - [ ] **SEC-04**: Rate limiting on `/api/contact` — 3 submissions per IP per hour
@@ -280,7 +280,7 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 
 ### Screen Design — Pencil (DSGN)
 
-- [~] **DSGN-01**: Landing pages designed in `design/landing-pages.pen` — frames: `home-light` (/), `home-dark` (/dark) ✓ DONE;  desktop nav + mobile hamburger sheet; all sections visible; brand tokens + Inter applied
+- [~] **DSGN-01**: Landing pages designed in `design/landing-pages.pen` — frames: `home-light` (/), `home-dark` (/dark) ✓ DONE; MISSING: `nav--mobile` mobile hamburger sheet frame (375px open state)
 - [~] **DSGN-02**: Auth screens designed in `design/auth.pen` — frames: `sign-up`, `modal-otp`, `onboarding-step1`, `onboarding-step2`, `modal-allset`, `login`, `forgot-password`, `otp-verify`, `new-password` ✓ DONE; MISSING: `sign-up--error`, `login--error` error state frames
 - [x] **DSGN-03**: Test flow designed in `design/test-flow.pen` — frames in canvas order: `intro` → `user-info` → `check` → `questions--qcm` / `questions--dragdrop` / `questions--casestudy` / `questions--simulation` / `questions--audiovideo` / `questions--shorttext` → `calculating` → `result` / `result--confetti`; design annotations (notes) embedded on canvas per step
 - [~] **DSGN-04**: Dashboard designed in `design/dashboard.pen` — frames: `dashboard`, `candidates-detail`, `compare`, `talent-pool`, `build-test`, `build-test-modules`, `build-test-custom-questions`, `build-test-generate`, `build-test-preview`, `build-test-success`, `tests`, `test-details`, `test-edit`, `test-edit-success`, `test-share-modal`, `Add Question Modal` ✓ DONE; MISSING:  responsive mobile frames + skeleton/empty state variants
@@ -349,7 +349,7 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 | I18N-04 | Phase 1 | Complete |
 | I18N-05 | Phase 1 | Complete |
 | I18N-06 | Phase 1 | Complete |
-| DSGN-01 | Phase 2.1 | Partial - responsive mobile frames, nav-mobile (hamburger)|
+| DSGN-01 | Phase 2.1 | Partial — home-light + home-dark done; missing nav--mobile hamburger sheet frame |
 | DSGN-02 | Phase 2.1 | Partial — core flows done; error states missing |
 | DSGN-03 | Phase 2.1 | Complete |
 | DSGN-04 | Phase 2.1 | Partial — all desktop views done; responsive mobile + empty states missing |
@@ -368,16 +368,13 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 | LAND-08 | Phase 2 | Complete |
 | LAND-01 | Phase 3 | Pending |
 | LAND-02 | Phase 3 | Pending |
-| LAND-03 | Phase 3 | Pending |
-| LAND-04 | Phase 3 | Pending |
-| LAND-05 | Phase 3 | Pending |
-| LAND-06-contact | Phase 3 | Pending |
-| DATA-01 | Phase 3 | Pending |
-| DATA-02 | Phase 3 | Pending |
-| DATA-03 | Phase 3 | Pending |
-| DATA-10 | Phase 3 | Pending |
+| LAND-01_02-contact | Phase 3 | Pending |
+| DATA-01 | Phase 3 | Complete |
+| DATA-02 | Phase 3 | Complete |
+| DATA-03 | Phase 3 | Complete |
+| DATA-10 | Phase 3 | Complete |
 | DATA-11 | Phase 3 | Pending |
-| SEC-01 | Phase 3 | Pending |
+| SEC-01 | Phase 3 | Complete |
 | AUTH-01 | Phase 4 | Pending |
 | AUTH-02 | Phase 4 | Pending |
 | AUTH-03 | Phase 4 | Pending |
@@ -415,8 +412,8 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 | SEC-07 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 74 total (+5 from previous update: DASH-07, DASH-08, DATA-05b, DATA-05c, and compare clarification)
-- Mapped to phases: 74
+- v1 requirements: 71 total (removed LAND-03, LAND-04, LAND-05 — orphaned from original 5-page scope, no definitions exist)
+- Mapped to phases: 71
 - Unmapped: 0
 
 ---

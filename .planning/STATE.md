@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: planning
-stopped_at: Completed 2.1-screen-design-inserted 2.1-06-PLAN.md — Phase 2.1 COMPLETE
-last_updated: "2026-03-15T12:00:00.000Z"
-last_activity: 2026-03-15 — Completed Phase 2.1 Screen Design (all 6 DSGN requirements, 6 .pen files)
+status: completed
+stopped_at: Completed 03-landing-pages-data-foundation 03-01-PLAN.md
+last_updated: "2026-03-22T20:34:35.853Z"
+last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 3
-  total_plans: 16
-  completed_plans: 16
-  percent: 100
+  total_plans: 22
+  completed_plans: 18
+  percent: 81
 ---
 
 # Project State
@@ -63,6 +63,7 @@ Progress: [████████░░] 81%
 | Phase 2.1-screen-design-inserted P01 | 5min | 2 tasks | 1 files |
 | Phase 2.1-screen-design-inserted P02 | 3min | 2 tasks | 1 files |
 | Phase 2.1-screen-design-inserted P03 | 8 | 3 tasks | 1 files |
+| Phase 03-landing-pages-data-foundation P01 | 28min | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -103,6 +104,9 @@ Recent decisions affecting current work:
 - [Phase 2.1-03]: test-flow.pen tasks committed atomically — .pen JSON format requires complete valid document; partial writes produce invalid files
 - [Phase 2.1-03]: questions--mobile at 375px uses QCM format to show layout contrast vs desktop — no nav chrome, full-width options, 48px tap targets
 - [Phase 2.1-03]: result frame score 74 (base state), result--confetti score 85 (confetti trigger state) — distinct scores differentiate the two result variants
+- [Phase 03-01]: Used @supabase/ssr createBrowserClient + createServerClient split — server client reads cookies, browser client for client components
+- [Phase 03-01]: Rate limiter uses module-level Map (not Redis) — sufficient for single-instance demo, setInterval cleanup every 5 min
+- [Phase 03-01]: tsx added as devDependency for zero-compile TypeScript seed execution via npx tsx
 
 ### Pending Todos
 
@@ -114,6 +118,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T12:00:00.000Z
-Stopped at: Completed 2.1-screen-design-inserted 2.1-06-PLAN.md — Phase 2.1 COMPLETE
+Last session: 2026-03-22T20:34:35.851Z
+Stopped at: Completed 03-landing-pages-data-foundation 03-01-PLAN.md
 Resume file: None
