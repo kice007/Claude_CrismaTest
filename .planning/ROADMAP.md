@@ -74,7 +74,7 @@ Plans:
 
 Plans:
 - [ ] 2.1-00-PLAN.md — Setup: create /design/ directory + initialize 6 empty .pen files + verify Pencil MCP connection
-- [~] 2.1-01-PLAN.md — DSGN-01: landing-pages.pen — PARTIAL: home-dark + home-light done; hero state preview frames done; MISSING: mobile responsive for each frame nav-mobile, nav-shell
+- [~] 2.1-01-PLAN.md — DSGN-01: landing-pages.pen — PARTIAL: home-dark + home-light done; hero state preview frames done; MISSING: nav--mobile hamburger sheet frame (375px) only — no other frames needed (scope reduced to 2 home variants)
 - [~] 2.1-02-PLAN.md — DSGN-02: auth.pen — EXPANDED: 9 frames (sign-up, modal-otp, onboarding-step1, onboarding-step2, modal-allset, login, forgot-password, otp-verify, new-password); MISSING: sign-up--error + login--error frames
 - [x] 2.1-03-PLAN.md — DSGN-03: test-flow.pen — 11 frames (intro, check, 6 question formats, calculating, result, result--confetti); MISSING: mobile questions frame
 - [~] 2.1-04-PLAN.md — DSGN-04: dashboard.pen — EXPANDED: 16 desktop frames (dashboard, candidates-detail, compare, talent-pool, build-test + 5 build-test steps, tests, test-details, test-edit, test-edit-success, test-share-modal, Add Question Modal); MISSING:responsive mobile frames for each frames + skeleton/empty state variants
@@ -82,16 +82,24 @@ Plans:
 - [ ] 2.1-06-PLAN.md — DSGN-06: components.pen — shared component reference sheet (6 groups: toasts, modals, skeletons, empty state, 404, 500)
 
 ### Phase 3: Landing Pages + Data Foundation
-**Goal**: All two marketing pages are live and bilingual, the Supabase database is seeded with realistic data, and the contact form posts real data and sends a real email.
+**Goal**: Both home pages (/ light and /dark) are live and bilingual, the Supabase database is seeded with realistic data, and the contact form (embedded on the home pages) posts real data and sends a real email.
 **Depends on**: Phase 2.1
 **Requirements**: LAND-01, LAND-02, DATA-01, DATA-02, DATA-03, DATA-10, SEC-01
 **Success Criteria** (what must be TRUE):
-  1. Visiting /, /dark all render fully with correct bilingual content and no layout breaks on mobile or desktop
+  1. Visiting `/` and `/dark` renders fully with correct bilingual content and no layout breaks on mobile or desktop
   2. Submitting the contact form saves a row to Supabase contact_submissions and triggers a Resend email notification
   3. Submitting the contact form more than 3 times from the same IP within one hour returns a rate-limit error without exposing server details
-  4. Running npm run db:seed populates test_templates, mock_candidates, and questions tables with the specified seed counts (30-50 candidates, 80-120 questions, 8 templates)
-  5. The .env.schema file declares all five environment variables; the .env file is confirmed absent from git history
-**Plans**: TBD
+  4. Running npm run db:seed populates test_templates, mock_candidates, and questions tables with the specified seed counts (40 candidates, ~100 questions, 8 templates)
+  5. The .env.schema file declares all six environment variables; the .env file is confirmed absent from git history
+**Plans**: 6 plans
+
+Plans:
+- [ ] 03-00-PLAN.md — Setup checkpoint: create Supabase project + install @supabase/ssr, resend, zod, react-hook-form + create .env file
+- [ ] 03-01-PLAN.md — Data foundation: .env.schema (6 vars), Supabase migration SQL (5 tables + RLS), supabase.ts clients, rate-limiter.ts, seed script
+- [ ] 03-02-PLAN.md — i18n keys: all landing page copy added to en.json + fr.json before components are built
+- [ ] 03-03-PLAN.md — Home-light page (/): 11 section components + page.tsx assembly (LAND-01)
+- [ ] 03-04-PLAN.md — Home-dark page (/dark) + POST /api/contact route (LAND-02 + contact API)
+- [ ] 03-05-PLAN.md — Human verification checkpoint: both pages + contact form end-to-end + seed script
 
 ### Phase 4: Auth + Test Flow
 **Goal**: A user can sign up or log in (visually), reach the appropriate flow, and complete the full five-step candidate test journey from intro through animated result.
@@ -139,7 +147,7 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 | 1. Foundation | 3/3 | Complete   | 2026-03-14 |
 | 2. Shared UI + Nav Shell | 6/6 | Complete   | 2026-03-15 |
 | 2.1. Screen Design | 2 full + 3 partial / 7 | In progress — see plan notes for what's missing per file | - |
-| 3. Landing Pages + Data Foundation | 0/TBD | Not started | - |
+| 3. Landing Pages + Data Foundation | 0/6 | Not started | - |
 | 4. Auth + Test Flow | 0/TBD | Not started | - |
 | 5. Company Dashboard + API | 0/TBD | Not started | - |
 | 6. Payment + Security | 0/TBD | Not started | - |
