@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Design system tokens, i18n framework, and font setup — the substrate every component builds on (completed 2026-03-14)
 - [x] **Phase 2: Shared UI + Nav Shell** - Reusable component library (toasts, modals, skeletons, error pages), responsive nav, and global layout wrapper (completed 2026-03-15)
 - [ ] **Phase 2.1: Screen Design** (INSERTED) - Full Pencil screen designs for all product areas — visual spec used by Phases 3–6
-- [ ] **Phase 3: Landing Pages + Data Foundation** - All five marketing pages served with real Supabase data, seeded database, and contact form API
+- [ ] **Phase 3: Landing Pages + Data Foundation** - the two landing pages (light and dark) served with real Supabase data, seeded database, and contact form API
 - [ ] **Phase 4: Auth + Test Flow** - Visual-only sign-up/login and the full five-step candidate test journey
 - [ ] **Phase 5: Company Dashboard + API** - Complete company-facing dashboard with six views, wired to six live API routes returning seeded data
 - [ ] **Phase 6: Payment + Security** - Visual checkout flow, security hardening, and final compliance pass
@@ -74,19 +74,19 @@ Plans:
 
 Plans:
 - [ ] 2.1-00-PLAN.md — Setup: create /design/ directory + initialize 6 empty .pen files + verify Pencil MCP connection
-- [x] 2.1-01-PLAN.md — DSGN-01: landing-pages.pen — 5 landing page desktop frames + mobile nav frame + NavShell reusable component
-- [ ] 2.1-02-PLAN.md — DSGN-02: auth.pen — sign-up, login, forgot-password + 2 form error state variants
-- [x] 2.1-03-PLAN.md — DSGN-03: test-flow.pen — 5 screens + 6 question format frames + mobile questions frame (12 total)
-- [ ] 2.1-04-PLAN.md — DSGN-04: dashboard.pen — 5 desktop + 5 mobile dashboard views + 3 state variants (13 total)
-- [ ] 2.1-05-PLAN.md — DSGN-05: payments.pen — checkout + checkout-success (2 frames)
+- [~] 2.1-01-PLAN.md — DSGN-01: landing-pages.pen — PARTIAL: home-dark + home-light done; hero state preview frames done; MISSING: mobile responsive for each frame nav-mobile, nav-shell
+- [~] 2.1-02-PLAN.md — DSGN-02: auth.pen — EXPANDED: 9 frames (sign-up, modal-otp, onboarding-step1, onboarding-step2, modal-allset, login, forgot-password, otp-verify, new-password); MISSING: sign-up--error + login--error frames
+- [x] 2.1-03-PLAN.md — DSGN-03: test-flow.pen — 11 frames (intro, check, 6 question formats, calculating, result, result--confetti); MISSING: mobile questions frame
+- [~] 2.1-04-PLAN.md — DSGN-04: dashboard.pen — EXPANDED: 16 desktop frames (dashboard, candidates-detail, compare, talent-pool, build-test + 5 build-test steps, tests, test-details, test-edit, test-edit-success, test-share-modal, Add Question Modal); MISSING:responsive mobile frames for each frames + skeleton/empty state variants
+- [x] 2.1-05-PLAN.md — DSGN-05: payments.pen — checkout + checkout-success (2 frames, complete)
 - [ ] 2.1-06-PLAN.md — DSGN-06: components.pen — shared component reference sheet (6 groups: toasts, modals, skeletons, empty state, 404, 500)
 
 ### Phase 3: Landing Pages + Data Foundation
-**Goal**: All five marketing pages are live and bilingual, the Supabase database is seeded with realistic data, and the contact form posts real data and sends a real email.
+**Goal**: All two marketing pages are live and bilingual, the Supabase database is seeded with realistic data, and the contact form posts real data and sends a real email.
 **Depends on**: Phase 2.1
-**Requirements**: LAND-01, LAND-02, LAND-03, LAND-04, LAND-05, DATA-01, DATA-02, DATA-03, DATA-10, SEC-01
+**Requirements**: LAND-01, LAND-02, DATA-01, DATA-02, DATA-03, DATA-10, SEC-01
 **Success Criteria** (what must be TRUE):
-  1. Visiting /, /for-candidates, /for-companies, /pricing, and /contact all render fully with correct bilingual content and no layout breaks on mobile or desktop
+  1. Visiting /, /dark all render fully with correct bilingual content and no layout breaks on mobile or desktop
   2. Submitting the contact form saves a row to Supabase contact_submissions and triggers a Resend email notification
   3. Submitting the contact form more than 3 times from the same IP within one hour returns a rate-limit error without exposing server details
   4. Running npm run db:seed populates test_templates, mock_candidates, and questions tables with the specified seed counts (30-50 candidates, 80-120 questions, 8 templates)
@@ -98,7 +98,7 @@ Plans:
 **Depends on**: Phase 3
 **Requirements**: AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-05, TEST-01, TEST-02, TEST-03, TEST-04, TEST-05
 **Success Criteria** (what must be TRUE):
-  1. Signing up as Candidate redirects to /test/sample/intro; signing up as Company redirects to /dashboard; the logged-in nav avatar and dropdown appear immediately
+  1.clicking on a test link redirect to the test intro from where, following the flow , a candidate can register; signing up as Company redirects (through th sign up button on the home page) to /dashboard; the logged-in nav avatar and  appear immediately
   2. Navigating to /dashboard or /test/* while logged out redirects to /login
   3. The pre-flight check page requests real webcam and microphone permissions from the browser and shows a live mic level indicator; the Start CTA stays disabled until the checklist is agreed
   4. The test engine renders all six question formats (QCM, drag & drop, case study, simulation, audio/video, short text), tracks progress, and shows a countdown timer that turns amber then red as time expires
@@ -138,7 +138,7 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-03-14 |
 | 2. Shared UI + Nav Shell | 6/6 | Complete   | 2026-03-15 |
-| 2.1. Screen Design | 3/7 | In progress | - |
+| 2.1. Screen Design | 2 full + 3 partial / 7 | In progress — see plan notes for what's missing per file | - |
 | 3. Landing Pages + Data Foundation | 0/TBD | Not started | - |
 | 4. Auth + Test Flow | 0/TBD | Not started | - |
 | 5. Company Dashboard + API | 0/TBD | Not started | - |

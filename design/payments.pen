@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.9",
   "children": [
     {
       "type": "frame",
@@ -27,14 +27,36 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "0qNEU",
-              "name": "co-logo",
-              "fill": "$brand-navy",
-              "content": "CrismaTest",
-              "fontFamily": "$font-sans",
-              "fontSize": 20,
-              "fontWeight": "700"
+              "type": "frame",
+              "id": "UJcRo",
+              "name": "v4-logo",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "PTJO4",
+                  "name": "logoImg",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../design_context/logo/logo-1.png",
+                    "mode": "fit"
+                  },
+                  "width": 42,
+                  "height": 36
+                },
+                {
+                  "type": "text",
+                  "id": "5zCDu",
+                  "fill": "$brand-navy",
+                  "content": "CrismaTest",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "letterSpacing": -0.3
+                }
+              ]
             },
             {
               "type": "frame",
@@ -58,7 +80,7 @@
                   "id": "HiNXy",
                   "name": "coSecureTxt",
                   "fill": "#64748B",
-                  "content": "Secure Checkout",
+                  "content": "Secure checkout",
                   "fontFamily": "$font-sans",
                   "fontSize": 13,
                   "fontWeight": "normal"
@@ -379,7 +401,7 @@
                   "id": "Dmukq",
                   "name": "co-back-link",
                   "fill": "$brand-primary",
-                  "content": "← Back to Pricing",
+                  "content": "← Back to pricing",
                   "fontFamily": "Inter",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -781,7 +803,7 @@
                           "id": "PFpvm",
                           "name": "coSubTxt",
                           "fill": "#FFFFFF",
-                          "content": "Subscribe Now",
+                          "content": "Subscribe now",
                           "fontFamily": "Inter",
                           "fontSize": 16,
                           "fontWeight": "700"
@@ -852,14 +874,36 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "j4ChC",
-              "name": "csLogo",
-              "fill": "$brand-navy",
-              "content": "CrismaTest",
-              "fontFamily": "Inter",
-              "fontSize": 20,
-              "fontWeight": "700"
+              "type": "frame",
+              "id": "vsqew",
+              "name": "v4-logo",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "uxW3m",
+                  "name": "logoImg",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../design_context/logo/logo-1.png",
+                    "mode": "fit"
+                  },
+                  "width": 42,
+                  "height": 36
+                },
+                {
+                  "type": "text",
+                  "id": "hbDAA",
+                  "fill": "$brand-navy",
+                  "content": "CrismaTest",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "letterSpacing": -0.3
+                }
+              ]
             }
           ]
         },
@@ -968,7 +1012,7 @@
                           "id": "L8RFZ",
                           "name": "csDashTxt",
                           "fill": "#FFFFFF",
-                          "content": "Go to Dashboard",
+                          "content": "Go to dashboard",
                           "fontFamily": "Inter",
                           "fontSize": 15,
                           "fontWeight": "700"
@@ -995,7 +1039,7 @@
                           "id": "9LrS1",
                           "name": "csTestTxt",
                           "fill": "$brand-navy",
-                          "content": "Take Your First Test",
+                          "content": "Take your first test",
                           "fontFamily": "Inter",
                           "fontSize": 15,
                           "fontWeight": "600"
