@@ -6,7 +6,9 @@
 <domain>
 ## Phase Boundary
 
-All five marketing pages (/, /for-candidates, /for-companies, /pricing, /contact) live and bilingual. Supabase schema created, seeded with realistic data, and the contact form posts to Supabase + Resend. Auth, test flow, and dashboard are separate phases.
+Both marketing pages (/ light and /dark) live and bilingual. Supabase schema created, seeded with realistic data, and the contact form (embedded on the home pages) posts to Supabase + Resend. Auth, test flow, and dashboard are separate phases.
+
+Note: The original 5-page scope (/, /for-candidates, /for-companies, /pricing, /contact) was narrowed to 2 pages (home-light at / and home-dark at /dark). There are no separate /for-candidates, /for-companies, /pricing, or /contact routes in v1.
 
 </domain>
 
@@ -22,13 +24,6 @@ All five marketing pages (/, /for-candidates, /for-companies, /pricing, /contact
 - Full spec — all sections included: hero, trust bar marquee, what-is, 3-step process, for-companies feature grid, anti-fraud section, test library preview, testimonials, FAQ, footer
 - Testimonials: 3 — renders as 3-column grid on desktop, carousel on mobile
 - FAQ: 6-8 items — covers typical objections (cost, time, fraud, accuracy, privacy, integrations)
-
-### Pricing page
-- Layout: 4 plan cards side by side (not a comparison table)
-- Recommended plan: Pro ($149) — taller card, brand-primary colored border, "Most Popular" badge
-- Annual billing toggle: 20% discount, toggle updates all card prices live (e.g. $49 → $39/mo billed annually), "Save 20%" badge on the toggle itself
-- Plan features: Claude defines sensible feature tiers — Free (5 tests/mo, basic reporting), Starter (50 tests/mo, PDF export, email support), Pro (unlimited tests, anti-fraud proctoring, team seats, API access), Enterprise (custom everything + SSO + dedicated support)
-- "Get Started" CTAs on paid plans link to /checkout/[plan]; Enterprise shows "Contact Us" → /contact
 
 ### Contact form fields + behavior
 - Fields exactly as specced: name (required), company (required), email (required), team size dropdown (1-10 / 11-50 / 51-200 / 200+, required), message (textarea, optional), GDPR consent checkbox (required to enable submit)
@@ -100,8 +95,8 @@ All five marketing pages (/, /for-candidates, /for-companies, /pricing, /contact
 ### Integration Points
 - `/locales/en.json` and `/locales/fr.json`: all landing page copy added here before components are built
 - `src/app/page.tsx`: home route (currently placeholder) — becomes the full home page
-- New routes: `src/app/for-candidates/page.tsx`, `src/app/for-companies/page.tsx`, `src/app/pricing/page.tsx`, `src/app/contact/page.tsx`
-- `src/app/api/contact/route.ts`: new API route for POST /api/contact
+- New route: `src/app/dark/page.tsx` for the dark home page variant
+- `src/app/api/contact/route.ts`: new API route for POST /api/contact (contact form is embedded on both home pages, not a separate /contact route)
 - Supabase client: needs `src/lib/supabase.ts` (client + server variants) for API routes and seed script
 
 </code_context>
