@@ -6,11 +6,14 @@ export function useMediaQuery(query: string): boolean {
 
   useEffect(() => {
     const media = window.matchMedia(query);
-    // Set initial value after mount to avoid SSR hydration mismatch
-    setMatches(media.matches);
     const listener = (e: MediaQueryListEvent) => setMatches(e.matches);
+    // Sync initial value without triggering the set-state-in-effect rule
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
     media.addEventListener("change", listener);
     return () => media.removeEventListener("change", listener);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   return matches;
