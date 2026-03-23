@@ -1,71 +1,127 @@
 "use client";
-import { useTranslation } from "react-i18next";
+import Image from "next/image";
 import { motion } from "motion/react";
-import { staggerChildren, fadeIn } from "@/lib/motion";
-import { CheckCircle } from "lucide-react";
+import { SectionReveal } from "@/components/ui/SectionReveal";
+import { fadeIn, fadeUp, staggerContainer } from "@/lib/animations";
 
-const FEATURES = [
-  "home_antifraid_feat_1",
-  "home_antifraid_feat_2",
-  "home_antifraid_feat_3",
-  "home_antifraid_feat_4",
-] as const;
+const detections = [
+  { img: "/images/antifraud/faces.png", label: "Multiple faces detected" },
+  { img: "/images/antifraud/eye_off.png", label: "Looking away from screen" },
+  { img: "/images/antifraud/windows.png", label: "Multiple tabs or windows" },
+  { img: "/images/antifraud/keyboard.png", label: "Unusual typing or input patterns" },
+  { img: "/images/antifraud/clipboard.png", label: "Copy/paste anomalies" },
+  { img: "/images/antifraud/assist.png", label: "Signs of external assistance" },
+];
 
-export function AntifraudSection({ variant = "light" }: { variant?: "light" | "dark" }) {
-  const { t } = useTranslation();
-  void variant; // Always dark navy per design spec
+function DetectionCard({
+  img,
+  label,
+  dark,
+}: {
+  img: string;
+  label: string;
+  dark: boolean;
+}) {
+  return (
+    <motion.div
+      variants={fadeUp}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="flex-1 flex items-center gap-2.5 rounded-lg"
+      style={{
+        background: dark ? "#0C1E38" : "rgba(255,255,255,0.7)",
+        border: `1px solid ${dark ? "#1E3A5F" : "#BFDBFE"}`,
+        padding: "14px 16px",
+      }}
+    >
+      <Image src={img} alt={label} width={16} height={16} className="shrink-0" />
+      <span
+        className="text-[13px] font-medium"
+        style={{ color: dark ? "#E2E8F0" : "#374151" }}
+      >
+        {label}
+      </span>
+    </motion.div>
+  );
+}
+
+export function AntiFraudSection({ dark = false }: { dark?: boolean }) {
+  const bg = dark ? "#040D1E" : "#EFF6FF";
+  const badgeBg = dark ? "#0C2040" : "#DBEAFE";
+  const badgeBorder = dark ? "#1E3A5F" : "#BFDBFE";
+  const badgeText = dark ? "#60A5FA" : "#2563EB";
+  const headlineColor = dark ? "#FFFFFF" : "#0F172A";
+  const subColor = dark ? "#8FA8C8" : "#64748B";
+  const footerColor = dark ? "#4A6080" : "#64748B";
 
   return (
-    <section className="w-full bg-brand-navy px-4 py-20 text-white">
-      <div className="mx-auto max-w-4xl">
+    <section
+      className="w-full flex flex-col items-center gap-12"
+      style={{ background: bg, padding: 80 }}
+    >
+      <SectionReveal variants={fadeIn}>
+        <div
+          className="flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-[0.5px]"
+          style={{ background: badgeBg, border: `1px solid ${badgeBorder}`, color: badgeText }}
+        >
+          <div className="w-1.5 h-1.5 rounded-sm" style={{ background: badgeText }} />
+          Anti-Fraud technology
+        </div>
+      </SectionReveal>
+
+      <SectionReveal variants={fadeUp} delay={0.1}>
+        <h2
+          className="text-[42px] font-extrabold text-center leading-[1.15] tracking-[-1px] max-w-[800px]"
+          style={{ color: headlineColor }}
+        >
+          No more cheating. No more uncertainty.
+        </h2>
+      </SectionReveal>
+
+      <SectionReveal variants={fadeUp} delay={0.15}>
+        <p
+          className="text-[16px] text-center leading-[1.6] max-w-[640px]"
+          style={{ color: subColor }}
+        >
+          CrismaTest uses real-time AI proctoring to ensure every score reflects genuine, unassisted
+          performance. Every session is monitored, analyzed, and verified — transparently.
+        </p>
+      </SectionReveal>
+
+      {/* Detection grid: 2 staggered rows of 3 */}
+      <div className="flex flex-col gap-3 w-full">
         <motion.div
-          variants={staggerChildren}
+          className="flex gap-3 w-full"
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
         >
-          {/* Eyebrow */}
-          <motion.p
-            variants={fadeIn}
-            className="mb-3 text-center text-sm font-semibold uppercase tracking-widest text-brand-accent"
-          >
-            {t("home_antifraid_eyebrow")}
-          </motion.p>
-
-          {/* Headline */}
-          <motion.h2
-            variants={fadeIn}
-            className="mb-6 text-center text-3xl font-bold leading-tight sm:text-4xl"
-          >
-            {t("home_antifraid_headline")}
-          </motion.h2>
-
-          {/* Body */}
-          <motion.p
-            variants={fadeIn}
-            className="mb-12 text-center text-lg leading-relaxed text-white/70"
-          >
-            {t("home_antifraid_body")}
-          </motion.p>
-
-          {/* Features 2x2 grid */}
-          <motion.div
-            variants={staggerChildren}
-            className="grid grid-cols-1 gap-4 sm:grid-cols-2"
-          >
-            {FEATURES.map((key) => (
-              <motion.div
-                key={key}
-                variants={fadeIn}
-                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-4"
-              >
-                <CheckCircle className="h-5 w-5 shrink-0 text-brand-accent" />
-                <span className="text-base font-medium">{t(key)}</span>
-              </motion.div>
-            ))}
-          </motion.div>
+          {detections.slice(0, 3).map((d) => (
+            <DetectionCard key={d.label} {...d} dark={!!dark} />
+          ))}
+        </motion.div>
+        <motion.div
+          className="flex gap-3 w-full"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {detections.slice(3).map((d) => (
+            <DetectionCard key={d.label} {...d} dark={!!dark} />
+          ))}
         </motion.div>
       </div>
+
+      <SectionReveal variants={fadeUp} delay={0.1}>
+        <p
+          className="text-[14px] italic text-center max-w-[640px]"
+          style={{ color: footerColor }}
+        >
+          All detected behaviors are flagged transparently in the candidate&apos;s report. No hidden
+          penalties — just honest data for better decisions.
+        </p>
+      </SectionReveal>
     </section>
   );
 }
