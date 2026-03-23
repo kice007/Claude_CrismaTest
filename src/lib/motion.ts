@@ -1,5 +1,6 @@
 // src/lib/motion.ts
-// Shared animation variants — import from here in all phases.
+// @deprecated — Use src/lib/animations.ts for all new components.
+// This file is retained only for the legacy dev/design-system page.
 // MotionConfig reducedMotion="user" in layout.tsx handles prefers-reduced-motion globally.
 import type { Variants } from "motion-dom";
 
