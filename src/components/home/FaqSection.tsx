@@ -1,89 +1,90 @@
 "use client";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { SectionReveal } from "@/components/ui/SectionReveal";
+import { fadeIn, fadeUp } from "@/lib/animations";
 
-const FAQ_ITEMS = [
-  { q: "home_faq_q1", a: "home_faq_a1" },
-  { q: "home_faq_q2", a: "home_faq_a2" },
-  { q: "home_faq_q3", a: "home_faq_a3" },
-  { q: "home_faq_q4", a: "home_faq_a4" },
-  { q: "home_faq_q5", a: "home_faq_a5" },
-  { q: "home_faq_q6", a: "home_faq_a6" },
-  { q: "home_faq_q7", a: "home_faq_a7" },
-] as const;
+const faqs = [
+  {
+    q: "How accurate is the test?",
+    a: "CrismaTest combines six evaluation dimensions — logic, communication, job skills, behavioral indicators, anti-fraud consistency, and optional video — to produce a holistic score with significantly higher predictive validity than traditional CV screening.",
+  },
+  {
+    q: "How long does it take?",
+    a: "Most candidates complete the full test in 10 to 15 minutes. The adaptive format means the test adjusts to your responses — no two sessions are identical.",
+  },
+  {
+    q: "How is cheating prevented?",
+    a: "CrismaTest uses real-time AI proctoring that monitors webcam activity, tab switching, typing patterns, copy/paste behavior, audio environment, and secondary screen usage. Any anomalies are flagged in the candidate's TrustScore breakdown.",
+  },
+  {
+    q: "Can companies customize the test?",
+    a: "Yes. Companies on Starter, Pro, and Enterprise plans can use the Test Builder to select specific modules, adjust question focus, and add up to 3 custom questions — all without any technical configuration.",
+  },
+  {
+    q: "Can I reuse my CrismaScore?",
+    a: "Absolutely. Your CrismaScore is valid for 12 months. You can share it via a unique profile link, embed it on LinkedIn, or send it directly to any employer — anywhere in the world. Free plan candidates receive 2 free retests.",
+  },
+];
 
-export function FaqSection({ variant = "light" }: { variant?: "light" | "dark" }) {
-  const { t } = useTranslation();
-  const [openItems, setOpenItems] = useState<Set<number>>(new Set());
-
-  function toggle(i: number) {
-    setOpenItems((prev) => {
-      const next = new Set(prev);
-      if (next.has(i)) {
-        next.delete(i);
-      } else {
-        next.add(i);
-      }
-      return next;
-    });
-  }
-
-  const sectionClass =
-    variant === "dark" ? "bg-brand-navy text-white" : "bg-white text-brand-navy";
-  const eyebrowClass =
-    variant === "dark" ? "text-brand-accent" : "text-brand-primary";
-  const itemClass =
-    variant === "dark"
-      ? "border-white/10"
-      : "border-neutral-100";
-  const answerClass =
-    variant === "dark" ? "text-white/70" : "text-neutral-600";
-  const questionClass =
-    variant === "dark" ? "text-white" : "text-brand-navy";
+export function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className={`w-full px-4 py-20 ${sectionClass}`}>
-      <div className="mx-auto max-w-2xl">
-        {/* Eyebrow */}
-        <p className={`mb-3 text-center text-sm font-semibold uppercase tracking-widest ${eyebrowClass}`}>
-          {t("home_faq_eyebrow")}
-        </p>
-
-        {/* Headline */}
-        <h2 className="mb-12 text-center text-3xl font-bold leading-tight sm:text-4xl">
-          {t("home_faq_headline")}
-        </h2>
-
-        {/* Accordion */}
-        <div className="divide-y" style={{ borderColor: "inherit" }}>
-          {FAQ_ITEMS.map((item, i) => {
-            const isOpen = openItems.has(i);
-            return (
-              <div key={item.q} className={`border-b ${itemClass}`}>
-                <button
-                  type="button"
-                  onClick={() => toggle(i)}
-                  className={`flex w-full items-center justify-between gap-4 py-5 text-left text-base font-semibold ${questionClass} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary`}
-                  aria-expanded={isOpen}
-                >
-                  <span>{t(item.q)}</span>
-                  <ChevronDown
-                    className={`h-5 w-5 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                    aria-hidden="true"
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-200 ease-in-out ${isOpen ? "max-h-96" : "max-h-0"}`}
-                >
-                  <p className={`pb-5 text-sm leading-relaxed ${answerClass}`}>
-                    {t(item.a)}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+    <section id="faq" className="w-full bg-white flex flex-col gap-12" style={{ padding: 80 }}>
+      {/* Outer shell — scroll reveal */}
+      <SectionReveal variants={fadeIn}>
+        <div className="self-start flex items-center gap-1.5 rounded-full px-3.5 py-1.5 bg-[#EFF6FF] border border-[#BFDBFE]">
+          <div className="w-1.5 h-1.5 rounded-sm bg-[#2563EB]" />
+          <span className="text-[12px] font-semibold text-[#2563EB] tracking-[0.5px]">FAQ</span>
         </div>
+      </SectionReveal>
+
+      <SectionReveal variants={fadeUp} delay={0.1}>
+        <h2 className="text-[40px] font-extrabold text-[#0F172A] leading-[1.15] tracking-[-1px]">
+          Frequently asked questions
+        </h2>
+      </SectionReveal>
+
+      {/* Accordion */}
+      <div className="flex flex-col w-full">
+        {faqs.map((faq, i) => (
+          <div
+            key={faq.q}
+            className="flex flex-col w-full"
+            style={i < faqs.length - 1 ? { borderBottom: "1px solid #E2E8F0" } : {}}
+          >
+            <button
+              className="flex items-center justify-between w-full py-6 text-left"
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+            >
+              <span className="text-[16px] font-bold text-[#0F172A]">{faq.q}</span>
+              <motion.span
+                animate={{ rotate: openIndex === i ? 45 : 0 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="text-[24px] text-[#2563EB] font-light leading-none ml-4 shrink-0"
+              >
+                +
+              </motion.span>
+            </button>
+            <AnimatePresence initial={false}>
+              {openIndex === i && (
+                <motion.div
+                  key="answer"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <p className="text-[14px] text-[#64748B] leading-[1.6] pb-6">
+                    {faq.a}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
       </div>
     </section>
   );
