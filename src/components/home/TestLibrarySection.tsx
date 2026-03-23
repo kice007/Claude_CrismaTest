@@ -1,99 +1,123 @@
 "use client";
-import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
-import { staggerChildren, fadeIn } from "@/lib/motion";
-import Link from "next/link";
+import { SectionReveal } from "@/components/ui/SectionReveal";
+import { fadeIn, fadeUp, staggerContainer } from "@/lib/animations";
 
-const TEMPLATES = [
-  { key: "home_tests_template_1", duration: 12 },
-  { key: "home_tests_template_2", duration: 15 },
-  { key: "home_tests_template_3", duration: 10 },
-  { key: "home_tests_template_4", duration: 11 },
-  { key: "home_tests_template_5", duration: 14 },
-  { key: "home_tests_template_6", duration: 13 },
-  { key: "home_tests_template_7", duration: 12 },
-  { key: "home_tests_template_8", duration: 10 },
+const categories = [
+  {
+    dotColor: "#1D4ED8",
+    label: "TECHNOLOGY & SUPPORT",
+    chips: [
+      { text: "Customer support", textColor: "#1D4ED8", bg: "#EFF6FF" },
+      { text: "Virtual assistant", textColor: "#1D4ED8", bg: "#EFF6FF" },
+      { text: "Software developer", textColor: "#1D4ED8", bg: "#EFF6FF" },
+    ],
+  },
+  {
+    dotColor: "#7C3AED",
+    label: "BUSINESS & GROWTH",
+    chips: [
+      { text: "Marketing", textColor: "#7C3AED", bg: "#F5F3FF" },
+      { text: "Sales", textColor: "#7C3AED", bg: "#F5F3FF" },
+      { text: "Data analysis", textColor: "#7C3AED", bg: "#F5F3FF" },
+    ],
+  },
+  {
+    dotColor: "#059669",
+    label: "OPERATIONS & FINANCE",
+    chips: [
+      { text: "Operations", textColor: "#059669", bg: "#ECFDF5" },
+      { text: "Finance", textColor: "#059669", bg: "#ECFDF5" },
+      {
+        text: "More coming soon…",
+        textColor: "#94A3B8",
+        bg: "#F8FAFC",
+        border: "#E2E8F0",
+        italic: true,
+      },
+    ],
+  },
 ] as const;
 
-export function TestLibrarySection({ variant = "light" }: { variant?: "light" | "dark" }) {
-  const { t } = useTranslation();
-
-  const sectionClass =
-    variant === "dark" ? "bg-brand-navy text-white" : "bg-neutral-50 text-brand-navy";
-  const eyebrowClass =
-    variant === "dark" ? "text-brand-accent" : "text-brand-primary";
-  const subtitleClass =
-    variant === "dark" ? "text-white/70" : "text-neutral-600";
-  const cardClass =
-    variant === "dark"
-      ? "bg-white/5 border-white/10 hover:bg-white/10"
-      : "bg-white border-neutral-100 hover:border-brand-primary/30 hover:shadow-md";
-  const durationClass =
-    variant === "dark" ? "text-white/50" : "text-neutral-400";
-
+export function TestLibrarySection() {
   return (
-    <section className={`w-full px-4 py-20 ${sectionClass}`}>
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          variants={staggerChildren}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {/* Eyebrow */}
-          <motion.p
-            variants={fadeIn}
-            className={`mb-3 text-center text-sm font-semibold uppercase tracking-widest ${eyebrowClass}`}
-          >
-            {t("home_tests_eyebrow")}
-          </motion.p>
+    <section
+      id="tests"
+      className="w-full bg-[#F8FAFC] flex flex-col items-center gap-10"
+      style={{ padding: 80 }}
+    >
+      <SectionReveal variants={fadeIn}>
+        <div className="flex items-center gap-1.5 rounded-full px-3.5 py-1.5 bg-[#EFF6FF] border border-[#BFDBFE]">
+          <div className="w-1.5 h-1.5 rounded-sm bg-[#2563EB]" />
+          <span className="text-[12px] font-semibold text-[#2563EB] tracking-[0.5px]">
+            Pre-built assessments
+          </span>
+        </div>
+      </SectionReveal>
 
-          {/* Headline */}
-          <motion.h2
-            variants={fadeIn}
-            className="mb-4 text-center text-3xl font-bold leading-tight sm:text-4xl"
-          >
-            {t("home_tests_headline")}
-          </motion.h2>
+      <SectionReveal variants={fadeUp} delay={0.1}>
+        <h2 className="text-[42px] font-extrabold text-[#0F172A] text-center leading-[1.15] tracking-[-1px] max-w-[800px]">
+          Role-ready tests for every position.
+        </h2>
+      </SectionReveal>
 
-          {/* Subtitle */}
-          <motion.p
-            variants={fadeIn}
-            className={`mb-12 text-center text-lg ${subtitleClass}`}
-          >
-            {t("home_tests_subtitle")}
-          </motion.p>
+      <SectionReveal variants={fadeUp} delay={0.15}>
+        <p className="text-[16px] text-[#64748B] text-center leading-[1.6] max-w-[620px]">
+          Choose from our growing library of job-specific assessments — each designed to evaluate the
+          exact skills that matter for that role.
+        </p>
+      </SectionReveal>
 
-          {/* Template grid */}
+      {/* Category cards — stagger */}
+      <motion.div
+        className="flex gap-4 w-full"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {categories.map((cat) => (
           <motion.div
-            variants={staggerChildren}
-            className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+            key={cat.label}
+            variants={fadeUp}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="flex-1 flex flex-col gap-4 rounded-xl bg-white border border-[#E2E8F0] p-6"
           >
-            {TEMPLATES.map((tmpl) => (
-              <motion.div
-                key={tmpl.key}
-                variants={fadeIn}
-                className={`rounded-xl border p-5 transition-all ${cardClass}`}
-              >
-                <h3 className="mb-2 text-sm font-semibold">{t(tmpl.key)}</h3>
-                <p className={`text-xs ${durationClass}`}>
-                  {tmpl.duration} {t("home_tests_duration_label")}
-                </p>
-              </motion.div>
-            ))}
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded" style={{ background: cat.dotColor }} />
+              <span className="text-[11px] font-semibold text-[#64748B] tracking-[0.5px]">
+                {cat.label}
+              </span>
+            </div>
+            <div className="h-px bg-[#E2E8F0] w-full" />
+            <div className="flex flex-col gap-2">
+              {cat.chips.map((chip) => (
+                <div
+                  key={chip.text}
+                  className="self-start px-3 py-1.5 rounded-full"
+                  style={{
+                    background: chip.bg,
+                    border: "border" in chip ? `1px solid ${chip.border}` : undefined,
+                  }}
+                >
+                  <span
+                    className={`text-[13px] font-medium${"italic" in chip && chip.italic ? " italic" : ""}`}
+                    style={{ color: chip.textColor }}
+                  >
+                    {chip.text}
+                  </span>
+                </div>
+              ))}
+            </div>
           </motion.div>
+        ))}
+      </motion.div>
 
-          {/* CTA */}
-          <motion.div variants={fadeIn} className="text-center">
-            <Link
-              href="/for-candidates"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-primary bg-transparent px-8 py-3 text-base font-semibold text-brand-primary transition-colors hover:bg-brand-primary hover:text-white"
-            >
-              {t("home_tests_cta")}
-            </Link>
-          </motion.div>
-        </motion.div>
-      </div>
+      <SectionReveal variants={fadeUp} delay={0.1}>
+        <button className="px-7 py-3 rounded-lg border-[1.5px] border-[#CBD5E1] text-[15px] font-semibold text-[#334155] hover:opacity-80 active:scale-[0.97] transition-all duration-150">
+          Browse all tests
+        </button>
+      </SectionReveal>
     </section>
   );
 }
