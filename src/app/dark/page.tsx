@@ -1,36 +1,31 @@
-import type { Metadata } from "next";
-import { HeroSection } from "@/components/home/HeroSection";
+import { HeroDark } from "@/components/home/HeroDark";
 import { TrustBar } from "@/components/home/TrustBar";
-import { WhatIsSection } from "@/components/home/WhatIsSection";
-import { HowItWorksSection } from "@/components/home/HowItWorksSection";
-import { ForCompaniesSection } from "@/components/home/ForCompaniesSection";
-import { AntifraudSection } from "@/components/home/AntifraudSection";
+import { ProblemSection } from "@/components/home/ProblemSection";
+import { SolutionSection } from "@/components/home/SolutionSection";
+import { FeaturesSection } from "@/components/home/FeaturesSection";
+import { CrismaScoreSection } from "@/components/home/CrismaScoreSection";
+import { AntiFraudSection } from "@/components/home/AntiFraudSection";
 import { TestLibrarySection } from "@/components/home/TestLibrarySection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { ContactSection } from "@/components/home/ContactSection";
-import { FooterSection } from "@/components/home/FooterSection";
+import { CtaBanner } from "@/components/home/CtaBanner";
+import { Footer } from "@/components/home/Footer";
 
-export const metadata: Metadata = {
-  title: "CrismaTest — Hire the Best. Objectively.",
-  description:
-    "CrismaTest delivers AI-powered candidate assessments with fraud detection built in. Know who you're hiring — before you extend an offer.",
-};
-
-export default function DarkHomePage() {
+export default function DarkHome() {
   return (
-    <div className="bg-brand-navy min-h-screen">
-      <HeroSection variant="dark" />
-      <TrustBar variant="dark" />
-      <WhatIsSection variant="dark" />
-      <HowItWorksSection variant="dark" />
-      <ForCompaniesSection variant="dark" />
-      <AntifraudSection variant="dark" />
-      <TestLibrarySection variant="dark" />
-      <TestimonialsSection variant="dark" />
-      <FaqSection variant="dark" />
-      <ContactSection variant="dark" />
-      <FooterSection variant="dark" />
-    </div>
+    <>
+      <HeroDark />
+      <TrustBar dark />
+      <ProblemSection />
+      <SolutionSection dark />
+      <FeaturesSection dark />
+      <CrismaScoreSection />
+      <AntiFraudSection dark />
+      <TestLibrarySection />
+      <FaqSection />
+      <ContactSection />
+      <CtaBanner dark />
+      <Footer dark />
+    </>
   );
 }

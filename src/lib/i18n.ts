@@ -19,7 +19,7 @@ i18n
     fallbackLng: "en",
     supportedLngs: ["en", "fr"],
     detection: {
-      order: ["localStorage", "navigator", "htmlTag"],
+      order: ["localStorage"],
       caches: ["localStorage"],
       lookupLocalStorage: "crismatest_lang",
     },

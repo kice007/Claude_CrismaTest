@@ -1,4 +1,5 @@
 "use client";
+import { useTranslation } from "react-i18next";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { fadeIn, fadeUp } from "@/lib/animations";
 
@@ -29,40 +30,42 @@ function FormField({
 }
 
 export function ContactSection() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contact"
-      className="w-full flex flex-col items-center gap-12"
-      style={{ background: "#F8FAFC", padding: 80 }}
+      className="w-full flex flex-col items-center gap-8 md:gap-12 px-5 py-12 md:p-20"
+      style={{ background: "#F8FAFC" }}
     >
       <SectionReveal variants={fadeIn}>
         <div className="flex items-center gap-1.5 rounded-full px-3.5 py-1.5 bg-[#EFF6FF]">
           <div className="w-1.5 h-1.5 rounded-sm bg-[#2563EB]" />
-          <span className="text-[12px] font-semibold text-[#2563EB] tracking-[0.5px]">Contact</span>
+          <span className="text-[12px] font-semibold text-[#2563EB] tracking-[0.5px]">{t("contact_badge")}</span>
         </div>
       </SectionReveal>
 
       <SectionReveal variants={fadeUp} delay={0.1}>
-        <h2 className="text-[40px] font-extrabold text-[#0F172A] text-center leading-[1.15] tracking-[-1px]">
-          Get in touch
+        <h2 className="text-[24px] md:text-[40px] font-extrabold text-[#0F172A] text-center leading-[1.15] tracking-[-0.5px] md:tracking-[-1px]">
+          {t("contact_headline")}
         </h2>
       </SectionReveal>
 
       <SectionReveal variants={fadeUp} delay={0.15}>
-        <p className="text-[18px] text-[#64748B] text-center leading-[1.6] max-w-[560px]">
-          Have a question or want to learn more? We&apos;d love to hear from you.
+        <p className="text-[13px] md:text-[18px] text-[#64748B] text-center leading-[1.6] max-w-[560px]">
+          {t("contact_sub")}
         </p>
       </SectionReveal>
 
       <SectionReveal variants={fadeUp} delay={0.2} className="w-full max-w-[680px]">
         <div className="flex flex-col gap-5 w-full">
-          <FormField label="Full Name" placeholder="Your full name" />
-          <FormField label="Email Address" placeholder="your@email.com" type="email" />
-          <FormField label="Subject" placeholder="What's this about?" />
+          <FormField label={t("contact_name_label")} placeholder={t("contact_name_placeholder")} />
+          <FormField label={t("contact_email_label")} placeholder={t("contact_email_placeholder")} type="email" />
+          <FormField label={t("contact_subject_label")} placeholder={t("contact_subject_placeholder")} />
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#374151]">Message</label>
+            <label className="text-[14px] font-semibold text-[#374151]">{t("contact_message_label")}</label>
             <textarea
-              placeholder="Tell us how we can help..."
+              placeholder={t("contact_message_placeholder")}
               className="w-full rounded-lg bg-white border-[1.5px] border-[#E2E8F0] p-3.5 text-[14px] text-[#374151] placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#2563EB] resize-none transition-colors"
               style={{ height: 140 }}
             />
@@ -72,7 +75,7 @@ export function ContactSection() {
             className="w-full rounded-[10px] bg-[#2563EB] text-white text-[16px] font-semibold hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(37,99,235,0.35)] active:scale-[0.97] transition-all duration-200 flex items-center justify-center"
             style={{ padding: "14px 28px" }}
           >
-            Send message
+            {t("contact_submit")}
           </button>
         </div>
       </SectionReveal>

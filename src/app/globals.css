@@ -174,7 +174,27 @@ body {
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
+  button, [role="button"] {
+    cursor: pointer;
+  }
+}
+
+/* Dot pulse — gentle scale pulse for category indicator dots */
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.7); opacity: 0.55; }
+}
+
+.dot-pulse {
+  animation: dot-pulse 1.4s ease-in-out infinite;
+}
+
+/* Chip rain — fall-in animation for pre-built assessment chips */
+@keyframes chip-rain {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Skeleton shimmer — CSS-only animation for performance (not Framer Motion) */

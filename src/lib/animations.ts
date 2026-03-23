@@ -26,3 +26,18 @@ export const scaleUp: Variants = {
   hidden: { opacity: 0, scale: 0.97 },
   visible: { opacity: 1, scale: 1 },
 };
+
+export const fadeLeft: Variants = {
+  hidden: { opacity: 0, x: -24 },
+  visible: { opacity: 1, x: 0 },
+};
+
+export const fadeRight: Variants = {
+  hidden: { opacity: 0, x: 24 },
+  visible: { opacity: 1, x: 0 },
+};
+
+export const fadeDown: Variants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0 },
+};

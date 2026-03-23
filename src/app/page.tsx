@@ -1,36 +1,31 @@
-import type { Metadata } from "next";
-import { HeroSection } from "@/components/home/HeroSection";
+import { HeroLight } from "@/components/home/HeroLight";
 import { TrustBar } from "@/components/home/TrustBar";
-import { WhatIsSection } from "@/components/home/WhatIsSection";
-import { HowItWorksSection } from "@/components/home/HowItWorksSection";
-import { ForCompaniesSection } from "@/components/home/ForCompaniesSection";
-import { AntifraudSection } from "@/components/home/AntifraudSection";
+import { ProblemSection } from "@/components/home/ProblemSection";
+import { SolutionSection } from "@/components/home/SolutionSection";
+import { FeaturesSection } from "@/components/home/FeaturesSection";
+import { CrismaScoreSection } from "@/components/home/CrismaScoreSection";
+import { AntiFraudSection } from "@/components/home/AntiFraudSection";
 import { TestLibrarySection } from "@/components/home/TestLibrarySection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { ContactSection } from "@/components/home/ContactSection";
-import { FooterSection } from "@/components/home/FooterSection";
-
-export const metadata: Metadata = {
-  title: "CrismaTest — Hire the Best. Objectively.",
-  description:
-    "CrismaTest delivers AI-powered candidate assessments with fraud detection built in. Know who you're hiring — before you extend an offer.",
-};
+import { CtaBanner } from "@/components/home/CtaBanner";
+import { Footer } from "@/components/home/Footer";
 
 export default function Home() {
   return (
-    <main className="min-w-0 overflow-x-hidden">
-      <HeroSection />
+    <>
+      <HeroLight />
       <TrustBar />
-      <WhatIsSection />
-      <HowItWorksSection />
-      <ForCompaniesSection />
-      <AntifraudSection />
+      <ProblemSection />
+      <SolutionSection />
+      <FeaturesSection />
+      <CrismaScoreSection />
+      <AntiFraudSection />
       <TestLibrarySection />
-      <TestimonialsSection />
       <FaqSection />
       <ContactSection />
-      <FooterSection />
-    </main>
+      <CtaBanner />
+      <Footer />
+    </>
   );
 }

@@ -15,23 +15,20 @@ export function HeroDark() {
 
   return (
     <section
-      className="w-full flex"
+      className="w-full flex flex-col md:flex-row"
       style={{
-        height: 680,
         background: "linear-gradient(180deg, #040D1E 0%, #071A38 100%)",
+        minHeight: 680,
       }}
     >
-      {/* Left */}
-      <div
-        className="flex flex-col justify-center gap-6 shrink-0"
-        style={{ width: 563, padding: "80px 0 80px 80px" }}
-      >
+      {/* Content column — centered on mobile, left-aligned on desktop */}
+      <div className="flex flex-col items-center md:items-start justify-center gap-5 md:gap-6 shrink-0 w-full md:w-[563px] px-5 pt-24 pb-8 md:pt-0 md:pb-0 md:pl-20 md:pr-0">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="self-start flex items-center gap-2 rounded-full text-[12px] font-medium"
+          className="flex items-center gap-2 rounded-full text-[12px] font-medium"
           style={{
             background: "#0C2040",
             border: "1px solid #1E3A5F",
@@ -44,14 +41,14 @@ export function HeroDark() {
         </motion.div>
 
         {/* Headline */}
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col items-center md:items-start w-full">
           {headlineLines.map(({ text, blue, delay }) => (
             <motion.span
               key={text}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: "easeOut", delay }}
-              className="text-[52px] font-extrabold leading-[1.1] tracking-[-1.5px]"
+              className="text-[32px] md:text-[52px] font-extrabold leading-[1.1] tracking-[-1px] md:tracking-[-1.5px] text-center md:text-left"
               style={{ color: blue ? "#2563EB" : "#FFFFFF" }}
             >
               {text}
@@ -64,22 +61,21 @@ export function HeroDark() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
-          className="text-[16px] leading-[1.6]"
+          className="text-[14px] md:text-[16px] leading-[1.6] text-center md:text-left"
           style={{ color: "#8FA8C8" }}
         >
-          AI-powered. Adaptive. Fraud-proof. Verified. The smartest way to evaluate candidates — and
-          prove your skills to the world. One test. One score. Unlimited opportunities.
+          AI-powered. Adaptive. Fraud-proof. Verified. One test. One score. Unlimited opportunities.
         </motion.p>
 
         {/* CTAs */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 md:gap-3">
           <motion.a
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.5 }}
             href="/sign-up"
-            className="flex items-center gap-2 rounded-lg text-[15px] font-semibold text-white bg-[#2563EB] hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(37,99,235,0.35)] active:scale-[0.97] transition-all duration-200"
-            style={{ padding: "14px 24px" }}
+            className="flex items-center gap-2 rounded-full md:rounded-lg text-[14px] md:text-[15px] font-semibold text-white bg-[#2563EB] hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(37,99,235,0.35)] active:scale-[0.97] transition-all duration-200"
+            style={{ padding: "13px 24px" }}
           >
             Start a test <ArrowUpRight size={16} />
           </motion.a>
@@ -88,23 +84,22 @@ export function HeroDark() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.58 }}
             href="#features"
-            className="rounded-lg text-[15px] font-semibold hover:opacity-80 active:scale-[0.97] transition-all duration-150"
-            style={{ color: "#8FA8C8", border: "1px solid #1E3A5F", padding: "14px 24px" }}
+            className="rounded-full md:rounded-lg text-[14px] md:text-[15px] font-semibold hover:opacity-80 active:scale-[0.97] transition-all duration-150"
+            style={{ color: "#8FA8C8", border: "1px solid #1E3A5F", padding: "13px 24px" }}
           >
             For companies
           </motion.a>
         </div>
       </div>
 
-      {/* Right — image + skeleton */}
+      {/* Image — below on mobile, right panel on desktop */}
       <motion.div
         initial={{ opacity: 0, scale: 0.97, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.65 }}
-        className="flex-1 flex items-center justify-center"
-        style={{ padding: "48px 80px 48px 48px" }}
+        className="flex-1 flex items-center justify-center px-5 pb-10 md:px-12 md:py-12"
       >
-        <div className="w-full rounded-xl overflow-hidden relative" style={{ height: 460 }}>
+        <div className="w-full rounded-xl overflow-hidden relative" style={{ height: 220 }}>
           {!loaded && (
             <div className="absolute inset-0 animate-pulse bg-slate-800 rounded-xl" />
           )}
@@ -112,8 +107,9 @@ export function HeroDark() {
             src="/images/dashboard.png"
             alt="CrismaTest dashboard"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             onLoad={() => setLoaded(true)}
+            priority
           />
         </div>
       </motion.div>
