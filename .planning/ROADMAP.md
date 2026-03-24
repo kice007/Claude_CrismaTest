@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Design system tokens, i18n framework, and font setup — the substrate every component builds on (completed 2026-03-14)
 - [x] **Phase 2: Shared UI + Nav Shell** - Reusable component library (toasts, modals, skeletons, error pages), responsive nav, and global layout wrapper (completed 2026-03-15)
 - [ ] **Phase 2.1: Screen Design** (INSERTED) - Full Pencil screen designs for all product areas — visual spec used by Phases 3–6
-- [ ] **Phase 3: Landing Pages + Data Foundation** - the two landing pages (light and dark) served with real Supabase data, seeded database, and contact form API
+- [x] **Phase 3: Landing Pages + Data Foundation** - the two landing pages (light and dark) served with real Supabase data, seeded database, and contact form API (completed 2026-03-23)
 - [ ] **Phase 4: Auth + Test Flow** - Visual-only sign-up/login and the full five-step candidate test journey
 - [ ] **Phase 5: Company Dashboard + API** - Complete company-facing dashboard with six views, wired to six live API routes returning seeded data
 - [ ] **Phase 6: Payment + Security** - Visual checkout flow, security hardening, and final compliance pass
@@ -111,7 +111,16 @@ Plans:
   3. The pre-flight check page requests real webcam and microphone permissions from the browser and shows a live mic level indicator; the Start CTA stays disabled until the checklist is agreed
   4. The test engine renders all six question formats (QCM, drag & drop, case study, simulation, audio/video, short text), tracks progress, and shows a countdown timer that turns amber then red as time expires
   5. After submitting the test, the calculating screen runs its animated sequence and auto-redirects to the result page where the CrismaScore gauge animates from 0 to the final value and confetti fires if the score exceeds 70
-**Plans**: TBD
+**Plans**: 7 plans
+
+Plans:
+- [ ] 04-00-PLAN.md — Wave 0: packages, proxy.ts, auth.ts, mock-data.ts, route group layouts, i18n keys
+- [ ] 04-01-PLAN.md — /sign-up multi-step flow + /login (AUTH-01, AUTH-02)
+- [ ] 04-02-PLAN.md — /forgot-password 3-step + AuthContext + NavShell logged-in state (AUTH-03, AUTH-04, AUTH-05)
+- [ ] 04-03-PLAN.md — /test/[id]/intro + /user-info split-panel pages (TEST-01, TEST-01b)
+- [ ] 04-04-PLAN.md — /test/[id]/check webcam+mic + /questions 6-type carousel (TEST-02, TEST-03)
+- [ ] 04-05-PLAN.md — /test/[id]/calculating animation + /result gauge+confetti (TEST-04, TEST-05)
+- [ ] 04-06-PLAN.md — Human verification checkpoint: auth + test flows end-to-end
 
 ### Phase 5: Company Dashboard + API
 **Goal**: A logged-in company user can browse, search, compare, and inspect candidates across all six dashboard views, with all data served from live Supabase API routes.
@@ -147,7 +156,7 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 | 1. Foundation | 3/3 | Complete   | 2026-03-14 |
 | 2. Shared UI + Nav Shell | 6/6 | Complete   | 2026-03-15 |
 | 2.1. Screen Design | 2 full + 3 partial / 7 | In progress — see plan notes for what's missing per file | - |
-| 3. Landing Pages + Data Foundation | 4/6 | In Progress|  |
-| 4. Auth + Test Flow | 0/TBD | Not started | - |
+| 3. Landing Pages + Data Foundation | 6/6 | Complete   | 2026-03-23 |
+| 4. Auth + Test Flow | 0/7 | Planned | - |
 | 5. Company Dashboard + API | 0/TBD | Not started | - |
 | 6. Payment + Security | 0/TBD | Not started | - |
