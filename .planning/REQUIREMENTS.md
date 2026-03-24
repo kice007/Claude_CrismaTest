@@ -205,21 +205,21 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 
 - [x] **AUTH-01**: `/sign-up` — form (Company Name, first name, last name, work email, password show/hide, company size, country/region dropdown); submit → `modal-otp` (email verification) → `onboarding-step1` (company profile) → `onboarding-step2` → `modal-allset` → sets isLoggedIn=true in localStorage → redirect `/dashboard`; Google OAuth button shows "Coming soon" toast
 - [x] **AUTH-02**: `/login` — email + password + remember me; sets isLoggedIn; forgot password link → `/forgot-password`
-- [ ] **AUTH-03**: `/forgot-password` 3-step flow: Step 1 (`/forgot-password`, frame `forgot-password`) enter email → Step 2 (`/forgot-password/verify`, frame `otp-verify`) OTP entry (any code accepted, no real email) → Step 3 (`/forgot-password/reset`, frame `new-password`) new password + confirmation → back to `/login`
-- [ ] **AUTH-04**: Logged-in nav state — user avatar + name top-right, dropdown with My Profile, Settings, Logout; logout clears isLoggedIn → redirect to `/`; refer to `design/dashboard.pen`
-- [ ] **AUTH-05**: Protected routes — `/dashboard` and `/test/*` redirect to `/login` if isLoggedIn = false
+- [x] **AUTH-03**: `/forgot-password` 3-step flow: Step 1 (`/forgot-password`, frame `forgot-password`) enter email → Step 2 (`/forgot-password/verify`, frame `otp-verify`) OTP entry (any code accepted, no real email) → Step 3 (`/forgot-password/reset`, frame `new-password`) new password + confirmation → back to `/login`
+- [x] **AUTH-04**: Logged-in nav state — user avatar + name top-right, dropdown with My Profile, Settings, Logout; logout clears isLoggedIn → redirect to `/`; refer to `design/dashboard.pen`
+- [x] **AUTH-05**: Protected routes — `/dashboard` and `/test/*` redirect to `/login` if isLoggedIn = false
 
 ### Candidate Test Flow (TEST)
 
 > **Design source:** `design/test-flow.pen` — all frames at 1440×900, no NavShell (full-screen focus mode per `introNote`)
 
-- [ ] **TEST-01**: `/test/[id]/intro` — frame `intro` (`mEEpY`); split-panel layout (720px navy left: logo + tagline "Your skills, objectively measured." + "Trusted by 500+ companies"; 720px light right: white card with role badge, duration row, module breakdown list, webcam disclaimer chip, "Start Test →" CTA button); no NavShell; full-width centered card on all breakpoints; "Start Test →" → `/test/[id]/user-info`
+- [x] **TEST-01**: `/test/[id]/intro` — frame `intro` (`mEEpY`); split-panel layout (720px navy left: logo + tagline "Your skills, objectively measured." + "Trusted by 500+ companies"; 720px light right: white card with role badge, duration row, module breakdown list, webcam disclaimer chip, "Start Test →" CTA button); no NavShell; full-width centered card on all breakpoints; "Start Test →" → `/test/[id]/user-info`
 
 - [ ] **TEST-01b**: `/test/[id]/user-info` — frame `user-info` (`70euA`); **NEW step between intro and check**; split-panel layout matching intro (navy left: logo + "Step 1 of 2" badge + "Tell us a bit about yourself before we begin."; light right: white card with title "Your Information"); form fields: Full Name (placeholder "e.g. John Smith"), Email Address (placeholder "e.g. john@company.com"), Phone / Contact, Job Title, Company / Organization; all fields required; form data stored in sessionStorage under key `crismatest_candidate_info`; "Continue →" CTA → `/test/[id]/check`
 
-- [ ] **TEST-02**: `/test/[id]/check` — frame `check` (`oUhTX`); "Pre-flight check" header with logo; two-column body: left col (real webcam preview via browser permission request, mic level animated bars via Web Audio API), right col (anti-fraud checklist: camera ✓, mic ✓, alone in room ✓, no extra screens ✓; disclaimer checkbox); "I'm Ready" CTA activates only when ALL four checkboxes are checked (per `readyNote`); camera/mic denied → warning toast + retry button; "I'm Ready" → `/test/[id]/questions`
+- [x] **TEST-02**: `/test/[id]/check` — frame `check` (`oUhTX`); "Pre-flight check" header with logo; two-column body: left col (real webcam preview via browser permission request, mic level animated bars via Web Audio API), right col (anti-fraud checklist: camera ✓, mic ✓, alone in room ✓, no extra screens ✓; disclaimer checkbox); "I'm Ready" CTA activates only when ALL four checkboxes are checked (per `readyNote`); camera/mic denied → warning toast + retry button; "I'm Ready" → `/test/[id]/questions`
 
-- [ ] **TEST-03**: `/test/[id]/questions` — 6 question format frames, all sharing header/body/footer structure; **header**: progress bar (`progressBarBg`), module badge (`moduleBadge`, brand-accent), countdown timer (`timerBox`, JetBrains Mono — `#F59E0B` amber at 1:00 remaining, `#EF4444` red at 0:30 per `timerNote`); **footer**: Previous button, "Flag for review" link (brand-accent), Next/Submit button; stateful 12-18 question carousel; full-screen, no NavShell:
+- [x] **TEST-03**: `/test/[id]/questions` — 6 question format frames, all sharing header/body/footer structure; **header**: progress bar (`progressBarBg`), module badge (`moduleBadge`, brand-accent), countdown timer (`timerBox`, JetBrains Mono — `#F59E0B` amber at 1:00 remaining, `#EF4444` red at 0:30 per `timerNote`); **footer**: Previous button, "Flag for review" link (brand-accent), Next/Submit button; stateful 12-18 question carousel; full-screen, no NavShell:
   - *QCM* (`questions--qcm`, `uxyll`): single/multi-select A/B/C/D; multi-select uses checkboxes per `qcmNote`
   - *Drag & Drop* (`questions--dragdrop`, `lBny6`): ranking via dnd-kit, 48px touch targets, visible drag handles per `ddNote`
   - *Case Study* (`questions--casestudy`, `34eoS`): scenario card (`csScenario`, brand-light bg) + 3 decision questions per `csNote`
@@ -227,9 +227,9 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
   - *Audio/Video* (`questions--audiovideo`, `0vBzj`): dark video area (`avVideoArea`, `#1F2937`), 90s record limit, countdown bar, preview before submit per `avNote`; record/stop/preview/submit button row
   - *Short Text* (`questions--shorttext`, `iNQFK`): textarea (`stTextarea`, brand-primary 2px border), 150-word limit, real-time word counter in JetBrains Mono per `stNote`; "Submit Test" on last question → `/test/[id]/calculating`
 
-- [ ] **TEST-04**: `/test/[id]/calculating` — frame `calculating` (`UEtRR`); full dark-navy background with neural-network particle animation (`calcBg`); centered card (`calcCard`, `#0F2A6B`, cornerRadius 16, padding 56): circular gauge area (200×200, brand-primary 6px stroke ring) + staggered step list (`calcSteps`) — "Analyzing responses." → "Checking consistency." → "Computing sub-scores." → "Generating CrismaScore." (staggerChildren 0.3s per `calcNote`); auto-redirects to `/test/[id]/result` after 5–7s
+- [x] **TEST-04**: `/test/[id]/calculating` — frame `calculating` (`UEtRR`); full dark-navy background with neural-network particle animation (`calcBg`); centered card (`calcCard`, `#0F2A6B`, cornerRadius 16, padding 56): circular gauge area (200×200, brand-primary 6px stroke ring) + staggered step list (`calcSteps`) — "Analyzing responses." → "Checking consistency." → "Computing sub-scores." → "Generating CrismaScore." (staggerChildren 0.3s per `calcNote`); auto-redirects to `/test/[id]/result` after 5–7s
 
-- [ ] **TEST-05**: `/test/[id]/result` — two variants based on score:
+- [x] **TEST-05**: `/test/[id]/result` — two variants based on score:
   - Standard: frame `result` (`m6thB`), brand-light background
   - Confetti (score > 70): frame `result--confetti` (`vkvua`), canvas-confetti overlay
   - Both: white header (logo), two-column body (leftCol 380px fixed: CrismaScore gauge 0→final 1.5s ease-out Framer Motion + grade badge; 5 sub-score bars: Logic, Communication, JobSkill, Trust, Video; strengths panel 2-3 bullets); rightCol fill: share CTA "Share Your CrismaScore" (copy link + LinkedIn sheet), "Improve Your Score" → `/pricing`, "Retake Test" → `/test/[id]/intro` with retest counter; gauge full-width mobile, sub-scores stacked
@@ -377,15 +377,15 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 | SEC-01 | Phase 3 | Complete |
 | AUTH-01 | Phase 4 | Complete |
 | AUTH-02 | Phase 4 | Complete |
-| AUTH-03 | Phase 4 | Pending |
-| AUTH-04 | Phase 4 | Pending |
-| AUTH-05 | Phase 4 | Pending |
-| TEST-01 | Phase 4 | Pending |
+| AUTH-03 | Phase 4 | Complete |
+| AUTH-04 | Phase 4 | Complete |
+| AUTH-05 | Phase 4 | Complete |
+| TEST-01 | Phase 4 | Complete |
 | TEST-01b | Phase 4 | Pending |
-| TEST-02 | Phase 4 | Pending |
-| TEST-03 | Phase 4 | Pending |
-| TEST-04 | Phase 4 | Pending |
-| TEST-05 | Phase 4 | Pending |
+| TEST-02 | Phase 4 | Complete |
+| TEST-03 | Phase 4 | Complete |
+| TEST-04 | Phase 4 | Complete |
+| TEST-05 | Phase 4 | Complete |
 | DASH-01 | Phase 5 | Pending |
 | DASH-02 | Phase 5 | Pending |
 | DASH-03 | Phase 5 | Pending |

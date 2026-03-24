@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 04-auth-test-flow 04-01-PLAN.md
-last_updated: "2026-03-24T13:12:11.611Z"
+stopped_at: Completed 04-auth-test-flow 04-00-PLAN.md
+last_updated: "2026-03-24T13:13:05.938Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 4
   total_plans: 29
-  completed_plans: 23
+  completed_plans: 24
   percent: 79
 ---
 
@@ -84,6 +84,7 @@ Progress: [████████░░] 81%
 | Phase 03-landing-pages-data-foundation P03 | 25min | 2 tasks | 16 files |
 | Phase 03-landing-pages-data-foundation P04 | 8min | 2 tasks | 2 files |
 | Phase 04-auth-test-flow P01 | 4min | 2 tasks | 7 files |
+| Phase 04-auth-test-flow P00 | 10 | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -137,6 +138,8 @@ Recent decisions affecting current work:
 - [Phase 03-04]: Resend email failure caught and logged; never causes 500 — DB insert already succeeded
 - [Phase 04-auth-test-flow]: standardSchemaResolver must import from @hookform/resolvers/standard-schema sub-package — bare @hookform/resolvers only exports utility helpers, not the resolver itself
 - [Phase 04-auth-test-flow]: Sign-up uses local React state (SignUpStep union type) as step machine — linear 5-step flow needs no external state management
+- [Phase 04-auth-test-flow]: proxy.ts uses function named proxy (not middleware) — Next.js 16 renamed convention
+- [Phase 04-auth-test-flow]: Visual auth: localStorage crismatest_isLoggedIn + cookie crismatest_auth=1 set/cleared together
 
 ### Pending Todos
 
@@ -148,6 +151,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-24T13:12:11.608Z
-Stopped at: Completed 04-auth-test-flow 04-01-PLAN.md
+Last session: 2026-03-24T13:13:05.935Z
+Stopped at: Completed 04-auth-test-flow 04-00-PLAN.md
 Resume file: None
