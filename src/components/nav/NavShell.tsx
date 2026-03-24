@@ -1,14 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut, User, Settings, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import { NavDesktop } from "./NavDesktop";
 import { NavMobile } from "./NavMobile";
+import { useAuth } from "@/lib/auth-context";
 
 const landingNavLinks = [
   { key: "nav_landing_purpose", href: "#problem" },
@@ -25,15 +26,29 @@ export function NavShell() {
   const toggleLang = () => i18n.changeLanguage(lang === "EN" ? "fr" : "en");
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [avatarOpen, setAvatarOpen] = useState(false);
+  const avatarRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isDarkPage = pathname === "/dark";
   const isLandingPage = pathname === "/" || pathname === "/dark";
+  const { isLoggedIn, logout } = useAuth();
 
   useEffect(() => {
     // Plain function inside useEffect — do NOT wrap in useCallback (React Compiler active)
     const handleScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close avatar dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (avatarRef.current && !avatarRef.current.contains(e.target as Node)) {
+        setAvatarOpen(false);
+      }
+    };
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
   }, []);
 
   if (isLandingPage) {
@@ -104,18 +119,65 @@ export function NavShell() {
                 ))}
               </button>
 
-              <a
-                href="#"
-                className={`hidden lg:block text-[14px] transition-colors duration-300 hover:text-[#2563EB] ${linkBase}`}
-              >
-                {t("nav_log_in")}
-              </a>
-              <Link
-                href="/sign-up"
-                className="hidden lg:block px-5 py-2.5 rounded-md text-[14px] font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
-              >
-                {t("nav_sign_up_cta")}
-              </Link>
+              {/* Desktop: auth-conditional right section */}
+              {isLoggedIn ? (
+                <div className="relative hidden lg:block" ref={avatarRef}>
+                  <button
+                    onClick={() => setAvatarOpen((o) => !o)}
+                    className="flex items-center gap-2 rounded-full px-3 py-1.5 hover:bg-slate-100 transition-colors"
+                    aria-label="User menu"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-[#2563EB] flex items-center justify-center text-white text-sm font-medium">
+                      JD
+                    </div>
+                    <span className="text-sm font-medium text-slate-700">John Doe</span>
+                    <ChevronDown size={14} className="text-slate-500" />
+                  </button>
+                  <AnimatePresence>
+                    {avatarOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-lg border border-slate-100 py-1 z-50"
+                      >
+                        <button className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50">
+                          <User size={14} />
+                          {t("nav_avatar_profile")}
+                        </button>
+                        <button className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50">
+                          <Settings size={14} />
+                          {t("nav_avatar_settings")}
+                        </button>
+                        <hr className="my-1 border-slate-100" />
+                        <button
+                          onClick={() => { logout(); setAvatarOpen(false); }}
+                          className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-red-600 hover:bg-red-50"
+                        >
+                          <LogOut size={14} />
+                          {t("nav_avatar_logout")}
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <>
+                  <a
+                    href="#"
+                    className={`hidden lg:block text-[14px] transition-colors duration-300 hover:text-[#2563EB] ${linkBase}`}
+                  >
+                    {t("nav_log_in")}
+                  </a>
+                  <Link
+                    href="/sign-up"
+                    className="hidden lg:block px-5 py-2.5 rounded-md text-[14px] font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+                  >
+                    {t("nav_sign_up_cta")}
+                  </Link>
+                </>
+              )}
 
               {/* Mobile hamburger */}
               <button
@@ -159,19 +221,32 @@ export function NavShell() {
               ))}
               <div className="flex items-center justify-between px-5 pt-4 pb-1">
                 <div className="flex items-center gap-3">
-                  <a
-                    href="#"
-                    className={`text-[14px] font-medium transition-colors hover:text-[#2563EB] ${linkBase}`}
-                  >
-                    {t("nav_log_in")}
-                  </a>
-                  <Link
-                    href="/sign-up"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-5 py-2.5 rounded-md text-[14px] font-semibold text-white bg-[#2563EB]"
-                  >
-                    {t("nav_sign_up_cta")}
-                  </Link>
+                  {isLoggedIn ? (
+                    <button
+                      type="button"
+                      onClick={() => { logout(); setMobileMenuOpen(false); }}
+                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50 rounded-lg"
+                    >
+                      <LogOut size={14} />
+                      {t("nav_avatar_logout")}
+                    </button>
+                  ) : (
+                    <>
+                      <a
+                        href="#"
+                        className={`text-[14px] font-medium transition-colors hover:text-[#2563EB] ${linkBase}`}
+                      >
+                        {t("nav_log_in")}
+                      </a>
+                      <Link
+                        href="/sign-up"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="px-5 py-2.5 rounded-md text-[14px] font-semibold text-white bg-[#2563EB]"
+                      >
+                        {t("nav_sign_up_cta")}
+                      </Link>
+                    </>
+                  )}
                 </div>
                 {/* Language toggle — mobile */}
                 <button
@@ -204,6 +279,7 @@ export function NavShell() {
     );
   }
 
+  // ─── App nav (non-landing pages) ──────────────────────────────────────────────
   return (
     <header
       role="banner"
