@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Geist } from "next/font/google";
 import { MotionConfig } from "motion/react";
 import { I18nProvider } from "@/components/I18nProvider";
+import { AuthProvider } from "@/lib/auth-context";
 import { NavShell } from "@/components/nav/NavShell";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
@@ -51,12 +52,15 @@ export default function RootLayout({
         {/* MotionConfig propagates reducedMotion="user" to all child motion components */}
         <MotionConfig reducedMotion="user">
           <I18nProvider>
-            {/* NavShell inside I18nProvider — NavDesktop/NavMobile use useTranslation */}
-            <NavShell />
-            {/* pt-16 (64px) matches h-16 nav height; min-w-0 prevents flex overflow */}
-            <main className="pt-16 min-w-0">
-              {children}
-            </main>
+            {/* AuthProvider inside I18nProvider — NavShell uses both useTranslation and useAuth */}
+            <AuthProvider>
+              {/* NavShell inside AuthProvider — reads auth state for avatar/dropdown */}
+              <NavShell />
+              {/* pt-16 (64px) matches h-16 nav height; min-w-0 prevents flex overflow */}
+              <main className="pt-16 min-w-0">
+                {children}
+              </main>
+            </AuthProvider>
           </I18nProvider>
           {/* Toaster outside I18nProvider — avoids focus trap conflicts with Dialog */}
           <Toaster
