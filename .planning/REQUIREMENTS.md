@@ -203,8 +203,8 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 
 ### Authentication — Visual Only (AUTH)
 
-- [ ] **AUTH-01**: `/sign-up` — form (Company Name, first name, last name, work email, password show/hide, company size, country/region dropdown); submit → `modal-otp` (email verification) → `onboarding-step1` (company profile) → `onboarding-step2` → `modal-allset` → sets isLoggedIn=true in localStorage → redirect `/dashboard`; Google OAuth button shows "Coming soon" toast
-- [ ] **AUTH-02**: `/login` — email + password + remember me; sets isLoggedIn; forgot password link → `/forgot-password`
+- [x] **AUTH-01**: `/sign-up` — form (Company Name, first name, last name, work email, password show/hide, company size, country/region dropdown); submit → `modal-otp` (email verification) → `onboarding-step1` (company profile) → `onboarding-step2` → `modal-allset` → sets isLoggedIn=true in localStorage → redirect `/dashboard`; Google OAuth button shows "Coming soon" toast
+- [x] **AUTH-02**: `/login` — email + password + remember me; sets isLoggedIn; forgot password link → `/forgot-password`
 - [ ] **AUTH-03**: `/forgot-password` 3-step flow: Step 1 (`/forgot-password`, frame `forgot-password`) enter email → Step 2 (`/forgot-password/verify`, frame `otp-verify`) OTP entry (any code accepted, no real email) → Step 3 (`/forgot-password/reset`, frame `new-password`) new password + confirmation → back to `/login`
 - [ ] **AUTH-04**: Logged-in nav state — user avatar + name top-right, dropdown with My Profile, Settings, Logout; logout clears isLoggedIn → redirect to `/`; refer to `design/dashboard.pen`
 - [ ] **AUTH-05**: Protected routes — `/dashboard` and `/test/*` redirect to `/login` if isLoggedIn = false
@@ -375,8 +375,8 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 | DATA-10 | Phase 3 | Complete |
 | DATA-11 | Phase 3 | Pending |
 | SEC-01 | Phase 3 | Complete |
-| AUTH-01 | Phase 4 | Pending |
-| AUTH-02 | Phase 4 | Pending |
+| AUTH-01 | Phase 4 | Complete |
+| AUTH-02 | Phase 4 | Complete |
 | AUTH-03 | Phase 4 | Pending |
 | AUTH-04 | Phase 4 | Pending |
 | AUTH-05 | Phase 4 | Pending |

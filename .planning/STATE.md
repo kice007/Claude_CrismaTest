@@ -3,11 +3,27 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
+stopped_at: Completed 04-auth-test-flow 04-01-PLAN.md
+last_updated: "2026-03-24T13:12:11.611Z"
+last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
+progress:
+  total_phases: 7
+  completed_phases: 4
+  total_plans: 29
+  completed_plans: 23
+  percent: 79
+---
+
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: completed
 stopped_at: Completed 03-landing-pages-data-foundation 03-04-PLAN.md
 last_updated: "2026-03-22T21:07:22.768Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
-  total_phases: 7
+  [████████░░] 79%
   completed_phases: 3
   total_plans: 22
   completed_plans: 21
@@ -67,6 +83,7 @@ Progress: [████████░░] 81%
 | Phase 03-landing-pages-data-foundation P02 | 4min | 1 tasks | 2 files |
 | Phase 03-landing-pages-data-foundation P03 | 25min | 2 tasks | 16 files |
 | Phase 03-landing-pages-data-foundation P04 | 8min | 2 tasks | 2 files |
+| Phase 04-auth-test-flow P01 | 4min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -118,6 +135,8 @@ Recent decisions affecting current work:
 - [Phase 03-04]: Rate limit applied before body parse — prevents DoS via large request body
 - [Phase 03-04]: gdprConsent: z.literal(true) enforces GDPR server-side; false/absent/non-true value rejects submission
 - [Phase 03-04]: Resend email failure caught and logged; never causes 500 — DB insert already succeeded
+- [Phase 04-auth-test-flow]: standardSchemaResolver must import from @hookform/resolvers/standard-schema sub-package — bare @hookform/resolvers only exports utility helpers, not the resolver itself
+- [Phase 04-auth-test-flow]: Sign-up uses local React state (SignUpStep union type) as step machine — linear 5-step flow needs no external state management
 
 ### Pending Todos
 
@@ -129,6 +148,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-22T21:07:22.763Z
-Stopped at: Completed 03-landing-pages-data-foundation 03-04-PLAN.md
+Last session: 2026-03-24T13:12:11.608Z
+Stopped at: Completed 04-auth-test-flow 04-01-PLAN.md
 Resume file: None
