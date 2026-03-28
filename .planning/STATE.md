@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 05-company-dashboard-api 05-01-PLAN.md
-last_updated: "2026-03-28T16:14:44.371Z"
+stopped_at: Completed 05-company-dashboard-api 05-03-PLAN.md
+last_updated: "2026-03-28T16:15:19.272Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 5
   total_plans: 39
-  completed_plans: 31
+  completed_plans: 32
   percent: 79
 ---
 
@@ -90,6 +90,7 @@ Progress: [████████░░] 81%
 | Phase 04-auth-test-flow P06 | 15 | 2 tasks | 5 files |
 | Phase 04-auth-test-flow P07 | 25 | 4 tasks | 5 files |
 | Phase 05-company-dashboard-api P01 | 8min | 2 tasks | 10 files |
+| Phase 05-company-dashboard-api P03 | 4min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -155,6 +156,9 @@ Recent decisions affecting current work:
 - [Phase 05-01]: shadcn add does not overwrite globals.css — brand tokens survive all component installs (unlike shadcn init)
 - [Phase 05-01]: public/crima-compare-report.pdf is minimal valid PDF — v1 Export Report CTA requires downloadable file existence, not visual branding
 - [Phase 05-01]: All dashboard i18n keys pre-loaded in Wave 0 under dashboard.* namespace — eliminates missing-key fallbacks during subsequent component builds
+- [Phase 05-03]: PGRST116 error code used to detect not-found from Supabase .single() — avoids a second existence check on GET
+- [Phase 05-03]: PUT handler builds updatePayload dynamically to only send provided fields — prevents overwriting existing values with undefined
+- [Phase 05-03]: DELETE verifies row existence first then soft-deletes — clean 404 before attempting update
 
 ### Pending Todos
 
@@ -166,6 +170,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T16:14:44.368Z
-Stopped at: Completed 05-company-dashboard-api 05-01-PLAN.md
+Last session: 2026-03-28T16:15:19.269Z
+Stopped at: Completed 05-company-dashboard-api 05-03-PLAN.md
 Resume file: None
