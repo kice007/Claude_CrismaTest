@@ -51,6 +51,11 @@ export function NavShell() {
     return () => document.removeEventListener("click", handler);
   }, []);
 
+  // Belt-and-suspenders layer 2: NavShell renders nothing on all /dashboard/* routes.
+  // Placed AFTER all hooks to comply with Rules of Hooks.
+  // Layer 1 is DashboardShell's fixed inset-0 z-50 overlay.
+  if (pathname.startsWith("/dashboard")) return null;
+
   if (isLandingPage) {
     const bgClass = isDarkPage
       ? scrolled

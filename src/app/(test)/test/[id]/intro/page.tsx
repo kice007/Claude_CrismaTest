@@ -112,18 +112,18 @@ export default function TestInfoPage() {
 
           {/* Module rows */}
           <div className="flex flex-col" style={{ gap: 14 }}>
-            {test.modules.map((mod) => {
-              const meta = MODULE_META[mod.name]
+            {test.modules.map((modName) => {
+              const meta = MODULE_META[modName]
               const Icon = meta?.Icon ?? Brain
-              const duration = meta?.duration ?? `${mod.count} pts`
+              const duration = meta?.duration ?? ''
               return (
-                <div key={mod.name} className="flex items-center" style={{ gap: 12 }}>
+                <div key={modName} className="flex items-center" style={{ gap: 12 }}>
                   <Icon size={18} color="#6366F1" />
                   <span
                     className="flex-1"
                     style={{ color: '#374151', fontSize: 14, fontFamily: 'Inter, sans-serif' }}
                   >
-                    {mod.name}
+                    {modName}
                   </span>
                   <span style={{ color: '#9CA3AF', fontSize: 12, fontFamily: 'Inter, sans-serif' }}>
                     {duration}
