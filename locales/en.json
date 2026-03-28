@@ -26,7 +26,6 @@
   "design_system_toast_success": "Show Success Toast",
   "design_system_toast_warning": "Show Warning Toast",
   "design_system_toast_error": "Show Error Toast",
-
   "nav_landing_purpose": "Purpose",
   "nav_landing_how_it_works": "How it works",
   "nav_landing_features": "Features",
@@ -35,7 +34,6 @@
   "nav_landing_contact": "Contact",
   "nav_log_in": "Log In",
   "nav_sign_up_cta": "Sign up",
-
   "hero_badge": "AI Assessment platform",
   "hero_headline_1": "The global standard",
   "hero_headline_2": "for talent assessment",
@@ -46,9 +44,7 @@
   "hero_tab_candidates": "Candidates",
   "hero_tab_tests": "Tests",
   "hero_tab_talent_pool": "Talent Pool",
-
   "trust_bar_label": "Trusted by leading companies worldwide",
-
   "problem_badge": "What is CrismaTest?",
   "problem_headline": "The world's first AI-powered adaptive test designed for real-world hiring.",
   "problem_body": "CrismaTest isn't a quiz. It's a complete evaluation system that measures what actually matters — the skills, reasoning, and reliability that make someone great at their job.",
@@ -65,7 +61,6 @@
   "problem_feat_5_desc": "Advanced AI detection ensures responses are genuine and unassisted",
   "problem_feat_6_title": "Video responses (optional)",
   "problem_feat_6_desc": "Optional video questions for deeper candidate insight",
-
   "solution_badge": "For candidates",
   "solution_headline": "3 steps. 10 minutes. One global score.",
   "solution_sub": "From test to verified score in minutes. Your CrismaScore is portable, universal, and trusted by employers worldwide.",
@@ -76,7 +71,6 @@
   "solution_step_2_desc": "Receive a universal score from 0–100 measuring your skills and potential — broken down into LogicScore, CommsScore, JobSkillScore, and TrustScore.",
   "solution_step_3_title": "Share it everywhere",
   "solution_step_3_desc": "Use your CrismaScore when applying to jobs anywhere in the world — on CrismaWork, LinkedIn, Indeed, and with any employer worldwide.",
-
   "features_badge": "For companies",
   "features_headline": "Screen 10x faster. With 90% more accuracy.",
   "features_sub": "CrismaTest gives you objective, fraud-proof scores in under 15 minutes — so you can focus on the candidates who actually qualify.",
@@ -89,7 +83,6 @@
   "features_col2_3": "Access a global talent pool — browse verified candidates who have completed CrismaTest",
   "features_cta_primary": "Try CrismaTest for teams",
   "features_cta_secondary": "Request a demo",
-
   "crismascore_badge": "The CrismaScore",
   "crismascore_headline": "A single, universal score that companies trust.",
   "crismascore_sub": "CrismaScore is not just a number. It's a verified, portable, AI-generated profile of a candidate's real capabilities — built from five dimensions of evaluation.",
@@ -104,7 +97,6 @@
   "crismascore_trust_desc": "Anti-fraud stability — consistency, behavioral patterns, and AI-verified authenticity",
   "crismascore_video_title": "Video score (optional)",
   "crismascore_video_desc": "Communication clarity, presence, and clarity from video responses",
-
   "antifraud_badge": "Anti-Fraud technology",
   "antifraud_headline": "No more cheating. No more uncertainty.",
   "antifraud_sub": "CrismaTest uses real-time AI proctoring to ensure every score reflects genuine, unassisted performance. Every session is monitored, analyzed, and verified — transparently.",
@@ -115,7 +107,6 @@
   "antifraud_det_4": "Unusual typing or input patterns",
   "antifraud_det_5": "Copy/paste anomalies",
   "antifraud_det_6": "Signs of external assistance",
-
   "tests_badge": "Pre-built assessments",
   "tests_headline": "Role-ready tests for every position.",
   "tests_sub": "Choose from our growing library of job-specific assessments — each designed to evaluate the exact skills that matter for that role.",
@@ -136,7 +127,6 @@
   "tests_chip_finance": "Finance",
   "tests_chip_hr_management": "HR management",
   "tests_chip_more_coming": "More coming soon…",
-
   "faq_badge": "FAQ",
   "faq_headline": "Frequently asked questions",
   "faq_1_q": "How accurate is the test?",
@@ -149,7 +139,6 @@
   "faq_4_a": "Yes. Companies on Starter, Pro, and Enterprise plans can use the Test Builder to select specific modules, adjust question focus, and add up to 3 custom questions — all without any technical configuration.",
   "faq_5_q": "Can I reuse my CrismaScore?",
   "faq_5_a": "Absolutely. Your CrismaScore is valid for 12 months. You can share it via a unique profile link, embed it on LinkedIn, or send it directly to any employer — anywhere in the world. Free plan candidates receive 2 free retests.",
-
   "contact_badge": "Contact",
   "contact_headline": "Get in touch",
   "contact_sub": "Have a question or want to learn more? We'd love to hear from you.",
@@ -162,12 +151,10 @@
   "contact_message_label": "Message",
   "contact_message_placeholder": "Tell us how we can help...",
   "contact_submit": "Send message",
-
   "cta_headline": "Take the test. Get your score. Open more doors.",
   "cta_sub": "Join thousands of candidates who have already validated their skills with CrismaTest. Free to start.",
   "cta_primary": "Get your CrismaScore",
   "cta_secondary": "For companies",
-
   "footer_tagline": "The global standard for talent assessment.",
   "footer_nav_label": "Navigation",
   "footer_legal_label": "Legal",
@@ -186,7 +173,6 @@
   "footer_social_instagram": "Instagram",
   "footer_copyright": "© 2025 CrismaTest — A Crisma Group product. All rights reserved.",
   "footer_bottom_links": "Terms · Privacy · Cookies",
-
   "auth_signup_title": "Create your account",
   "auth_signup_subtitle": "Start hiring smarter with CrismaTest",
   "auth_signup_company": "Company Name",
@@ -214,13 +200,11 @@
   "auth_invalid_email": "Please enter a valid email address",
   "auth_password_min": "Password must be at least 8 characters",
   "auth_google_coming_soon": "Google login coming soon",
-
   "auth_otp_title": "Verify your email",
   "auth_otp_subtitle": "Enter the 6-digit code sent to {{email}}",
   "auth_otp_placeholder": "000000",
   "auth_otp_cta": "Verify code",
   "auth_otp_resend": "Resend code",
-
   "auth_onboarding_step": "Step {{current}} of {{total}}",
   "auth_onboarding_1_title": "Tell us about your hiring",
   "auth_onboarding_1_subtitle": "Help us tailor CrismaTest to your needs",
@@ -236,15 +220,12 @@
   "auth_onboarding_1_volume_3": "21–50",
   "auth_onboarding_1_volume_4": "51+",
   "auth_onboarding_1_cta": "Continue",
-
   "auth_onboarding_2_title": "Which roles do you hire for?",
   "auth_onboarding_2_subtitle": "Select all that apply — we'll suggest the best tests",
   "auth_onboarding_2_cta": "Finish setup",
-
   "auth_allset_title": "You're all set!",
   "auth_allset_subtitle": "Your account is ready. Start assessing candidates with CrismaTest.",
   "auth_allset_cta": "Go to dashboard",
-
   "auth_login_title": "Welcome back",
   "auth_login_subtitle": "Sign in to your CrismaTest account",
   "auth_login_email": "Email Address",
@@ -257,14 +238,12 @@
   "auth_login_google": "Continue with Google",
   "auth_login_no_account": "Don't have an account?",
   "auth_login_signup_link": "Sign up",
-
   "auth_forgot_title": "Forgot password?",
   "auth_forgot_subtitle": "No worries — enter your email and we'll send you a reset link.",
   "auth_forgot_email_label": "Email address",
   "auth_forgot_email_placeholder": "you@example.com",
   "auth_forgot_cta": "Send reset link",
   "auth_forgot_back": "Back to sign in",
-
   "auth_otp_verify_title": "Check your email",
   "auth_otp_verify_subtitle": "We sent a 6-digit code to {{email}}. Enter it below.",
   "auth_otp_verify_cta": "Verify email",
@@ -273,7 +252,6 @@
   "auth_otp_verify_no_receive": "Didn't receive it?",
   "auth_otp_code_label": "Verification code",
   "auth_otp_code_placeholder": "000000",
-
   "auth_new_password_title": "Create new password",
   "auth_new_password_subtitle": "Your new password must be at least 8 characters and contain a number.",
   "auth_new_password_label": "New password",
@@ -286,11 +264,9 @@
   "auth_req_min_chars": "At least 8 characters",
   "auth_req_number": "Contains a number",
   "auth_req_special": "Contains a special character",
-
   "nav_avatar_profile": "My Profile",
   "nav_avatar_settings": "Settings",
   "nav_avatar_logout": "Log out",
-
   "auth_google_cta": "Continue with Google",
   "auth_signup_company_name": "Company Name",
   "auth_signup_company_name_placeholder": "e.g. Acme Corp",
@@ -308,7 +284,6 @@
   "auth_onboarding_1_industry_placeholder": "Select your industry",
   "auth_forgot_email": "Work Email",
   "auth_login_cta_v2": "Log In",
-
   "test_intro_tagline": "Your skills, objectively measured.",
   "test_intro_trusted": "Trusted by 500+ companies",
   "test_intro_role_badge": "Role",
@@ -316,7 +291,7 @@
   "test_intro_duration_value": "{{minutes}} minutes",
   "test_intro_modules": "What's covered",
   "test_intro_privacy_note": "Your webcam will be used for anti-fraud verification during the test.",
-  "test_intro_cta": "Start Test →",
+  "test_intro_cta": "Start test",
   "test_userinfo_step_badge": "Step 1 of 2",
   "test_userinfo_left_tagline": "Tell us a bit about yourself before we begin.",
   "test_userinfo_title": "Your Information",
@@ -330,16 +305,17 @@
   "test_userinfo_job_title_placeholder": "e.g. Customer Support Specialist",
   "test_userinfo_company": "Company / Organization",
   "test_userinfo_company_placeholder": "e.g. Acme Corp",
-  "test_userinfo_cta": "Continue →",
+  "test_userinfo_cta": "Continue ",
   "test_check_title": "Pre-flight check",
+  "test_check_before_begin": "Before you begin",
   "test_check_webcam_label": "Webcam",
   "test_check_mic_label": "Microphone",
-  "test_check_item_camera": "Camera is active",
-  "test_check_item_mic": "Microphone is active",
+  "test_check_item_camera": "Camera is working",
+  "test_check_item_mic": "Microphone is working",
   "test_check_item_alone": "I am alone in the room",
-  "test_check_item_no_screens": "No extra screens or devices",
-  "test_check_disclaimer": "I agree to be recorded during this test for anti-fraud verification purposes.",
-  "test_check_cta": "I'm Ready",
+  "test_check_item_no_screens": "No extra screens or notes visible",
+  "test_check_disclaimer": "I agree to the testing conditions and consent to webcam monitoring",
+  "test_check_cta": "I'm ready",
   "test_check_permission_denied": "Camera or microphone access was denied. Please allow access and try again.",
   "test_check_retry": "Retry Permissions",
   "test_check_permission_cta": "Check Permissions",
@@ -368,18 +344,246 @@
   "test_result_grade_good": "Good",
   "test_result_grade_average": "Average",
   "test_result_grade_below": "Below Average",
-  "test_result_subscores_title": "Score Breakdown",
-  "test_result_subscore_logic": "Logic",
+  "test_result_subscores_title": "Score breakdown",
+  "test_result_subscore_logic": "Logic & reasoning",
   "test_result_subscore_comm": "Communication",
-  "test_result_subscore_job": "Job Skills",
-  "test_result_subscore_trust": "Trust",
-  "test_result_subscore_video": "Video",
-  "test_result_strengths_title": "Key Strengths",
-  "test_result_share_title": "Share Your CrismaScore",
+  "test_result_subscore_job": "Job skills",
+  "test_result_subscore_trust": "TrustScore",
+  "test_result_subscore_video": "Video presence",
+  "test_result_strengths_title": "Strengths",
+  "test_result_share_title": "Share your CrismaScore",
   "test_result_share_copy": "Copy Link",
   "test_result_share_linkedin": "Share on LinkedIn",
-  "test_result_improve": "Improve Your Score",
-  "test_result_retake": "Retake Test",
+  "test_result_improve": "Improve your score",
+  "test_result_retake": "Retake test",
   "test_result_congrats": "Congratulations!",
-  "test_result_congrats_sub": "You scored in the top tier. Share your result with employers."
+  "test_result_congrats_sub": "You scored in the top tier. Share your result with employers.",
+  "auth_left_headline": "The smarter way to hire —\nand to get hired.",
+  "auth_left_sub": "Join thousands of candidates and companies using CrismaTest to make better decisions.",
+  "auth_left_legal": "Terms of service · Privacy notice",
+  "auth_or_continue": "or continue with",
+  "auth_otp_modal_subtitle": "We sent a 6-digit code to your work email. Enter it below to continue.",
+  "auth_otp_expires": "Code expires in",
+  "auth_onboarding_step1_title": "The HR Context",
+  "auth_onboarding_step1_sub": "Help us tailor your CrismaTest experience.",
+  "auth_onboarding_step2_title": "Your Intention",
+  "auth_onboarding_step2_sub": "Help us understand how you plan to use CrismaTest.",
+  "auth_onboarding_1_roles": "Most frequently recruited roles",
+  "auth_onboarding_1_ats": "Current HR tool (ATS)",
+  "auth_onboarding_2_why_title": "Why you use CrismaTest",
+  "auth_onboarding_2_how_heard": "How did you hear about CrismaTest?",
+  "auth_onboarding_ind_tech": "Tech",
+  "auth_onboarding_ind_finance": "Finance",
+  "auth_onboarding_ind_marketing": "Marketing",
+  "auth_onboarding_ind_support": "Customer Support",
+  "auth_onboarding_ind_sales": "Sales",
+  "auth_onboarding_ind_operations": "Operations",
+  "auth_onboarding_ind_other": "Other",
+  "auth_onboarding_role_sw_eng": "Software Engineer",
+  "auth_onboarding_role_pm": "Product Manager",
+  "auth_onboarding_role_data": "Data Analyst",
+  "auth_onboarding_role_ux": "UX Designer",
+  "auth_onboarding_role_mktg": "Marketing Manager",
+  "auth_onboarding_role_sales": "Sales Rep",
+  "auth_onboarding_role_support": "Customer Support",
+  "auth_onboarding_role_other": "Other...",
+  "auth_onboarding_ats_workday": "Workday",
+  "auth_onboarding_ats_greenhouse": "Greenhouse",
+  "auth_onboarding_ats_lever": "Lever",
+  "auth_onboarding_ats_notion": "Notion",
+  "auth_onboarding_ats_none": "None",
+  "auth_onboarding_ats_other": "Other",
+  "auth_onboarding_why_1": "Reduce screening time",
+  "auth_onboarding_why_2": "Eliminate fraud / ChatGPT",
+  "auth_onboarding_why_3": "Compare candidates objectively",
+  "auth_onboarding_why_4": "Access a talent pool",
+  "auth_onboarding_why_5": "Standardize our assessments",
+  "auth_onboarding_heard_linkedin": "LinkedIn",
+  "auth_onboarding_heard_google": "Google",
+  "auth_onboarding_heard_referral": "Referral",
+  "auth_onboarding_heard_social": "Social media",
+  "auth_onboarding_heard_other": "Other",
+  "auth_country_placeholder": "Select country or region",
+  "auth_country_search": "Search country…",
+  "auth_country_no_results": "No results",
+  "auth_onboarding_other_industry": "Your industry…",
+  "auth_onboarding_other_role": "Your role…",
+  "auth_onboarding_other_ats": "Your ATS…",
+  "auth_allset_body": "Your account is ready. Let's start building smarter hiring decisions together.",
+  "auth_allset_note": "or explore the docs first",
+  "auth_signup_size_placeholder": "Select company size",
+  "auth_signup_company_size_201_500": "201–500 employees",
+  "auth_signup_company_size_500_plus": "500+ employees",
+  "dashboard": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "candidates": "Candidates",
+      "tests": "Tests",
+      "talentPool": "Talent Pool",
+      "profile": "Profile",
+      "buildTest": "Build Test",
+      "logout": "Log out"
+    },
+    "sidebar": {
+      "plan": "Pro Plan",
+      "upgrade": "Upgrade"
+    },
+    "candidateTable": {
+      "title": "Candidates",
+      "search": "Search by name or email...",
+      "filterRole": "All Roles",
+      "filterStatus": "All Statuses",
+      "filterScore": "Score Range",
+      "columns": {
+        "candidate": "Candidate",
+        "role": "Role",
+        "score": "CrismaScore",
+        "trust": "Trust Score",
+        "status": "Status",
+        "date": "Test Date",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View Details",
+        "compare": "Add to Compare",
+        "compareSelected": "Compare Selected",
+        "inviteCandidate": "Invite Candidate"
+      },
+      "empty": "No candidates found",
+      "emptyHint": "Adjust your filters or invite candidates to take a test",
+      "loading": "Loading candidates..."
+    },
+    "candidateDetail": {
+      "back": "Back to Candidates",
+      "inviteToInterview": "Invite to Interview",
+      "emailCandidate": "Email Candidate",
+      "emailSubject": "Interview Invitation — CrismaTest",
+      "scores": {
+        "crimaScore": "CrismaScore",
+        "logic": "Logic",
+        "communication": "Communication",
+        "jobSkill": "Job Skill",
+        "trust": "Trust Score",
+        "video": "Video Score"
+      },
+      "sections": {
+        "fraudFlags": "Anti-Fraud Flags",
+        "aiInsight": "AI Interview Recommendation",
+        "testTimeline": "Test Timeline"
+      },
+      "fraudSeverity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "none": "None"
+      }
+    },
+    "compare": {
+      "title": "Compare Candidates",
+      "back": "Back to Candidates",
+      "recommended": "Recommended for Interview",
+      "exportReport": "Export Report",
+      "noIds": "No candidates selected for comparison",
+      "sections": {
+        "score": "CrismaScore",
+        "subScores": "Sub-Scores",
+        "fraudFlags": "Anti-Fraud Flags"
+      }
+    },
+    "talentPool": {
+      "title": "Talent Pool",
+      "search": "Search by name, role, or skill...",
+      "filterRole": "All Roles",
+      "filterScore": "Score Range",
+      "contact": "Contact Candidate",
+      "empty": "No candidates in the talent pool",
+      "emptyHint": "Qualified candidates will appear here"
+    },
+    "buildTest": {
+      "title": "Build a New Test",
+      "steps": {
+        "role": "Choose Role",
+        "modules": "Select Modules",
+        "questions": "Custom Questions",
+        "generate": "Generate Test",
+        "preview": "Preview",
+        "success": "Test Ready!"
+      },
+      "actions": {
+        "next": "Next",
+        "back": "Back",
+        "generate": "Generate Test",
+        "copyLink": "Copy Test Link",
+        "sendToCandidates": "Send to Candidates",
+        "addQuestion": "Add Question",
+        "viewTest": "View Test"
+      },
+      "copyLinkSuccess": "Test link copied to clipboard",
+      "successTitle": "Your test is ready!",
+      "successBody": "Share the link with candidates or send it directly from here."
+    },
+    "tests": {
+      "title": "Tests",
+      "buildNew": "Build New Test",
+      "search": "Search by name or role...",
+      "columns": {
+        "name": "Test Name",
+        "role": "Role",
+        "modules": "Modules",
+        "created": "Created",
+        "status": "Status",
+        "responses": "Responses",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete",
+        "share": "Share"
+      },
+      "status": {
+        "active": "Active",
+        "draft": "Draft",
+        "archived": "Archived"
+      },
+      "empty": "No tests yet",
+      "emptyHint": "Build your first test to start evaluating candidates",
+      "deleteConfirm": "Delete this test?",
+      "deleteWarning": "This will remove the test and its shareable link. This action cannot be undone.",
+      "deleteCancel": "Cancel",
+      "deleteConfirmBtn": "Delete Test"
+    },
+    "testDetail": {
+      "back": "Back to Tests",
+      "shareableLink": "Shareable Link",
+      "copyLink": "Copy Link",
+      "copyLinkSuccess": "Link copied to clipboard",
+      "responses": "Candidate Responses",
+      "viewResponses": "View in Dashboard",
+      "editTest": "Edit Test",
+      "deleteTest": "Delete Test",
+      "sendToCandidates": "Send to Candidates",
+      "sections": {
+        "modules": "Modules",
+        "customQuestions": "Custom Questions",
+        "details": "Test Details"
+      },
+      "editSuccess": "Test updated successfully",
+      "saveChanges": "Save Changes",
+      "cancelEdit": "Cancel"
+    },
+    "status": {
+      "active": "Active",
+      "draft": "Draft",
+      "archived": "Archived",
+      "passed": "Passed",
+      "failed": "Failed",
+      "pending": "Pending"
+    },
+    "errors": {
+      "loadFailed": "Failed to load data",
+      "notFound": "Not found",
+      "retry": "Try again"
+    }
+  }
 }
