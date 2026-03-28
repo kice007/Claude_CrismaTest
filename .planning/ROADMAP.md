@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Shared UI + Nav Shell** - Reusable component library (toasts, modals, skeletons, error pages), responsive nav, and global layout wrapper (completed 2026-03-15)
 - [ ] **Phase 2.1: Screen Design** (INSERTED) - Full Pencil screen designs for all product areas — visual spec used by Phases 3–6
 - [x] **Phase 3: Landing Pages + Data Foundation** - the two landing pages (light and dark) served with real Supabase data, seeded database, and contact form API (completed 2026-03-23)
-- [ ] **Phase 4: Auth + Test Flow** - Visual-only sign-up/login and the full five-step candidate test journey
+- [x] **Phase 4: Auth + Test Flow** - Visual-only sign-up/login and the full five-step candidate test journey (completed 2026-03-28)
 - [ ] **Phase 5: Company Dashboard + API** - Complete company-facing dashboard with six views, wired to six live API routes returning seeded data
 - [ ] **Phase 6: Payment + Security** - Visual checkout flow, security hardening, and final compliance pass
 
@@ -157,6 +157,6 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 | 2. Shared UI + Nav Shell | 6/6 | Complete   | 2026-03-15 |
 | 2.1. Screen Design | 2 full + 3 partial / 7 | In progress — see plan notes for what's missing per file | - |
 | 3. Landing Pages + Data Foundation | 6/6 | Complete   | 2026-03-23 |
-| 4. Auth + Test Flow | 3/7 | In Progress|  |
+| 4. Auth + Test Flow | 7/7 | Complete   | 2026-03-28 |
 | 5. Company Dashboard + API | 0/TBD | Not started | - |
 | 6. Payment + Security | 0/TBD | Not started | - |
