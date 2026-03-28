@@ -6,11 +6,27 @@ import { useMediaQuery } from "@/lib/use-media-query";
 interface ContactModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  candidateName?: string;
+  candidateEmail?: string;
+  candidateEmailLoading?: boolean;
 }
 
-function ContactModalContent() {
+function ContactModalContent({
+  candidateName,
+  candidateEmail,
+  candidateEmailLoading,
+}: {
+  candidateName?: string;
+  candidateEmail?: string;
+  candidateEmailLoading?: boolean;
+}) {
   return (
     <div className="space-y-4">
+      {candidateName && (
+        <p className="text-sm text-slate-600">
+          Contacting <span className="font-semibold text-slate-900">{candidateName}</span>
+        </p>
+      )}
       <div className="space-y-2">
         <label className="block text-sm font-medium text-foreground" htmlFor="contact-email">
           Email
@@ -18,7 +34,9 @@ function ContactModalContent() {
         <input
           id="contact-email"
           type="email"
-          placeholder="candidate@example.com"
+          defaultValue={candidateEmail ?? ""}
+          readOnly={!!candidateEmail}
+          placeholder={candidateEmailLoading ? "Loading email..." : "candidate@example.com"}
           className="w-full rounded-md border border-input bg-background px-3 text-base min-h-[48px] focus:outline-none focus:ring-2 focus:ring-ring"
         />
       </div>
@@ -44,17 +62,19 @@ function ContactModalContent() {
           className="w-full rounded-md border border-input bg-background px-3 py-3 text-base min-h-[120px] focus:outline-none focus:ring-2 focus:ring-ring resize-none"
         />
       </div>
-      <button
-        type="button"
-        className="w-full min-h-[48px] bg-brand-primary text-white font-medium rounded-md hover:bg-brand-secondary transition-colors"
+      <a
+        href={candidateEmail ? `mailto:${candidateEmail}` : undefined}
+        className={`flex items-center justify-center w-full min-h-[48px] bg-brand-primary text-white font-medium rounded-md transition-colors ${candidateEmail ? "hover:bg-brand-secondary" : "opacity-50 pointer-events-none cursor-not-allowed"}`}
+        aria-disabled={!candidateEmail}
+        tabIndex={candidateEmail ? 0 : -1}
       >
         Send Message
-      </button>
+      </a>
     </div>
   );
 }
 
-export function ContactModal({ open, onOpenChange }: ContactModalProps) {
+export function ContactModal({ open, onOpenChange, candidateName, candidateEmail, candidateEmailLoading }: ContactModalProps) {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   if (isDesktop) {
@@ -65,7 +85,11 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
             <DialogTitle>Contact Candidate</DialogTitle>
             <DialogDescription>Send a message to the candidate.</DialogDescription>
           </DialogHeader>
-          <ContactModalContent />
+          <ContactModalContent
+            candidateName={candidateName}
+            candidateEmail={candidateEmail}
+            candidateEmailLoading={candidateEmailLoading}
+          />
         </DialogContent>
       </Dialog>
     );
@@ -79,7 +103,11 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
           <DrawerDescription>Send a message to the candidate.</DrawerDescription>
         </DrawerHeader>
         <div className="px-4 pb-6 pb-safe">
-          <ContactModalContent />
+          <ContactModalContent
+            candidateName={candidateName}
+            candidateEmail={candidateEmail}
+            candidateEmailLoading={candidateEmailLoading}
+          />
         </div>
       </DrawerContent>
     </Drawer>
