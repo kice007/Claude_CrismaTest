@@ -1,240 +1,186 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useParams } from 'next/navigation'
-import Link from 'next/link'
+import Image from 'next/image'
+import { RotateCcw, Share2, CircleCheck } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { motion, useMotionValue, useTransform, animate } from 'motion/react'
-import confetti from 'canvas-confetti'
-import { toast } from 'sonner'
-import { Copy } from 'lucide-react'
-import { fadeUp } from '@/lib/animations'
+import { AuthLangToggle } from '@/components/auth/AuthLangToggle'
+
+const SUB_SCORES = [
+  { key: 'logic', labelKey: 'test_result_subscore_logic', pct: 80 },
+  { key: 'comm',  labelKey: 'test_result_subscore_comm',  pct: 70 },
+  { key: 'job',   labelKey: 'test_result_subscore_job',   pct: 72 },
+  { key: 'trust', labelKey: 'test_result_subscore_trust', pct: 65 },
+  { key: 'video', labelKey: 'test_result_subscore_video', pct: 78 },
+]
+
+const STRENGTHS = [
+  'Strong logical reasoning under time pressure',
+  'Clear and structured written communication',
+]
+
+function scoreGrade(s: number) {
+  if (s >= 85) return { labelKey: 'test_result_grade_excellent', bg: '#DCFCE7', color: '#166534' }
+  if (s >= 70) return { labelKey: 'test_result_grade_good',      bg: '#D1FAE5', color: '#065F46' }
+  if (s >= 55) return { labelKey: 'test_result_grade_average',   bg: '#FEF3C7', color: '#92400E' }
+  return               { labelKey: 'test_result_grade_below',    bg: '#FEE2E2', color: '#991B1B' }
+}
 
 export default function TestResultPage() {
-  const { id } = useParams<{ id: string }>()
   const { t } = useTranslation()
 
-  const [finalScore, setFinalScore] = useState(0)
-  const [subScores, setSubScores] = useState({
-    logic: 0,
-    communication: 0,
-    jobSkill: 0,
-    trust: 0,
-    video: 0,
-  })
-  const [grade, setGrade] = useState<'excellent' | 'good' | 'average' | 'below'>('good')
-  const [showConfetti, setShowConfetti] = useState(false)
+  const [score, setScore]       = useState(0)
+  const [displayed, setDisplayed] = useState(0)
+  const [barsVisible, setBarsVisible] = useState(false)
 
-  // Gauge animation
-  const r = 80
-  const circumference = 2 * Math.PI * r
-  const progress = useMotionValue(0)
-  const strokeDashoffset = useTransform(progress, [0, 100], [circumference, 0])
-
-  // Derive score from sessionStorage (browser-only)
   useEffect(() => {
-    const storedAnswers = sessionStorage.getItem('crismatest_answers')
-    const answerCount = storedAnswers
-      ? Object.keys(JSON.parse(storedAnswers) as Record<string, unknown>).length
-      : 0
-    const score = Math.min(95, Math.max(40, 60 + answerCount * 3))
-    setFinalScore(score)
-    setSubScores({
-      logic: Math.min(100, Math.round(score * 0.9)),
-      communication: Math.min(100, Math.round(score * 1.05)),
-      jobSkill: Math.min(100, Math.round(score * 0.95)),
-      trust: Math.min(100, Math.round(score * 0.85)),
-      video: Math.min(100, Math.round(score * 1.0)),
-    })
-    const g =
-      score >= 85 ? 'excellent' : score >= 70 ? 'good' : score >= 55 ? 'average' : 'below'
-    setGrade(g as typeof grade)
-    if (score > 70) setShowConfetti(true)
+    const stored = sessionStorage.getItem('crismatest_answers')
+    const n = stored ? Object.keys(JSON.parse(stored) as Record<string, unknown>).length : 0
+    setScore(Math.min(95, Math.max(40, 60 + n * 3)))
   }, [])
 
-  // Animate gauge when finalScore is set
+  // 1.5s ease-out count-up
   useEffect(() => {
-    if (finalScore > 0) {
-      const controls = animate(progress, finalScore, { duration: 1.5, ease: 'easeOut' })
-      return controls.stop
-    }
-  }, [finalScore, progress])
+    if (score === 0) return
+    let frame = 0
+    const total = 60
+    const id = setInterval(() => {
+      frame++
+      const ease = 1 - Math.pow(1 - frame / total, 3)
+      setDisplayed(Math.round(score * ease))
+      if (frame >= total) {
+        clearInterval(id)
+        setDisplayed(score)
+        setBarsVisible(true)
+      }
+    }, 25)
+    return () => clearInterval(id)
+  }, [score])
 
-  // Fire confetti
-  useEffect(() => {
-    if (showConfetti) {
-      confetti({
-        particleCount: 120,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#1B4FD8', '#3B6FE8', '#6366F1', '#FFFFFF'],
-      })
-    }
-  }, [showConfetti])
+  const grade = scoreGrade(score)
 
-  const gradeColors = {
-    excellent: 'bg-emerald-100 text-emerald-700',
-    good: 'bg-blue-100 text-blue-700',
-    average: 'bg-amber-100 text-amber-700',
-    below: 'bg-red-100 text-red-600',
-  }
-
-  const gradeLabel = {
-    excellent: t('test_result_grade_excellent'),
-    good: t('test_result_grade_good'),
-    average: t('test_result_grade_average'),
-    below: t('test_result_grade_below'),
-  }
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(`${window.location.origin}/score/sample`)
-    toast.success(`${t('test_result_share_copy')}!`)
-  }
+  // SVG gauge: 280×280 container, r=134, stroke=12
+  const R    = 134
+  const circ = 2 * Math.PI * R
+  const dash = circ - (displayed / 100) * circ
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF]">
-      {/* Header */}
-      <header className="bg-white border-b border-slate-100 px-6 py-4">
-        <div className="max-w-5xl mx-auto">
-          <span className="text-lg font-bold text-[#0F2A6B]">CrismaTest</span>
+    <div className="min-h-screen bg-[#EEF2FF] flex flex-col">
+
+      {/* ── Header ───────────────────────────────────────────── */}
+      <header className="bg-white border-b border-[#E5E7EB] px-12 h-16 flex items-center justify-between flex-shrink-0">
+        <div className="flex items-center gap-2">
+          <Image src="/images/logo.png" alt="CrismaTest" width={42} height={36} className="object-contain" />
+          <span className="text-[18px] font-bold text-[#0F2A6B] tracking-tight">CrismaTest</span>
         </div>
+        <AuthLangToggle />
       </header>
 
-      <div className="max-w-5xl mx-auto px-6 py-12">
-        {/* Congrats banner */}
-        {showConfetti && (
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.4 }}
-            className="bg-[#1B4FD8] text-white rounded-2xl p-4 mb-8 text-center"
-          >
-            <p className="font-bold text-lg">{t('test_result_congrats')}</p>
-            <p className="text-blue-200 text-sm">{t('test_result_congrats_sub')}</p>
-          </motion.div>
-        )}
+      {/* ── Body ─────────────────────────────────────────────── */}
+      {/* padding: 48px top/bottom, 80px left/right; gap: 64px  */}
+      <div className="flex-1 flex flex-row py-12 px-20 gap-16">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* LEFT — Gauge + sub-scores */}
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-            {/* SVG Gauge */}
-            <div className="flex justify-center mb-6">
-              <svg width="200" height="200" viewBox="0 0 200 200">
-                {/* Background ring */}
-                <circle cx="100" cy="100" r={r} fill="none" stroke="#E2E8F0" strokeWidth="12" />
-                {/* Animated arc */}
-                <motion.circle
-                  cx="100"
-                  cy="100"
-                  r={r}
-                  fill="none"
-                  stroke="#1B4FD8"
-                  strokeWidth="12"
-                  strokeLinecap="round"
-                  strokeDasharray={circumference}
-                  style={{ strokeDashoffset }}
-                  transform="rotate(-90 100 100)"
-                />
-                {/* Score text */}
-                <text
-                  x="100"
-                  y="95"
-                  textAnchor="middle"
-                  fill="#0F2A6B"
-                  fontSize="36"
-                  fontWeight="700"
-                >
-                  {Math.round(finalScore)}
-                </text>
-                <text x="100" y="115" textAnchor="middle" fill="#64748B" fontSize="12">
-                  CrismaScore
-                </text>
-              </svg>
-            </div>
+        {/* LEFT — Gauge + actions  (w=380) */}
+        <div className="w-[380px] flex flex-col items-center gap-6 flex-shrink-0">
 
-            {/* Grade badge */}
-            <div className="flex justify-center mb-6">
-              <span className={`px-4 py-1.5 rounded-full text-sm font-semibold ${gradeColors[grade]}`}>
-                {gradeLabel[grade]}
+          {/* Gauge circle — 280×280 */}
+          <div className="relative w-[280px] h-[280px]">
+            <svg width="280" height="280" viewBox="0 0 280 280" className="absolute inset-0">
+              {/* track */}
+              <circle
+                cx="140" cy="140" r={R}
+                fill="white"
+                stroke="#E5E7EB"
+                strokeWidth="12"
+              />
+              {/* animated fill */}
+              <circle
+                cx="140" cy="140" r={R}
+                fill="none"
+                stroke="#1B4FD8"
+                strokeWidth="12"
+                strokeLinecap="round"
+                strokeDasharray={circ}
+                strokeDashoffset={dash}
+                transform="rotate(-90 140 140)"
+                style={{ transition: 'stroke-dashoffset 0.025s linear' }}
+              />
+            </svg>
+            {/* score + label inside */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
+              <span className="text-[64px] font-bold text-[#1B4FD8] leading-none tabular-nums">
+                {displayed}
               </span>
-            </div>
-
-            {/* Sub-scores */}
-            <h3 className="text-sm font-semibold text-slate-700 mb-4">
-              {t('test_result_subscores_title')}
-            </h3>
-            <div className="space-y-3">
-              {[
-                { key: 'logic', label: t('test_result_subscore_logic'), value: subScores.logic },
-                { key: 'communication', label: t('test_result_subscore_comm'), value: subScores.communication },
-                { key: 'jobSkill', label: t('test_result_subscore_job'), value: subScores.jobSkill },
-                { key: 'trust', label: t('test_result_subscore_trust'), value: subScores.trust },
-                { key: 'video', label: t('test_result_subscore_video'), value: subScores.video },
-              ].map(({ key, label, value }) => (
-                <div key={key}>
-                  <div className="flex justify-between text-xs text-slate-600 mb-1">
-                    <span>{label}</span>
-                    <span className="font-medium">{value}</span>
-                  </div>
-                  <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-[#1B4FD8] rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${value}%` }}
-                      transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-                    />
-                  </div>
-                </div>
-              ))}
+              <span className="text-[13px] text-[#6B7280]">CrismaScore</span>
             </div>
           </div>
 
-          {/* RIGHT — Share + CTAs */}
-          <div className="space-y-4">
-            {/* Share card */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="text-base font-semibold text-slate-900 mb-4">
-                {t('test_result_share_title')}
-              </h3>
-              <div className="space-y-3">
-                <button
-                  onClick={handleCopyLink}
-                  className="w-full flex items-center justify-center gap-2 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
-                >
-                  <Copy size={14} />
-                  {t('test_result_share_copy')}
-                </button>
-                <button
-                  onClick={() =>
-                    window.open(
-                      'https://www.linkedin.com/sharing/share-offsite/?url=https://crismatest.com/score/sample',
-                      '_blank',
-                      'noopener,noreferrer',
-                    )
-                  }
-                  className="w-full flex items-center justify-center gap-2 bg-[#0A66C2] text-white rounded-xl px-4 py-3 text-sm font-medium hover:bg-[#0857a4] transition-colors"
-                >
-                  {t('test_result_share_linkedin')}
-                </button>
-              </div>
-            </div>
+          {/* Grade badge */}
+          <div
+            className="h-9 flex items-center px-5 rounded-[18px] text-[14px] font-bold"
+            style={{ backgroundColor: grade.bg, color: grade.color }}
+          >
+            {t(grade.labelKey)}
+          </div>
 
-            {/* Secondary CTAs */}
-            <Link
-              href="/pricing"
-              className="block w-full text-center border border-[#1B4FD8] text-[#1B4FD8] rounded-xl px-4 py-3 text-sm font-medium hover:bg-[#EEF2FF] transition-colors"
-            >
-              {t('test_result_improve')}
-            </Link>
-            <Link
-              href={`/test/${id}/intro`}
-              className="block w-full text-center text-slate-500 text-sm hover:text-slate-700 transition-colors py-3"
-            >
-              {t('test_result_retake')}
-            </Link>
+          {/* Share CTA */}
+          <button className="w-full h-12 flex items-center justify-center gap-2 bg-[#1B4FD8] text-white rounded-lg text-[14px] font-semibold hover:bg-[#3B6FE8] transition-colors">
+            <Share2 size={16} />
+            {t('test_result_share_title')}
+          </button>
+
+          {/* Improve link */}
+          <span className="text-[14px] font-medium text-[#1B4FD8] cursor-pointer hover:underline">
+            {t('test_result_improve')} →
+          </span>
+
+          {/* Retake */}
+          <div className="flex items-center gap-1.5">
+            <RotateCcw size={14} className="text-[#6B7280]" />
+            <span className="text-[13px] text-[#6B7280]">{t('test_result_retake')}</span>
           </div>
         </div>
+
+        {/* RIGHT — Score breakdown  (flex-1) */}
+        <div className="flex-1 flex flex-col gap-8">
+
+          <h2 className="text-[18px] font-bold text-[#0F2A6B]">
+            {t('test_result_subscores_title')}
+          </h2>
+
+          {/* Sub-score bars — gap 16 between rows */}
+          <div className="flex flex-col gap-4">
+            {SUB_SCORES.map(({ key, labelKey, pct }) => (
+              <div key={key} className="flex flex-col gap-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[14px] text-[#374151]">{t(labelKey)}</span>
+                  <span className="text-[14px] font-semibold text-[#1B4FD8]">{pct}%</span>
+                </div>
+                <div className="h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[#1B4FD8] rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: barsVisible ? `${pct}%` : '0%' }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Strengths card — cornerRadius 12, padding 24, gap 12 */}
+          <div className="bg-white rounded-xl p-6 flex flex-col gap-3">
+            <h3 className="text-[15px] font-semibold text-[#0F2A6B]">
+              {t('test_result_strengths_title')}
+            </h3>
+            {STRENGTHS.map((s) => (
+              <div key={s} className="flex items-center gap-2.5">
+                <CircleCheck size={16} className="text-[#10B981] flex-shrink-0" />
+                <span className="text-[14px] text-[#374151]">{s}</span>
+              </div>
+            ))}
+          </div>
+
+        </div>
       </div>
+
     </div>
   )
 }

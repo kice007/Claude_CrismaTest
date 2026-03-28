@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, useEffect, useCallback } from 'react'
+import { createContext, useContext, useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { setAuthSession, clearAuthSession, getIsLoggedIn } from '@/lib/auth'
 
@@ -19,13 +19,9 @@ const AuthContext = createContext<AuthContextValue | null>(null)
 // ─── Provider ─────────────────────────────────────────────────────────────────
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  // Lazy initializer: reads localStorage only on first render (SSR-safe — component is 'use client')
+  const [isLoggedIn, setIsLoggedIn] = useState(() => getIsLoggedIn())
   const router = useRouter()
-
-  useEffect(() => {
-    // Hydrate from localStorage after mount (SSR-safe)
-    setIsLoggedIn(getIsLoggedIn())
-  }, [])
 
   // NOTE: useCallback is intentionally used here — this is a provider, not a
   // React Compiler-managed component. The compiler only manages components,
