@@ -1,9 +1,13 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useParams, useRouter } from 'next/navigation'
 import { RotateCcw, Share2, CircleCheck } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { AuthLangToggle } from '@/components/auth/AuthLangToggle'
+import confetti from 'canvas-confetti'
+import { toast } from 'sonner'
 
 const SUB_SCORES = [
   { key: 'logic', labelKey: 'test_result_subscore_logic', pct: 80 },
@@ -27,6 +31,8 @@ function scoreGrade(s: number) {
 
 export default function TestResultPage() {
   const { t } = useTranslation()
+  const { id } = useParams<{ id: string }>()
+  const router = useRouter()
 
   const [score, setScore]       = useState(0)
   const [displayed, setDisplayed] = useState(0)
@@ -51,6 +57,9 @@ export default function TestResultPage() {
         clearInterval(id)
         setDisplayed(score)
         setBarsVisible(true)
+        if (score > 70) {
+          confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } })
+        }
       }
     }, 25)
     return () => clearInterval(id)
@@ -123,21 +132,34 @@ export default function TestResultPage() {
           </div>
 
           {/* Share CTA */}
-          <button className="w-full h-12 flex items-center justify-center gap-2 bg-[#1B4FD8] text-white rounded-lg text-[14px] font-semibold hover:bg-[#3B6FE8] transition-colors">
+          <button
+            onClick={() => {
+              navigator.clipboard.writeText(window.location.href)
+              toast.success(t('test_result_share_copy'))
+            }}
+            className="w-full h-12 flex items-center justify-center gap-2 bg-[#1B4FD8] text-white rounded-lg text-[14px] font-semibold hover:bg-[#3B6FE8] transition-colors"
+          >
             <Share2 size={16} />
             {t('test_result_share_title')}
           </button>
 
           {/* Improve link */}
-          <span className="text-[14px] font-medium text-[#1B4FD8] cursor-pointer hover:underline">
+          <Link
+            href="/pricing"
+            className="text-[14px] font-medium text-[#1B4FD8] hover:underline"
+          >
             {t('test_result_improve')} →
-          </span>
+          </Link>
 
           {/* Retake */}
-          <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            onClick={() => router.push(`/test/${id}/intro`)}
+            className="flex items-center gap-1.5 hover:opacity-70 transition-opacity"
+          >
             <RotateCcw size={14} className="text-[#6B7280]" />
             <span className="text-[13px] text-[#6B7280]">{t('test_result_retake')}</span>
-          </div>
+          </button>
         </div>
 
         {/* RIGHT — Score breakdown  (flex-1) */}
