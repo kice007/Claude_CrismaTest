@@ -243,9 +243,9 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 - [x] **DASH-05**: `/dashboard/talent-pool` — frame `talent-pool`; card grid (4 cols desktop / 2 tablet / 1 mobile): avatar, name, role, CrismaScore badge, TrustScore, last test date, Contact CTA; filters (score range, role, experience); search (name, role, skill); card click → inline detail modal; "Contact Candidate" → email modal with prefilled mailto
 - [x] **DASH-06**: `/dashboard/build-test` — frames `build-test` (role) → `build-test-modules` (module toggle) → `build-test-custom-questions` (up to 3 custom questions, add via `Add Question Modal`) → `build-test-generate` (generate) → `build-test-preview` (preview) → `build-test-success` (success modal); "Copy Test Link" and "Send to Candidates" CTAs (static); on complete → test saved → redirect to `/dashboard/tests/[newId]`
 
-- [ ] **DASH-07**: `/dashboard/tests` — frame `tests`; sidebar nav item "Tests" (alongside Candidates, Talent Pool, Build Test); table columns: test name, role, modules count, created date, status badge (Active/Draft/Archived), candidate responses count, actions (View, Edit, Delete); "Build New Test" CTA → `/dashboard/build-test`; empty state with illustrated card + "Build your first test" CTA; skeleton loading; search by test name or role
+- [x] **DASH-07**: `/dashboard/tests` — frame `tests`; sidebar nav item "Tests" (alongside Candidates, Talent Pool, Build Test); table columns: test name, role, modules count, created date, status badge (Active/Draft/Archived), candidate responses count, actions (View, Edit, Delete); "Build New Test" CTA → `/dashboard/build-test`; empty state with illustrated card + "Build your first test" CTA; skeleton loading; search by test name or role
 
-- [ ] **DASH-08**: `/dashboard/tests/[id]` — frame `test-details`; header: test name, role badge, status badge, created date; shareable link field (copy-to-clipboard via `test-share-modal`); modules list with question counts per module; custom questions preview (read-only); candidate responses count with link to filtered `/dashboard` view; "Edit Test" → `test-edit` frame (name, modules, custom questions editable) → save → `test-edit-success` modal; "Delete Test" → confirm modal ("This will remove the test and its shareable link") → delete → redirect to `/dashboard/tests`; "Send to Candidates" → email modal with prefilled mailto
+- [x] **DASH-08**: `/dashboard/tests/[id]` — frame `test-details`; header: test name, role badge, status badge, created date; shareable link field (copy-to-clipboard via `test-share-modal`); modules list with question counts per module; custom questions preview (read-only); candidate responses count with link to filtered `/dashboard` view; "Edit Test" → `test-edit` frame (name, modules, custom questions editable) → save → `test-edit-success` modal; "Delete Test" → confirm modal ("This will remove the test and its shareable link") → delete → redirect to `/dashboard/tests`; "Send to Candidates" → email modal with prefilled mailto
 
 ### Payment Flow — Visual Only (PAY)
 
@@ -259,8 +259,8 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 - [x] **DATA-03**: Seed script (`npm run db:seed`) — 30-50 mock candidates with varied scores, roles, fraud flags; 80-120 static questions across 8 roles, 6 types, EN+FR text; test templates for 8 roles
 - [x] **DATA-04**: `GET /api/tests` — returns all test templates (id, role, slug, name, modules, duration, status, created_at, response_count)
 - [x] **DATA-05**: `GET /api/tests/[id]` — returns single test with full question list, custom questions, shareable link, response count
-- [ ] **DATA-05b**: `PUT /api/tests/[id]` — updates test name, modules, custom questions; returns updated test
-- [ ] **DATA-05c**: `DELETE /api/tests/[id]` — soft-deletes test (status → Archived); returns 204
+- [x] **DATA-05b**: `PUT /api/tests/[id]` — updates test name, modules, custom questions; returns updated test
+- [x] **DATA-05c**: `DELETE /api/tests/[id]` — soft-deletes test (status → Archived); returns 204
 - [x] **DATA-06**: `GET /api/candidates` — returns mock candidates list (no email in list response)
 - [x] **DATA-07**: `GET /api/candidates/[id]` — returns full candidate detail including email
 - [x] **DATA-08**: `GET /api/talent-pool` — returns filterable talent pool entries
@@ -392,12 +392,12 @@ protected routes (/dashboard, /test/*) → check isLoggedIn → redirect /login 
 | DASH-04 | Phase 5 | Complete |
 | DASH-05 | Phase 5 | Complete |
 | DASH-06 | Phase 5 | Complete |
-| DASH-07 | Phase 5 | Pending |
-| DASH-08 | Phase 5 | Pending |
+| DASH-07 | Phase 5 | Complete |
+| DASH-08 | Phase 5 | Complete |
 | DATA-04 | Phase 5 | Complete |
 | DATA-05 | Phase 5 | Complete |
-| DATA-05b | Phase 5 | Pending |
-| DATA-05c | Phase 5 | Pending |
+| DATA-05b | Phase 5 | Complete |
+| DATA-05c | Phase 5 | Complete |
 | DATA-06 | Phase 5 | Complete |
 | DATA-07 | Phase 5 | Complete |
 | DATA-08 | Phase 5 | Complete |
