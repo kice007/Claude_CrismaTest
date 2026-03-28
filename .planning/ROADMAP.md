@@ -16,8 +16,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Shared UI + Nav Shell** - Reusable component library (toasts, modals, skeletons, error pages), responsive nav, and global layout wrapper (completed 2026-03-15)
 - [ ] **Phase 2.1: Screen Design** (INSERTED) - Full Pencil screen designs for all product areas — visual spec used by Phases 3–6
 - [x] **Phase 3: Landing Pages + Data Foundation** - the two landing pages (light and dark) served with real Supabase data, seeded database, and contact form API (completed 2026-03-23)
-- [x] **Phase 4: Auth + Test Flow** - Visual-only sign-up/login and the full five-step candidate test journey (completed 2026-03-28)
-- [ ] **Phase 5: Company Dashboard + API** - Complete company-facing dashboard with six views, wired to six live API routes returning seeded data
+- [x] **Phase 4: Auth + Test Flow** - Visual-only sign-up/login and the full five-step candidate test journey (completed 2026-03-28)
+- [ ] **Phase 5: Company Dashboard + API** - Complete company-facing dashboard with eight views, wired to live API routes returning seeded data
 - [ ] **Phase 6: Payment + Security** - Visual checkout flow, security hardening, and final compliance pass
 
 ## Phase Details
@@ -124,7 +124,7 @@ Plans:
 - [ ] 04-07-PLAN.md — Gap closure: auth cookie wiring, intro URL, sessionStorage, result CTAs (AUTH-01, AUTH-02, TEST-01, TEST-05)
 
 ### Phase 5: Company Dashboard + API
-**Goal**: A logged-in company user can browse, search, compare, and inspect candidates across all six dashboard views, with all data served from live Supabase API routes.
+**Goal**: A logged-in company user can browse, search, compare, and inspect candidates across all eight dashboard views, with all data served from live Supabase API routes.
 **Depends on**: Phase 4
 **Requirements**: DASH-01, DASH-02, DASH-03, DASH-04, DASH-05, DASH-06, DATA-04, DATA-05, DATA-06, DATA-07, DATA-08, DATA-09
 **Success Criteria** (what must be TRUE):
@@ -134,7 +134,18 @@ Plans:
   4. The talent pool view (GET /api/talent-pool) renders as a filterable card grid and opens a contact modal on card click
   5. The build-test 4-step flow completes end-to-end and shows the "Test Ready" confirmation with copy-link and send CTAs
   6. On mobile, the sidebar collapses to a bottom tab bar, and data tables reformat as scrollable card stacks
-**Plans**: TBD
+**Plans**: 9 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Wave 0: shadcn components, static PDF, all dashboard i18n keys
+- [ ] 05-02-PLAN.md — API: GET /api/candidates, /api/candidates/[id], /api/talent-pool
+- [ ] 05-03-PLAN.md — API: GET+POST /api/tests, GET+PUT+DELETE /api/tests/[id]
+- [ ] 05-04-PLAN.md — DashboardShell + Sidebar + BottomTabBar + (dashboard)/layout.tsx
+- [ ] 05-05-PLAN.md — /dashboard candidates list + /dashboard/candidates/[id] detail
+- [ ] 05-06-PLAN.md — /dashboard/compare + /dashboard/talent-pool
+- [ ] 05-07-PLAN.md — /dashboard/tests list + /dashboard/tests/[id] detail+edit
+- [ ] 05-08-PLAN.md — /dashboard/build-test 4-step wizard
+- [ ] 05-09-PLAN.md — Integration fixes + human verification checkpoint
 
 ### Phase 6: Payment + Security
 **Goal**: The visual checkout flow is complete and the codebase passes a full security compliance pass — no sensitive data leaks, all inputs sanitized, rate limiting enforced.
@@ -159,5 +170,5 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 | 2.1. Screen Design | 2 full + 3 partial / 7 | In progress — see plan notes for what's missing per file | - |
 | 3. Landing Pages + Data Foundation | 6/6 | Complete   | 2026-03-23 |
 | 4. Auth + Test Flow | 8/8 | Complete   | 2026-03-28 |
-| 5. Company Dashboard + API | 0/TBD | Not started | - |
+| 5. Company Dashboard + API | 0/9 | Planned | - |
 | 6. Payment + Security | 0/TBD | Not started | - |
