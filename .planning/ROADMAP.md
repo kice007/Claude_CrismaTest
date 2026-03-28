@@ -126,7 +126,7 @@ Plans:
 ### Phase 5: Company Dashboard + API
 **Goal**: A logged-in company user can browse, search, compare, and inspect candidates across all eight dashboard views, with all data served from live Supabase API routes.
 **Depends on**: Phase 4
-**Requirements**: DASH-01, DASH-02, DASH-03, DASH-04, DASH-05, DASH-06, DATA-04, DATA-05, DATA-06, DATA-07, DATA-08, DATA-09
+**Requirements**: DASH-01, DASH-02, DASH-03, DASH-04, DASH-05, DASH-06, DASH-07, DASH-08, DATA-04, DATA-05, DATA-05b, DATA-05c, DATA-06, DATA-07, DATA-08, DATA-09
 **Success Criteria** (what must be TRUE):
   1. The candidate list table loads from GET /api/candidates and supports search by name or email plus filters for role, score range, status, and date range — email addresses do not appear in the list response
   2. Clicking a candidate row opens the detail page (GET /api/candidates/[id]), showing the score gauge, sub-scores, fraud flags, AI insight card, and a clickable mailto link for the candidate's email
