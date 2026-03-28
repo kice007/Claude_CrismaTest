@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Phase 5 context gathered
-last_updated: "2026-03-28T04:55:53.668Z"
+stopped_at: Completed 05-company-dashboard-api 05-01-PLAN.md
+last_updated: "2026-03-28T16:14:44.371Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 5
-  total_plans: 30
-  completed_plans: 30
+  total_plans: 39
+  completed_plans: 31
   percent: 79
 ---
 
@@ -89,6 +89,7 @@ Progress: [████████░░] 81%
 | Phase 04-auth-test-flow P06 | 15 | 1 tasks | 5 files |
 | Phase 04-auth-test-flow P06 | 15 | 2 tasks | 5 files |
 | Phase 04-auth-test-flow P07 | 25 | 4 tasks | 5 files |
+| Phase 05-company-dashboard-api P01 | 8min | 2 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -151,6 +152,9 @@ Recent decisions affecting current work:
 - [Phase 04-auth-test-flow]: useState lazy initializer replaces useEffect for SSR-safe localStorage hydration — eliminates react-hooks/set-state-in-effect lint error cleanly
 - [Phase 04-auth-test-flow]: useAuth().login() used in login/onboarding pages instead of direct setAuthSession() — updates both cookie and NavShell React context state simultaneously
 - [Phase 04-auth-test-flow]: intro/page.tsx created as content copy of info/page.tsx to restore /intro URL without breaking existing /info links
+- [Phase 05-01]: shadcn add does not overwrite globals.css — brand tokens survive all component installs (unlike shadcn init)
+- [Phase 05-01]: public/crima-compare-report.pdf is minimal valid PDF — v1 Export Report CTA requires downloadable file existence, not visual branding
+- [Phase 05-01]: All dashboard i18n keys pre-loaded in Wave 0 under dashboard.* namespace — eliminates missing-key fallbacks during subsequent component builds
 
 ### Pending Todos
 
@@ -162,6 +166,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T04:55:53.665Z
-Stopped at: Phase 5 context gathered
-Resume file: .planning/phases/05-company-dashboard-api/05-CONTEXT.md
+Last session: 2026-03-28T16:14:44.368Z
+Stopped at: Completed 05-company-dashboard-api 05-01-PLAN.md
+Resume file: None
