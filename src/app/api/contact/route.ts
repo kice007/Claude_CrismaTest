@@ -1,3 +1,4 @@
+// DATA-09: verified — zod validation, Resend trigger, rate-limiter, minimal error responses
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";

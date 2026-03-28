@@ -35,6 +35,7 @@ export default function ForgotPasswordVerifyPage() {
 
   // sessionStorage is browser-only — must read in useEffect (SSR-safe)
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEmail(sessionStorage.getItem('fp_email') ?? '')
   }, [])
 

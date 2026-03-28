@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
-import { CheckCircle2Icon, XIcon, TrashIcon } from 'lucide-react'
+import { CheckCircle2Icon, TrashIcon } from 'lucide-react'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import {
@@ -32,7 +32,6 @@ import { useMediaQuery } from '@/lib/use-media-query'
 
 type WizardStep = 'role' | 'modules' | 'custom-questions' | 'generate' | 'preview' | 'success'
 
-const STEPS: Exclude<WizardStep, 'success'>[] = ['role', 'modules', 'custom-questions', 'generate', 'preview']
 
 const ROLES = [
   'Software Engineer',

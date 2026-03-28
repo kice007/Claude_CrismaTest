@@ -77,6 +77,7 @@ export default function TalentPoolPage() {
   }, [])
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchCandidates(filters)
   }, [filters, fetchCandidates])
 
