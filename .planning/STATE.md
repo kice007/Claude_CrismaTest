@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 05-company-dashboard-api 05-04-PLAN.md
-last_updated: "2026-03-28T16:19:04.782Z"
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-03-28T16:20:25.967Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 5
   total_plans: 39
-  completed_plans: 33
+  completed_plans: 34
   percent: 79
 ---
 
@@ -92,6 +92,7 @@ Progress: [████████░░] 81%
 | Phase 05-company-dashboard-api P01 | 8min | 2 tasks | 10 files |
 | Phase 05-company-dashboard-api P03 | 4min | 2 tasks | 2 files |
 | Phase 05-company-dashboard-api P04 | 35min | 2 tasks | 8 files |
+| Phase 05-company-dashboard-api P02 | 10min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -162,6 +163,9 @@ Recent decisions affecting current work:
 - [Phase 05-03]: DELETE verifies row existence first then soft-deletes — clean 404 before attempting update
 - [Phase 05-company-dashboard-api]: Dashboard NavShell early-return guard placed AFTER all hooks — Rules of Hooks compliance requires no conditional returns before useAuth()
 - [Phase 05-company-dashboard-api]: DashboardShell uses fixed inset-0 z-50 overlay (layer 1) + NavShell pathname check (layer 2) for belt-and-suspenders NavShell suppression on /dashboard/*
+- [Phase 05-02]: Email excluded from /api/candidates and /api/talent-pool SELECT queries at DB level, not stripped in handler — enforces DATA-06 without runtime risk
+- [Phase 05-02]: PGRST116 PostgREST code checked explicitly for .single() not-found — returns 404 before logging as error
+- [Phase 05-02]: Talent pool threshold: crima_score >= 60 differentiates pool from general candidate list
 
 ### Pending Todos
 
@@ -173,6 +177,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T16:19:04.778Z
-Stopped at: Completed 05-company-dashboard-api 05-04-PLAN.md
+Last session: 2026-03-28T16:20:25.964Z
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None
