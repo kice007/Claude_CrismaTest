@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 05-02-PLAN.md
-last_updated: "2026-03-28T16:20:25.967Z"
+stopped_at: Completed 05-05-PLAN.md
+last_updated: "2026-03-28T16:57:43.360Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 5
   total_plans: 39
-  completed_plans: 34
+  completed_plans: 35
   percent: 79
 ---
 
@@ -93,6 +93,7 @@ Progress: [████████░░] 81%
 | Phase 05-company-dashboard-api P03 | 4min | 2 tasks | 2 files |
 | Phase 05-company-dashboard-api P04 | 35min | 2 tasks | 8 files |
 | Phase 05-company-dashboard-api P02 | 10min | 2 tasks | 4 files |
+| Phase 05-company-dashboard-api P05 | 23 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -166,6 +167,9 @@ Recent decisions affecting current work:
 - [Phase 05-02]: Email excluded from /api/candidates and /api/talent-pool SELECT queries at DB level, not stripped in handler — enforces DATA-06 without runtime risk
 - [Phase 05-02]: PGRST116 PostgREST code checked explicitly for .single() not-found — returns 404 before logging as error
 - [Phase 05-02]: Talent pool threshold: crima_score >= 60 differentiates pool from general candidate list
+- [Phase 05-05]: Base UI Select onValueChange typed as (val: string | null) — null-guard applied when forwarding to setState<string>
+- [Phase 05-05]: Video score derived as (logic_score + comms_score) / 2 client-side — API does not return video_score field
+- [Phase 05-05]: AIInsightCard bullets fully mocked based on score thresholds — no AI API calls in v1
 
 ### Pending Todos
 
@@ -177,6 +181,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T16:20:25.964Z
-Stopped at: Completed 05-02-PLAN.md
+Last session: 2026-03-28T16:57:43.357Z
+Stopped at: Completed 05-05-PLAN.md
 Resume file: None
