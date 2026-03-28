@@ -1,161 +1,189 @@
 'use client'
+import { useState } from 'react'
+import Image from 'next/image'
 import { useParams, useRouter } from 'next/navigation'
+import { User, Lock, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'motion/react'
-import { useForm } from 'react-hook-form'
-import { standardSchemaResolver } from '@hookform/resolvers/standard-schema'
-import { z } from 'zod'
-import { fadeUp, staggerContainer } from '@/lib/animations'
-
-const schema = z.object({
-  fullName: z.string().min(1),
-  email: z.string().email(),
-  phone: z.string().min(1),
-  jobTitle: z.string().min(1),
-  company: z.string().min(1),
-})
-type FormData = z.infer<typeof schema>
+import { AuthLangToggle } from '@/components/auth/AuthLangToggle'
 
 export default function TestUserInfoPage() {
   const { id } = useParams<{ id: string }>()
   const router = useRouter()
   const { t } = useTranslation()
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: standardSchemaResolver(schema),
+  const [form, setForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    company: '',
+    jobTitle: '',
   })
 
-  const onSubmit = (data: FormData) => {
-    sessionStorage.setItem('crismatest_candidate_info', JSON.stringify(data))
-    router.push(`/test/${id}/check`)
+  const canContinue =
+    form.fullName.trim() &&
+    form.email.trim() &&
+    form.phone.trim() &&
+    form.company.trim() &&
+    form.jobTitle.trim()
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (canContinue) {
+      sessionStorage.setItem('crismatest_candidate_info', JSON.stringify(form))
+      router.push(`/test/${id}/check`)
+    }
   }
+
+  const inputClass =
+    'w-full bg-white text-sm text-slate-900 placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]/30 focus:border-[#1B4FD8] transition-colors'
+
+  const fields = [
+    { key: 'fullName', label: t('test_userinfo_full_name'), type: 'text', placeholder: t('test_userinfo_full_name_placeholder') },
+    { key: 'email', label: t('test_userinfo_email'), type: 'email', placeholder: t('test_userinfo_email_placeholder') },
+    { key: 'phone', label: t('test_userinfo_phone'), type: 'tel', placeholder: t('test_userinfo_phone_placeholder') },
+    { key: 'company', label: t('test_userinfo_company'), type: 'text', placeholder: t('test_userinfo_company_placeholder') },
+    { key: 'jobTitle', label: t('test_userinfo_job_title'), type: 'text', placeholder: t('test_userinfo_job_title_placeholder') },
+  ] as const
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
-      {/* LEFT PANEL */}
-      <div className="bg-[#0F2A6B] lg:w-1/2 flex flex-col items-center justify-center p-10 lg:p-16 text-white min-h-[40vh] lg:min-h-screen">
-        <div className="mb-6">
-          <span className="text-2xl font-bold tracking-tight">CrismaTest</span>
-        </div>
-        {/* Step badge */}
-        <span className="text-xs font-semibold text-blue-300 bg-blue-900/40 px-3 py-1 rounded-full mb-4">
-          {t('test_userinfo_step_badge')}
-        </span>
-        <p className="text-lg text-blue-100 text-center max-w-xs mt-2">
-          {t('test_userinfo_left_tagline')}
+
+      {/* ── LEFT PANEL ─────────────────────────────────────────── */}
+      <div
+        className="lg:w-1/2 min-h-[220px] lg:min-h-screen flex flex-col items-center justify-center"
+        style={{ background: '#0F2A6B', gap: 32, padding: 64 }}
+      >
+        <Image
+          src="/images/logo.png"
+          alt="CrismaTest"
+          width={110}
+          height={110}
+          style={{ objectFit: 'contain' }}
+        />
+
+        <p
+          className="text-white font-bold"
+          style={{ fontSize: 30, letterSpacing: -0.5, fontFamily: 'Inter, sans-serif' }}
+        >
+          CrismaTest
+        </p>
+
+        <p
+          className="text-center"
+          style={{ color: '#A5B4FC', fontSize: 15, lineHeight: 1.6, fontFamily: 'Inter, sans-serif', maxWidth: 380 }}
+        >
+          {t('test_intro_tagline')}
+        </p>
+
+        <div style={{ width: 40, height: 2, background: '#3B6FE8', borderRadius: 2 }} />
+
+        <p
+          className="text-center"
+          style={{ color: '#6366F1', fontSize: 12, fontFamily: 'Inter, sans-serif', maxWidth: 300 }}
+        >
+          {t('test_intro_trusted')}
         </p>
       </div>
 
-      {/* RIGHT PANEL */}
-      <div className="bg-white lg:w-1/2 flex flex-col items-center justify-center p-8 lg:p-16">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="w-full max-w-md"
+      {/* ── RIGHT PANEL ────────────────────────────────────────── */}
+      <div
+        className="lg:w-1/2 min-h-screen flex flex-col items-center justify-center relative"
+        style={{ background: '#ffffffff' }}
+      >
+        {/* Lang toggle */}
+        <div className="absolute top-5 right-6">
+          <AuthLangToggle />
+        </div>
+
+        {/* Card */}
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col bg-white border"
+          style={{
+            width: 420,
+            maxWidth: 'calc(100vw - 32px)',
+            borderRadius: 16,
+            padding: 40,
+            gap: 20,
+          }}
         >
-          <motion.h1
-            variants={fadeUp}
-            transition={{ duration: 0.3 }}
-            className="text-2xl font-bold text-slate-900 mb-6"
+          {/* Step badge */}
+          <div
+            className="inline-flex items-center self-start"
+            style={{ background: '#EEF2FF', borderRadius: 20, padding: '6px 14px', gap: 8 }}
           >
-            {t('test_userinfo_title')}
-          </motion.h1>
+            <User size={14} color="#1B4FD8" />
+            <span style={{ color: '#1B4FD8', fontSize: 12, fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>
+              user informations
+            </span>
+          </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            {/* Full Name */}
-            <motion.div variants={fadeUp} transition={{ duration: 0.3 }}>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                {t('test_userinfo_full_name')}
-              </label>
-              <input
-                {...register('fullName')}
-                placeholder={t('test_userinfo_full_name_placeholder')}
-                className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]"
-              />
-              {errors.fullName && (
-                <p className="text-xs text-red-500 mt-1">{t('auth_field_required')}</p>
-              )}
-            </motion.div>
+          {/* Title */}
+          <p style={{ color: '#111827', fontSize: 24, fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>
+            Tell us about yourself
+          </p>
 
-            {/* Email Address */}
-            <motion.div variants={fadeUp} transition={{ duration: 0.3 }}>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                {t('test_userinfo_email')}
-              </label>
-              <input
-                {...register('email')}
-                type="email"
-                placeholder={t('test_userinfo_email_placeholder')}
-                className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]"
-              />
-              {errors.email && (
-                <p className="text-xs text-red-500 mt-1">{t('auth_invalid_email')}</p>
-              )}
-            </motion.div>
+          {/* Subtitle */}
+          <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.5, fontFamily: 'Inter, sans-serif', maxWidth: 340 }}>
+            This helps us personalize your assessment
+          </p>
 
-            {/* Phone */}
-            <motion.div variants={fadeUp} transition={{ duration: 0.3 }}>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                {t('test_userinfo_phone')}
-              </label>
-              <input
-                {...register('phone')}
-                type="tel"
-                placeholder={t('test_userinfo_phone_placeholder')}
-                className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]"
-              />
-              {errors.phone && (
-                <p className="text-xs text-red-500 mt-1">{t('auth_field_required')}</p>
-              )}
-            </motion.div>
+          {/* Fields */}
+          <div className="flex flex-col" style={{ gap: 16 }}>
+            {fields.map(({ key, label, type, placeholder }) => (
+              <div key={key} className="flex flex-col" style={{ gap: 6 }}>
+                <label
+                  style={{ color: '#374151', fontSize: 13, fontWeight: 600, fontFamily: 'Inter, sans-serif' }}
+                >
+                  {label}
+                </label>
+                <input
+                  type={type}
+                  placeholder={placeholder}
+                  value={form[key]}
+                  onChange={(e) => setForm((f) => ({ ...f, [key]: e.target.value }))}
+                  className={inputClass}
+                  style={{
+                    height: 44,
+                    borderRadius: 8,
+                    border: '1.5px solid #E5E7EB',
+                    paddingLeft: 14,
+                  }}
+                />
+              </div>
+            ))}
+          </div>
 
-            {/* Job Title */}
-            <motion.div variants={fadeUp} transition={{ duration: 0.3 }}>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                {t('test_userinfo_job_title')}
-              </label>
-              <input
-                {...register('jobTitle')}
-                placeholder={t('test_userinfo_job_title_placeholder')}
-                className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]"
-              />
-              {errors.jobTitle && (
-                <p className="text-xs text-red-500 mt-1">{t('auth_field_required')}</p>
-              )}
-            </motion.div>
+          {/* Privacy note */}
+          <div className="flex items-center" style={{ gap: 8 }}>
+            <Lock size={14} color="#6B7280" className="shrink-0" />
+            <span style={{ color: '#6B7280', fontSize: 12, fontFamily: 'Inter, sans-serif' }}>
+              Your data is private and never shared
+            </span>
+          </div>
 
-            {/* Company */}
-            <motion.div variants={fadeUp} transition={{ duration: 0.3 }}>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                {t('test_userinfo_company')}
-              </label>
-              <input
-                {...register('company')}
-                placeholder={t('test_userinfo_company_placeholder')}
-                className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]"
-              />
-              {errors.company && (
-                <p className="text-xs text-red-500 mt-1">{t('auth_field_required')}</p>
-              )}
-            </motion.div>
-
-            {/* Submit */}
-            <motion.div variants={fadeUp} transition={{ duration: 0.3 }} className="pt-2">
-              <button
-                type="submit"
-                className="w-full bg-[#1B4FD8] text-white rounded-xl px-6 py-3.5 font-semibold hover:bg-[#3B6FE8] transition-colors text-base"
-              >
-                {t('test_userinfo_cta')}
-              </button>
-            </motion.div>
-          </form>
-        </motion.div>
+          {/* Continue button */}
+          <button
+            type="submit"
+            disabled={!canContinue}
+            className="flex items-center justify-center transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+            style={{
+              background: '#1B4FD8',
+              borderRadius: 10,
+              height: 50,
+              gap: 10,
+              border: 'none',
+              cursor: canContinue ? 'pointer' : 'not-allowed',
+            }}
+          >
+            <span style={{ color: '#FFFFFF', fontSize: 15, fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>
+              {t('test_userinfo_cta')}
+            </span>
+            <ArrowRight size={16} color="#FFFFFF" />
+          </button>
+        </form>
       </div>
+
     </div>
   )
 }

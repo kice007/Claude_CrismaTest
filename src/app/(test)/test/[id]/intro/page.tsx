@@ -1,114 +1,171 @@
 'use client'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
+import { Briefcase, Timer, Brain, MessageCircle, Star, Camera, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'motion/react'
-import { Clock, BookOpen, Shield } from 'lucide-react'
 import { MOCK_TEST } from '@/lib/mock-data'
-import { fadeUp, staggerContainer } from '@/lib/animations'
+import { AuthLangToggle } from '@/components/auth/AuthLangToggle'
 
-export default function TestIntroPage() {
+// Design-specified icons and durations per module name
+const MODULE_META: Record<string, { Icon: React.ElementType; duration: string }> = {
+  'Logic & reasoning': { Icon: Brain, duration: '7 min' },
+  'Communication': { Icon: MessageCircle, duration: '3 min' },
+  'Job skills': { Icon: Star, duration: '5 min' },
+}
+
+export default function TestInfoPage() {
   const { id } = useParams<{ id: string }>()
   const { t } = useTranslation()
-  const test = MOCK_TEST // Phase 4: always use MOCK_TEST regardless of id param
+  const test = MOCK_TEST
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
-      {/* LEFT PANEL — dark navy */}
-      <div className="bg-[#0F2A6B] lg:w-1/2 flex flex-col items-center justify-center p-10 lg:p-16 text-white min-h-[40vh] lg:min-h-screen">
+
+      {/* ── LEFT PANEL ─────────────────────────────────────────── */}
+      <div
+        className="lg:w-1/2 min-h-[220px] lg:min-h-screen flex flex-col items-center justify-center"
+        style={{ background: '#0F2A6B', gap: 32, padding: 64 }}
+      >
         {/* Logo */}
-        <div className="mb-8">
-          <span className="text-2xl font-bold tracking-tight">CrismaTest</span>
-        </div>
+        <Image
+          src="/images/logo.png"
+          alt="CrismaTest"
+          width={110}
+          height={110}
+          style={{ objectFit: 'contain' }}
+        />
+
+        {/* Brand name */}
+        <p
+          className="text-white font-bold"
+          style={{ fontSize: 30, letterSpacing: -0.5, fontFamily: 'Inter, sans-serif' }}
+        >
+          CrismaTest
+        </p>
+
         {/* Tagline */}
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.4 }}
-          className="text-xl lg:text-2xl font-medium text-center text-blue-100 max-w-xs"
+        <p
+          className="text-center"
+          style={{ color: '#A5B4FC', fontSize: 15, lineHeight: 1.6, fontFamily: 'Inter, sans-serif', maxWidth: 380 }}
         >
           {t('test_intro_tagline')}
-        </motion.p>
-        {/* Trust badge */}
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.4, delay: 0.15 }}
-          className="mt-4 text-sm text-blue-300"
+        </p>
+
+        {/* Divider */}
+        <div style={{ width: 40, height: 2, background: '#3B6FE8', borderRadius: 2 }} />
+
+        {/* Trust note */}
+        <p
+          className="text-center"
+          style={{ color: '#6366F1', fontSize: 12, fontFamily: 'Inter, sans-serif', maxWidth: 300 }}
         >
           {t('test_intro_trusted')}
-        </motion.p>
+        </p>
       </div>
 
-      {/* RIGHT PANEL — white card */}
-      <div className="bg-white lg:w-1/2 flex flex-col items-center justify-center p-8 lg:p-16">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="w-full max-w-md"
+      {/* ── RIGHT PANEL ────────────────────────────────────────── */}
+      <div
+        className="lg:w-1/2 min-h-screen flex flex-col items-center justify-center relative"
+        style={{ background: '#ffffffff' }}
+      >
+        {/* Lang toggle — top-right */}
+        <div className="absolute top-5 right-6">
+          <AuthLangToggle />
+        </div>
+
+        {/* Card */}
+        <div
+          className="flex flex-col bg-white border"
+          style={{
+            width: 420,
+            maxWidth: 'calc(100vw - 32px)',
+            borderRadius: 16,
+            padding: 40,
+            gap: 24,
+
+          }}
         >
-          {/* Role badge */}
-          <motion.div variants={fadeUp} transition={{ duration: 0.3 }}>
-            <span className="inline-block bg-[#EEF2FF] text-[#1B4FD8] text-xs font-semibold px-3 py-1 rounded-full mb-4">
-              {t('test_intro_role_badge')}: {test.role}
+          {/* Badge — role */}
+          <div
+            className="inline-flex items-center self-start"
+            style={{ background: '#EEF2FF', borderRadius: 20, padding: '6px 14px', gap: 8 }}
+          >
+            <Briefcase size={14} color="#1B4FD8" />
+            <span style={{ color: '#1B4FD8', fontSize: 12, fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>
+              {test.role} assessment
             </span>
-          </motion.div>
+          </div>
 
           {/* Duration row */}
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.3 }}
-            className="flex items-center gap-2 text-slate-500 text-sm mb-6"
-          >
-            <Clock size={14} />
-            <span>
-              {t('test_intro_duration')}:{' '}
+          <div className="flex items-center" style={{ gap: 8 }}>
+            <Timer size={16} color="#6B7280" />
+            <span style={{ color: '#6B7280', fontSize: 14, fontFamily: 'Inter, sans-serif' }}>
               {t('test_intro_duration_value', { minutes: test.duration })}
             </span>
-          </motion.div>
+          </div>
 
-          {/* Modules list */}
-          <motion.div variants={fadeUp} transition={{ duration: 0.3 }}>
-            <h3 className="text-sm font-semibold text-slate-700 mb-3 flex items-center gap-2">
-              <BookOpen size={14} />
-              {t('test_intro_modules')}
-            </h3>
-            <ul className="space-y-2 mb-6">
-              {test.modules.map((module, i) => (
-                <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                  <span className="w-5 h-5 rounded-full bg-[#EEF2FF] text-[#1B4FD8] flex items-center justify-center text-xs font-medium">
-                    {i + 1}
+          {/* Section header */}
+          <p style={{ color: '#111827', fontSize: 16, fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>
+            {t('test_intro_modules')}
+          </p>
+
+          {/* Module rows */}
+          <div className="flex flex-col" style={{ gap: 14 }}>
+            {test.modules.map((mod) => {
+              const meta = MODULE_META[mod.name]
+              const Icon = meta?.Icon ?? Brain
+              const duration = meta?.duration ?? `${mod.count} pts`
+              return (
+                <div key={mod.name} className="flex items-center" style={{ gap: 12 }}>
+                  <Icon size={18} color="#6366F1" />
+                  <span
+                    className="flex-1"
+                    style={{ color: '#374151', fontSize: 14, fontFamily: 'Inter, sans-serif' }}
+                  >
+                    {mod.name}
                   </span>
-                  {module}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+                  <span style={{ color: '#9CA3AF', fontSize: 12, fontFamily: 'Inter, sans-serif' }}>
+                    {duration}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
 
-          {/* Webcam disclaimer chip */}
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.3 }}
-            className="flex items-start gap-2 bg-amber-50 border border-amber-100 rounded-lg p-3 mb-8 text-xs text-amber-700"
+          {/* Disclaimer */}
+          <div
+            className="flex items-start"
+            style={{ background: '#FFF8F0', borderRadius: 8, padding: '12px 16px', gap: 10 }}
           >
-            <Shield size={14} className="mt-0.5 shrink-0" />
-            <span>{t('test_intro_privacy_note')}</span>
-          </motion.div>
-
-          {/* Start Test CTA */}
-          <motion.div variants={fadeUp} transition={{ duration: 0.3 }}>
-            <Link
-              href={`/test/${id}/user-info`}
-              className="block w-full bg-[#1B4FD8] text-white text-center rounded-xl px-6 py-3.5 font-semibold hover:bg-[#3B6FE8] transition-colors text-base"
+            <Camera size={14} color="#F59E0B" className="shrink-0 mt-0.5" />
+            <span
+              style={{ color: '#92400E', fontSize: 12, lineHeight: 1.5, fontFamily: 'Inter, sans-serif' }}
             >
+              {t('test_intro_privacy_note')}
+            </span>
+          </div>
+
+          {/* Start button */}
+          <Link
+            href={`/test/${id}/user-info`}
+            className="flex items-center justify-center"
+            style={{
+              background: '#1B4FD8',
+              borderRadius: 10,
+              padding: '14px 0',
+              gap: 10,
+              textDecoration: 'none',
+            }}
+          >
+            <span style={{ color: '#FFFFFF', fontSize: 15, fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>
               {t('test_intro_cta')}
-            </Link>
-          </motion.div>
-        </motion.div>
+            </span>
+            <ArrowRight size={16} color="#FFFFFF" />
+          </Link>
+        </div>
       </div>
+
     </div>
   )
 }
