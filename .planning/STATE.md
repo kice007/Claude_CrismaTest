@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 05-company-dashboard-api 05-03-PLAN.md
-last_updated: "2026-03-28T16:15:19.272Z"
+stopped_at: Completed 05-company-dashboard-api 05-04-PLAN.md
+last_updated: "2026-03-28T16:19:04.782Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 5
   total_plans: 39
-  completed_plans: 32
+  completed_plans: 33
   percent: 79
 ---
 
@@ -91,6 +91,7 @@ Progress: [████████░░] 81%
 | Phase 04-auth-test-flow P07 | 25 | 4 tasks | 5 files |
 | Phase 05-company-dashboard-api P01 | 8min | 2 tasks | 10 files |
 | Phase 05-company-dashboard-api P03 | 4min | 2 tasks | 2 files |
+| Phase 05-company-dashboard-api P04 | 35min | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -159,6 +160,8 @@ Recent decisions affecting current work:
 - [Phase 05-03]: PGRST116 error code used to detect not-found from Supabase .single() — avoids a second existence check on GET
 - [Phase 05-03]: PUT handler builds updatePayload dynamically to only send provided fields — prevents overwriting existing values with undefined
 - [Phase 05-03]: DELETE verifies row existence first then soft-deletes — clean 404 before attempting update
+- [Phase 05-company-dashboard-api]: Dashboard NavShell early-return guard placed AFTER all hooks — Rules of Hooks compliance requires no conditional returns before useAuth()
+- [Phase 05-company-dashboard-api]: DashboardShell uses fixed inset-0 z-50 overlay (layer 1) + NavShell pathname check (layer 2) for belt-and-suspenders NavShell suppression on /dashboard/*
 
 ### Pending Todos
 
@@ -170,6 +173,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T16:15:19.269Z
-Stopped at: Completed 05-company-dashboard-api 05-03-PLAN.md
+Last session: 2026-03-28T16:19:04.778Z
+Stopped at: Completed 05-company-dashboard-api 05-04-PLAN.md
 Resume file: None
