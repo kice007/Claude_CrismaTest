@@ -158,6 +158,6 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4 → 5 → 6
 | 2. Shared UI + Nav Shell | 6/6 | Complete   | 2026-03-15 |
 | 2.1. Screen Design | 2 full + 3 partial / 7 | In progress — see plan notes for what's missing per file | - |
 | 3. Landing Pages + Data Foundation | 6/6 | Complete   | 2026-03-23 |
-| 4. Auth + Test Flow | 7/7 | Complete   | 2026-03-28 |
+| 4. Auth + Test Flow | 8/8 | Complete   | 2026-03-28 |
 | 5. Company Dashboard + API | 0/TBD | Not started | - |
 | 6. Payment + Security | 0/TBD | Not started | - |
