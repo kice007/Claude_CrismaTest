@@ -111,7 +111,7 @@ Plans:
   3. The pre-flight check page requests real webcam and microphone permissions from the browser and shows a live mic level indicator; the Start CTA stays disabled until the checklist is agreed
   4. The test engine renders all six question formats (QCM, drag & drop, case study, simulation, audio/video, short text), tracks progress, and shows a countdown timer that turns amber then red as time expires
   5. After submitting the test, the calculating screen runs its animated sequence and auto-redirects to the result page where the CrismaScore gauge animates from 0 to the final value and confetti fires if the score exceeds 70
-**Plans**: 7 plans
+**Plans**: 8 plans
 
 Plans:
 - [ ] 04-00-PLAN.md — Wave 0: packages, proxy.ts, auth.ts, mock-data.ts, route group layouts, i18n keys
@@ -121,6 +121,7 @@ Plans:
 - [ ] 04-04-PLAN.md — /test/[id]/check webcam+mic + /questions 6-type carousel (TEST-02, TEST-03)
 - [ ] 04-05-PLAN.md — /test/[id]/calculating animation + /result gauge+confetti (TEST-04, TEST-05)
 - [ ] 04-06-PLAN.md — Human verification checkpoint: auth + test flows end-to-end
+- [ ] 04-07-PLAN.md — Gap closure: auth cookie wiring, intro URL, sessionStorage, result CTAs (AUTH-01, AUTH-02, TEST-01, TEST-05)
 
 ### Phase 5: Company Dashboard + API
 **Goal**: A logged-in company user can browse, search, compare, and inspect candidates across all six dashboard views, with all data served from live Supabase API routes.
