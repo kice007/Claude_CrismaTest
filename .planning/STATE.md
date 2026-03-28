@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 05-05-PLAN.md
-last_updated: "2026-03-28T16:57:43.360Z"
+stopped_at: Completed 05-08-PLAN.md
+last_updated: "2026-03-28T17:18:31.578Z"
 last_activity: 2026-03-15 — Completed 2.1-06 components.pen (6 groups, DSGN-06) — Phase 2.1 done
 progress:
   total_phases: 7
   completed_phases: 5
   total_plans: 39
-  completed_plans: 35
+  completed_plans: 36
   percent: 79
 ---
 
@@ -94,6 +94,7 @@ Progress: [████████░░] 81%
 | Phase 05-company-dashboard-api P04 | 35min | 2 tasks | 8 files |
 | Phase 05-company-dashboard-api P02 | 10min | 2 tasks | 4 files |
 | Phase 05-company-dashboard-api P05 | 23 | 2 tasks | 8 files |
+| Phase 05-company-dashboard-api P08 | 2min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -170,6 +171,8 @@ Recent decisions affecting current work:
 - [Phase 05-05]: Base UI Select onValueChange typed as (val: string | null) — null-guard applied when forwarding to setState<string>
 - [Phase 05-05]: Video score derived as (logic_score + comms_score) / 2 client-side — API does not return video_score field
 - [Phase 05-05]: AIInsightCard bullets fully mocked based on score thresholds — no AI API calls in v1
+- [Phase 05-08]: Success modal uses Base UI Dialog open={step === 'success'} with empty onOpenChange — prevents ESC dismiss without conditional hooks
+- [Phase 05-08]: Base UI Select onValueChange typed as (val: string | null) — null-guard applied in wizard consistent with dashboard page pattern
 
 ### Pending Todos
 
@@ -181,6 +184,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T16:57:43.357Z
-Stopped at: Completed 05-05-PLAN.md
+Last session: 2026-03-28T17:18:31.574Z
+Stopped at: Completed 05-08-PLAN.md
 Resume file: None
