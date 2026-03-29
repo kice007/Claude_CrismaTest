@@ -409,6 +409,8 @@
   "auth_onboarding_other_industry": "Your industry…",
   "auth_onboarding_other_role": "Your role…",
   "auth_onboarding_other_ats": "Your ATS…",
+  "auth_onboarding_other_source": "e.g. a friend, a podcast…",
+  "auth_login_cta_v2": "Log In",
   "auth_allset_body": "Your account is ready. Let's start building smarter hiring decisions together.",
   "auth_allset_note": "or explore the docs first",
   "auth_signup_size_placeholder": "Select company size",

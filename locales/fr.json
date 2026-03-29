@@ -412,6 +412,8 @@
   "auth_onboarding_other_industry": "Votre secteur…",
   "auth_onboarding_other_role": "Votre poste…",
   "auth_onboarding_other_ats": "Votre ATS…",
+  "auth_onboarding_other_source": "ex. un ami, un podcast…",
+  "auth_login_cta_v2": "Se connecter",
   "auth_allset_body": "Votre compte est prêt. Commençons à prendre de meilleures décisions d'embauche ensemble.",
   "auth_allset_note": "ou explorez d'abord la documentation",
   "auth_signup_size_placeholder": "Sélectionner la taille",

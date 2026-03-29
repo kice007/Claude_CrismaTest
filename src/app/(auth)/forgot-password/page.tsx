@@ -48,13 +48,13 @@ export default function ForgotPasswordPage() {
     <div className="min-h-screen bg-[#F1F5F9] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-[460px] bg-white rounded-2xl shadow-sm border border-slate-100 p-10 flex flex-col gap-6">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-center gap-2">
           <Image src="/images/logo.png" alt="CrismaTest logo" width={42} height={36} />
           <span className="font-bold text-[17px] text-[#0F172A]">CrismaTest</span>
         </div>
 
         {/* Icon */}
-        <div className="flex">
+        <div className="flex justify-center">
           <div className="w-16 h-16 rounded-2xl bg-[#EFF6FF] flex items-center justify-center">
             <Mail size={28} className="text-[#2563EB]" />
           </div>
@@ -91,7 +91,7 @@ export default function ForgotPasswordPage() {
         </form>
 
         {/* Back link */}
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center justify-center gap-1.5">
           <ArrowLeft size={13} className="text-[#64748B]" />
           <Link
             href="/login"

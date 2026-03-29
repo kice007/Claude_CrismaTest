@@ -51,10 +51,14 @@ export function NavShell() {
     return () => document.removeEventListener("click", handler);
   }, []);
 
-  // Belt-and-suspenders layer 2: NavShell renders nothing on all /dashboard/* routes.
+  // NavShell renders nothing on dashboard routes and all auth routes.
   // Placed AFTER all hooks to comply with Rules of Hooks.
-  // Layer 1 is DashboardShell's fixed inset-0 z-50 overlay.
-  if (pathname.startsWith("/dashboard")) return null;
+  const isAuthPage =
+    pathname.startsWith("/sign-up") ||
+    pathname.startsWith("/login") ||
+    pathname.startsWith("/forgot-password") ||
+    pathname.startsWith("/onboarding");
+  if (pathname.startsWith("/dashboard") || isAuthPage) return null;
 
   if (isLandingPage) {
     const bgClass = isDarkPage
