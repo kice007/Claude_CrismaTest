@@ -178,12 +178,12 @@ export function NavShell() {
                 </div>
               ) : (
                 <>
-                  <a
-                    href="#"
+                  <Link
+                    href="/login"
                     className={`hidden lg:block text-[14px] transition-colors duration-300 hover:text-[#2563EB] ${linkBase}`}
                   >
                     {t("nav_log_in")}
-                  </a>
+                  </Link>
                   <Link
                     href="/sign-up"
                     className="hidden lg:block px-5 py-2.5 rounded-md text-[14px] font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
@@ -246,12 +246,13 @@ export function NavShell() {
                     </button>
                   ) : (
                     <>
-                      <a
-                        href="#"
+                      <Link
+                        href="/login"
+                        onClick={() => setMobileMenuOpen(false)}
                         className={`text-[14px] font-medium transition-colors hover:text-[#2563EB] ${linkBase}`}
                       >
                         {t("nav_log_in")}
-                      </a>
+                      </Link>
                       <Link
                         href="/sign-up"
                         onClick={() => setMobileMenuOpen(false)}
