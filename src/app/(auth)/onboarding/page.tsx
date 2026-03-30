@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ArrowRight, Check, PenLine } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -20,10 +21,10 @@ function AuthLeftPanel() {
         <div className="absolute rounded-full" style={{ width: 620, height: 620, background: '#1E293B', left: '38.9%', top: '42.2%' }} />
         <div className="absolute rounded-full" style={{ width: 420, height: 420, background: '#162032', left: '50%', top: '55.6%' }} />
       </div>
-      <div className="relative z-10 p-10 flex items-center gap-2.5">
+      <Link href="/" className="relative z-10 p-10 flex items-center gap-2.5">
         <Image src="/images/logo.png" alt="CrismaTest logo" width={42} height={36} />
         <span className="text-white text-[18px] font-bold">CrismaTest</span>
-      </div>
+      </Link>
       <div className="relative z-10 px-14 pb-12">
         <h1 className="text-white font-extrabold leading-tight mb-5" style={{ fontSize: 38, maxWidth: 560 }}>
           {t('auth_left_headline').split('\n').map((line, i) => (

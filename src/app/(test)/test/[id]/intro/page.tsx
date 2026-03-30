@@ -28,13 +28,15 @@ export default function TestInfoPage() {
         style={{ background: '#0F2A6B', gap: 32, padding: 64 }}
       >
         {/* Logo */}
-        <Image
-          src="/images/logo.png"
-          alt="CrismaTest"
-          width={110}
-          height={110}
-          style={{ objectFit: 'contain' }}
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            alt="CrismaTest"
+            width={110}
+            height={110}
+            style={{ objectFit: 'contain' }}
+          />
+        </Link>
 
         {/* Brand name */}
         <p

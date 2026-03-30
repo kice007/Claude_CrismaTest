@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useParams, useRouter } from 'next/navigation'
 import { User, Lock, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -53,13 +54,15 @@ export default function TestUserInfoPage() {
         className="lg:w-1/2 min-h-[220px] lg:min-h-screen flex flex-col items-center justify-center"
         style={{ background: '#0F2A6B', gap: 32, padding: 64 }}
       >
-        <Image
-          src="/images/logo.png"
-          alt="CrismaTest"
-          width={110}
-          height={110}
-          style={{ objectFit: 'contain' }}
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            alt="CrismaTest"
+            width={110}
+            height={110}
+            style={{ objectFit: 'contain' }}
+          />
+        </Link>
 
         <p
           className="text-white font-bold"

@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useParams, useRouter } from 'next/navigation'
 import { Mic, TriangleAlert, Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -75,10 +76,10 @@ export default function TestCheckPage() {
     <div className="min-h-screen bg-[#EEF2FF] flex flex-col">
       {/* Header */}
       <header className="bg-white border-b border-[#E5E7EB] px-12 h-16 flex items-center justify-between flex-shrink-0">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Image src="/images/logo.png" alt="CrismaTest" width={42} height={36} className="object-contain" />
           <span className="text-[18px] font-bold text-[#0F2A6B] tracking-tight">CrismaTest</span>
-        </div>
+        </Link>
         <div className="flex items-center gap-4">
           <span className="text-[16px] font-semibold text-[#0F2A6B]">{t('test_check_title')}</span>
           <AuthLangToggle />

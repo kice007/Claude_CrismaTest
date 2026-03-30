@@ -427,7 +427,8 @@
       "talentPool": "Vivier de talents",
       "profile": "Profil",
       "buildTest": "Créer un test",
-      "logout": "Se déconnecter"
+      "logout": "Se déconnecter",
+      "settings": "Paramètres"
     },
     "sidebar": {
       "plan": "Plan Pro",
@@ -456,7 +457,21 @@
       },
       "empty": "Aucun candidat trouvé",
       "emptyHint": "Ajustez vos filtres ou invitez des candidats à passer un test",
-      "loading": "Chargement des candidats..."
+      "loading": "Chargement des candidats...",
+      "viewProfile": "Voir le profil",
+      "searchRoles": "Rechercher des postes...",
+      "noRolesFound": "Aucun poste trouvé",
+      "allRoles": "Tous les postes",
+      "scoreRange": "Plage de score",
+      "allScores": "Tous les scores",
+      "below60": "En dessous de 60",
+      "selectedCount_one": "{{count}} candidat sélectionné",
+      "selectedCount_other": "{{count}} candidats sélectionnés",
+      "compareHint": "Sélectionnez jusqu'à 5 candidats pour les comparer côte à côte",
+      "clear": "Effacer",
+      "compareNow": "Comparer maintenant",
+      "noResults": "0 résultats",
+      "resultsRange": "{{start}}–{{end}} sur {{total}}"
     },
     "candidateDetail": {
       "back": "Retour aux candidats",
@@ -535,6 +550,7 @@
         "name": "Nom du test",
         "role": "Poste",
         "modules": "Modules",
+        "duration": "Durée",
         "created": "Créé le",
         "status": "Statut",
         "responses": "Réponses",
@@ -556,7 +572,17 @@
       "deleteConfirm": "Supprimer ce test ?",
       "deleteWarning": "Cette action supprimera le test et son lien partageable. Elle est irréversible.",
       "deleteCancel": "Annuler",
-      "deleteConfirmBtn": "Supprimer le test"
+      "deleteConfirmBtn": "Supprimer le test",
+      "searchPlaceholder": "Rechercher par nom de test ou poste...",
+      "allStatuses": "Tous les statuts",
+      "statusPlaceholder": "Statut",
+      "searchRoles": "Rechercher des postes...",
+      "noRolesFound": "Aucun poste trouvé",
+      "notFound": "Aucun test trouvé",
+      "durationMin": "{{n}} min",
+      "viewBtn": "Voir",
+      "noResults": "0 résultats",
+      "resultsRange": "{{start}}–{{end}} sur {{total}}"
     },
     "testDetail": {
       "back": "Retour aux tests",
@@ -582,6 +608,7 @@
       "draft": "Brouillon",
       "archived": "Archivé",
       "passed": "Réussi",
+      "reviewed": "Évalué",
       "failed": "Échoué",
       "pending": "En attente"
     },
@@ -589,6 +616,86 @@
       "loadFailed": "Échec du chargement des données",
       "notFound": "Introuvable",
       "retry": "Réessayer"
+    },
+    "overview": {
+      "title": "Vue d'ensemble",
+      "kpi": {
+        "testsSent": "Tests envoyés",
+        "testsSentDelta": "↑ +18% ce mois-ci",
+        "avgScore": "CrismaScore moyen",
+        "avgScoreDelta": "↑ +5 pts vs le mois dernier",
+        "candidatesReviewed": "Candidats évalués",
+        "candidatesReviewedSub": "Ce mois · 73% de réussite",
+        "fraudFlags": "Alertes fraude",
+        "fraudFlagsDelta": "↓ −3 vs le mois dernier"
+      },
+      "scoreDistribution": "Distribution des scores",
+      "scoreDistributionSub": "30 derniers jours · 142 candidats",
+      "topCandidates": "Meilleurs candidats",
+      "topCandidatesQualified": "{{count}} qualifiés · ≥75",
+      "recentCandidates": "Candidats récents",
+      "viewAll": "Voir tout →",
+      "viewAllQualified": "Voir tous les candidats qualifiés →",
+      "table": {
+        "name": "Nom",
+        "role": "Poste",
+        "score": "CrismaScore",
+        "trust": "Confiance",
+        "status": "Statut",
+        "date": "Date",
+        "action": "Action"
+      },
+      "empty": "Aucun candidat pour le moment",
+      "viewBtn": "Voir",
+      "paginationZero": "0 résultats",
+      "paginationRange": "{{start}}–{{end}} sur {{total}} résultats"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "comingSoon": "Les paramètres du compte et de l'espace de travail arrivent bientôt."
+    },
+    "talentPoolPage": {
+      "buildTest": "Créer un test",
+      "leadsCount": "Vivier de talents ({{count}} profils)",
+      "sortBy": "Trier par :",
+      "sortScore": "Score",
+      "sortName": "Nom",
+      "sortDate": "Date",
+      "clear": "Effacer",
+      "toggleGridView": "Basculer vue grille"
+    },
+    "comparePage": {
+      "title": "Comparer les candidats",
+      "exportReport": "Exporter le rapport",
+      "noSelected": "Aucun candidat sélectionné",
+      "backToCandidates": "Retour aux candidats",
+      "candidatesCount": "{{count}} Candidats",
+      "bestFit": "Meilleur profil",
+      "table": {
+        "crimaScore": "CrismaScore",
+        "logic": "Logique",
+        "communication": "Communication",
+        "jobSkills": "Compétences métier",
+        "trust": "Score de confiance",
+        "fraudRisk": "Risque fraude",
+        "aiVerdict": "Verdict IA",
+        "pipeline": "Étape du processus"
+      },
+      "pipeline": {
+        "technical": "Technique",
+        "screened": "Présélectionné",
+        "applied": "Candidature reçue"
+      },
+      "ai": {
+        "advanceInterview": "Passer à l'entretien",
+        "furtherScreening": "Présélection approfondie",
+        "onHold": "En attente"
+      },
+      "fraud": {
+        "lowRisk": "Risque faible",
+        "mediumRisk": "Risque moyen",
+        "highRisk": "Risque élevé"
+      }
     }
   }
 }

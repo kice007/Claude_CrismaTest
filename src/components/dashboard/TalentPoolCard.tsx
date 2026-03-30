@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/navigation'
 
 interface TalentPoolEntry {
   id: string
@@ -16,7 +16,6 @@ interface TalentPoolEntry {
 
 interface TalentPoolCardProps {
   candidate: TalentPoolEntry
-  onClick: () => void
 }
 
 function scoreColorClasses(score: number): string {
@@ -25,10 +24,9 @@ function scoreColorClasses(score: number): string {
   return 'bg-red-100 text-red-800'
 }
 
-function formatDate(dateStr: string): string {
+function formatDateShort(dateStr: string): string {
   try {
     return new Date(dateStr).toLocaleDateString('en-US', {
-      year: 'numeric',
       month: 'short',
       day: 'numeric',
     })
@@ -37,50 +35,78 @@ function formatDate(dateStr: string): string {
   }
 }
 
-export function TalentPoolCard({ candidate, onClick }: TalentPoolCardProps) {
-  const { t } = useTranslation('translation')
+function formatDateBadge(dateStr: string): string {
+  try {
+    return new Date(dateStr).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+    })
+  } catch {
+    return dateStr
+  }
+}
 
+function topPercent(score: number): string {
+  if (score >= 90) return 'Top 3%'
+  if (score >= 80) return 'Top 10%'
+  if (score >= 70) return 'Top 20%'
+  if (score >= 60) return 'Top 35%'
+  return 'Top 50%'
+}
+
+export function TalentPoolCard({ candidate }: TalentPoolCardProps) {
+  const router = useRouter()
   return (
-    <div
-      className="flex flex-col bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow cursor-default"
-    >
-      {/* Avatar + name + role */}
+    <div className="flex flex-col bg-white rounded-xl border border-[#E2E8F0] p-5 hover:shadow-md transition-shadow cursor-default">
+
+      {/* Top row: avatar + name/role + date badge */}
       <div className="flex items-start gap-3 mb-4">
         <div
-          className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-base shrink-0"
+          className="w-11 h-11 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0"
           style={{ backgroundColor: candidate.avatar_color }}
         >
           {candidate.avatar_initials}
         </div>
-        <div className="min-w-0">
-          <p className="font-bold text-slate-900 truncate leading-tight">{candidate.full_name}</p>
-          <p className="text-slate-600 text-sm truncate mt-0.5">{candidate.role}</p>
+        <div className="flex-1 min-w-0">
+          <p className="font-bold text-[#0F172A] truncate leading-tight text-sm">{candidate.full_name}</p>
+          <p className="text-[#64748B] text-xs truncate mt-0.5">{candidate.role}</p>
         </div>
-      </div>
-
-      {/* Scores */}
-      <div className="flex items-center gap-2 mb-3">
-        <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${scoreColorClasses(candidate.crima_score)}`}>
-          {candidate.crima_score}
+        <span className="shrink-0 inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 text-xs font-medium">
+          {formatDateBadge(candidate.test_date)}
         </span>
-        <span className="text-xs text-slate-400">CrismaScore</span>
       </div>
-      <p className="text-xs text-slate-500 mb-1">
-        Trust Score: <span className="font-medium text-slate-700">{candidate.trust_score}</span>
-      </p>
 
-      {/* Last test date */}
-      <p className="text-xs text-slate-400 mb-5">
-        {formatDate(candidate.test_date)}
-      </p>
+      {/* Score row */}
+      <div className="flex items-center gap-3 mb-3">
+        <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${scoreColorClasses(candidate.crima_score)}`}>
+          CrismaScore {candidate.crima_score}
+        </span>
+        <span className="text-xs text-[#64748B]">
+          Trust <span className="font-medium text-slate-700">{candidate.trust_score}%</span>
+        </span>
+        <span className="text-xs text-[#64748B]">
+          Tests <span className="font-medium text-slate-700">3</span>
+        </span>
+      </div>
 
-      {/* Contact button */}
+      {/* Stats row */}
+      <div className="flex items-center gap-3 mb-4 text-xs text-[#64748B]">
+        <span className="font-medium text-slate-700">{topPercent(candidate.crima_score)}</span>
+        <span>·</span>
+        <span>3/4</span>
+        <span>·</span>
+        <span>{formatDateShort(candidate.test_date)}</span>
+        <span>·</span>
+        <span className="text-slate-400">Last invited</span>
+      </div>
+
+      {/* View profile button */}
       <button
         type="button"
-        onClick={onClick}
-        className="mt-auto w-full min-h-[48px] rounded-lg border border-brand-primary text-brand-primary font-medium text-sm hover:bg-brand-primary hover:text-white transition-colors"
+        onClick={() => router.push(`/dashboard/talent-pool/${candidate.id}`)}
+        className="mt-auto w-full min-h-[40px] rounded-lg border border-[#2563EB] text-[#2563EB] font-medium text-sm hover:bg-[#2563EB] hover:text-white transition-colors"
       >
-        {t('dashboard.talentPool.contact')}
+        View profile
       </button>
     </div>
   )

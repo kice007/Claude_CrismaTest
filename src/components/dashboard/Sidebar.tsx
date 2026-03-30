@@ -1,48 +1,38 @@
 'use client'
 
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Users, FileText, Star, LogOut } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { useAuth } from '@/lib/auth-context'
+import { usePathname, useRouter } from 'next/navigation'
+import { LayoutDashboard, Users, ClipboardList, Star, Settings, LogOut, ChevronUp, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useAuth } from '@/lib/auth-context'
+import { useTranslation } from 'react-i18next'
 
-// ─── Nav Items ───────────────────────────────────────────────────────────────
-
-const navItems = [
-  {
-    key: 'dashboard.nav.dashboard',
-    href: '/dashboard',
-    icon: LayoutDashboard,
-    exact: true,
-  },
-  {
-    key: 'dashboard.nav.candidates',
-    href: '/dashboard',
-    icon: Users,
-    exact: true,
-  },
-  {
-    key: 'dashboard.nav.tests',
-    href: '/dashboard/tests',
-    icon: FileText,
-    exact: false,
-  },
-  {
-    key: 'dashboard.nav.talentPool',
-    href: '/dashboard/talent-pool',
-    icon: Star,
-    exact: false,
-  },
+const NAV_ITEMS = [
+  { labelKey: 'dashboard.nav.dashboard', href: '/dashboard', icon: LayoutDashboard, exact: true },
+  { labelKey: 'dashboard.nav.candidates', href: '/dashboard/candidates', icon: Users, exact: false },
+  { labelKey: 'dashboard.nav.tests', href: '/dashboard/tests', icon: ClipboardList, exact: false },
+  { labelKey: 'dashboard.nav.talentPool', href: '/dashboard/talent-pool', icon: Star, exact: false },
 ]
 
-// ─── Component ───────────────────────────────────────────────────────────────
-
 export function Sidebar() {
-  const { t } = useTranslation()
   const pathname = usePathname()
+  const router = useRouter()
   const { logout } = useAuth()
+  const { t, i18n } = useTranslation()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false)
+      }
+    }
+    if (menuOpen) document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [menuOpen])
 
   function isActive(href: string, exact: boolean): boolean {
     if (exact) return pathname === href
@@ -50,66 +40,154 @@ export function Sidebar() {
   }
 
   return (
-    <aside className="hidden md:flex flex-col w-60 shrink-0 h-full bg-[#0F2A6B]">
-      {/* Logo area */}
-      <div className="flex items-center gap-2 px-5 py-5 border-b border-white/10">
+    <aside className="hidden md:flex flex-col w-60 shrink-0 h-full bg-[#0F172A] py-6 px-4 gap-2">
+      {/* Logo */}
+      <Link href="/dashboard" className="flex items-center gap-2 h-10 w-full shrink-0">
         <Image
           src="/images/logo.png"
           alt="CrismaTest logo"
-          width={32}
-          height={28}
-          className="shrink-0"
+          width={42}
+          height={36}
+          className="shrink-0 object-contain"
         />
-        <span className="font-bold text-[17px] tracking-[-0.3px] text-white">
-          CrismaTest
-        </span>
-      </div>
+        <span className="font-bold text-base text-white leading-none">CrismaTest</span>
+      </Link>
 
-      {/* Nav items */}
-      <nav className="flex-1 flex flex-col gap-1 px-3 pt-4" aria-label="Dashboard navigation">
-        {navItems.map((item) => {
+      {/* Nav */}
+      <nav className="flex flex-col w-full mt-6" style={{ gap: 4 }}>
+        {NAV_ITEMS.map((item) => {
           const active = isActive(item.href, item.exact)
           const Icon = item.icon
           return (
             <Link
-              key={item.key}
+              key={item.href}
               href={item.href}
               className={cn(
-                'flex items-center gap-3 px-3 py-2.5 rounded-lg text-[14px] font-medium transition-colors duration-150',
-                active
-                  ? 'border-l-2 border-[#2563EB] bg-[#2563EB]/10 text-white pl-[10px]'
-                  : 'text-slate-300 hover:bg-white/10 hover:text-white'
+                'flex items-center w-full rounded-lg shrink-0',
+                active ? 'bg-[#1B4FD8]' : 'hover:bg-white/5'
               )}
+              style={{ gap: 10, height: 48, padding: '0 12px' }}
             >
-              <Icon size={18} className="shrink-0" />
-              <span>{t(item.key)}</span>
+              <Icon
+                size={20}
+                className={cn('shrink-0', active ? 'text-white' : 'text-[#94A3B8]')}
+              />
+              <span
+                className={cn(
+                  'text-[14px] leading-none',
+                  active ? 'text-white font-semibold' : 'text-[#94A3B8] font-normal'
+                )}
+              >
+                {t(item.labelKey)}
+              </span>
             </Link>
           )
         })}
       </nav>
 
-      {/* User section */}
-      <div className="px-3 pb-4 border-t border-white/10 pt-4">
-        {/* Avatar + name + plan badge */}
-        <div className="flex items-center gap-3 px-3 py-2 mb-2">
-          <div className="w-9 h-9 rounded-full bg-[#2563EB] flex items-center justify-center text-white text-sm font-semibold shrink-0">
-            JD
+      {/* Spacer */}
+      <div className="flex-1" />
+
+      {/* Profile footer with popup */}
+      <div ref={menuRef} className="relative shrink-0">
+
+        {/* Popup menu */}
+        {menuOpen && (
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 'calc(100% + 8px)',
+              left: 0,
+              right: 0,
+              background: '#1E293B',
+              border: '1px solid #334155',
+              borderRadius: 10,
+              padding: '4px 0',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
+              zIndex: 50,
+            }}
+          >
+            {/* Language switcher */}
+            <div
+              className="flex items-center w-full"
+              style={{ gap: 10, padding: '10px 14px', borderBottom: '1px solid #334155' }}
+            >
+              <Globe size={15} color="#94A3B8" />
+              <div className="flex items-center" style={{ gap: 4 }}>
+                {(['en', 'fr'] as const).map((lang) => (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => i18n.changeLanguage(lang)}
+                    style={{
+                      background: i18n.resolvedLanguage === lang ? '#1B4FD8' : 'transparent',
+                      border: i18n.resolvedLanguage === lang ? 'none' : '1px solid #475569',
+                      borderRadius: 6,
+                      color: i18n.resolvedLanguage === lang ? '#fff' : '#94A3B8',
+                      fontSize: 12,
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      padding: '3px 10px',
+                      lineHeight: '18px',
+                    }}
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => { setMenuOpen(false); router.push('/dashboard/settings') }}
+              className="flex items-center w-full hover:bg-white/5 transition-colors"
+              style={{ gap: 10, padding: '10px 14px', background: 'none', border: 'none', cursor: 'pointer' }}
+            >
+              <Settings size={15} color="#94A3B8" />
+              <span style={{ fontSize: 13, color: '#E2E8F0' }}>{t('dashboard.nav.settings')}</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => { setMenuOpen(false); logout() }}
+              className="flex items-center w-full hover:bg-white/5 transition-colors"
+              style={{ gap: 10, padding: '10px 14px', background: 'none', border: 'none', cursor: 'pointer' }}
+            >
+              <LogOut size={15} color="#F87171" />
+              <span style={{ fontSize: 13, color: '#F87171' }}>{t('dashboard.nav.logout')}</span>
+            </button>
           </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-white text-[13px] font-medium truncate">John Doe</p>
-            <span className="inline-block mt-0.5 px-2 py-0.5 rounded-full bg-[#2563EB]/20 text-[#93C5FD] text-[11px] font-medium">
-              {t('dashboard.sidebar.plan')}
-            </span>
-          </div>
-        </div>
-        {/* Logout button */}
+        )}
+
+        {/* Trigger button */}
         <button
           type="button"
-          onClick={logout}
-          className="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-[14px] font-medium text-slate-300 hover:bg-white/10 hover:text-white transition-colors duration-150"
+          onClick={() => setMenuOpen(v => !v)}
+          className={cn('flex items-center w-full rounded-lg transition-colors', menuOpen ? 'bg-white/5' : 'hover:bg-white/5')}
+          style={{ gap: 10, height: 56, padding: '0 12px', background: 'none', border: 'none', cursor: 'pointer' }}
         >
-          <LogOut size={18} className="shrink-0" />
-          <span>{t('dashboard.nav.logout')}</span>
+          <div
+            className="shrink-0 rounded-[18px]"
+            style={{ width: 36, height: 36, backgroundColor: '#3B6FE8' }}
+          />
+          <div className="flex flex-row items-center flex-1 min-w-0" style={{ gap: 6 }}>
+            <span className="text-white font-semibold truncate text-[13px] leading-none">
+              Acme Corp
+            </span>
+            <div
+              className="flex items-center justify-center rounded-[9px] shrink-0"
+              style={{ width: 36, height: 18, backgroundColor: '#6366F1' }}
+            >
+              <span className="text-white font-bold text-[10px] leading-none">Pro</span>
+            </div>
+          </div>
+          <ChevronUp
+            size={14}
+            color="#94A3B8"
+            style={{
+              flexShrink: 0,
+              transform: menuOpen ? 'rotate(0deg)' : 'rotate(180deg)',
+              transition: 'transform 0.2s',
+            }}
+          />
         </button>
       </div>
     </aside>

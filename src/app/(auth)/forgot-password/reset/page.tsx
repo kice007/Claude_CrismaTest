@@ -76,10 +76,10 @@ export default function ForgotPasswordResetPage() {
     <div className="min-h-screen bg-[#F1F5F9] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-[460px] bg-white rounded-2xl shadow-sm border border-slate-100 p-10 flex flex-col gap-[22px]">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-2">
+        <Link href="/" className="flex items-center justify-center gap-2">
           <Image src="/images/logo.png" alt="CrismaTest logo" width={42} height={36} />
           <span className="font-bold text-[17px] text-[#0F172A]">CrismaTest</span>
-        </div>
+        </Link>
 
         {/* Icon */}
         <div className="flex justify-center">

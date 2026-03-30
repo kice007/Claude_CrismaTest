@@ -159,10 +159,10 @@ function LeftPanel() {
       />
 
       {/* Logo row */}
-      <div className="relative z-10 flex items-center gap-2.5 px-14 pt-11">
+      <Link href="/" className="relative z-10 flex items-center gap-2.5 px-14 pt-11">
         <Image src="/images/logo.png" alt="CrismaTest logo" width={42} height={36} />
         <span className="text-white font-bold text-lg tracking-tight">CrismaTest</span>
-      </div>
+      </Link>
 
       {/* Tagline — vertically centered in remaining space */}
       <div className="relative z-10 flex-1 flex flex-col justify-center px-14">

@@ -424,7 +424,8 @@
       "talentPool": "Talent Pool",
       "profile": "Profile",
       "buildTest": "Build Test",
-      "logout": "Log out"
+      "logout": "Log out",
+      "settings": "Settings"
     },
     "sidebar": {
       "plan": "Pro Plan",
@@ -453,7 +454,21 @@
       },
       "empty": "No candidates found",
       "emptyHint": "Adjust your filters or invite candidates to take a test",
-      "loading": "Loading candidates..."
+      "loading": "Loading candidates...",
+      "viewProfile": "View profile",
+      "searchRoles": "Search roles...",
+      "noRolesFound": "No roles found",
+      "allRoles": "All roles",
+      "scoreRange": "Score range",
+      "allScores": "All scores",
+      "below60": "Below 60",
+      "selectedCount_one": "{{count}} candidate selected",
+      "selectedCount_other": "{{count}} candidates selected",
+      "compareHint": "Select up to 5 candidates to compare side by side",
+      "clear": "Clear",
+      "compareNow": "Compare now",
+      "noResults": "0 results",
+      "resultsRange": "{{start}}–{{end}} of {{total}}"
     },
     "candidateDetail": {
       "back": "Back to Candidates",
@@ -532,6 +547,7 @@
         "name": "Test Name",
         "role": "Role",
         "modules": "Modules",
+        "duration": "Duration",
         "created": "Created",
         "status": "Status",
         "responses": "Responses",
@@ -553,7 +569,17 @@
       "deleteConfirm": "Delete this test?",
       "deleteWarning": "This will remove the test and its shareable link. This action cannot be undone.",
       "deleteCancel": "Cancel",
-      "deleteConfirmBtn": "Delete Test"
+      "deleteConfirmBtn": "Delete Test",
+      "searchPlaceholder": "Search by test name or role...",
+      "allStatuses": "All statuses",
+      "statusPlaceholder": "Status",
+      "searchRoles": "Search roles...",
+      "noRolesFound": "No roles found",
+      "notFound": "No tests found",
+      "durationMin": "{{n}} min",
+      "viewBtn": "View",
+      "noResults": "0 results",
+      "resultsRange": "{{start}}–{{end}} of {{total}}"
     },
     "testDetail": {
       "back": "Back to Tests",
@@ -579,6 +605,7 @@
       "draft": "Draft",
       "archived": "Archived",
       "passed": "Passed",
+      "reviewed": "Reviewed",
       "failed": "Failed",
       "pending": "Pending"
     },
@@ -586,6 +613,86 @@
       "loadFailed": "Failed to load data",
       "notFound": "Not found",
       "retry": "Try again"
+    },
+    "overview": {
+      "title": "Overview",
+      "kpi": {
+        "testsSent": "Tests sent",
+        "testsSentDelta": "↑ +18% this month",
+        "avgScore": "Avg. CrismaScore",
+        "avgScoreDelta": "↑ +5 pts vs last month",
+        "candidatesReviewed": "Candidates reviewed",
+        "candidatesReviewedSub": "This month · 73% pass rate",
+        "fraudFlags": "Fraud flags",
+        "fraudFlagsDelta": "↓ −3 vs last month"
+      },
+      "scoreDistribution": "Score distribution",
+      "scoreDistributionSub": "Last 30 days · 142 candidates",
+      "topCandidates": "Top candidates",
+      "topCandidatesQualified": "{{count}} qualified · ≥75",
+      "recentCandidates": "Recent candidates",
+      "viewAll": "View all →",
+      "viewAllQualified": "View all qualified candidates →",
+      "table": {
+        "name": "Name",
+        "role": "Role",
+        "score": "CrismaScore",
+        "trust": "Trust",
+        "status": "Status",
+        "date": "Date",
+        "action": "Action"
+      },
+      "empty": "No candidates yet",
+      "viewBtn": "View",
+      "paginationZero": "0 results",
+      "paginationRange": "{{start}}–{{end}} of {{total}} results"
+    },
+    "settings": {
+      "title": "Settings",
+      "comingSoon": "Account and workspace settings coming soon."
+    },
+    "talentPoolPage": {
+      "buildTest": "Build test",
+      "leadsCount": "Talent Pool ({{count}} leads)",
+      "sortBy": "Sort by:",
+      "sortScore": "Score",
+      "sortName": "Name",
+      "sortDate": "Date",
+      "clear": "Clear",
+      "toggleGridView": "Toggle grid view"
+    },
+    "comparePage": {
+      "title": "Compare candidates",
+      "exportReport": "Export report",
+      "noSelected": "No candidates selected",
+      "backToCandidates": "Back to Candidates",
+      "candidatesCount": "{{count}} Candidates",
+      "bestFit": "Best Fit",
+      "table": {
+        "crimaScore": "CrismaScore",
+        "logic": "Logic",
+        "communication": "Communication",
+        "jobSkills": "Job skills",
+        "trust": "Trust score",
+        "fraudRisk": "Fraud risk",
+        "aiVerdict": "AI verdict",
+        "pipeline": "Pipeline stage"
+      },
+      "pipeline": {
+        "technical": "Technical",
+        "screened": "Screened",
+        "applied": "Applied"
+      },
+      "ai": {
+        "advanceInterview": "Advance to Interview",
+        "furtherScreening": "Further screening",
+        "onHold": "On Hold"
+      },
+      "fraud": {
+        "lowRisk": "Low Risk",
+        "mediumRisk": "Medium Risk",
+        "highRisk": "High Risk"
+      }
     }
   }
 }

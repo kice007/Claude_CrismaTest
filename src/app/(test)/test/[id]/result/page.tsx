@@ -77,10 +77,10 @@ export default function TestResultPage() {
 
       {/* ── Header ───────────────────────────────────────────── */}
       <header className="bg-white border-b border-[#E5E7EB] px-12 h-16 flex items-center justify-between flex-shrink-0">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Image src="/images/logo.png" alt="CrismaTest" width={42} height={36} className="object-contain" />
           <span className="text-[18px] font-bold text-[#0F2A6B] tracking-tight">CrismaTest</span>
-        </div>
+        </Link>
         <AuthLangToggle />
       </header>
 

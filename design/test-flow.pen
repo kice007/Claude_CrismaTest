@@ -3138,7 +3138,41 @@
             48
           ],
           "justifyContent": "space_between",
-          "alignItems": "center"
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "VcTM0",
+              "name": "v4-logo",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "ZjXjZ",
+                  "name": "logoImg",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../design_context/logo/logo-1.png",
+                    "mode": "fit"
+                  },
+                  "width": 42,
+                  "height": 36
+                },
+                {
+                  "type": "text",
+                  "id": "f67Ea",
+                  "fill": "$brand-navy",
+                  "content": "CrismaTest",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "letterSpacing": -0.3
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "frame",
@@ -4355,6 +4389,27 @@
               ]
             }
           ]
+        },
+        {
+          "type": "frame",
+          "id": "r0fYw",
+          "name": "resultHeader",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "#E5E7EB"
+          },
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center"
         }
       ]
     },
@@ -4880,6 +4935,532 @@
                       "type": "icon_font",
                       "id": "054Hg",
                       "name": "startArrow",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "arrow-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Tro2K",
+      "x": 1500,
+      "y": 550,
+      "name": "user-info",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "CcMqR",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "name": "leftPanelCopy",
+          "width": 720,
+          "height": 900,
+          "fill": "$brand-navy",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": 64,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "Vvvtw",
+              "name": "logoImg",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "../design_context/logo/logo-1.png",
+                "mode": "fit"
+              },
+              "width": 110,
+              "height": 110
+            },
+            {
+              "type": "text",
+              "id": "A6lPp",
+              "name": "brandName",
+              "fill": "#FFFFFF",
+              "content": "CrismaTest",
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fontWeight": "700",
+              "letterSpacing": -0.5
+            },
+            {
+              "type": "text",
+              "id": "nPVZs",
+              "name": "tagline",
+              "fill": "#A5B4FC",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Your skills, objectively measured.",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 2,
+              "id": "HH9BG",
+              "name": "divider",
+              "fill": "#3B6FE8",
+              "width": 40,
+              "height": 2
+            },
+            {
+              "type": "text",
+              "id": "I6A2Y",
+              "name": "trustNote",
+              "fill": "#6366F1",
+              "textGrowth": "fixed-width",
+              "width": 300,
+              "content": "Trusted by 500+ companies worldwide",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Eszv5",
+          "layoutPosition": "absolute",
+          "x": 720,
+          "y": 0,
+          "name": "rightPanel",
+          "width": 720,
+          "height": 900,
+          "fill": "#F5F7FA",
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "YPAip",
+              "name": "card",
+              "width": 420,
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#0F2A6B20",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 40
+              },
+              "layout": "vertical",
+              "gap": 20,
+              "padding": 40,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "srVlP",
+                  "name": "stepBadge",
+                  "fill": "$brand-light",
+                  "cornerRadius": 20,
+                  "gap": 8,
+                  "padding": [
+                    6,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "1fBTK",
+                      "name": "badgeIcon",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "user",
+                      "iconFontFamily": "lucide",
+                      "fill": "$brand-primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "hTqbS",
+                      "name": "badgeText",
+                      "fill": "$brand-primary",
+                      "content": "user informations",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "3NwFx",
+                  "name": "formTitle",
+                  "fill": "#111827",
+                  "content": "Tell us about yourself",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "sSWV5",
+                  "name": "formSubtitle",
+                  "fill": "#6B7280",
+                  "textGrowth": "fixed-width",
+                  "width": 340,
+                  "content": "This helps us personalize your assessment",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "fp7Zu",
+                  "name": "fieldsContainer",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MsrRD",
+                      "name": "fieldFullName",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dDBxw",
+                          "name": "label",
+                          "fill": "#374151",
+                          "content": "Full Name",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "S5r8r",
+                          "name": "input",
+                          "width": "fill_container",
+                          "height": 44,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1.5,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            0,
+                            0,
+                            0,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "s2F6Z",
+                              "name": "placeholder",
+                              "fill": "#9CA3AF",
+                              "content": "Your full name",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "slVmb",
+                      "name": "fieldEmail",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "9WYja",
+                          "name": "label",
+                          "fill": "#374151",
+                          "content": "Email Address",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "6GvzH",
+                          "name": "input",
+                          "width": "fill_container",
+                          "height": 44,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1.5,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            0,
+                            0,
+                            0,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "YeqaE",
+                              "name": "placeholder",
+                              "fill": "#9CA3AF",
+                              "content": "your@email.com",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NMtdr",
+                      "name": "fieldPhone",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YtKSA",
+                          "name": "label",
+                          "fill": "#374151",
+                          "content": "Phone Number",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "8XtoZ",
+                          "name": "input",
+                          "width": "fill_container",
+                          "height": 44,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1.5,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            0,
+                            0,
+                            0,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "6zxB7",
+                              "name": "placeholder",
+                              "fill": "#9CA3AF",
+                              "content": "+1 (555) 000-0000",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "w7jUF",
+                      "name": "fieldCompany",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "A5XEn",
+                          "name": "label",
+                          "fill": "#374151",
+                          "content": "Company / Organization",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "fXOp9",
+                          "name": "input",
+                          "width": "fill_container",
+                          "height": 44,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1.5,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            0,
+                            0,
+                            0,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "pCqnd",
+                              "name": "placeholder",
+                              "fill": "#9CA3AF",
+                              "content": "Where do you work?",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W7ylK",
+                      "name": "fieldJobTitle",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "uhvHD",
+                          "name": "label",
+                          "fill": "#374151",
+                          "content": "Job Title",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "NSq8v",
+                          "name": "input",
+                          "width": "fill_container",
+                          "height": 44,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1.5,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            0,
+                            0,
+                            0,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "7HpYP",
+                              "name": "placeholder",
+                              "fill": "#9CA3AF",
+                              "content": "Your current role",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ngc1k",
+                  "name": "privacyNote",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Ogy68",
+                      "name": "lockIcon",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "lock",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6B7280"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ynT70",
+                      "name": "privacyText",
+                      "fill": "#6B7280",
+                      "content": "Your data is private and never shared",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Pq9pv",
+                  "name": "continueBtn",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "$brand-primary",
+                  "cornerRadius": 10,
+                  "gap": 10,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "1XfmD",
+                      "name": "continueLabel",
+                      "fill": "#FFFFFF",
+                      "content": "Continue",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "MLGxX",
+                      "name": "arrowIcon",
                       "width": 16,
                       "height": 16,
                       "iconFontName": "arrow-right",

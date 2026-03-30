@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const navLinks = [
@@ -38,10 +39,10 @@ export function Footer({ dark = false }: { dark?: boolean }) {
       {/* Top row */}
       <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 w-full mb-8 md:mb-12">
         <div className="flex flex-col gap-3" style={{ maxWidth: 280 }}>
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image src="/images/logo.png" alt="CrismaTest" width={42} height={36} />
             <span className="text-white text-[16px] font-bold">CrismaTest</span>
-          </div>
+          </Link>
           <span className="text-[13px] leading-[1.6]" style={{ color: "#475569" }}>
             {t("footer_tagline")}
           </span>
