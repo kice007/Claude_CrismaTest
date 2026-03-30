@@ -25,7 +25,7 @@ export default function TestInfoPage() {
       {/* ── LEFT PANEL ─────────────────────────────────────────── */}
       <div
         className="lg:w-1/2 min-h-[220px] lg:min-h-screen flex flex-col items-center justify-center"
-        style={{ background: '#0F2A6B', gap: 32, padding: 64 }}
+        style={{ background: '#0f172a', gap: 32, padding: 64 }}
       >
         {/* Logo */}
         <Link href="/">

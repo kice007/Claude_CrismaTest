@@ -4,6 +4,7 @@ import { MotionConfig } from "motion/react";
 import { I18nProvider } from "@/components/I18nProvider";
 import { AuthProvider } from "@/lib/auth-context";
 import { NavShell } from "@/components/nav/NavShell";
+import { MainWrapper } from "@/components/nav/MainWrapper";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -56,10 +57,10 @@ export default function RootLayout({
             <AuthProvider>
               {/* NavShell inside AuthProvider — reads auth state for avatar/dropdown */}
               <NavShell />
-              {/* pt-16 (64px) matches h-16 nav height; min-w-0 prevents flex overflow */}
-              <main className="pt-16 min-w-0">
+              {/* pt-16 omitted on /test/* routes (no navbar there) */}
+              <MainWrapper>
                 {children}
-              </main>
+              </MainWrapper>
             </AuthProvider>
           </I18nProvider>
           {/* Toaster outside I18nProvider — avoids focus trap conflicts with Dialog */}

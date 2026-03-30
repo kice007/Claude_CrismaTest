@@ -7,7 +7,7 @@ export function proxy(request: NextRequest) {
   const isLoggedIn = request.cookies.get('crismatest_auth')?.value === '1'
   const { pathname } = request.nextUrl
 
-  if ((pathname.startsWith('/dashboard') || pathname.startsWith('/test')) && !isLoggedIn) {
+  if (pathname.startsWith('/dashboard') && !isLoggedIn) {
     const loginUrl = new URL('/login', request.url)
     loginUrl.searchParams.set('from', pathname)
     return NextResponse.redirect(loginUrl)
@@ -17,5 +17,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/test/:path*'],
+  matcher: ['/dashboard/:path*'],
 }

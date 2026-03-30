@@ -31,6 +31,8 @@ export function NavShell() {
   const pathname = usePathname();
   const isDarkPage = pathname === "/dark";
   const isLandingPage = pathname === "/" || pathname === "/dark";
+
+  if (pathname.startsWith("/test/")) return null;
   const { isLoggedIn, logout } = useAuth();
 
   useEffect(() => {
