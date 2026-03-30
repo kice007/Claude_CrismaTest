@@ -81,7 +81,12 @@ export function NavShell() {
           )}
         >
           <div className="flex items-center justify-between w-full px-5 md:px-20 max-w-[1440px] mx-auto">
-            <Link href="/" className="flex items-center gap-2 shrink-0">
+            <Link
+              href="/"
+              scroll={false}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center gap-2 shrink-0"
+            >
               <Image src="/images/logo.png" alt="CrismaTest logo" width={42} height={36} />
               <span
                 className="font-bold text-[18px] tracking-[-0.3px]"

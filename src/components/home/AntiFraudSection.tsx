@@ -110,7 +110,7 @@ export function AntiFraudSection({ dark = false }: { dark?: boolean }) {
       {/* Desktop: 2 rows of 3 */}
       <div className="hidden md:flex flex-col gap-3 w-full">
         <motion.div
-          className="flex gap-3 w-full"
+          className="flex justify-center gap-3 w-full"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -121,7 +121,7 @@ export function AntiFraudSection({ dark = false }: { dark?: boolean }) {
           ))}
         </motion.div>
         <motion.div
-          className="flex gap-3 w-full"
+          className="flex justify-center gap-3 w-full"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"

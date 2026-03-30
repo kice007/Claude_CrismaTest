@@ -19,7 +19,9 @@ const AuthContext = createContext<AuthContextValue | null>(null)
 // ─── Provider ─────────────────────────────────────────────────────────────────
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  // Lazy initializer: reads localStorage only on first render (SSR-safe — component is 'use client')
+  // Lazy initializer: runs only on the client (no SSR mismatch risk because AuthProvider
+  // is rendered client-side under 'use client'). Eliminates the extra render that would
+  // occur if setState() were called synchronously inside a useEffect.
   const [isLoggedIn, setIsLoggedIn] = useState(() => getIsLoggedIn())
   const router = useRouter()
 

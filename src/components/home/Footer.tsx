@@ -39,7 +39,12 @@ export function Footer({ dark = false }: { dark?: boolean }) {
       {/* Top row */}
       <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 w-full mb-8 md:mb-12">
         <div className="flex flex-col gap-3" style={{ maxWidth: 280 }}>
-          <Link href="/" className="flex items-center gap-2">
+          <Link
+            href="/"
+            scroll={false}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-2"
+          >
             <Image src="/images/logo.png" alt="CrismaTest" width={42} height={36} />
             <span className="text-white text-[16px] font-bold">CrismaTest</span>
           </Link>
